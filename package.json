@@ -1,0 +1,13 @@
+{
+  "name": "auth-connect-tutorials-ng",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm run -r build",
+    "lint": "pnpm run -r lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
