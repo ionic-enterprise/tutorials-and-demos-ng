@@ -5,9 +5,20 @@
   "main": "index.js",
   "scripts": {
     "build": "pnpm run -r build",
-    "lint": "pnpm run -r lint"
+    "lint": "pnpm run -r lint",
+    "prepare": "husky install"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": {
+    "name": "Ionic Customer Success Team",
+    "email": "support@ionic.io"
+  },
+  "license": "MIT",
+  "prettier": "@ionic/prettier-config",
+  "devDependencies": {
+    "@ionic/prettier-config": "^4.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
+  }
 }
