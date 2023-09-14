@@ -1,2 +1,4 @@
 packages:
-  - 'packages/*'
+  - 'auth-connect/*'
+  - 'identity-vault/*'
+  - 'demos/*'
