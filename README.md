@@ -6,15 +6,23 @@ This is a collection of tutorials and demos.
 
 ### Auth Connect
 
-Under construction.
+The `auth-connect` collection contains applications whose primary purpose is to highlight the use of [Auth Connect](https://ionic.io/docs/auth-connect). At this time, all of the projects contained here are examples for our Auth Connect Tutorials.
+
+#### Getting Started
+
+The `auth-connect/getting-started` project is the output of the basic Auth Connect training and serves as the basis for the other targeted tutorials.
+
+#### Refresh Workflow
+
+The `auth-connect/refresh-workflow` project demonstrates one way of implementing a refresh flow within an application that uses Auth Connect. It is sufficient for use as-is but can also be used as the basis for a more complex workflow if needed.
 
 ### Identity Vault
 
-Under construction.
+The `identity-vault` collection contains applications whose primary purpose is to highlight the use of [Identity Vault](https://ionic.io/docs/auth-connect). At this time this area is under construction.
 
 ### Demos
 
-Under construction.
+The `demos` collection contain applications whose primary purpose does not fit into any of the other package collections. At this time this area is under construction.
 
 ## Building
 
