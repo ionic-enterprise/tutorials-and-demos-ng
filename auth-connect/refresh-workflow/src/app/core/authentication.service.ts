@@ -60,7 +60,23 @@ export class AuthenticationService {
   }
 
   private async getAuthResult(): Promise<AuthResult | null> {
-    return this.session.getSession();
+    let authResult = await this.session.getSession();
+    if (authResult && (await AuthConnect.isAccessTokenExpired(authResult))) {
+      authResult = await this.refreshAuthResult(authResult);
+    }
+    return authResult;
+  }
+
+  private async refreshAuthResult(authResult: AuthResult): Promise<AuthResult | null> {
+    let newAuthResult: AuthResult | null = null;
+    if (await AuthConnect.isRefreshTokenAvailable(authResult)) {
+      try {
+        newAuthResult = await AuthConnect.refreshSession(this.provider, authResult);
+      } catch (err) {
+        null;
+      }
+    }
+    return newAuthResult;
   }
 
   private async saveAuthResult(authResult: AuthResult | null): Promise<void> {
