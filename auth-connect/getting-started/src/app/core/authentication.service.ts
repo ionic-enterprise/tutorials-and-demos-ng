@@ -21,8 +21,8 @@ export class AuthenticationService {
       audience: 'https://io.ionic.demo.ac',
       clientId: 'yLasZNUGkZ19DGEjTmAITBfGXzqbvd00',
       discoveryUrl: 'https://dev-2uspt-sz.us.auth0.com/.well-known/openid-configuration',
-      logoutUrl: isNative ? 'msauth://login' : 'http://localhost:8100/login',
-      redirectUri: isNative ? 'msauth://login' : 'http://localhost:8100/login',
+      logoutUrl: isNative ? 'msauth://auth-action-complete' : 'http://localhost:8100/auth-action-complete',
+      redirectUri: isNative ? 'msauth://auth-action-complete' : 'http://localhost:8100/auth-action-complete',
       scope: 'openid offline_access email picture profile',
     };
 
