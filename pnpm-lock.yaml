@@ -178,6 +178,163 @@ importers:
         specifier: ~5.1.6
         version: 5.1.6
 
+  auth-connect/protect-routes:
+    dependencies:
+      '@angular/animations':
+        specifier: ^16.2.6
+        version: 16.2.6(@angular/core@16.2.6)
+      '@angular/common':
+        specifier: ^16.2.6
+        version: 16.2.6(@angular/core@16.2.6)(rxjs@7.8.1)
+      '@angular/compiler':
+        specifier: ^16.2.6
+        version: 16.2.6(@angular/core@16.2.6)
+      '@angular/core':
+        specifier: ^16.2.6
+        version: 16.2.6(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/forms':
+        specifier: ^16.2.6
+        version: 16.2.6(@angular/common@16.2.6)(@angular/core@16.2.6)(@angular/platform-browser@16.2.6)(rxjs@7.8.1)
+      '@angular/platform-browser':
+        specifier: ^16.2.6
+        version: 16.2.6(@angular/animations@16.2.6)(@angular/common@16.2.6)(@angular/core@16.2.6)
+      '@angular/platform-browser-dynamic':
+        specifier: ^16.2.6
+        version: 16.2.6(@angular/common@16.2.6)(@angular/compiler@16.2.6)(@angular/core@16.2.6)(@angular/platform-browser@16.2.6)
+      '@angular/router':
+        specifier: ^16.2.6
+        version: 16.2.6(@angular/common@16.2.6)(@angular/core@16.2.6)(@angular/platform-browser@16.2.6)(rxjs@7.8.1)
+      '@capacitor/android':
+        specifier: ^5.4.1
+        version: 5.4.1(@capacitor/core@5.4.1)
+      '@capacitor/app':
+        specifier: 5.0.6
+        version: 5.0.6(@capacitor/core@5.4.1)
+      '@capacitor/core':
+        specifier: 5.4.1
+        version: 5.4.1
+      '@capacitor/haptics':
+        specifier: 5.0.6
+        version: 5.0.6(@capacitor/core@5.4.1)
+      '@capacitor/ios':
+        specifier: ^5.4.1
+        version: 5.4.1(@capacitor/core@5.4.1)
+      '@capacitor/keyboard':
+        specifier: 5.0.6
+        version: 5.0.6(@capacitor/core@5.4.1)
+      '@capacitor/preferences':
+        specifier: ~5.0.6
+        version: 5.0.6(@capacitor/core@5.4.1)
+      '@capacitor/status-bar':
+        specifier: 5.0.6
+        version: 5.0.6(@capacitor/core@5.4.1)
+      '@ionic-enterprise/auth':
+        specifier: ^5.0.8
+        version: 5.0.8(@capacitor/core@5.4.1)
+      '@ionic/angular':
+        specifier: ^7.4.1
+        version: 7.4.1(@angular/core@16.2.6)(@angular/forms@16.2.6)(@angular/router@16.2.6)(rxjs@7.8.1)(zone.js@0.13.3)
+      ionicons:
+        specifier: ^7.1.2
+        version: 7.1.2
+      rxjs:
+        specifier: ~7.8.1
+        version: 7.8.1
+      tslib:
+        specifier: ^2.6.2
+        version: 2.6.2
+      zone.js:
+        specifier: ~0.13.3
+        version: 0.13.3
+    devDependencies:
+      '@angular-devkit/build-angular':
+        specifier: ^16.2.3
+        version: 16.2.3(@angular/compiler-cli@16.2.6)(@types/node@20.6.5)(karma@6.4.2)(typescript@5.1.6)
+      '@angular-eslint/builder':
+        specifier: ^16.2.0
+        version: 16.2.0(eslint@8.50.0)(typescript@5.1.6)
+      '@angular-eslint/eslint-plugin':
+        specifier: ^16.2.0
+        version: 16.2.0(eslint@8.50.0)(typescript@5.1.6)
+      '@angular-eslint/eslint-plugin-template':
+        specifier: ^16.2.0
+        version: 16.2.0(eslint@8.50.0)(typescript@5.1.6)
+      '@angular-eslint/schematics':
+        specifier: ^16.2.0
+        version: 16.2.0(@angular/cli@16.2.3)(eslint@8.50.0)(typescript@5.1.6)
+      '@angular-eslint/template-parser':
+        specifier: ^16.2.0
+        version: 16.2.0(eslint@8.50.0)(typescript@5.1.6)
+      '@angular/cli':
+        specifier: ^16.2.3
+        version: 16.2.3
+      '@angular/compiler-cli':
+        specifier: ^16.2.6
+        version: 16.2.6(@angular/compiler@16.2.6)(typescript@5.1.6)
+      '@angular/language-service':
+        specifier: ^16.2.6
+        version: 16.2.6
+      '@capacitor/cli':
+        specifier: 5.4.1
+        version: 5.4.1
+      '@ionic/angular-toolkit':
+        specifier: ^10.0.0
+        version: 10.0.0
+      '@types/jasmine':
+        specifier: ~4.3.6
+        version: 4.3.6
+      '@types/node':
+        specifier: ^20.6.5
+        version: 20.6.5
+      '@typescript-eslint/eslint-plugin':
+        specifier: 6.7.2
+        version: 6.7.2(@typescript-eslint/parser@6.7.2)(eslint@8.50.0)(typescript@5.1.6)
+      '@typescript-eslint/parser':
+        specifier: 6.7.2
+        version: 6.7.2(eslint@8.50.0)(typescript@5.1.6)
+      eslint:
+        specifier: ^8.50.0
+        version: 8.50.0
+      eslint-plugin-import:
+        specifier: 2.28.1
+        version: 2.28.1(@typescript-eslint/parser@6.7.2)(eslint@8.50.0)
+      eslint-plugin-jsdoc:
+        specifier: 46.8.2
+        version: 46.8.2(eslint@8.50.0)
+      eslint-plugin-prefer-arrow:
+        specifier: 1.2.3
+        version: 1.2.3(eslint@8.50.0)
+      jasmine-core:
+        specifier: ~5.1.1
+        version: 5.1.1
+      jasmine-spec-reporter:
+        specifier: ~7.0.0
+        version: 7.0.0
+      karma:
+        specifier: ~6.4.2
+        version: 6.4.2
+      karma-chrome-launcher:
+        specifier: ~3.2.0
+        version: 3.2.0
+      karma-coverage:
+        specifier: ~2.2.1
+        version: 2.2.1
+      karma-coverage-istanbul-reporter:
+        specifier: ~3.0.3
+        version: 3.0.3
+      karma-jasmine:
+        specifier: ~5.1.0
+        version: 5.1.0(karma@6.4.2)
+      karma-jasmine-html-reporter:
+        specifier: ~2.1.0
+        version: 2.1.0(jasmine-core@5.1.1)(karma-jasmine@5.1.0)(karma@6.4.2)
+      ts-node:
+        specifier: ^10.9.1
+        version: 10.9.1(@types/node@20.6.5)(typescript@5.1.6)
+      typescript:
+        specifier: ~5.1.6
+        version: 5.1.6
+
   auth-connect/refresh-workflow:
     dependencies:
       '@angular/animations':
@@ -841,12 +998,12 @@ packages:
     dependencies:
       '@ampproject/remapping': 2.2.1
       '@babel/code-frame': 7.22.13
-      '@babel/generator': 7.22.9
+      '@babel/generator': 7.23.0
       '@babel/helper-compilation-targets': 7.22.15
       '@babel/helper-module-transforms': 7.23.0(@babel/core@7.22.9)
       '@babel/helpers': 7.23.1
       '@babel/parser': 7.23.0
-      '@babel/template': 7.22.5
+      '@babel/template': 7.22.15
       '@babel/traverse': 7.23.0
       '@babel/types': 7.23.0
       convert-source-map: 1.9.0
@@ -1486,7 +1643,7 @@ packages:
     dependencies:
       '@babel/core': 7.22.9
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/template': 7.22.5
+      '@babel/template': 7.22.15
     dev: true
 
   /@babel/plugin-transform-destructuring@7.23.0(@babel/core@7.22.9):
@@ -5806,7 +5963,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
