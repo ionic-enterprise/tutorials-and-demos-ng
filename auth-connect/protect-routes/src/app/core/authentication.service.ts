@@ -41,7 +41,7 @@ export class AuthenticationService {
 
   async isAuthenticated(): Promise<boolean> {
     const authResult = await this.getAuthResult();
-    return !!authResult;
+    return !!authResult && (await AuthConnect.isAccessTokenAvailable(authResult));
   }
 
   async login(): Promise<void> {
@@ -57,6 +57,12 @@ export class AuthenticationService {
       await AuthConnect.logout(this.provider, authResult);
       this.saveAuthResult(null);
     }
+  }
+
+  async getAccessToken(): Promise<string | undefined> {
+    await this.isReady;
+    const res = await this.getAuthResult();
+    return res?.accessToken;
   }
 
   private async getAuthResult(): Promise<AuthResult | null> {

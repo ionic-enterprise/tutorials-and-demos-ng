@@ -13,4 +13,5 @@
 
   <ion-button *ngIf="!authenticated" (click)="login()" data-testid="login-button">Login</ion-button>
   <ion-button *ngIf="authenticated" (click)="logout()" data-testid="logout-button">Logout</ion-button>
+  <pre>{{ accessToken }}</pre>
 </ion-content>

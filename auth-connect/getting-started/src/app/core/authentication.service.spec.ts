@@ -29,17 +29,29 @@ describe('AuthenticationService', () => {
     expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
   });
 
-  describe('`is authenticated', () => {
+  describe('is authenticated', () => {
     it('resolves false if there is no stored auth result', async () => {
+      spyOn(AuthConnect, 'isAccessTokenAvailable').and.resolveTo(false);
       const session = TestBed.inject(SessionService);
       (session.getSession as jasmine.Spy).and.resolveTo(null);
       expect(await service.isAuthenticated()).toBe(false);
+      expect(AuthConnect.isAccessTokenAvailable).not.toHaveBeenCalled();
     });
 
-    it('resolves true if there is a stored auth result', async () => {
+    it('resolves false if there is a stored auth result but no access token is available', async () => {
+      spyOn(AuthConnect, 'isAccessTokenAvailable').and.resolveTo(false);
+      const session = TestBed.inject(SessionService);
+      (session.getSession as jasmine.Spy).and.resolveTo(testAuthResult);
+      expect(await service.isAuthenticated()).toBe(false);
+      expect(AuthConnect.isAccessTokenAvailable).toHaveBeenCalledOnceWith(testAuthResult);
+    });
+
+    it('resolves true if there is a stored auth result with an access token', async () => {
+      spyOn(AuthConnect, 'isAccessTokenAvailable').and.resolveTo(true);
       const session = TestBed.inject(SessionService);
       (session.getSession as jasmine.Spy).and.resolveTo(testAuthResult);
       expect(await service.isAuthenticated()).toBe(true);
+      expect(AuthConnect.isAccessTokenAvailable).toHaveBeenCalledOnceWith(testAuthResult);
     });
   });
 

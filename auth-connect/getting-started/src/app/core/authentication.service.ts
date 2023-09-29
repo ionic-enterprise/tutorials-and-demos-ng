@@ -41,7 +41,7 @@ export class AuthenticationService {
 
   async isAuthenticated(): Promise<boolean> {
     const authResult = await this.getAuthResult();
-    return !!authResult;
+    return !!authResult && (await AuthConnect.isAccessTokenAvailable(authResult));
   }
 
   async login(): Promise<void> {

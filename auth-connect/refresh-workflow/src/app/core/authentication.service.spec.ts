@@ -38,7 +38,7 @@ describe('AuthenticationService', () => {
     expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
   });
 
-  describe('`is authenticated', () => {
+  describe('is authenticated', () => {
     describe('when there is no stored auth result', () => {
       beforeEach(() => {
         const session = TestBed.inject(SessionService);

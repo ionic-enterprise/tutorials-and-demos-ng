@@ -13,6 +13,7 @@ import { AuthenticationService } from './../core/authentication.service';
 })
 export class Tab1Page implements OnInit {
   authenticated = false;
+  accessToken: string | undefined = '';
 
   constructor(private authentication: AuthenticationService) {}
 
@@ -32,5 +33,6 @@ export class Tab1Page implements OnInit {
 
   private async checkAuthentication(): Promise<void> {
     this.authenticated = await this.authentication.isAuthenticated();
+    this.accessToken = await this.authentication.getAccessToken();
   }
 }
