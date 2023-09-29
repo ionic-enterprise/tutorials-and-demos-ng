@@ -20,6 +20,7 @@ describe('AuthenticationService', () => {
   };
 
   beforeEach(() => {
+    spyOn(AuthConnect, 'isAccessTokenAvailable').and.resolveTo(true);
     spyOn(AuthConnect, 'isAccessTokenExpired').and.resolveTo(false);
     spyOn(AuthConnect, 'isRefreshTokenAvailable').and.resolveTo(false);
     spyOn(AuthConnect, 'login').and.resolveTo(testAuthResult);
@@ -61,69 +62,85 @@ describe('AuthenticationService', () => {
         (session.getSession as jasmine.Spy).and.resolveTo(testAuthResult);
       });
 
-      it('checks for an expired access token', async () => {
-        await service.isAuthenticated();
-        expect(AuthConnect.isAccessTokenExpired).toHaveBeenCalledOnceWith(testAuthResult);
-      });
-
-      describe('if the token is not expired', () => {
+      describe('when there is no access token', () => {
         beforeEach(() => {
-          (AuthConnect.isAccessTokenExpired as jasmine.Spy).and.resolveTo(false);
+          (AuthConnect.isAccessTokenAvailable as jasmine.Spy).and.resolveTo(false);
         });
 
-        it('resolves true', async () => {
-          expect(await service.isAuthenticated()).toBe(true);
+        it('resolves false', async () => {
+          expect(await service.isAuthenticated()).toBe(false);
         });
       });
 
-      describe('if the token is expired', () => {
+      describe('when there is an access token', () => {
         beforeEach(() => {
-          (AuthConnect.isAccessTokenExpired as jasmine.Spy).and.resolveTo(true);
+          (AuthConnect.isAccessTokenAvailable as jasmine.Spy).and.resolveTo(true);
         });
 
-        describe('if a refresh token is available', () => {
+        it('checks for an expired access token', async () => {
+          await service.isAuthenticated();
+          expect(AuthConnect.isAccessTokenExpired).toHaveBeenCalledOnceWith(testAuthResult);
+        });
+
+        describe('if the token is not expired', () => {
           beforeEach(() => {
-            (AuthConnect.isRefreshTokenAvailable as jasmine.Spy).and.resolveTo(true);
+            (AuthConnect.isAccessTokenExpired as jasmine.Spy).and.resolveTo(false);
           });
 
-          it('attempts a refresh', async () => {
-            await service.isAuthenticated();
-            expect(AuthConnect.refreshSession).toHaveBeenCalledOnceWith(jasmine.any(Auth0Provider), testAuthResult);
+          it('resolves true', async () => {
+            expect(await service.isAuthenticated()).toBe(true);
+          });
+        });
+
+        describe('if the token is expired', () => {
+          beforeEach(() => {
+            (AuthConnect.isAccessTokenExpired as jasmine.Spy).and.resolveTo(true);
           });
 
-          describe('if the refresh is successful', () => {
+          describe('if a refresh token is available', () => {
             beforeEach(() => {
-              (AuthConnect.refreshSession as jasmine.Spy).and.resolveTo(refreshAuthResult);
+              (AuthConnect.isRefreshTokenAvailable as jasmine.Spy).and.resolveTo(true);
             });
 
-            it('resolves true', async () => {
-              expect(await service.isAuthenticated()).toBe(true);
+            it('attempts a refresh', async () => {
+              await service.isAuthenticated();
+              expect(AuthConnect.refreshSession).toHaveBeenCalledOnceWith(jasmine.any(Auth0Provider), testAuthResult);
+            });
+
+            describe('if the refresh is successful', () => {
+              beforeEach(() => {
+                (AuthConnect.refreshSession as jasmine.Spy).and.resolveTo(refreshAuthResult);
+              });
+
+              it('resolves true', async () => {
+                expect(await service.isAuthenticated()).toBe(true);
+              });
+            });
+
+            describe('if the refresh fails', () => {
+              beforeEach(() => {
+                (AuthConnect.refreshSession as jasmine.Spy).and.rejectWith(new Error('test error'));
+              });
+
+              it('resolves false', async () => {
+                expect(await service.isAuthenticated()).toBe(false);
+              });
             });
           });
 
-          describe('if the refresh fails', () => {
+          describe('if a refresh token is not available', () => {
             beforeEach(() => {
-              (AuthConnect.refreshSession as jasmine.Spy).and.rejectWith(new Error('test error'));
+              (AuthConnect.isRefreshTokenAvailable as jasmine.Spy).and.resolveTo(false);
+            });
+
+            it('does not attempt a refresh', async () => {
+              await service.isAuthenticated();
+              expect(AuthConnect.refreshSession).not.toHaveBeenCalled();
             });
 
             it('resolves false', async () => {
               expect(await service.isAuthenticated()).toBe(false);
             });
-          });
-        });
-
-        describe('if a refresh token is not available', () => {
-          beforeEach(() => {
-            (AuthConnect.isRefreshTokenAvailable as jasmine.Spy).and.resolveTo(false);
-          });
-
-          it('does not attempt a refresh', async () => {
-            await service.isAuthenticated();
-            expect(AuthConnect.refreshSession).not.toHaveBeenCalled();
-          });
-
-          it('resolves false', async () => {
-            expect(await service.isAuthenticated()).toBe(false);
           });
         });
       });

@@ -41,7 +41,7 @@ export class AuthenticationService {
 
   async isAuthenticated(): Promise<boolean> {
     const authResult = await this.getAuthResult();
-    return !!authResult;
+    return !!authResult && (await AuthConnect.isAccessTokenAvailable(authResult));
   }
 
   async login(): Promise<void> {
@@ -61,7 +61,11 @@ export class AuthenticationService {
 
   private async getAuthResult(): Promise<AuthResult | null> {
     let authResult = await this.session.getSession();
-    if (authResult && (await AuthConnect.isAccessTokenExpired(authResult))) {
+    if (
+      authResult &&
+      (await AuthConnect.isAccessTokenAvailable(authResult)) &&
+      (await AuthConnect.isAccessTokenExpired(authResult))
+    ) {
       authResult = await this.refreshAuthResult(authResult);
     }
     return authResult;
@@ -76,6 +80,7 @@ export class AuthenticationService {
         null;
       }
     }
+    await this.saveAuthResult(newAuthResult);
     return newAuthResult;
   }
 
