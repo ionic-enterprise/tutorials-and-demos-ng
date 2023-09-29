@@ -17,18 +17,18 @@ export class Tab1Page implements OnInit {
 
   constructor(private authentication: AuthenticationService) {}
 
-  ngOnInit() {
-    this.checkAuthentication();
+  async ngOnInit() {
+    await this.checkAuthentication();
   }
 
   async login(): Promise<void> {
     await this.authentication.login();
-    this.checkAuthentication();
+    await this.checkAuthentication();
   }
 
   async logout(): Promise<void> {
     await this.authentication.logout();
-    this.checkAuthentication();
+    await this.checkAuthentication();
   }
 
   private async checkAuthentication(): Promise<void> {
