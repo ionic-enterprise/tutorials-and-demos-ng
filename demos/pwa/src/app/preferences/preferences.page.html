@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Preferences </ion-title>
+    <ion-buttons slot="end">
+      <ion-button strong="true" data-testid="cancel-button" (click)="cancel()"> Dismiss </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-list-header> Session Locking </ion-list-header>
+    <ion-item>
+      <ion-toggle
+        enableOnOffLabels="true"
+        [checked]="useBiometrics"
+        (ionChange)="useBiometricsChanged($event)"
+        [disabled]="disableBiometrics"
+        data-testid="bio-button"
+      >
+        Use Biometrics</ion-toggle
+      >
+    </ion-item>
+    <ion-item>
+      <ion-toggle
+        enableOnOffLabels="true"
+        [checked]="useSystemPasscode"
+        (ionChange)="useSystemPasscodeChanged($event)"
+        [disabled]="disableSystemPasscode"
+        data-testid="system-passcode-button"
+      >
+        Use System Passcode</ion-toggle
+      >
+    </ion-item>
+    <ion-item>
+      <ion-toggle
+        enableOnOffLabels="true"
+        [checked]="useCustomPasscode"
+        (ionChange)="useCustomPasscodeChanged($event)"
+        [disabled]="disableCustomPasscode"
+        data-testid="custom-passcode-button"
+      >
+        Use Custom Passcode
+      </ion-toggle>
+    </ion-item>
+    <ion-list-header> Privacy </ion-list-header>
+    <ion-item>
+      <ion-toggle
+        enableOnOffLabels="true"
+        [checked]="hideInBackground"
+        (ionChange)="hideInBackgroundChanged($event)"
+        [disabled]="disableHideInBackground"
+        data-testid="hide-contents-button"
+      >
+        Hide contents in background
+      </ion-toggle>
+    </ion-item>
+    <ion-list-header> Other Actions </ion-list-header>
+    <ion-item button (click)="logoutClicked()" data-testid="logout-button">
+      <ion-label> Logout </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">cs-demo-secure-storage-ng</string>
+    <string name="title_activity_main">cs-demo-secure-storage-ng</string>
+    <string name="package_name">io.ionic.csdemosecurestorageng</string>
+    <string name="custom_url_scheme">io.ionic.csdemosecurestorageng</string>
+</resources>

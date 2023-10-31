@@ -1,0 +1,36 @@
+<ion-content class="ion-text-center main-content">
+  <div *ngIf="!canUnlock">
+    <ion-list class="ion-padding" *ngIf="displayLockingOptions" data-testid="locking-options">
+      <ion-radio-group [(ngModel)]="unlockMode">
+        <ion-list-header>
+          <ion-label> Session Locking </ion-label>
+        </ion-list-header>
+
+        <ion-item *ngFor="let unlockMode of unlockModes">
+          <ion-radio [value]="unlockMode.mode">{{unlockMode.label}}</ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <div class="unlock-app" (click)="signIn()" data-testid="signin-button">
+      <ion-icon name="log-in-outline"></ion-icon>
+      <div>Sign In</div>
+    </div>
+  </div>
+
+  <div *ngIf="canUnlock">
+    <div class="unlock-app" (click)="unlock()" data-testid="unlock-button">
+      <ion-icon name="lock-open-outline"></ion-icon>
+      <div>Unlock</div>
+    </div>
+
+    <div class="unlock-app" (click)="redo()" data-testid="redo-button">
+      <ion-icon name="arrow-redo-outline"></ion-icon>
+      <div>Redo Sign In</div>
+    </div>
+  </div>
+
+  <div class="error-message">
+    <div>{{ errorMessage$ | async }}</div>
+  </div>
+</ion-content>

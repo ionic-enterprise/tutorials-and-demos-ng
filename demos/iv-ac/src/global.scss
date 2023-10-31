@@ -1,0 +1,84 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import '~@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+.main-content {
+  --background: linear-gradient(white, var(--ion-color-secondary));
+}
+
+@media (prefers-color-scheme: dark) {
+  .main-content {
+    --background: linear-gradient(var(--ion-background-color), var(--ion-color-secondary));
+  }
+}
+
+.list-ios {
+  background: transparent;
+}
+
+.list-md {
+  background: transparent;
+}
+
+.item {
+  --background: transparent;
+}
+
+ion-list-header {
+  --background: transparent;
+}
+
+ion-card {
+  border-radius: 20px;
+}
+
+ion-select::part(icon) {
+  width: 20px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+ion-select::part(text) {
+  margin-right: 1em;
+}
+
+:root {
+  --ion-color-aws: #ff9900;
+  --ion-color-aws-rgb: 255, 153, 0;
+  --ion-color-aws-contrast: #000000;
+  --ion-color-aws-contrast-rgb: 0, 0, 0;
+  --ion-color-aws-shade: #e08700;
+  --ion-color-aws-tint: #ffa31a;
+}
+
+.ion-color-aws {
+  --ion-color-base: var(--ion-color-aws);
+  --ion-color-base-rgb: var(--ion-color-aws-rgb);
+  --ion-color-contrast: var(--ion-color-aws-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-aws-contrast-rgb);
+  --ion-color-shade: var(--ion-color-aws-shade);
+  --ion-color-tint: var(--ion-color-aws-tint);
+}

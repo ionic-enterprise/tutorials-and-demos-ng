@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button id="cancel-button" (click)="close()" data-testid="close-button">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #notesEditorForm="ngForm">
+    <ion-item>
+      <ion-input
+        id="brand-input"
+        label="Brand"
+        label-placement="floating"
+        name="brand"
+        [(ngModel)]="brand"
+        #brandInput="ngModel"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        id="name-input"
+        label="Name"
+        label-placement="floating"
+        name="name"
+        [(ngModel)]="name"
+        #nameInput="ngModel"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select name="tea-type-select" label="Type" [(ngModel)]="teaCategoryId" #teaTypeSelect="ngModel" required>
+        <ion-select-option *ngFor="let t of categories" value="{{ t.id }}">{{ t.name }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Rating</ion-label>
+      <app-rating [(ngModel)]="rating" id="rating-input" name="rating" #ratingInput="ngModel" required></app-rating>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+        id="notes-textbox"
+        label="Notes"
+        label-placement="floating"
+        name="notes"
+        [(ngModel)]="notes"
+        #notesInput="ngModel"
+        rows="5"
+        required
+      ></ion-textarea>
+    </ion-item>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" [disabled]="!notesEditorForm.form.valid" (click)="save()" data-testid="save-button">{{
+      buttonLabel
+    }}</ion-button>
+  </ion-toolbar>
+</ion-footer>

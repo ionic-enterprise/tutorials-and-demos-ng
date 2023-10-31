@@ -1,0 +1,22 @@
+<ion-content class="ion-text-center main-content">
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>The Tasting Room is Locked</ion-card-title>
+      <ion-button
+        class="unlock-button"
+        expand="full"
+        fill="clear"
+        (click)="unlockClicked()"
+        data-testid="unlock-button"
+      >
+        <ion-icon slot="end" icon="lock-open-outline"></ion-icon>
+        <div>Unlock</div>
+      </ion-button>
+
+      <ion-button expand="full" color="secondary" (click)="redoClicked()" data-testid="redo-button">
+        <ion-icon slot="end" icon="arrow-redo-outline"></ion-icon>
+        <div>Redo Sign In</div>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

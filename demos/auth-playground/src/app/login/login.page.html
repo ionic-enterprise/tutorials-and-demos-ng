@@ -1,0 +1,89 @@
+<ion-content class="ion-text-center">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> Login </ion-card-title>
+      <ion-card-subtitle>Welcome to the Ionic Authentication Playground</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <form #loginForm="ngForm">
+        <ion-list>
+          <ion-item>
+            <ion-input
+              id="email-input"
+              label="E-Mail Address"
+              label-placement="floating"
+              name="email"
+              type="email"
+              [(ngModel)]="email"
+              #emailInput="ngModel"
+              email
+              required
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              id="password-input"
+              label="Password"
+              label-placement="floating"
+              name="password"
+              type="password"
+              [(ngModel)]="password"
+              #passwordInput="ngModel"
+              required
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <ion-button
+                expand="block"
+                [disabled]="!loginForm.form.valid"
+                (click)="basicSignIn()"
+                data-testid="basic-signin-button"
+                >Sign In with Email</ion-button
+              >
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <div class="error-message" data-testid="login-form-errors">
+          <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+            <div *ngIf="emailInput.errors.email">E-Mail Address must have a valid format</div>
+            <div *ngIf="emailInput.errors.required">E-Mail Address is required</div>
+          </div>
+
+          <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+            <div *ngIf="passwordInput.errors.required">Password is required</div>
+          </div>
+        </div>
+      </form>
+
+      <div class="auth-button-area">
+        <div>--OR--</div>
+        <ion-button expand="block" color="auth0" (click)="oidcSignIn('Auth0')" data-testid="atuh0-signin-button">
+          <ion-icon slot="end" src="assets/auth0-logo.svg"></ion-icon>
+          Sign In with Auth0</ion-button
+        >
+      </div>
+
+      <div class="auth-button-area">
+        <div>--OR--</div>
+        <ion-button expand="block" color="aws" (click)="oidcSignIn('AWS')" data-testid="aws-signin-button">
+          <ion-icon slot="end" name="logo-amazon"></ion-icon>
+          Sign In with AWS</ion-button
+        >
+      </div>
+
+      <div class="auth-button-area">
+        <div>--OR--</div>
+        <ion-button expand="block" color="azure" (click)="oidcSignIn('Azure')" data-testid="azure-signin-button">
+          <ion-icon slot="end" name="logo-microsoft"></ion-icon>
+          Sign In with Azure</ion-button
+        >
+      </div>
+
+      <div class="error-message" data-testid="error-message">
+        <div>{{ errorMessage }}</div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

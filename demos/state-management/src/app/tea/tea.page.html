@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Teas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="main-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Teas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row *ngFor="let teaRow of teas$ | async" class="ion-align-items-stretch">
+      <ion-col *ngFor="let tea of teaRow" size="12" size-md="6" size-xl="3">
+        <ion-card button (click)="showDetailsPage(tea.id)">
+          <ion-img [src]="tea.image"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{tea.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content> {{tea.description}} </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Auth Playground NG</string>
+    <string name="title_activity_main">Auth Playground NG</string>
+    <string name="package_name">io.ionic.authplaygroundng</string>
+    <string name="custom_url_scheme">io.ionic.authplaygroundng</string>
+</resources>

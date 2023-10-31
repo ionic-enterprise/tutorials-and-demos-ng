@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button *ngIf="sharingIsAvailable" [disabled]="!allowSharing" id="share-button" (click)="share()">
+        <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+      </ion-button>
+      <ion-button id="cancel-button" (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #notesEditorForm="ngForm">
+    <ion-item>
+      <ion-input
+        id="brand-input"
+        name="brand"
+        [(ngModel)]="brand"
+        #brandInput="ngModel"
+        label="Brand"
+        labelPlacement="floating"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        id="name-input"
+        name="name"
+        [(ngModel)]="name"
+        #nameInput="ngModel"
+        label="Name"
+        labelPlacement="floating"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select name="tea-type-select" [(ngModel)]="teaCategoryId" #teaTypeSelect="ngModel" label="Type" required>
+        <ion-select-option *ngFor="let t of teaCategories$ | async" value="{{ t.id }}">{{ t.name }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Rating</ion-label>
+      <app-rating [(ngModel)]="rating" id="rating-input" name="rating" #ratingInput="ngModel" required></app-rating>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+        id="notes-textbox"
+        name="notes"
+        [(ngModel)]="notes"
+        #notesInput="ngModel"
+        rows="5"
+        label="Notes"
+        labelPlacement="floating"
+        required
+      ></ion-textarea>
+    </ion-item>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" [disabled]="!notesEditorForm.form.valid" (click)="save()">{{ buttonLabel }}</ion-button>
+  </ion-toolbar>
+</ion-footer>

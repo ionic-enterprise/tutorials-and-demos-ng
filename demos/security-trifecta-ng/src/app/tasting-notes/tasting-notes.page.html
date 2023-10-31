@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Tasting Notes </ion-title>
+    <ion-buttons slot="end">
+      <ion-toggle [(ngModel)]="prefersDarkMode" (click)="setDarkMode()" data-testid="dark-mode-toggle">Dark</ion-toggle>
+      <ion-button data-testid="sync-button" (click)="performSync()">
+        <ion-icon slot="icon-only" :icon="sync"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()" data-testid="logout-button">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tasting Notes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list data-testid="notes-list">
+    <ion-item-sliding *ngFor="let note of notes">
+      <ion-item (click)="presentNoteEditor(note)">
+        <ion-label>
+          <div>{{ note.brand }}</div>
+          <div>{{ note.name }}</div>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option color="danger" (click)="remove(note)" data-testid="delete-button"> Delete </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentNoteEditor()" data-testid="add-note-button">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

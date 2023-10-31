@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">{{ title }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button id="cancel-button" (click)="close()" data-testid="cancel-button"> Cancel </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="sharingIsAvailable" [disabled]="!allowSharing" data-testid="share-button" (click)="share()">
+        <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+      </ion-button>
+      <ion-button [strong]="true" [disabled]="!editorForm.valid" (click)="save()" data-testid="save-button">{{
+        buttonLabel
+      }}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="editorForm">
+    <ion-item>
+      <ion-input
+        id="brand-input"
+        name="brand"
+        label="Brand"
+        label-placement="floating"
+        formControlName="brand"
+        data-testid="brand-input"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        id="name-input"
+        name="name"
+        label="Name"
+        label-placement="floating"
+        formControlName="name"
+        data-testid="name-input"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select name="tea-type-select" label="Type" formControlName="teaCategoryId" data-testid="tea-type-select">
+        <ion-select-option *ngFor="let t of teaCategories$ | async" [value]="t.id">{{ t.name }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Rating</ion-label>
+      <app-rating id="rating-input" name="rating" formControlName="rating" data-testid="rating"></app-rating>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+        id="notes-textbox"
+        name="notes"
+        label="Notes"
+        label-placement="floating"
+        formControlName="notes"
+        rows="5"
+        data-testid="notes-input"
+      ></ion-textarea>
+    </ion-item>
+  </form>
+</ion-content>

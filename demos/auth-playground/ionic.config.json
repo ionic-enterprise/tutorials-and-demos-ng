@@ -1,0 +1,7 @@
+{
+  "name": "auth-playground-ng",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

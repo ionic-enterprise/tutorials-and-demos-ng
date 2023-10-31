@@ -1,0 +1,26 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Login</ion-card-title>
+    <ion-card-subtitle>Secure Storage Demo (Angular)</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div>
+      <ion-button id="signin-button" expand="full" color="aws" (click)="signIn()"
+        >Sign In
+        <ion-icon slot="end" name="logo-amazon"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="ion-padding ion-text-center" *ngIf="showSessionLocking">
+      <ion-checkbox [(ngModel)]="useSessionLocking" (ionChange)="useSessionLockingChanged()"
+        >Use Session Locking</ion-checkbox
+      >
+    </div>
+
+    <div class="error-message ion-text-center">
+      <div>{{ errorMessage }}</div>
+    </div>
+    <ion-loading [isOpen]="authenticating" message="Authenticating..."></ion-loading>
+  </ion-card-content>
+</ion-card>
