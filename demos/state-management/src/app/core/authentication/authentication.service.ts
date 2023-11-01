@@ -1,11 +1,10 @@
 import { Injectable, NgZone } from '@angular/core';
-import { AuthConnect, AuthResult, CognitoProvider, ProviderOptions, TokenType } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular';
-
-import { mobileAuthConfig, webAuthConfig } from '@env/environment';
 import { User } from '@app/models';
-import { SessionVaultService } from '../session-vault/session-vault.service';
+import { mobileAuthConfig, webAuthConfig } from '@env/environment';
+import { Auth0Provider, AuthConnect, AuthResult, ProviderOptions, TokenType } from '@ionic-enterprise/auth';
+import { Platform } from '@ionic/angular';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { SessionVaultService } from '../session-vault/session-vault.service';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +13,7 @@ export class AuthenticationService {
   public authenticationChange$: Observable<boolean>;
   private authenticationChange: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  private readonly provider = new CognitoProvider();
+  private readonly provider = new Auth0Provider();
 
   private isNative;
   private authOptions: ProviderOptions;

@@ -984,7 +984,7 @@ importers:
         specifier: ~5.1.6
         version: 5.1.6
 
-  demos/security-trifecta-ng:
+  demos/security-trifecta:
     dependencies:
       '@angular/common':
         specifier: ^16.2.11
@@ -1046,6 +1046,9 @@ importers:
       date-fns:
         specifier: ~2.30.0
         version: 2.30.0
+      ionicons:
+        specifier: ~7.2.1
+        version: 7.2.1
       rxjs:
         specifier: ~7.8.1
         version: 7.8.1
@@ -1221,6 +1224,9 @@ importers:
       '@ngrx/store-devtools':
         specifier: ~16.3.0
         version: 16.3.0(@ngrx/store@16.3.0)(rxjs@7.8.1)
+      ionicons:
+        specifier: ~7.2.1
+        version: 7.2.1
       rxjs:
         specifier: ~7.8.1
         version: 7.8.1
@@ -2029,12 +2035,12 @@ packages:
     dependencies:
       '@ampproject/remapping': 2.2.1
       '@babel/code-frame': 7.22.13
-      '@babel/generator': 7.22.9
+      '@babel/generator': 7.23.0
       '@babel/helper-compilation-targets': 7.22.15
       '@babel/helper-module-transforms': 7.23.0(@babel/core@7.22.9)
       '@babel/helpers': 7.23.2
       '@babel/parser': 7.23.0
-      '@babel/template': 7.22.5
+      '@babel/template': 7.22.15
       '@babel/traverse': 7.23.2
       '@babel/types': 7.23.0
       convert-source-map: 1.9.0
@@ -2658,7 +2664,7 @@ packages:
     dependencies:
       '@babel/core': 7.22.9
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/template': 7.22.5
+      '@babel/template': 7.22.15
     dev: true
 
   /@babel/plugin-transform-destructuring@7.23.0(@babel/core@7.22.9):
@@ -3223,7 +3229,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
-    dev: false
 
   /@babel/template@7.22.15:
     resolution: {integrity: sha512-QPErUVm4uyJa60rkI73qneDacvdvzxshT3kksGqlGWYdOTIUOwJ7RDUL8sGqslY1uXWSL6xMFKEXDS3ox2uF0w==}
@@ -7597,7 +7602,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
@@ -10433,12 +10438,11 @@ packages:
 
   /regenerator-runtime@0.14.0:
     resolution: {integrity: sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==}
-    dev: false
 
   /regenerator-transform@0.15.2:
     resolution: {integrity: sha512-hfMp2BoF0qOk3uc5V20ALGDS2ddjQaLrdl7xrGXvAIow7qeWRM2VA2HuCHkUKk9slq3VwEwLNK3DFBqDfPGYtg==}
     dependencies:
-      '@babel/runtime': 7.22.6
+      '@babel/runtime': 7.23.2
     dev: true
 
   /regex-parser@2.2.11:

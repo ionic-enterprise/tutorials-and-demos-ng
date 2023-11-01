@@ -1,6 +1,6 @@
 {
-  "name": "tea-taster",
-  "description": "Tea Tasting Notes",
+  "name": "state-management",
+  "description": "State Management in an Angular app",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -41,6 +41,7 @@
     "@ngrx/effects": "~16.3.0",
     "@ngrx/store": "~16.3.0",
     "@ngrx/store-devtools": "~16.3.0",
+    "ionicons": "~7.2.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
     "zone.js": "~0.13.3"

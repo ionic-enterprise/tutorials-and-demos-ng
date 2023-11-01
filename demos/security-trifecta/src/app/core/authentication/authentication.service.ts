@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
-import { AuthConnect, AuthResult, CognitoProvider, TokenType } from '@ionic-enterprise/auth';
+import { Auth0Provider, AuthConnect, AuthResult, CognitoProvider, TokenType } from '@ionic-enterprise/auth';
 import { Platform } from '@ionic/angular';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 
@@ -10,14 +10,14 @@ import { SessionVaultService } from '../session-vault/session-vault.service';
 export class AuthenticationService {
   initializing: Promise<void> | undefined;
 
-  private provider: CognitoProvider;
+  private provider: Auth0Provider;
   private isMobile: boolean;
 
   constructor(
     platform: Platform,
     private sessionVault: SessionVaultService,
   ) {
-    this.provider = new CognitoProvider();
+    this.provider = new Auth0Provider();
     this.isMobile = platform.is('hybrid');
   }
 
@@ -78,7 +78,7 @@ export class AuthenticationService {
       },
       web: {
         uiMode: 'popup',
-        authFlow: 'PKCE',
+        authFlow: 'implicit',
       },
     });
   }

@@ -64,21 +64,3 @@ ion-select::part(icon) {
 ion-select::part(text) {
   margin-right: 1em;
 }
-
-:root {
-  --ion-color-aws: #ff9900;
-  --ion-color-aws-rgb: 255, 153, 0;
-  --ion-color-aws-contrast: #000000;
-  --ion-color-aws-contrast-rgb: 0, 0, 0;
-  --ion-color-aws-shade: #e08700;
-  --ion-color-aws-tint: #ffa31a;
-}
-
-.ion-color-aws {
-  --ion-color-base: var(--ion-color-aws);
-  --ion-color-base-rgb: var(--ion-color-aws-rgb);
-  --ion-color-contrast: var(--ion-color-aws-contrast);
-  --ion-color-contrast-rgb: var(--ion-color-aws-contrast-rgb);
-  --ion-color-shade: var(--ion-color-aws-shade);
-  --ion-color-tint: var(--ion-color-aws-tint);
-}

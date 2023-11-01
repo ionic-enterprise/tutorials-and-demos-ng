@@ -1,7 +1,7 @@
 import { Injectable, NgZone, isDevMode } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Auth0Provider, AuthConnect, AuthResult, ProviderOptions } from '@ionic-enterprise/auth';
 import { Platform } from '@ionic/angular';
-import { AuthConnect, AuthResult, CognitoProvider, ProviderOptions } from '@ionic-enterprise/auth';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class AuthenticationService {
   private initializing: Promise<void> | undefined;
   private isNative;
   private authOptions: ProviderOptions;
-  private provider = new CognitoProvider();
+  private provider = new Auth0Provider();
 
   private authenticationChange: BehaviorSubject<boolean> = new BehaviorSubject(false);
   public authenticationChange$: Observable<boolean>;
@@ -29,12 +29,12 @@ export class AuthenticationService {
       : 'https://tea-taster-ng.web.app/auth-action-complete';
 
     this.authOptions = {
-      clientId: '64p9c53l5thd5dikra675suvq9',
-      discoveryUrl: 'https://cognito-idp.us-east-2.amazonaws.com/us-east-2_YU8VQe29z/.well-known/openid-configuration',
+      audience: 'https://io.ionic.demo.ac',
+      clientId: 'yLasZNUGkZ19DGEjTmAITBfGXzqbvd00',
+      discoveryUrl: 'https://dev-2uspt-sz.us.auth0.com/.well-known/openid-configuration',
+      scope: 'openid email picture profile offline_access',
       logoutUrl: url,
       redirectUri: url,
-      scope: 'openid email profile',
-      audience: '',
     };
 
     this.initialize();

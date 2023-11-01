@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
-import { AuthenticationService } from './authentication.service';
-import { AuthConnect, CognitoProvider } from '@ionic-enterprise/auth';
-import { SessionVaultService } from '../session-vault/session-vault.service';
+import { Auth0Provider, AuthConnect } from '@ionic-enterprise/auth';
 import { ModalController } from '@ionic/angular';
 import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
+import { SessionVaultService } from '../session-vault/session-vault.service';
 import { createSessionVaultServiceMock } from '../testing';
+import { AuthenticationService } from './authentication.service';
 
 describe('AuthenticationService', () => {
   let modal: HTMLIonModalElement;
@@ -112,7 +112,7 @@ describe('AuthenticationService', () => {
             spyOn(AuthConnect, 'refreshSession').and.returnValue(Promise.resolve(refreshedAuthResult));
             await authService.isAuthenticated();
             expect(AuthConnect.refreshSession).toHaveBeenCalledTimes(1);
-            expect(AuthConnect.refreshSession).toHaveBeenCalledWith(jasmine.any(CognitoProvider), testAuthResult);
+            expect(AuthConnect.refreshSession).toHaveBeenCalledWith(jasmine.any(Auth0Provider), testAuthResult);
           });
 
           describe('when the refresh is successful', () => {
@@ -217,7 +217,7 @@ describe('AuthenticationService', () => {
             spyOn(AuthConnect, 'refreshSession').and.returnValue(Promise.resolve(refreshedAuthResult));
             await authService.getAccessToken();
             expect(AuthConnect.refreshSession).toHaveBeenCalledTimes(1);
-            expect(AuthConnect.refreshSession).toHaveBeenCalledWith(jasmine.any(CognitoProvider), testAuthResult);
+            expect(AuthConnect.refreshSession).toHaveBeenCalledWith(jasmine.any(Auth0Provider), testAuthResult);
           });
 
           describe('when the refresh is successful', () => {
@@ -280,14 +280,13 @@ describe('AuthenticationService', () => {
     it('performs a login', async () => {
       await authService.login();
       expect(AuthConnect.login).toHaveBeenCalledTimes(1);
-      expect(AuthConnect.login).toHaveBeenCalledWith(jasmine.any(CognitoProvider), {
-        clientId: '64p9c53l5thd5dikra675suvq9',
-        discoveryUrl:
-          'https://cognito-idp.us-east-2.amazonaws.com/us-east-2_YU8VQe29z/.well-known/openid-configuration',
+      expect(AuthConnect.login).toHaveBeenCalledWith(jasmine.any(Auth0Provider), {
+        audience: 'https://io.ionic.demo.ac',
+        clientId: 'yLasZNUGkZ19DGEjTmAITBfGXzqbvd00',
+        discoveryUrl: 'https://dev-2uspt-sz.us.auth0.com/.well-known/openid-configuration',
+        scope: 'openid email picture profile offline_access',
         redirectUri: 'http://localhost:8100/auth-action-complete',
         logoutUrl: 'http://localhost:8100/auth-action-complete',
-        scope: 'openid email profile',
-        audience: '',
       });
     });
 
@@ -316,13 +315,13 @@ describe('AuthenticationService', () => {
       it('builds an auth result', async () => {
         await authService.logout();
         expect(AuthConnect.buildAuthResult).toHaveBeenCalledTimes(1);
-        expect(AuthConnect.buildAuthResult).toHaveBeenCalledWith(jasmine.any(CognitoProvider), jasmine.any(Object), {});
+        expect(AuthConnect.buildAuthResult).toHaveBeenCalledWith(jasmine.any(Auth0Provider), jasmine.any(Object), {});
       });
 
       it('calls logout ', async () => {
         await authService.logout();
         expect(AuthConnect.logout).toHaveBeenCalledTimes(1);
-        expect(AuthConnect.logout).toHaveBeenCalledWith(jasmine.any(CognitoProvider), {
+        expect(AuthConnect.logout).toHaveBeenCalledWith(jasmine.any(Auth0Provider), {
           name: 'generatedAuthResult',
         } as any);
       });
@@ -342,7 +341,7 @@ describe('AuthenticationService', () => {
       it('calls logout ', async () => {
         await authService.logout();
         expect(AuthConnect.logout).toHaveBeenCalledTimes(1);
-        expect(AuthConnect.logout).toHaveBeenCalledWith(jasmine.any(CognitoProvider), testAuthResult);
+        expect(AuthConnect.logout).toHaveBeenCalledWith(jasmine.any(Auth0Provider), testAuthResult);
       });
 
       it('clears the auth result', async () => {

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { SessionVaultService } from '@app/core/session-vault/session-vault.service';
 import { createSessionVaultServiceMock } from '@app/core/testing';
 import { environment } from '@env/environment';
-import { AuthConnect, AuthResult, CognitoProvider, TokenType } from '@ionic-enterprise/auth';
+import { Auth0Provider, AuthConnect, AuthResult, TokenType } from '@ionic-enterprise/auth';
 import { Platform } from '@ionic/angular';
 import { createPlatformMock } from '@test/mocks';
 import { AuthenticationService } from './authentication.service';
@@ -57,7 +57,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'PKCE',
+            authFlow: 'implicit',
           },
         });
       });
@@ -66,7 +66,7 @@ const testAuthResult = {
         await service.login();
         expect(AuthConnect.login).toHaveBeenCalledTimes(1);
         expect(AuthConnect.login).toHaveBeenCalledWith(
-          jasmine.any(CognitoProvider),
+          jasmine.any(Auth0Provider),
           isNative ? environment.mobileAuthConfig : environment.webAuthConfig,
         );
       });
@@ -97,7 +97,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'PKCE',
+            authFlow: 'implicit',
           },
         });
       });
@@ -148,7 +148,7 @@ const testAuthResult = {
               await service.isAuthenticated();
               expect(AuthConnect.refreshSession).toHaveBeenCalledTimes(1);
               expect(AuthConnect.refreshSession).toHaveBeenCalledWith(
-                jasmine.any(CognitoProvider),
+                jasmine.any(Auth0Provider),
                 testAuthResult as AuthResult,
               );
             });
@@ -229,7 +229,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'PKCE',
+            authFlow: 'implicit',
           },
         });
       });
@@ -280,7 +280,7 @@ const testAuthResult = {
               await service.getAccessToken();
               expect(AuthConnect.refreshSession).toHaveBeenCalledTimes(1);
               expect(AuthConnect.refreshSession).toHaveBeenCalledWith(
-                jasmine.any(CognitoProvider),
+                jasmine.any(Auth0Provider),
                 testAuthResult as AuthResult,
               );
             });
@@ -359,7 +359,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'PKCE',
+            authFlow: 'implicit',
           },
         });
       });
@@ -417,7 +417,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'PKCE',
+            authFlow: 'implicit',
           },
         });
       });
@@ -450,7 +450,7 @@ const testAuthResult = {
         it('calls logout ', async () => {
           await service.logout();
           expect(AuthConnect.logout).toHaveBeenCalledTimes(1);
-          expect(AuthConnect.logout).toHaveBeenCalledWith(jasmine.any(CognitoProvider), testAuthResult as AuthResult);
+          expect(AuthConnect.logout).toHaveBeenCalledWith(jasmine.any(Auth0Provider), testAuthResult as AuthResult);
         });
 
         it('clears the auth result', async () => {
