@@ -4,7 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
+    "android": "cap open android",
     "build": "ng build --configuration production && cap sync",
+    "ios": "cap open ios",
     "lint": "ng lint",
     "ng": "ng",
     "start": "ng serve --port=8100",
