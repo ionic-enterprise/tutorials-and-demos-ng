@@ -548,6 +548,9 @@ importers:
       '@ionic/angular':
         specifier: ~7.5.3
         version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+      ionicons:
+        specifier: ~7.2.1
+        version: 7.2.1
       rxjs:
         specifier: ~7.8.1
         version: 7.8.1

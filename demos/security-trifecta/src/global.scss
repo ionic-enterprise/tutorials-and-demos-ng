@@ -25,7 +25,9 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
-@import './theme/custom-colors.scss';
+html {
+  --ion-dynamic-font: var(--ion-default-dynamic-font);
+}
 
 .center-content {
   text-align: center;
@@ -38,6 +40,6 @@
 }
 
 .error-message {
-  padding: 2em;
+  padding: 2rem;
   color: var(--ion-color-danger, #ff0000);
 }
