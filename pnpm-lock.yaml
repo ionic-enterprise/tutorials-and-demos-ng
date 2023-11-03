@@ -24,29 +24,29 @@ importers:
   auth-connect/getting-started:
     dependencies:
       '@angular/animations':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/common':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
       '@angular/compiler':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/core':
-        specifier: ^16.2.11
-        version: 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+        specifier: ^16.2.12
+        version: 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       '@angular/forms':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/platform-browser':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@angular/platform-browser-dynamic':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)
       '@angular/router':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@capacitor/android':
         specifier: ^5.5.1
         version: 5.5.1(@capacitor/core@5.5.1)
@@ -76,7 +76,7 @@ importers:
         version: 5.1.1(@capacitor/core@5.5.1)
       '@ionic/angular':
         specifier: ^7.5.3
-        version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+        version: 7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3)
       ionicons:
         specifier: ^7.2.1
         version: 7.2.1
@@ -92,7 +92,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^16.2.9
-        version: 16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
+        version: 16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
       '@angular-eslint/builder':
         specifier: ^16.2.0
         version: 16.2.0(eslint@8.52.0)(typescript@5.1.6)
@@ -112,11 +112,11 @@ importers:
         specifier: ^16.2.9
         version: 16.2.9
       '@angular/compiler-cli':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: ^16.2.11
-        version: 16.2.11
+        specifier: ^16.2.12
+        version: 16.2.12
       '@capacitor/cli':
         specifier: 5.5.1
         version: 5.5.1
@@ -181,29 +181,29 @@ importers:
   auth-connect/protect-routes:
     dependencies:
       '@angular/animations':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/common':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
       '@angular/compiler':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/core':
-        specifier: ^16.2.11
-        version: 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+        specifier: ^16.2.12
+        version: 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       '@angular/forms':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/platform-browser':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@angular/platform-browser-dynamic':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)
       '@angular/router':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@capacitor/android':
         specifier: ^5.5.1
         version: 5.5.1(@capacitor/core@5.5.1)
@@ -233,7 +233,7 @@ importers:
         version: 5.1.1(@capacitor/core@5.5.1)
       '@ionic/angular':
         specifier: ^7.5.3
-        version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+        version: 7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3)
       ionicons:
         specifier: ^7.2.1
         version: 7.2.1
@@ -249,7 +249,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^16.2.9
-        version: 16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
+        version: 16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
       '@angular-eslint/builder':
         specifier: ^16.2.0
         version: 16.2.0(eslint@8.52.0)(typescript@5.1.6)
@@ -269,11 +269,11 @@ importers:
         specifier: ^16.2.9
         version: 16.2.9
       '@angular/compiler-cli':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: ^16.2.11
-        version: 16.2.11
+        specifier: ^16.2.12
+        version: 16.2.12
       '@capacitor/cli':
         specifier: 5.5.1
         version: 5.5.1
@@ -338,29 +338,29 @@ importers:
   auth-connect/refresh-workflow:
     dependencies:
       '@angular/animations':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/common':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
       '@angular/compiler':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/core':
-        specifier: ^16.2.11
-        version: 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+        specifier: ^16.2.12
+        version: 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       '@angular/forms':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/platform-browser':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@angular/platform-browser-dynamic':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)
       '@angular/router':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@capacitor/android':
         specifier: ^5.5.1
         version: 5.5.1(@capacitor/core@5.5.1)
@@ -390,7 +390,7 @@ importers:
         version: 5.1.1(@capacitor/core@5.5.1)
       '@ionic/angular':
         specifier: ^7.5.3
-        version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+        version: 7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3)
       ionicons:
         specifier: ^7.2.1
         version: 7.2.1
@@ -406,7 +406,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^16.2.9
-        version: 16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
+        version: 16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
       '@angular-eslint/builder':
         specifier: ^16.2.0
         version: 16.2.0(eslint@8.52.0)(typescript@5.1.6)
@@ -426,11 +426,11 @@ importers:
         specifier: ^16.2.9
         version: 16.2.9
       '@angular/compiler-cli':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: ^16.2.11
-        version: 16.2.11
+        specifier: ^16.2.12
+        version: 16.2.12
       '@capacitor/cli':
         specifier: 5.5.1
         version: 5.5.1
@@ -495,23 +495,23 @@ importers:
   demos/auth-playground:
     dependencies:
       '@angular/common':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
       '@angular/core':
-        specifier: ^16.2.11
-        version: 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+        specifier: ^16.2.12
+        version: 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       '@angular/forms':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/platform-browser':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@angular/platform-browser-dynamic':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)
       '@angular/router':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@capacitor/android':
         specifier: ^5.5.1
         version: 5.5.1(@capacitor/core@5.5.1)
@@ -547,7 +547,7 @@ importers:
         version: 5.12.1(typescript@5.1.6)
       '@ionic/angular':
         specifier: ~7.5.3
-        version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+        version: 7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3)
       ionicons:
         specifier: ~7.2.1
         version: 7.2.1
@@ -563,7 +563,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^16.2.9
-        version: 16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
+        version: 16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
       '@angular-eslint/builder':
         specifier: ~16.2.0
         version: 16.2.0(eslint@8.52.0)(typescript@5.1.6)
@@ -583,14 +583,14 @@ importers:
         specifier: ^16.2.9
         version: 16.2.9
       '@angular/compiler':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/compiler-cli':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: ^16.2.11
-        version: 16.2.11
+        specifier: ^16.2.12
+        version: 16.2.12
       '@capacitor/assets':
         specifier: ~3.0.1
         version: 3.0.1(@types/node@20.8.10)(typescript@5.1.6)
@@ -661,23 +661,23 @@ importers:
   demos/iv-ac:
     dependencies:
       '@angular/common':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
       '@angular/core':
-        specifier: ^16.2.11
-        version: 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+        specifier: ^16.2.12
+        version: 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       '@angular/forms':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/platform-browser':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@angular/platform-browser-dynamic':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)
       '@angular/router':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@capacitor/android':
         specifier: ^5.5.1
         version: 5.5.1(@capacitor/core@5.5.1)
@@ -713,7 +713,7 @@ importers:
         version: 5.12.1(typescript@5.1.6)
       '@ionic/angular':
         specifier: ~7.5.3
-        version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+        version: 7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3)
       ionicons:
         specifier: ~7.2.1
         version: 7.2.1
@@ -729,7 +729,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^16.2.9
-        version: 16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
+        version: 16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
       '@angular-eslint/builder':
         specifier: ^16.2.0
         version: 16.2.0(eslint@8.52.0)(typescript@5.1.6)
@@ -749,14 +749,14 @@ importers:
         specifier: ^16.2.9
         version: 16.2.9
       '@angular/compiler':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/compiler-cli':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: ^16.2.11
-        version: 16.2.11
+        specifier: ^16.2.12
+        version: 16.2.12
       '@capacitor/assets':
         specifier: ~3.0.1
         version: 3.0.1(@types/node@20.8.10)(typescript@5.1.6)
@@ -824,26 +824,26 @@ importers:
   demos/pwa:
     dependencies:
       '@angular/common':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
       '@angular/core':
-        specifier: ^16.2.11
-        version: 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+        specifier: ^16.2.12
+        version: 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       '@angular/forms':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/platform-browser':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@angular/platform-browser-dynamic':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)
       '@angular/router':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/service-worker':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@capacitor/android':
         specifier: ^5.5.1
         version: 5.5.1(@capacitor/core@5.5.1)
@@ -879,7 +879,7 @@ importers:
         version: 5.12.1(typescript@5.1.6)
       '@ionic/angular':
         specifier: ~7.5.3
-        version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+        version: 7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3)
       ionicons:
         specifier: ~7.2.1
         version: 7.2.1
@@ -895,7 +895,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^16.2.9
-        version: 16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
+        version: 16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
       '@angular-eslint/builder':
         specifier: ^16.2.0
         version: 16.2.0(eslint@8.52.0)(typescript@5.1.6)
@@ -915,14 +915,14 @@ importers:
         specifier: ^16.2.9
         version: 16.2.9
       '@angular/compiler':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/compiler-cli':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: ^16.2.11
-        version: 16.2.11
+        specifier: ^16.2.12
+        version: 16.2.12
       '@capacitor/assets':
         specifier: ~3.0.1
         version: 3.0.1(@types/node@20.8.10)(typescript@5.1.6)
@@ -990,23 +990,23 @@ importers:
   demos/security-trifecta:
     dependencies:
       '@angular/common':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
       '@angular/core':
-        specifier: ^16.2.11
-        version: 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+        specifier: ^16.2.12
+        version: 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       '@angular/forms':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/platform-browser':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@angular/platform-browser-dynamic':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)
       '@angular/router':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@capacitor/android':
         specifier: ^5.5.1
         version: 5.5.1(@capacitor/core@5.5.1)
@@ -1042,7 +1042,7 @@ importers:
         version: 3.0.2(@awesome-cordova-plugins/core@6.4.0)(rxjs@7.8.1)
       '@ionic/angular':
         specifier: ~7.5.3
-        version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+        version: 7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3)
       core-js:
         specifier: ~3.33.2
         version: 3.33.2
@@ -1064,7 +1064,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^16.2.9
-        version: 16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
+        version: 16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
       '@angular-eslint/builder':
         specifier: ~16.2.0
         version: 16.2.0(eslint@8.52.0)(typescript@5.1.6)
@@ -1081,14 +1081,14 @@ importers:
         specifier: ^16.2.9
         version: 16.2.9
       '@angular/compiler':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/compiler-cli':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: ^16.2.11
-        version: 16.2.11
+        specifier: ^16.2.12
+        version: 16.2.12
       '@capacitor/assets':
         specifier: ~3.0.1
         version: 3.0.1(@types/node@20.8.10)(typescript@5.1.6)
@@ -1159,23 +1159,23 @@ importers:
   demos/state-management:
     dependencies:
       '@angular/common':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
       '@angular/core':
-        specifier: ^16.2.11
-        version: 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+        specifier: ^16.2.12
+        version: 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       '@angular/forms':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/platform-browser':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@angular/platform-browser-dynamic':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)
       '@angular/router':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@capacitor/android':
         specifier: ^5.5.1
         version: 5.5.1(@capacitor/core@5.5.1)
@@ -1217,13 +1217,13 @@ importers:
         version: 5.12.1(typescript@5.1.6)
       '@ionic/angular':
         specifier: ~7.5.3
-        version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+        version: 7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3)
       '@ngrx/effects':
         specifier: ~16.3.0
-        version: 16.3.0(@angular/core@16.2.11)(@ngrx/store@16.3.0)(rxjs@7.8.1)
+        version: 16.3.0(@angular/core@16.2.12)(@ngrx/store@16.3.0)(rxjs@7.8.1)
       '@ngrx/store':
         specifier: ~16.3.0
-        version: 16.3.0(@angular/core@16.2.11)(rxjs@7.8.1)
+        version: 16.3.0(@angular/core@16.2.12)(rxjs@7.8.1)
       '@ngrx/store-devtools':
         specifier: ~16.3.0
         version: 16.3.0(@ngrx/store@16.3.0)(rxjs@7.8.1)
@@ -1242,7 +1242,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^16.2.9
-        version: 16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
+        version: 16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
       '@angular-eslint/builder':
         specifier: ~16.2.0
         version: 16.2.0(eslint@8.52.0)(typescript@5.1.6)
@@ -1259,14 +1259,14 @@ importers:
         specifier: ^16.2.9
         version: 16.2.9
       '@angular/compiler':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/compiler-cli':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: ^16.2.11
-        version: 16.2.11
+        specifier: ^16.2.12
+        version: 16.2.12
       '@capacitor/cli':
         specifier: ^5.5.1
         version: 5.5.1
@@ -1337,23 +1337,23 @@ importers:
   demos/tea-taster:
     dependencies:
       '@angular/common':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
       '@angular/core':
-        specifier: ^16.2.11
-        version: 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+        specifier: ^16.2.12
+        version: 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       '@angular/forms':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@angular/platform-browser':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@angular/platform-browser-dynamic':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)
       '@angular/router':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@capacitor/android':
         specifier: ^5.5.1
         version: 5.5.1(@capacitor/core@5.5.1)
@@ -1386,7 +1386,7 @@ importers:
         version: 5.0.6(@capacitor/core@5.5.1)
       '@ionic/angular':
         specifier: ~7.5.3
-        version: 7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3)
+        version: 7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3)
       ionicons:
         specifier: ~7.2.1
         version: 7.2.1
@@ -1402,7 +1402,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^16.2.9
-        version: 16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
+        version: 16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6)
       '@angular-eslint/builder':
         specifier: ^16.2.0
         version: 16.2.0(eslint@8.52.0)(typescript@5.1.6)
@@ -1422,14 +1422,14 @@ importers:
         specifier: ^16.2.9
         version: 16.2.9
       '@angular/compiler':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/core@16.2.11)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/core@16.2.12)
       '@angular/compiler-cli':
-        specifier: ^16.2.11
-        version: 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+        specifier: ^16.2.12
+        version: 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: ^16.2.11
-        version: 16.2.11
+        specifier: ^16.2.12
+        version: 16.2.12
       '@capacitor/assets':
         specifier: ~3.0.1
         version: 3.0.1(@types/node@20.8.10)(typescript@5.1.6)
@@ -1519,7 +1519,7 @@ packages:
       - chokidar
     dev: true
 
-  /@angular-devkit/build-angular@16.2.9(@angular/compiler-cli@16.2.11)(@angular/service-worker@16.2.11)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6):
+  /@angular-devkit/build-angular@16.2.9(@angular/compiler-cli@16.2.12)(@angular/service-worker@16.2.12)(@types/node@20.8.10)(karma@6.4.2)(typescript@5.1.6):
     resolution: {integrity: sha512-S1C4UYxRVyNt3C0wCxbT2jZ1dN5i37kS0mol3PQjbR8gQ0GQzHmzhjTBl1oImo8aouET9yhrk9etk65oat4mBQ==}
     engines: {node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -1558,8 +1558,8 @@ packages:
       '@angular-devkit/architect': 0.1602.9(chokidar@3.5.3)
       '@angular-devkit/build-webpack': 0.1602.9(chokidar@3.5.3)(webpack-dev-server@4.15.1)(webpack@5.88.2)
       '@angular-devkit/core': 16.2.9(chokidar@3.5.3)
-      '@angular/compiler-cli': 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
-      '@angular/service-worker': 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)
+      '@angular/compiler-cli': 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
+      '@angular/service-worker': 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)
       '@babel/core': 7.22.9
       '@babel/generator': 7.22.9
       '@babel/helper-annotate-as-pure': 7.22.5
@@ -1571,7 +1571,7 @@ packages:
       '@babel/runtime': 7.22.6
       '@babel/template': 7.22.5
       '@discoveryjs/json-ext': 0.5.7
-      '@ngtools/webpack': 16.2.9(@angular/compiler-cli@16.2.11)(typescript@5.1.6)(webpack@5.88.2)
+      '@ngtools/webpack': 16.2.9(@angular/compiler-cli@16.2.12)(typescript@5.1.6)(webpack@5.88.2)
       '@vitejs/plugin-basic-ssl': 1.0.1(vite@4.4.7)
       ansi-colors: 4.1.3
       autoprefixer: 10.4.14(postcss@8.4.31)
@@ -1819,13 +1819,13 @@ packages:
       - supports-color
     dev: true
 
-  /@angular/animations@16.2.11(@angular/core@16.2.11):
-    resolution: {integrity: sha512-xdLYXsGi7OuJawhiVIppl2VkPHhPdxUP/nR6+ETR3TdAscVruCWJs4z9XKval4fbik/brekbFNFuYtlx6csDhQ==}
+  /@angular/animations@16.2.12(@angular/core@16.2.12):
+    resolution: {integrity: sha512-MD0ElviEfAJY8qMOd6/jjSSvtqER2RDAi0lxe6EtUacC1DHCYkaPrKW4vLqY+tmZBg1yf+6n+uS77pXcHHcA3w==}
     engines: {node: ^16.14.0 || >=18.10.0}
     peerDependencies:
-      '@angular/core': 16.2.11
+      '@angular/core': 16.2.12
     dependencies:
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       tslib: 2.6.2
     dev: false
 
@@ -1858,26 +1858,26 @@ packages:
       - supports-color
     dev: true
 
-  /@angular/common@16.2.11(@angular/core@16.2.11)(rxjs@7.8.1):
-    resolution: {integrity: sha512-h80WUR2OYlqxQy+4XgNtWT2vB+vZ6oCrFX/q8cU5jAvbvGQfJuH0zfcbSlUflStmAhk5/OT25F0mt96cqapEAw==}
+  /@angular/common@16.2.12(@angular/core@16.2.12)(rxjs@7.8.1):
+    resolution: {integrity: sha512-B+WY/cT2VgEaz9HfJitBmgdk4I333XG/ybC98CMC4Wz8E49T8yzivmmxXB3OD6qvjcOB6ftuicl6WBqLbZNg2w==}
     engines: {node: ^16.14.0 || >=18.10.0}
     peerDependencies:
-      '@angular/core': 16.2.11
+      '@angular/core': 16.2.12
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       rxjs: 7.8.1
       tslib: 2.6.2
 
-  /@angular/compiler-cli@16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6):
-    resolution: {integrity: sha512-ZtZCXfkVBH78HUm2Byf+WX3Y6WzQK9EXYXNU/ni1rvSZ1vLNwieLDfWb/xwiO7QojrHZTym1RJ10jTMinTguqw==}
+  /@angular/compiler-cli@16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6):
+    resolution: {integrity: sha512-pWSrr152562ujh6lsFZR8NfNc5Ljj+zSTQO44DsuB0tZjwEpnRcjJEgzuhGXr+CoiBf+jTSPZKemtSktDk5aaA==}
     engines: {node: ^16.14.0 || >=18.10.0}
     hasBin: true
     peerDependencies:
-      '@angular/compiler': 16.2.11
+      '@angular/compiler': 16.2.12
       typescript: '>=4.9.3 <5.2'
     dependencies:
-      '@angular/compiler': 16.2.11(@angular/core@16.2.11)
+      '@angular/compiler': 16.2.12(@angular/core@16.2.12)
       '@babel/core': 7.23.2
       '@jridgewell/sourcemap-codec': 1.4.15
       chokidar: 3.5.3
@@ -1891,20 +1891,20 @@ packages:
       - supports-color
     dev: true
 
-  /@angular/compiler@16.2.11(@angular/core@16.2.11):
-    resolution: {integrity: sha512-9q/E3uurvoQbdTTWDyWCLpzmfJ4+et7SUca1/EljD/X7Xg2FNU5GpTMutBtWFL7wDyWk1oswivuq9/C4GVW7fA==}
+  /@angular/compiler@16.2.12(@angular/core@16.2.12):
+    resolution: {integrity: sha512-6SMXUgSVekGM7R6l1Z9rCtUGtlg58GFmgbpMCsGf+VXxP468Njw8rjT2YZkf5aEPxEuRpSHhDYjqz7n14cwCXQ==}
     engines: {node: ^16.14.0 || >=18.10.0}
     peerDependencies:
-      '@angular/core': 16.2.11
+      '@angular/core': 16.2.12
     peerDependenciesMeta:
       '@angular/core':
         optional: true
     dependencies:
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       tslib: 2.6.2
 
-  /@angular/core@16.2.11(rxjs@7.8.1)(zone.js@0.13.3):
-    resolution: {integrity: sha512-Jb+7/p1vczQRQ3iC1QxUS5cE4X1hPVAvbrFnyMpSx6Pq5o274v/lK6PvhUZrfKrp9FxFp9pN+WHjUqNFqOuJZg==}
+  /@angular/core@16.2.12(rxjs@7.8.1)(zone.js@0.13.3):
+    resolution: {integrity: sha512-GLLlDeke/NjroaLYOks0uyzFVo6HyLl7VOm0K1QpLXnYvW63W9Ql/T3yguRZa7tRkOAeFZ3jw+1wnBD4O8MoUA==}
     engines: {node: ^16.14.0 || >=18.10.0}
     peerDependencies:
       rxjs: ^6.5.3 || ^7.4.0
@@ -1914,86 +1914,86 @@ packages:
       tslib: 2.6.2
       zone.js: 0.13.3
 
-  /@angular/forms@16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1):
-    resolution: {integrity: sha512-2powweUorehB1opfev6/sUeb3Bdey+Txq4gjI1Qdeo9c9OgtaKu6wK0KXgoism8HXXRFcGHMfS0dUVoDPVrtiQ==}
+  /@angular/forms@16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1):
+    resolution: {integrity: sha512-1Eao89hlBgLR3v8tU91vccn21BBKL06WWxl7zLpQmG6Hun+2jrThgOE4Pf3os4fkkbH4Apj0tWL2fNIWe/blbw==}
     engines: {node: ^16.14.0 || >=18.10.0}
     peerDependencies:
-      '@angular/common': 16.2.11
-      '@angular/core': 16.2.11
-      '@angular/platform-browser': 16.2.11
+      '@angular/common': 16.2.12
+      '@angular/core': 16.2.12
+      '@angular/platform-browser': 16.2.12
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
-      '@angular/common': 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
-      '@angular/platform-browser': 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+      '@angular/common': 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/platform-browser': 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
 
-  /@angular/language-service@16.2.11:
-    resolution: {integrity: sha512-rzZcqeBvgByu27gZk/f0K1VuwIYbScOG3sJYyWXBdSMmjqnl3ARwEEI/zyQT7I6uU6I9SwmoJhy44pQlrDDD7g==}
+  /@angular/language-service@16.2.12:
+    resolution: {integrity: sha512-sZwB+ZEjChx9EYcqPaS4OnhC/q5RcedZjIdM9mCxuU/MtseURRYRI/8Hnm1RHo9qyc5PmsQpg7p9Vp/5hXLUjw==}
     engines: {node: ^16.14.0 || >=18.10.0}
     dev: true
 
-  /@angular/platform-browser-dynamic@16.2.11(@angular/common@16.2.11)(@angular/compiler@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11):
-    resolution: {integrity: sha512-e+A7z6MUJaqC4Fdq7XQfIhAox3ZPM1lczM6G08fUKPbFDEe+c9i7C8YRLL+69BXDuG790btugIeOQcn5lnJcFg==}
+  /@angular/platform-browser-dynamic@16.2.12(@angular/common@16.2.12)(@angular/compiler@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12):
+    resolution: {integrity: sha512-ya54jerNgreCVAR278wZavwjrUWImMr2F8yM5n9HBvsMBbFaAQ83anwbOEiHEF2BlR+gJiEBLfpuPRMw20pHqw==}
     engines: {node: ^16.14.0 || >=18.10.0}
     peerDependencies:
-      '@angular/common': 16.2.11
-      '@angular/compiler': 16.2.11
-      '@angular/core': 16.2.11
-      '@angular/platform-browser': 16.2.11
+      '@angular/common': 16.2.12
+      '@angular/compiler': 16.2.12
+      '@angular/core': 16.2.12
+      '@angular/platform-browser': 16.2.12
     dependencies:
-      '@angular/common': 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
-      '@angular/compiler': 16.2.11(@angular/core@16.2.11)
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
-      '@angular/platform-browser': 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+      '@angular/common': 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
+      '@angular/compiler': 16.2.12(@angular/core@16.2.12)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/platform-browser': 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       tslib: 2.6.2
     dev: false
 
-  /@angular/platform-browser@16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11):
-    resolution: {integrity: sha512-gUptbI3lbaRg+L8rcTlxKtFunYmR/M/mm9/l9uRd+5qk2mnFI0+s/tzRoaq7K0XaRGKZiWLNTz6FTkviO1zo2g==}
+  /@angular/platform-browser@16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12):
+    resolution: {integrity: sha512-NnH7ju1iirmVEsUq432DTm0nZBGQsBrU40M3ZeVHMQ2subnGiyUs3QyzDz8+VWLL/T5xTxWLt9BkDn65vgzlIQ==}
     engines: {node: ^16.14.0 || >=18.10.0}
     peerDependencies:
-      '@angular/animations': 16.2.11
-      '@angular/common': 16.2.11
-      '@angular/core': 16.2.11
+      '@angular/animations': 16.2.12
+      '@angular/common': 16.2.12
+      '@angular/core': 16.2.12
     peerDependenciesMeta:
       '@angular/animations':
         optional: true
     dependencies:
-      '@angular/animations': 16.2.11(@angular/core@16.2.11)
-      '@angular/common': 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/animations': 16.2.12(@angular/core@16.2.12)
+      '@angular/common': 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       tslib: 2.6.2
     dev: false
 
-  /@angular/router@16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1):
-    resolution: {integrity: sha512-QTssqJue+xQ8M1gzmfJcIHPIpPOijVwGnXQjt7cnFggNe/CedOckLEzk2j7/6aC1b5aQKuZePPw6XMvk8ciilQ==}
+  /@angular/router@16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1):
+    resolution: {integrity: sha512-aU6QnYSza005V9P3W6PpkieL56O0IHps96DjqI1RS8yOJUl3THmokqYN4Fm5+HXy4f390FN9i6ftadYQDKeWmA==}
     engines: {node: ^16.14.0 || >=18.10.0}
     peerDependencies:
-      '@angular/common': 16.2.11
-      '@angular/core': 16.2.11
-      '@angular/platform-browser': 16.2.11
+      '@angular/common': 16.2.12
+      '@angular/core': 16.2.12
+      '@angular/platform-browser': 16.2.12
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
-      '@angular/common': 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
-      '@angular/platform-browser': 16.2.11(@angular/animations@16.2.11)(@angular/common@16.2.11)(@angular/core@16.2.11)
+      '@angular/common': 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/platform-browser': 16.2.12(@angular/animations@16.2.12)(@angular/common@16.2.12)(@angular/core@16.2.12)
       rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
 
-  /@angular/service-worker@16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11):
-    resolution: {integrity: sha512-fsfnQq/NbAI4sxz1eSs7o1scB0ezawjj6rwV6uaqPNMvHq8fphauGTkACiIF6SBhD3p54lRzEH5whG6aei1Ofg==}
+  /@angular/service-worker@16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12):
+    resolution: {integrity: sha512-o0z0s4c76NmRASa+mUHn/q6vUKQNa06mGmLBDKm84vRQ1sQ2TJv+R1p8K9WkiM5mGy6tjQCDOgaz13TcxMFWOQ==}
     engines: {node: ^16.14.0 || >=18.10.0}
     hasBin: true
     peerDependencies:
-      '@angular/common': 16.2.11
-      '@angular/core': 16.2.11
+      '@angular/common': 16.2.12
+      '@angular/core': 16.2.12
     dependencies:
-      '@angular/common': 16.2.11(@angular/core@16.2.11)(rxjs@7.8.1)
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/common': 16.2.12(@angular/core@16.2.12)(rxjs@7.8.1)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       tslib: 2.6.2
 
   /@assemblyscript/loader@0.10.1:
@@ -3738,7 +3738,7 @@ packages:
       - chokidar
     dev: true
 
-  /@ionic/angular@7.5.3(@angular/core@16.2.11)(@angular/forms@16.2.11)(@angular/router@16.2.11)(rxjs@7.8.1)(zone.js@0.13.3):
+  /@ionic/angular@7.5.3(@angular/core@16.2.12)(@angular/forms@16.2.12)(@angular/router@16.2.12)(rxjs@7.8.1)(zone.js@0.13.3):
     resolution: {integrity: sha512-LgTF8nNFj0B71E98gPEAP4cbSAnNfpDG82l/FGtozG83nto60wp13rWPtVuqG+xLSZqHgV6vN6d9W+2NfE46SQ==}
     peerDependencies:
       '@angular/core': '>=14.0.0'
@@ -3747,9 +3747,9 @@ packages:
       rxjs: '>=7.5.0'
       zone.js: '>=0.11.0'
     dependencies:
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
-      '@angular/forms': 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
-      '@angular/router': 16.2.11(@angular/common@16.2.11)(@angular/core@16.2.11)(@angular/platform-browser@16.2.11)(rxjs@7.8.1)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/forms': 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
+      '@angular/router': 16.2.12(@angular/common@16.2.12)(@angular/core@16.2.12)(@angular/platform-browser@16.2.12)(rxjs@7.8.1)
       '@ionic/core': 7.5.3
       ionicons: 7.2.1
       jsonc-parser: 3.2.0
@@ -3939,15 +3939,15 @@ packages:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
     dev: true
 
-  /@ngrx/effects@16.3.0(@angular/core@16.2.11)(@ngrx/store@16.3.0)(rxjs@7.8.1):
+  /@ngrx/effects@16.3.0(@angular/core@16.2.12)(@ngrx/store@16.3.0)(rxjs@7.8.1):
     resolution: {integrity: sha512-QvN+jJFqBHH6x5eqtFVeMTcotoWMLTrDjK4wW61hmbYafGmBbEnIgikTsn2DSPA67io0DhgDtBHoBKnicy1gEw==}
     peerDependencies:
       '@angular/core': ^16.0.0
       '@ngrx/store': 16.3.0
       rxjs: ^6.5.3 || ^7.5.0
     dependencies:
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
-      '@ngrx/store': 16.3.0(@angular/core@16.2.11)(rxjs@7.8.1)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
+      '@ngrx/store': 16.3.0(@angular/core@16.2.12)(rxjs@7.8.1)
       rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
@@ -3958,23 +3958,23 @@ packages:
       '@ngrx/store': 16.3.0
       rxjs: ^6.5.3 || ^7.5.0
     dependencies:
-      '@ngrx/store': 16.3.0(@angular/core@16.2.11)(rxjs@7.8.1)
+      '@ngrx/store': 16.3.0(@angular/core@16.2.12)(rxjs@7.8.1)
       rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
 
-  /@ngrx/store@16.3.0(@angular/core@16.2.11)(rxjs@7.8.1):
+  /@ngrx/store@16.3.0(@angular/core@16.2.12)(rxjs@7.8.1):
     resolution: {integrity: sha512-aWQY41M7O0sMpTmM+OOPBPwKQWHhmkCStizFB1GdiGud8DU5fz0BdUiy6o2+feZypMzczqbwTnq+AxxxrWYqoA==}
     peerDependencies:
       '@angular/core': ^16.0.0
       rxjs: ^6.5.3 || ^7.5.0
     dependencies:
-      '@angular/core': 16.2.11(rxjs@7.8.1)(zone.js@0.13.3)
+      '@angular/core': 16.2.12(rxjs@7.8.1)(zone.js@0.13.3)
       rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
 
-  /@ngtools/webpack@16.2.9(@angular/compiler-cli@16.2.11)(typescript@5.1.6)(webpack@5.88.2):
+  /@ngtools/webpack@16.2.9(@angular/compiler-cli@16.2.12)(typescript@5.1.6)(webpack@5.88.2):
     resolution: {integrity: sha512-rOclD7FfT4OSwVA0nDnULbJS6TORJ0+sQiuT2ebaNFErYr3LOm6Zut05tnmzFw8q1cePrILbG+xpnbggNr9Pyw==}
     engines: {node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -3982,7 +3982,7 @@ packages:
       typescript: '>=4.9.3 <5.2'
       webpack: ^5.54.0
     dependencies:
-      '@angular/compiler-cli': 16.2.11(@angular/compiler@16.2.11)(typescript@5.1.6)
+      '@angular/compiler-cli': 16.2.12(@angular/compiler@16.2.12)(typescript@5.1.6)
       typescript: 5.1.6
       webpack: 5.88.2(esbuild@0.18.17)
     dev: true
@@ -5425,7 +5425,7 @@ packages:
     dev: true
 
   /batch@0.6.1:
-    resolution: {integrity: sha512-x+VAiMRL6UPkx+kudNvxTl6hB2XNNCG2r+7wixVfIYwu/2HKRXimwQyaumLjMveWvT2Hkd/cAJw+QBMfJ/EKVw==}
+    resolution: {integrity: sha1-3DQxT05nkxgJP8dgJyUl+UvyXBY=}
     dev: true
 
   /big-integer@1.6.51:
@@ -5543,7 +5543,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001559
-      electron-to-chromium: 1.4.574
+      electron-to-chromium: 1.4.576
       node-releases: 2.0.13
       update-browserslist-db: 1.0.13(browserslist@4.22.1)
     dev: true
@@ -5573,7 +5573,7 @@ packages:
     dev: true
 
   /bytes@3.0.0:
-    resolution: {integrity: sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw==}
+    resolution: {integrity: sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=}
     engines: {node: '>= 0.8'}
     dev: true
 
@@ -5894,7 +5894,7 @@ packages:
     dev: true
 
   /concat-map@0.0.1:
-    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
 
   /connect-history-api-fallback@2.0.0:
     resolution: {integrity: sha512-U73+6lQFmfiNPrYbXqr6kZ1i1wiRqXnp2nhMsINseWXO8lDau0LGEffJ8kQi4EjLZympVgRdvqjAgiZ1tgzDDA==}
@@ -6069,7 +6069,7 @@ packages:
     dev: true
 
   /cookie-signature@1.0.6:
-    resolution: {integrity: sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==}
+    resolution: {integrity: sha1-4wOogrNCzD7oylE6eZmXNNqzriw=}
     dev: true
 
   /cookie@0.4.2:
@@ -6540,7 +6540,7 @@ packages:
     dev: true
 
   /ee-first@1.1.1:
-    resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
+    resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: true
 
   /ejs@3.1.9:
@@ -6551,8 +6551,8 @@ packages:
       jake: 10.8.7
     dev: true
 
-  /electron-to-chromium@1.4.574:
-    resolution: {integrity: sha512-bg1m8L0n02xRzx4LsTTMbBPiUd9yIR+74iPtS/Ao65CuXvhVZHP0ym1kSdDG3yHFDXqHQQBKujlN1AQ8qZnyFg==}
+  /electron-to-chromium@1.4.576:
+    resolution: {integrity: sha512-yXsZyXJfAqzWk1WKryr0Wl0MN2D47xodPvEEwlVePBnhU5E7raevLQR+E6b9JAD3GfL/7MbAL9ZtWQQPcLx7wA==}
     dev: true
 
   /elementtree@0.1.7:
@@ -7386,7 +7386,7 @@ packages:
     dev: true
 
   /fresh@0.5.2:
-    resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
+    resolution: {integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=}
     engines: {node: '>= 0.6'}
     dev: true
 
@@ -9037,7 +9037,7 @@ packages:
     engines: {node: '>=8'}
 
   /media-typer@0.3.0:
-    resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
+    resolution: {integrity: sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=}
     engines: {node: '>= 0.6'}
     dev: true
 
@@ -9065,7 +9065,7 @@ packages:
       yargs-parser: 20.2.9
 
   /merge-descriptors@1.0.1:
-    resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
+    resolution: {integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=}
     dev: true
 
   /merge-stream@2.0.0:
@@ -11858,7 +11858,7 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
   /utils-merge@1.0.1:
-    resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
+    resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
     engines: {node: '>= 0.4.0'}
     dev: true
 
