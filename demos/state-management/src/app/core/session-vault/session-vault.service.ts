@@ -26,10 +26,14 @@ export class SessionVaultService {
 
   constructor(
     private modalController: ModalController,
-    store: Store,
+    private store: Store,
     vaultFactory: VaultFactoryService,
   ) {
-    this.vault = vaultFactory.create({
+    this.vault = vaultFactory.create();
+  }
+
+  async initialize(): Promise<void> {
+    this.vault.initialize({
       key: 'io.ionic.teatasterngrx',
       type: VaultType.SecureStorage,
       lockAfterBackgrounded: 5000,
@@ -38,7 +42,7 @@ export class SessionVaultService {
       unlockVaultOnLoad: false,
     });
 
-    this.vault.onLock(() => store.dispatch(sessionLocked()));
+    this.vault.onLock(() => this.store.dispatch(sessionLocked()));
 
     this.vault.onPasscodeRequested(async (isPasscodeSetRequest: boolean) =>
       this.onPasscodeRequest(isPasscodeSetRequest),

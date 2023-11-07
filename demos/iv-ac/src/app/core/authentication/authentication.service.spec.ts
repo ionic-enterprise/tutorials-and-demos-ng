@@ -26,7 +26,7 @@ describe('AuthenticationService', () => {
   beforeEach(() => {
     spyOn(AuthConnect, 'login').and.returnValue(Promise.resolve(testAuthResult));
     spyOn(AuthConnect, 'logout').and.callFake(() => Promise.resolve());
-    spyOn(AuthConnect, 'setup').and.returnValue(Promise.resolve());
+    spyOn(AuthConnect, 'setup').and.callFake(() => Promise.resolve());
     spyOn(AuthConnect, 'buildAuthResult').and.callFake(() => Promise.resolve({ name: 'generatedAuthResult' } as any));
     modal = createOverlayElementMock('Modal');
     TestBed.configureTestingModule({

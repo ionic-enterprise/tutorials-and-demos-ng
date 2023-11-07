@@ -1,16 +1,16 @@
 import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { SessionVaultService } from '@app/core';
+import { createSessionVaultServiceMock } from '@app/core/testing';
 import { login, unlockSession } from '@app/store/actions';
 import { AuthState, initialState } from '@app/store/reducers/auth.reducer';
-import { LoginPage } from './login.page';
+import { Device } from '@ionic-enterprise/identity-vault';
 import { AlertController, IonicModule, Platform } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
 import { createOverlayControllerMock, createOverlayElementMock, createPlatformMock } from '@test/mocks';
-import { SessionVaultService } from '@app/core';
-import { createSessionVaultServiceMock } from '@app/core/testing';
-import { Device } from '@ionic-enterprise/identity-vault';
+import { LoginPage } from './login.page';
 
 describe('LoginPage', () => {
   let alert: HTMLIonAlertElement;

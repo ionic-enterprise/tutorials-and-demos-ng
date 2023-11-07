@@ -26,6 +26,7 @@ describe('SessionVaultService', () => {
   beforeEach(() => {
     mockVault = jasmine.createSpyObj<Vault>('Vault', {
       clear: Promise.resolve(),
+      initialize: Promise.resolve(),
       isEmpty: Promise.resolve(false),
       isLocked: Promise.resolve(false),
       lock: Promise.resolve(),
@@ -72,173 +73,193 @@ describe('SessionVaultService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('setUnlockMode', () => {
-    [
-      {
-        unlockMode: 'Device',
-        type: VaultType.DeviceSecurity,
-        deviceSecurityType: DeviceSecurityType.Both,
-      },
-      {
-        unlockMode: 'SessionPIN',
-        type: VaultType.CustomPasscode,
-        deviceSecurityType: DeviceSecurityType.SystemPasscode,
-      },
-      {
-        unlockMode: 'ForceLogin',
-        type: VaultType.InMemory,
-        deviceSecurityType: DeviceSecurityType.SystemPasscode,
-      },
-      {
-        unlockMode: 'NeverLock',
+  describe('initialization', () => {
+    it('initializes the vault', async () => {
+      await service.initialize();
+      expect(mockVault.initialize).toHaveBeenCalledOnceWith({
+        key: 'io.ionic.teatasterngrx',
         type: VaultType.SecureStorage,
-        deviceSecurityType: DeviceSecurityType.SystemPasscode,
-      },
-    ].forEach(({ unlockMode, type, deviceSecurityType }) =>
-      it(`updates the configuration for ${unlockMode}`, async () => {
-        const expectedConfig = {
-          ...mockVault.config,
-          type,
-          deviceSecurityType,
-        };
-        await service.setUnlockMode(unlockMode as UnlockMode);
-        expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-        expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
-      }),
-    );
-
-    describe('when using device unlock', () => {
-      it('provisions FaceID permissions if needed', async () => {
-        spyOn(Device, 'isBiometricsAllowed').and.returnValue(Promise.resolve(BiometricPermissionState.Prompt));
-        spyOn(Device, 'showBiometricPrompt').and.returnValue(Promise.resolve());
-        await service.setUnlockMode('Device');
-        expect(Device.showBiometricPrompt).toHaveBeenCalledTimes(1);
-        expect(Device.showBiometricPrompt).toHaveBeenCalledWith({
-          iosBiometricsLocalizedReason: 'Authenticate to continue',
-        });
-      });
-
-      it('does not provision FaceID permissions if it was previously denied', async () => {
-        spyOn(Device, 'isBiometricsAllowed').and.returnValue(Promise.resolve(BiometricPermissionState.Denied));
-        spyOn(Device, 'showBiometricPrompt').and.returnValue(Promise.resolve());
-        await service.setUnlockMode('Device');
-        expect(Device.showBiometricPrompt).not.toHaveBeenCalled();
-      });
-
-      it('does not provision FaceID permissions if it was previously granted', async () => {
-        spyOn(Device, 'isBiometricsAllowed').and.returnValue(Promise.resolve(BiometricPermissionState.Granted));
-        spyOn(Device, 'showBiometricPrompt').and.returnValue(Promise.resolve());
-        await service.setUnlockMode('Device');
-        expect(Device.showBiometricPrompt).not.toHaveBeenCalled();
-      });
-    });
-  });
-
-  describe('disable locking', () => {
-    it('updates the lock after value to null', async () => {
-      await service.disableLocking();
-      expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-      expect(mockVault.updateConfig).toHaveBeenCalledWith({
-        ...mockVault.config,
-        lockAfterBackgrounded: null,
-      });
-    });
-  });
-
-  describe('enable locking', () => {
-    it('updates the lock after value to 5 seconds', async () => {
-      await service.enableLocking();
-      expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-      expect(mockVault.updateConfig).toHaveBeenCalledWith({
-        ...mockVault.config,
         lockAfterBackgrounded: 5000,
+        shouldClearVaultAfterTooManyFailedAttempts: true,
+        customPasscodeInvalidUnlockAttempts: 2,
+        unlockVaultOnLoad: false,
       });
     });
   });
 
-  describe('clear session', () => {
-    it('clears the session', async () => {
-      await service.clearSession();
-      expect(mockVault.clear).toHaveBeenCalledTimes(1);
-    });
-  });
-
-  describe('locking', () => {
-    it('dispatches sessionLocked', () => {
-      const store = TestBed.inject(Store);
-      spyOn(store, 'dispatch');
-      mockVault.lock();
-      expect(store.dispatch).toHaveBeenCalledTimes(1);
-      expect(store.dispatch).toHaveBeenCalledWith(sessionLocked());
-    });
-  });
-
-  describe('can unlock', () => {
-    [
-      { empty: false, locked: true },
-      { empty: true, locked: true },
-      { empty: false, locked: false },
-    ].forEach(({ empty, locked }) =>
-      it(`is ${!empty && locked} for ${empty} ${locked}`, async () => {
-        (mockVault.isEmpty as jasmine.Spy).and.returnValue(Promise.resolve(empty));
-        (mockVault.isLocked as jasmine.Spy).and.returnValue(Promise.resolve(locked));
-        expect(await service.canUnlock()).toBe(!empty && locked);
-      }),
-    );
-  });
-
-  describe('isLocked', () => {
-    [true, false].forEach((value: boolean) =>
-      it('passes through to the vault', async () => {
-        (mockVault.isLocked as jasmine.Spy).and.returnValue(Promise.resolve(value));
-        expect(await mockVault.isLocked()).toEqual(value);
-      }),
-    );
-  });
-
-  describe('unlock', () => {
-    it('passes through to the vault', async () => {
-      await service.unlock();
-      expect(mockVault.unlock).toHaveBeenCalledTimes(1);
-    });
-  });
-
-  describe('onPasscodeRequested', () => {
-    beforeEach(() => {
-      (modal.onDidDismiss as jasmine.Spy).and.returnValue(Promise.resolve({ role: 'cancel' }));
+  describe('after initialized', () => {
+    beforeEach(async () => {
+      await service.initialize();
     });
 
-    [true, false].forEach((setPasscode) => {
-      it(`creates a PIN dialog, setting passcode: ${setPasscode}`, async () => {
-        const modalController = TestBed.inject(ModalController);
-        await onPassocodeRequestedCallback(setPasscode);
-        expect(modalController.create).toHaveBeenCalledTimes(1);
-        expect(modalController.create).toHaveBeenCalledWith({
-          backdropDismiss: false,
-          component: PinDialogComponent,
-          componentProps: {
-            setPasscodeMode: setPasscode,
-          },
+    describe('setUnlockMode', () => {
+      [
+        {
+          unlockMode: 'Device',
+          type: VaultType.DeviceSecurity,
+          deviceSecurityType: DeviceSecurityType.Both,
+        },
+        {
+          unlockMode: 'SessionPIN',
+          type: VaultType.CustomPasscode,
+          deviceSecurityType: DeviceSecurityType.SystemPasscode,
+        },
+        {
+          unlockMode: 'ForceLogin',
+          type: VaultType.InMemory,
+          deviceSecurityType: DeviceSecurityType.SystemPasscode,
+        },
+        {
+          unlockMode: 'NeverLock',
+          type: VaultType.SecureStorage,
+          deviceSecurityType: DeviceSecurityType.SystemPasscode,
+        },
+      ].forEach(({ unlockMode, type, deviceSecurityType }) =>
+        it(`updates the configuration for ${unlockMode}`, async () => {
+          const expectedConfig = {
+            ...mockVault.config,
+            type,
+            deviceSecurityType,
+          };
+          await service.setUnlockMode(unlockMode as UnlockMode);
+          expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
+          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
+        }),
+      );
+
+      describe('when using device unlock', () => {
+        it('provisions FaceID permissions if needed', async () => {
+          spyOn(Device, 'isBiometricsAllowed').and.returnValue(Promise.resolve(BiometricPermissionState.Prompt));
+          spyOn(Device, 'showBiometricPrompt').and.returnValue(Promise.resolve());
+          await service.setUnlockMode('Device');
+          expect(Device.showBiometricPrompt).toHaveBeenCalledTimes(1);
+          expect(Device.showBiometricPrompt).toHaveBeenCalledWith({
+            iosBiometricsLocalizedReason: 'Authenticate to continue',
+          });
+        });
+
+        it('does not provision FaceID permissions if it was previously denied', async () => {
+          spyOn(Device, 'isBiometricsAllowed').and.returnValue(Promise.resolve(BiometricPermissionState.Denied));
+          spyOn(Device, 'showBiometricPrompt').and.returnValue(Promise.resolve());
+          await service.setUnlockMode('Device');
+          expect(Device.showBiometricPrompt).not.toHaveBeenCalled();
+        });
+
+        it('does not provision FaceID permissions if it was previously granted', async () => {
+          spyOn(Device, 'isBiometricsAllowed').and.returnValue(Promise.resolve(BiometricPermissionState.Granted));
+          spyOn(Device, 'showBiometricPrompt').and.returnValue(Promise.resolve());
+          await service.setUnlockMode('Device');
+          expect(Device.showBiometricPrompt).not.toHaveBeenCalled();
         });
       });
     });
 
-    it('presents the modal', async () => {
-      await onPassocodeRequestedCallback(false);
-      expect(modal.present).toHaveBeenCalledTimes(1);
+    describe('disable locking', () => {
+      it('updates the lock after value to null', async () => {
+        await service.disableLocking();
+        expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
+        expect(mockVault.updateConfig).toHaveBeenCalledWith({
+          ...mockVault.config,
+          lockAfterBackgrounded: null,
+        });
+      });
     });
 
-    it('sets the custom passcode to the PIN', async () => {
-      (modal.onDidDismiss as jasmine.Spy).and.returnValue(Promise.resolve({ data: '4203', role: 'OK' }));
-      await onPassocodeRequestedCallback(false);
-      expect(mockVault.setCustomPasscode).toHaveBeenCalledTimes(1);
-      expect(mockVault.setCustomPasscode).toHaveBeenCalledWith('4203');
+    describe('enable locking', () => {
+      it('updates the lock after value to 5 seconds', async () => {
+        await service.enableLocking();
+        expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
+        expect(mockVault.updateConfig).toHaveBeenCalledWith({
+          ...mockVault.config,
+          lockAfterBackgrounded: 5000,
+        });
+      });
     });
 
-    it('sets the custom passcode to and empty string if the PIN is undefined', async () => {
-      await onPassocodeRequestedCallback(false);
-      expect(mockVault.setCustomPasscode).toHaveBeenCalledTimes(1);
-      expect(mockVault.setCustomPasscode).toHaveBeenCalledWith('');
+    describe('clear session', () => {
+      it('clears the session', async () => {
+        await service.clearSession();
+        expect(mockVault.clear).toHaveBeenCalledTimes(1);
+      });
+    });
+
+    describe('locking', () => {
+      it('dispatches sessionLocked', () => {
+        const store = TestBed.inject(Store);
+        spyOn(store, 'dispatch');
+        mockVault.lock();
+        expect(store.dispatch).toHaveBeenCalledTimes(1);
+        expect(store.dispatch).toHaveBeenCalledWith(sessionLocked());
+      });
+    });
+
+    describe('can unlock', () => {
+      [
+        { empty: false, locked: true },
+        { empty: true, locked: true },
+        { empty: false, locked: false },
+      ].forEach(({ empty, locked }) =>
+        it(`is ${!empty && locked} for ${empty} ${locked}`, async () => {
+          (mockVault.isEmpty as jasmine.Spy).and.returnValue(Promise.resolve(empty));
+          (mockVault.isLocked as jasmine.Spy).and.returnValue(Promise.resolve(locked));
+          expect(await service.canUnlock()).toBe(!empty && locked);
+        }),
+      );
+    });
+
+    describe('isLocked', () => {
+      [true, false].forEach((value: boolean) =>
+        it('passes through to the vault', async () => {
+          (mockVault.isLocked as jasmine.Spy).and.returnValue(Promise.resolve(value));
+          expect(await mockVault.isLocked()).toEqual(value);
+        }),
+      );
+    });
+
+    describe('unlock', () => {
+      it('passes through to the vault', async () => {
+        await service.unlock();
+        expect(mockVault.unlock).toHaveBeenCalledTimes(1);
+      });
+    });
+
+    describe('onPasscodeRequested', () => {
+      beforeEach(() => {
+        (modal.onDidDismiss as jasmine.Spy).and.returnValue(Promise.resolve({ role: 'cancel' }));
+      });
+
+      [true, false].forEach((setPasscode) => {
+        it(`creates a PIN dialog, setting passcode: ${setPasscode}`, async () => {
+          const modalController = TestBed.inject(ModalController);
+          await onPassocodeRequestedCallback(setPasscode);
+          expect(modalController.create).toHaveBeenCalledTimes(1);
+          expect(modalController.create).toHaveBeenCalledWith({
+            backdropDismiss: false,
+            component: PinDialogComponent,
+            componentProps: {
+              setPasscodeMode: setPasscode,
+            },
+          });
+        });
+      });
+
+      it('presents the modal', async () => {
+        await onPassocodeRequestedCallback(false);
+        expect(modal.present).toHaveBeenCalledTimes(1);
+      });
+
+      it('sets the custom passcode to the PIN', async () => {
+        (modal.onDidDismiss as jasmine.Spy).and.returnValue(Promise.resolve({ data: '4203', role: 'OK' }));
+        await onPassocodeRequestedCallback(false);
+        expect(mockVault.setCustomPasscode).toHaveBeenCalledTimes(1);
+        expect(mockVault.setCustomPasscode).toHaveBeenCalledWith('4203');
+      });
+
+      it('sets the custom passcode to and empty string if the PIN is undefined', async () => {
+        await onPassocodeRequestedCallback(false);
+        expect(mockVault.setCustomPasscode).toHaveBeenCalledTimes(1);
+        expect(mockVault.setCustomPasscode).toHaveBeenCalledWith('');
+      });
     });
   });
 });

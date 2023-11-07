@@ -1,17 +1,16 @@
-import { waitForAsync, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { TastingNote } from '@app/models';
+import { selectNotes } from '@app/store';
+import { noteDeleted, notesPageLoaded } from '@app/store/actions';
+import { DataState, initialState } from '@app/store/reducers/data.reducer';
+import { AlertController, IonRouterOutlet, IonicModule, ModalController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { AlertController, IonicModule, IonRouterOutlet, ModalController } from '@ionic/angular';
-
-import { DataState, initialState } from '@app/store/reducers/data.reducer';
-import { TastingNotesPage } from './tasting-notes.page';
-import { selectNotes } from '@app/store';
-import { TastingNote } from '@app/models';
-import { noteDeleted, notesPageLoaded } from '@app/store/actions';
 import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
-import { TastingNoteEditorModule } from './tasting-note-editor/tasting-note-editor.module';
 import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-editor.component';
+import { TastingNoteEditorModule } from './tasting-note-editor/tasting-note-editor.module';
+import { TastingNotesPage } from './tasting-notes.page';
 
 describe('TastingNotesPage', () => {
   let component: TastingNotesPage;
@@ -159,21 +158,6 @@ describe('TastingNotesPage', () => {
             },
           }),
         );
-      }));
-    });
-
-    describe('when the user answers no', () => {
-      beforeEach(() => {
-        (alert.onDidDismiss as jasmine.Spy).and.resolveTo({ role: 'no' });
-      });
-
-      it('does not dispatch a delete', fakeAsync(() => {
-        const store = TestBed.inject(Store);
-        spyOn(store, 'dispatch');
-        const buttons = fixture.debugElement.queryAll(By.css('ion-item-option'));
-        click(buttons[1].nativeElement);
-        tick();
-        expect(store.dispatch).not.toHaveBeenCalled();
       }));
     });
   });

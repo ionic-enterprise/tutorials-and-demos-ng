@@ -28,49 +28,83 @@ export class SessionVaultService {
   private vaultReady: Promise<void>;
 
   constructor(
+    vaultFactory: VaultFactoryService,
     private modalController: ModalController,
     private platform: Platform,
-    private vaultFactory: VaultFactoryService,
   ) {
     this.lockedSubject = new Subject();
+    this.preferencesVault = vaultFactory.create();
+    this.vault = vaultFactory.create();
   }
 
   get locked(): Observable<boolean> {
     return this.lockedSubject.asObservable();
   }
 
-  async getConfig(): Promise<IdentityVaultConfig> {
-    await this.init();
+  initialize(): Promise<void> {
+    if (!this.vaultReady) {
+      this.vaultReady = new Promise(async (resolve) => {
+        await this.platform.ready();
+
+        await this.preferencesVault.initialize({
+          key: 'io.ionic.auth-playground-ng-preferences',
+          type: VaultType.SecureStorage,
+        });
+
+        await this.vault.initialize({
+          key: 'io.ionic.auth-playground-ng',
+          type: VaultType.SecureStorage,
+          deviceSecurityType: DeviceSecurityType.None,
+          lockAfterBackgrounded: 5000,
+          shouldClearVaultAfterTooManyFailedAttempts: true,
+          customPasscodeInvalidUnlockAttempts: 2,
+          unlockVaultOnLoad: false,
+        });
+
+        this.vault.onLock(() => {
+          if (this.onLockCallback) {
+            this.onLockCallback();
+          }
+          this.lockedSubject.next(true);
+        });
+
+        this.vault.onUnlock(() => this.lockedSubject.next(false));
+
+        this.vault.onPasscodeRequested(async (isPasscodeSetRequest: boolean) =>
+          this.onPasscodeRequest(isPasscodeSetRequest),
+        );
+        resolve();
+      });
+    }
+
+    return this.vaultReady;
+  }
+
+  getConfig(): IdentityVaultConfig {
     return this.vault.config;
   }
 
-  async getKeys(): Promise<Array<string>> {
-    await this.init();
+  getKeys(): Promise<Array<string>> {
     return this.vault.getKeys();
   }
 
-  async getValue(key: string): Promise<any> {
-    await this.init();
+  getValue(key: string): Promise<any> {
     return this.vault.getValue(key);
   }
 
-  async lock(): Promise<void> {
-    await this.init();
+  lock(): Promise<void> {
     return this.vault.lock();
   }
 
-  async setValue(key: string, value: any): Promise<void> {
-    await this.init();
+  setValue(key: string, value: any): Promise<void> {
     return this.vault.setValue(key, value);
   }
 
-  async unlock(): Promise<void> {
-    await this.init();
+  unlock(): Promise<void> {
     return this.vault.unlock();
   }
 
   async canUnlock(): Promise<boolean> {
-    await this.init();
     return !(await this.neverLock()) && !(await this.vault.isEmpty()) && (await this.vault.isLocked());
   }
 
@@ -100,8 +134,6 @@ export class SessionVaultService {
   async setUnlockMode(unlockMode: UnlockMode): Promise<void> {
     let type: VaultType;
     let deviceSecurityType: DeviceSecurityType;
-
-    await this.init();
 
     switch (unlockMode) {
       case 'Device':
@@ -145,28 +177,23 @@ export class SessionVaultService {
   }
 
   // The following public methods are required by the TokenStorageProvider interface.
-  async clear(): Promise<void> {
-    await this.init();
+  clear(): Promise<void> {
     return this.vault.clear();
   }
 
-  async getAccessToken(tokenName?: string): Promise<string | undefined | null> {
-    await this.init();
+  getAccessToken(tokenName?: string): Promise<string | undefined | null> {
     return this.vault.getValue(`AccessToken${tokenName || ''}`);
   }
 
-  async getAuthResponse(): Promise<any | undefined | null> {
-    await this.init();
+  getAuthResponse(): Promise<any | undefined | null> {
     return this.vault.getValue('AuthResponse');
   }
 
-  async getIdToken(): Promise<string | undefined | null> {
-    await this.init();
+  getIdToken(): Promise<string | undefined | null> {
     return this.vault.getValue('IdToken');
   }
 
-  async getRefreshToken(): Promise<string | undefined | null> {
-    await this.init();
+  getRefreshToken(): Promise<string | undefined | null> {
     return this.vault.getValue('RefreshToken');
   }
 
@@ -174,68 +201,23 @@ export class SessionVaultService {
     this.onLockCallback = callback;
   }
 
-  async setAccessToken(value: string, tokenName?: string): Promise<void> {
-    await this.init();
+  setAccessToken(value: string, tokenName?: string): Promise<void> {
     return this.vault.setValue(`AccessToken${tokenName || ''}`, value);
   }
 
-  async setAuthResponse(value: any): Promise<void> {
-    await this.init();
+  setAuthResponse(value: any): Promise<void> {
     return this.vault.setValue('AuthResponse', value);
   }
 
-  async setIdToken(value: string): Promise<void> {
-    await this.init();
+  setIdToken(value: string): Promise<void> {
     return this.vault.setValue('IdToken', value);
   }
 
-  async setRefreshToken(value: string): Promise<void> {
-    await this.init();
+  setRefreshToken(value: string): Promise<void> {
     return this.vault.setValue('RefreshToken', value);
   }
 
-  private init(): Promise<void> {
-    if (!this.vaultReady) {
-      this.vaultReady = new Promise(async (resolve) => {
-        await this.platform.ready();
-
-        this.preferencesVault = this.vaultFactory.create({
-          key: 'io.ionic.auth-playground-ng-preferences',
-          type: VaultType.SecureStorage,
-        });
-
-        this.vault = this.vaultFactory.create({
-          key: 'io.ionic.auth-playground-ng',
-          type: VaultType.SecureStorage,
-          deviceSecurityType: DeviceSecurityType.None,
-          lockAfterBackgrounded: 20000,
-          shouldClearVaultAfterTooManyFailedAttempts: true,
-          customPasscodeInvalidUnlockAttempts: 2,
-          unlockVaultOnLoad: false,
-        });
-
-        this.vault.onLock(() => {
-          if (this.onLockCallback) {
-            this.onLockCallback();
-          }
-          this.lockedSubject.next(true);
-        });
-
-        this.vault.onUnlock(() => this.lockedSubject.next(false));
-
-        this.vault.onPasscodeRequested(async (isPasscodeSetRequest: boolean) =>
-          this.onPasscodeRequest(isPasscodeSetRequest),
-        );
-        resolve();
-      });
-    }
-
-    return this.vaultReady;
-  }
-
   private async onPasscodeRequest(isPasscodeSetRequest: boolean): Promise<void> {
-    await this.init();
-
     const dlg = await this.modalController.create({
       backdropDismiss: false,
       component: PinDialogComponent,
@@ -249,7 +231,6 @@ export class SessionVaultService {
   }
 
   private async provision(): Promise<void> {
-    await this.init();
     if ((await Device.isBiometricsAllowed()) === BiometricPermissionState.Prompt) {
       try {
         await Device.showBiometricPrompt({ iosBiometricsLocalizedReason: 'Please authenticate to continue' });
@@ -259,12 +240,10 @@ export class SessionVaultService {
 
   // Preference Related Methods
   private async setLastUnlockMode(value: UnlockMode): Promise<void> {
-    await this.init();
     return this.preferencesVault.setValue('LastUnlockMode', value);
   }
 
   private async neverLock(): Promise<boolean> {
-    await this.init();
     const lockMode = await this.preferencesVault.getValue('LastUnlockMode');
     return lockMode === 'NeverLock';
   }

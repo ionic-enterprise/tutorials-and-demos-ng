@@ -1,8 +1,8 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { AuthInterceptor, UnauthInterceptor } from '@app/core';
+import { AuthInterceptor, SessionVaultService, UnauthInterceptor } from '@app/core';
 import { metaReducers, reducers } from '@app/store';
 import { AuthEffects, DataEffects } from '@app/store/effects';
 import { environment } from '@env/environment';
@@ -13,6 +13,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PinDialogComponentModule } from './pin-dialog/pin-dialog.module';
+
+const appInitFactory =
+  (sessionVault: SessionVaultService): (() => Promise<void>) =>
+  async () => {
+    await sessionVault.initialize();
+  };
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +42,7 @@ import { PinDialogComponentModule } from './pin-dialog/pin-dialog.module';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: UnauthInterceptor, multi: true },
+    { provide: APP_INITIALIZER, useFactory: appInitFactory, deps: [SessionVaultService], multi: true },
   ],
   bootstrap: [AppComponent],
 })

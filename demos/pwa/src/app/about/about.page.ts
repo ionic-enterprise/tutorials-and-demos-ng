@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from '@app/core';
 import { PreferencesPage } from '@app/preferences/preferences.page';
-import { IonicModule, ModalController, NavController } from '@ionic/angular';
+import { IonicModule, ModalController } from '@ionic/angular';
 import packageInfo from '../../../package.json';
 
 @Component({
@@ -17,20 +16,11 @@ export class AboutPage {
   description: string;
   version: string;
 
-  constructor(
-    private auth: AuthenticationService,
-    private modalController: ModalController,
-    private nav: NavController,
-  ) {
+  constructor(private modalController: ModalController) {
     this.author = packageInfo.author;
     this.name = packageInfo.name;
     this.description = packageInfo.description;
     this.version = packageInfo.version;
-  }
-
-  async logout() {
-    await this.auth.logout();
-    this.nav.navigateRoot(['/', 'login']);
   }
 
   async openPreferences() {
@@ -39,6 +29,5 @@ export class AboutPage {
       component: PreferencesPage,
     });
     dlg.present();
-    const { data } = await dlg.onDidDismiss();
   }
 }

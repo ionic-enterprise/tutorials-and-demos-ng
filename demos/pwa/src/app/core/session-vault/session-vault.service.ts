@@ -1,7 +1,8 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
 import { Capacitor } from '@capacitor/core';
 import { Preferences } from '@capacitor/preferences';
+import { AuthResult } from '@ionic-enterprise/auth';
 import {
   BiometricPermissionState,
   BrowserVault,
@@ -11,7 +12,6 @@ import {
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
-import { AuthResult } from '@ionic-enterprise/auth';
 import { ModalController } from '@ionic/angular';
 import { Observable, Subject } from 'rxjs';
 import { VaultFactoryService } from './vault-factory.service';
@@ -47,12 +47,19 @@ export class SessionVaultService {
 
   constructor(
     private modalController: ModalController,
-    private ngZone: NgZone,
     vaultFactory: VaultFactoryService,
   ) {
     this.platform = Capacitor.getPlatform();
-    this.vault = vaultFactory.create(config);
+    this.vault = vaultFactory.create();
     this.lockedSubject = new Subject();
+  }
+
+  get locked(): Observable<boolean> {
+    return this.lockedSubject.asObservable();
+  }
+
+  async initialize(): Promise<void> {
+    await this.vault.initialize(config);
 
     this.vault.onLock(() => {
       this.lockedSubject.next(true);
@@ -65,10 +72,6 @@ export class SessionVaultService {
     this.vault.onPasscodeRequested(async (isPasscodeSetRequest: boolean) =>
       this.onPasscodeRequest(isPasscodeSetRequest),
     );
-  }
-
-  get locked(): Observable<boolean> {
-    return this.lockedSubject.asObservable();
   }
 
   async setSession(session: AuthResult): Promise<void> {

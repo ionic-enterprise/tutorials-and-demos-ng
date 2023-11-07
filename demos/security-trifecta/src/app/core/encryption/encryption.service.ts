@@ -10,17 +10,13 @@ import { VaultFactoryService } from '../vault-factory/vault-factory.service';
 })
 export class EncryptionService {
   private vault: Vault | BrowserVault;
+  private vaultReady: Promise<void>;
 
   constructor(
     private http: HttpClient,
     vaultFactory: VaultFactoryService,
   ) {
-    this.vault = vaultFactory.create({
-      key: 'io.ionic.csdemosecurestoragekeys',
-      type: VaultType.SecureStorage,
-      deviceSecurityType: DeviceSecurityType.None,
-      unlockVaultOnLoad: false,
-    });
+    this.vault = vaultFactory.create();
   }
 
   async getDatabaseKey(): Promise<string> {
@@ -30,5 +26,20 @@ export class EncryptionService {
       this.vault.setValue('database-key', key);
     }
     return key;
+  }
+
+  initialize(): Promise<void> {
+    if (!this.vaultReady) {
+      this.vaultReady = new Promise(async (resolve) => {
+        await this.vault.initialize({
+          key: 'io.ionic.csdemosecurestoragekeys',
+          type: VaultType.SecureStorage,
+          deviceSecurityType: DeviceSecurityType.None,
+          unlockVaultOnLoad: false,
+        });
+        resolve();
+      });
+    }
+    return this.vaultReady;
   }
 }

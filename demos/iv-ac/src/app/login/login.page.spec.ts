@@ -1,6 +1,7 @@
 import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AuthenticationService } from '@app/core';
+import { createAuthenticationServiceMock } from '@app/core/testing';
 import { NavController } from '@ionic/angular';
 import { createNavControllerMock } from '@test/mocks';
 import { of } from 'rxjs';
@@ -14,6 +15,7 @@ describe('LoginPage', () => {
     TestBed.configureTestingModule({
       imports: [LoginPage],
     })
+      .overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock })
       .overrideProvider(NavController, { useFactory: createNavControllerMock })
       .compileComponents();
 
@@ -50,7 +52,6 @@ describe('LoginPage', () => {
         };
 
         auth = TestBed.inject(AuthenticationService);
-        spyOn(auth, 'login').and.returnValue(Promise.resolve());
       });
 
       it('calls the login', () => {

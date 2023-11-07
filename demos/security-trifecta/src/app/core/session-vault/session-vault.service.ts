@@ -23,80 +23,24 @@ export class SessionVaultService {
   private vaultReady: Promise<void>;
 
   constructor(
+    vaultFactory: VaultFactoryService,
     private modalController: ModalController,
     private platform: Platform,
-    private vaultFactory: VaultFactoryService,
   ) {
     this.lockedSubject = new Subject();
+    this.vault = vaultFactory.create();
   }
 
   get locked$(): Observable<boolean> {
     return this.lockedSubject.asObservable();
   }
 
-  async disableLocking(): Promise<void> {
-    await this.initialize();
-    return this.vault.updateConfig({
-      ...this.vault.config,
-      lockAfterBackgrounded: null,
-    });
-  }
-
-  async enableLocking(): Promise<void> {
-    await this.initialize();
-    return this.vault.updateConfig({
-      ...this.vault.config,
-      lockAfterBackgrounded: 2000,
-    });
-  }
-
-  async resetUnlockMode(): Promise<void> {
-    await this.initialize();
-    await this.setUnlockMode('NeverLock');
-  }
-
-  async initializeUnlockMode(): Promise<void> {
-    if (this.platform.is('hybrid')) {
-      await this.initialize();
-      if (await Device.isSystemPasscodeSet()) {
-        await this.setUnlockMode('Device');
-      } else {
-        await this.setUnlockMode('SessionPIN');
-      }
-    }
-  }
-
-  async setSession(session: AuthResult): Promise<void> {
-    await this.initialize();
-    await this.vault.setValue('session', session);
-  }
-
-  async getSession(): Promise<AuthResult | null> {
-    await this.initialize();
-    return this.vault.getValue('session');
-  }
-
-  async clearSession(): Promise<void> {
-    await this.initialize();
-    return this.vault.clear();
-  }
-
-  async sessionIsLocked(): Promise<boolean> {
-    await this.initialize();
-    return !(await this.vault.isEmpty()) && (await this.vault.isLocked());
-  }
-
-  async unlockSession(): Promise<void> {
-    await this.initialize();
-    return this.vault.unlock();
-  }
-
-  private initialize() {
+  initialize() {
     if (!this.vaultReady) {
       this.vaultReady = new Promise(async (resolve) => {
         await this.platform.ready();
 
-        this.vault = this.vaultFactory.create({
+        await this.vault.initialize({
           key: 'io.ionic.auth-playground-ng',
           type: VaultType.SecureStorage,
           lockAfterBackgrounded: null,
@@ -118,9 +62,55 @@ export class SessionVaultService {
     return this.vaultReady;
   }
 
-  private async onPasscodeRequest(isPasscodeSetRequest: boolean): Promise<void> {
-    await this.initialize();
+  disableLocking(): Promise<void> {
+    return this.vault.updateConfig({
+      ...this.vault.config,
+      lockAfterBackgrounded: null,
+    });
+  }
 
+  enableLocking(): Promise<void> {
+    return this.vault.updateConfig({
+      ...this.vault.config,
+      lockAfterBackgrounded: 2000,
+    });
+  }
+
+  async resetUnlockMode(): Promise<void> {
+    await this.setUnlockMode('NeverLock');
+  }
+
+  async initializeUnlockMode(): Promise<void> {
+    if (this.platform.is('hybrid')) {
+      if (await Device.isSystemPasscodeSet()) {
+        await this.setUnlockMode('Device');
+      } else {
+        await this.setUnlockMode('SessionPIN');
+      }
+    }
+  }
+
+  async setSession(session: AuthResult): Promise<void> {
+    await this.vault.setValue('session', session);
+  }
+
+  getSession(): Promise<AuthResult | null> {
+    return this.vault.getValue('session');
+  }
+
+  clearSession(): Promise<void> {
+    return this.vault.clear();
+  }
+
+  async sessionIsLocked(): Promise<boolean> {
+    return !(await this.vault.isEmpty()) && (await this.vault.isLocked());
+  }
+
+  unlockSession(): Promise<void> {
+    return this.vault.unlock();
+  }
+
+  private async onPasscodeRequest(isPasscodeSetRequest: boolean): Promise<void> {
     const dlg = await this.modalController.create({
       backdropDismiss: false,
       component: PinDialogComponent,

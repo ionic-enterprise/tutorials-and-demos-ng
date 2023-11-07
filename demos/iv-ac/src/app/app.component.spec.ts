@@ -1,10 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { SplashScreen } from '@capacitor/splash-screen';
-
 import { AppComponent } from './app.component';
-import { createSessionVaultServiceMock } from './core/testing';
 import { SessionVaultService } from './core';
+import { createSessionVaultServiceMock } from './core/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

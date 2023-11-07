@@ -27,7 +27,7 @@ export class VaultControlPage {
   ) {}
 
   async ionViewDidEnter() {
-    this.config = await this.sessionVault.getConfig();
+    this.config = this.sessionVault.getConfig();
     if (this.platform.is('hybrid')) {
       this.disableCustomPasscode = false;
       this.disableInMemory = false;

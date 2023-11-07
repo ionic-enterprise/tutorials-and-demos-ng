@@ -1,7 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { SessionVaultService } from '@app/core';
-import { createSessionVaultServiceMock } from '@app/core/testing';
+import { AuthenticationService, SessionVaultService } from '@app/core';
+import { createAuthenticationServiceMock, createSessionVaultServiceMock } from '@app/core/testing';
 import { IonicModule, NavController } from '@ionic/angular';
 import { createNavControllerMock } from '@test/mocks';
 
@@ -15,6 +15,7 @@ describe('PreferencesPage', () => {
     TestBed.configureTestingModule({
       imports: [IonicModule.forRoot(), HttpClientTestingModule],
       providers: [
+        { provide: AuthenticationService, useFactory: createAuthenticationServiceMock },
         { provide: NavController, useFactory: createNavControllerMock },
         { provide: SessionVaultService, useFactory: createSessionVaultServiceMock },
       ],

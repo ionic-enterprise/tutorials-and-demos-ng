@@ -8,7 +8,7 @@ export const createSessionVaultServiceMock = () => {
     initializeUnlockMode: Promise.resolve(),
     setUnlockMode: Promise.resolve(),
     clear: Promise.resolve(),
-    getConfig: Promise.resolve({
+    getConfig: {
       key: 'io.ionic.auth-playground-ng',
       type: VaultType.SecureStorage,
       deviceSecurityType: DeviceSecurityType.None,
@@ -16,7 +16,7 @@ export const createSessionVaultServiceMock = () => {
       shouldClearVaultAfterTooManyFailedAttempts: true,
       customPasscodeInvalidUnlockAttempts: 2,
       unlockVaultOnLoad: false,
-    }),
+    },
     getKeys: Promise.resolve([]),
     getValue: Promise.resolve(),
     lock: Promise.resolve(),

@@ -13,7 +13,7 @@ import { SessionVaultService } from './core';
 })
 export class AppComponent implements OnInit {
   constructor(
-    private navController: NavController,
+    navController: NavController,
     private sessionVault: SessionVaultService,
   ) {
     sessionVault.locked.subscribe((locked) => {
