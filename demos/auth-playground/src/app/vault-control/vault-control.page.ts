@@ -4,14 +4,48 @@ import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
 import { VaultTypePipe } from '@app/shared/vault-type.pipe';
 import { Device, IdentityVaultConfig, VaultType } from '@ionic-enterprise/identity-vault';
-import { IonicModule, NavController, Platform } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { ellipsisVerticalOutline, hardwareChipOutline, listOutline } from 'ionicons/icons';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonList,
+  IonItem,
+  IonLabel,
+  IonNote,
+  IonButton,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonFabList,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-vault-control',
   templateUrl: 'vault-control.page.html',
   styleUrls: ['vault-control.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, VaultTypePipe],
+  imports: [
+    CommonModule,
+    FormsModule,
+    VaultTypePipe,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonList,
+    IonItem,
+    IonLabel,
+    IonNote,
+    IonButton,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonFabList,
+  ],
 })
 export class VaultControlPage {
   disableDeviceUnlock = true;
@@ -24,7 +58,9 @@ export class VaultControlPage {
     private navController: NavController,
     private platform: Platform,
     private sessionVault: SessionVaultService,
-  ) {}
+  ) {
+    addIcons({ ellipsisVerticalOutline, hardwareChipOutline, listOutline });
+  }
 
   async ionViewDidEnter() {
     this.config = this.sessionVault.getConfig();

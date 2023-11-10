@@ -4,14 +4,50 @@ import { FormsModule } from '@angular/forms';
 import { TastingNotesService, TeaCategoriesService } from '@app/core';
 import { TastingNote, TeaCategory } from '@app/models';
 import { RatingComponent } from '@app/rating/rating.component';
-import { IonicModule, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { close } from 'ionicons/icons';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonContent,
+  IonItem,
+  IonInput,
+  IonSelect,
+  IonSelectOption,
+  IonLabel,
+  IonTextarea,
+  IonFooter,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tasting-note-editor',
   templateUrl: './tasting-note-editor.component.html',
   styleUrls: ['./tasting-note-editor.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, RatingComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RatingComponent,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonButton,
+    IonIcon,
+    IonContent,
+    IonItem,
+    IonInput,
+    IonSelect,
+    IonSelectOption,
+    IonLabel,
+    IonTextarea,
+    IonFooter,
+  ],
 })
 export class TastingNoteEditorComponent implements OnInit {
   @Input() note: TastingNote;
@@ -28,7 +64,9 @@ export class TastingNoteEditorComponent implements OnInit {
     private modalController: ModalController,
     private tastingNotes: TastingNotesService,
     private teaCategories: TeaCategoriesService,
-  ) {}
+  ) {
+    addIcons({ close });
+  }
 
   get title(): string {
     return this.note ? 'Tasting Note' : 'Add New Tasting Note';

@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { TastingNote } from '@app/models';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { createPlatformMock } from '@test/mocks';
 import { of } from 'rxjs';
 import { TastingNotesApiService } from '../tasting-notes-api/tasting-notes-api.service';
 import { createTastingNotesApiServiceMock } from '../tasting-notes-api/tasting-notes-api.service.mock';
 import { TastingNotesDatabaseService } from '../tasting-notes-database/tasting-notes-database.service';
 import { createTastingNotesDatabaseServiceMock } from '../tasting-notes-database/tasting-notes-database.service.mock';
-
 import { TastingNotesService } from './tasting-notes.service';
 
 describe('TastingNotesService', () => {
@@ -15,13 +14,9 @@ describe('TastingNotesService', () => {
   let tastingNotes: Array<TastingNote>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        { provide: Platform, useFactory: createPlatformMock },
-        { provide: TastingNotesApiService, useFactory: createTastingNotesApiServiceMock },
-        { provide: TastingNotesDatabaseService, useFactory: createTastingNotesDatabaseServiceMock },
-      ],
-    });
+    TestBed.overrideProvider(Platform, { useFactory: createPlatformMock })
+      .overrideProvider(TastingNotesApiService, { useFactory: createTastingNotesApiServiceMock })
+      .overrideProvider(TastingNotesDatabaseService, { useFactory: createTastingNotesDatabaseServiceMock });
     initializeTestData();
     const tastingNotesApiService = TestBed.inject(TastingNotesApiService);
     const tastingNotesDatabaseService = TestBed.inject(TastingNotesDatabaseService);

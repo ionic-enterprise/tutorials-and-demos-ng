@@ -2,14 +2,41 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
-import { IonicModule, ModalController, NavController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular/standalone';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonButton,
+  IonContent,
+  IonList,
+  IonListHeader,
+  IonItem,
+  IonToggle,
+  IonLabel,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-preferences',
   templateUrl: './preferences.page.html',
   styleUrls: ['./preferences.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonButton,
+    IonContent,
+    IonList,
+    IonListHeader,
+    IonItem,
+    IonToggle,
+    IonLabel,
+  ],
 })
 export class PreferencesPage implements OnInit {
   hideInBackground = false;

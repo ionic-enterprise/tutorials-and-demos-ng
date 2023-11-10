@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { AuthenticationService, SessionVaultService } from '@app/core';
 import { createAuthenticationServiceMock, createSessionVaultServiceMock } from '@app/core/testing';
 import { Session } from '@app/models';
-import { NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
 import { of } from 'rxjs';
 import { LoginPage } from './login.page';
@@ -13,13 +13,9 @@ describe('LoginPage', () => {
   let fixture: ComponentFixture<LoginPage>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [LoginPage],
-    })
-      .overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock })
+    TestBed.overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock })
       .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock })
-      .overrideProvider(NavController, { useFactory: createNavControllerMock })
-      .compileComponents();
+      .overrideProvider(NavController, { useFactory: createNavControllerMock });
 
     fixture = TestBed.createComponent(LoginPage);
     component = fixture.componentInstance;

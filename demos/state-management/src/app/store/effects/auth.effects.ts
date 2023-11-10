@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { from, of } from 'rxjs';
 import { catchError, exhaustMap, map, mergeMap, tap } from 'rxjs/operators';

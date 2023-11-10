@@ -5,6 +5,8 @@ import { RatingComponent } from './rating.component';
 
 @Component({
   template: `<app-rating [(ngModel)]="rating" [disabled]="disabled" (ngModelChange)="onChange()"> </app-rating>`,
+  standalone: true,
+  imports: [FormsModule, RatingComponent],
 })
 class TestHostComponent {
   disabled = false;
@@ -21,11 +23,6 @@ describe('RatingComponent', () => {
   let fixture: ComponentFixture<TestHostComponent>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [TestHostComponent],
-      imports: [FormsModule, RatingComponent],
-    }).compileComponents();
-
     fixture = TestBed.createComponent(TestHostComponent);
     hostComponent = fixture.componentInstance;
     ratingEl = fixture.nativeElement.querySelector('app-rating');

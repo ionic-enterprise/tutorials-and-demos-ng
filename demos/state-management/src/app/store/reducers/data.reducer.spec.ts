@@ -1,3 +1,4 @@
+import { TastingNote, Tea, User } from '@app/models';
 import {
   initialLoadFailure,
   initialLoadSuccess,
@@ -17,7 +18,6 @@ import {
   unlockSessionSuccess,
 } from '@app/store/actions';
 import { DataState, initialState, reducer } from './data.reducer';
-import { TastingNote, Tea, User } from '@app/models';
 
 const notes: Array<TastingNote> = [
   {

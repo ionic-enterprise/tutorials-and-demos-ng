@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { Preferences } from '@capacitor/preferences';
 import { Session } from '@app/models';
+import { Preferences } from '@capacitor/preferences';
 import { SessionVaultService } from './session-vault.service';
 
 describe('SessionVaultService', () => {

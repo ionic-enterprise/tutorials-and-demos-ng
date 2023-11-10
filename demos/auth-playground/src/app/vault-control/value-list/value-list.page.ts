@@ -2,14 +2,45 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
-import { AlertController, IonicModule } from '@ionic/angular';
+import { AlertController } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { add } from 'ionicons/icons';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonBackButton,
+  IonContent,
+  IonList,
+  IonItem,
+  IonLabel,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-value-list',
   templateUrl: './value-list.page.html',
   styleUrls: ['./value-list.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonBackButton,
+    IonContent,
+    IonList,
+    IonItem,
+    IonLabel,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+  ],
 })
 export class ValueListPage implements OnInit {
   values: Array<{ key: string; value?: any }>;
@@ -17,7 +48,9 @@ export class ValueListPage implements OnInit {
   constructor(
     private alertController: AlertController,
     private sessionVault: SessionVaultService,
-  ) {}
+  ) {
+    addIcons({ add });
+  }
 
   ngOnInit() {
     this.getValues();

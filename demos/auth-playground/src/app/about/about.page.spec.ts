@@ -1,8 +1,8 @@
-import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AuthenticationExpediterService, SessionVaultService } from '@app/core';
 import { createAuthenticationExpediterServiceMock, createSessionVaultServiceMock } from '@app/core/testing';
-import { NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
 import { click } from '@test/util';
 import { AboutPage } from './about.page';
@@ -11,20 +11,15 @@ describe('AboutPage', () => {
   let component: AboutPage;
   let fixture: ComponentFixture<AboutPage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [AboutPage],
-      providers: [],
-    })
-      .overrideProvider(AuthenticationExpediterService, { useFactory: createAuthenticationExpediterServiceMock })
+  beforeEach(() => {
+    TestBed.overrideProvider(AuthenticationExpediterService, { useFactory: createAuthenticationExpediterServiceMock })
       .overrideProvider(NavController, { useFactory: createNavControllerMock })
-      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock })
-      .compileComponents();
+      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
 
     fixture = TestBed.createComponent(AboutPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

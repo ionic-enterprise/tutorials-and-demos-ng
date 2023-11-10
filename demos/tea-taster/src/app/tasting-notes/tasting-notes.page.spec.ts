@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { TastingNotesService } from '@app/core';
 import { createTastingNotesServiceMock } from '@app/core/testing';
 import { TastingNote } from '@app/models';
-import { AlertController, IonicModule, IonRouterOutlet, ModalController } from '@ionic/angular';
+import { AlertController, IonRouterOutlet, ModalController } from '@ionic/angular/standalone';
 import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
 import { of } from 'rxjs';
 import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-editor.component';
@@ -32,13 +32,12 @@ describe('TastingNotesPage', () => {
       .overrideProvider(AlertController, { useFactory: () => createOverlayControllerMock('AlertController', alert) })
       .overrideProvider(ModalController, { useValue: modalController })
       .overrideProvider(IonRouterOutlet, { useValue: mockRouterOutlet })
-      .overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock })
-      .compileComponents();
+      .overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock });
 
-    const tastingNotes = TestBed.inject(TastingNotesService);
-    (tastingNotes.getAll as jasmine.Spy).and.returnValue(of(testData));
     fixture = TestBed.createComponent(TastingNotesPage);
     component = fixture.componentInstance;
+    const tastingNotes = TestBed.inject(TastingNotesService);
+    (tastingNotes.getAll as jasmine.Spy).and.returnValue(of(testData));
   }));
 
   it('should create', () => {

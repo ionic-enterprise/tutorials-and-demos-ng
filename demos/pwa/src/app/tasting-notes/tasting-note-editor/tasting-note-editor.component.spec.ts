@@ -1,12 +1,11 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { TastingNotesService, TeaService } from '@app/core';
 import { createTastingNotesServiceMock, createTeaServiceMock } from '@app/core/testing';
 import { Share } from '@capacitor/share';
-import { IonicModule, ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular/standalone';
 import { createOverlayControllerMock, createPlatformMock } from '@test/mocks';
 import { of } from 'rxjs';
-
 import { TastingNoteEditorComponent } from './tasting-note-editor.component';
 
 describe('TastingNoteEditorComponent', () => {
@@ -21,7 +20,7 @@ describe('TastingNoteEditorComponent', () => {
     fixture.detectChanges();
   };
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     modalController = createOverlayControllerMock('ModalController');
     platform = createPlatformMock();
     TestBed.configureTestingModule({
@@ -30,9 +29,7 @@ describe('TastingNoteEditorComponent', () => {
       .overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock })
       .overrideProvider(TeaService, { useFactory: createTeaServiceMock })
       .overrideProvider(ModalController, { useValue: modalController })
-      .overrideProvider(Platform, { useValue: platform })
-      .compileComponents();
-
+      .overrideProvider(Platform, { useValue: platform });
     fixture = TestBed.createComponent(TastingNoteEditorComponent);
     component = fixture.componentInstance;
     const tea = TestBed.inject(TeaService);
@@ -54,7 +51,7 @@ describe('TastingNoteEditorComponent', () => {
         },
       ]),
     );
-  }));
+  });
 
   it('should create', () => {
     fixture.detectChanges();

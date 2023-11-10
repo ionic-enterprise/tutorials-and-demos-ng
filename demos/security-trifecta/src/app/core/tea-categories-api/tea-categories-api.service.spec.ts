@@ -2,7 +2,6 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 import { TeaCategory } from '@app/models';
 import { environment } from '@env/environment';
-
 import { TeaCategoriesApiService } from './tea-categories-api.service';
 
 describe('TeaCategoriesApiService', () => {

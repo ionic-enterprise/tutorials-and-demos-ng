@@ -1,13 +1,11 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { provideMockStore } from '@ngrx/store/testing';
-import { IonicModule } from '@ionic/angular';
-
-import { AboutPage } from './about.page';
 import { AuthenticationService } from '@app/core';
 import { createAuthenticationServiceMock } from '@app/core/testing';
-import { Store } from '@ngrx/store';
 import { logout } from '@app/store/actions';
+import { Store } from '@ngrx/store';
+import { provideMockStore } from '@ngrx/store/testing';
+import { AboutPage } from './about.page';
 
 describe('AboutPage', () => {
   let component: AboutPage;
@@ -15,16 +13,8 @@ describe('AboutPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [AboutPage],
-      imports: [IonicModule],
-      providers: [
-        provideMockStore(),
-        {
-          provide: AuthenticationService,
-          useFactory: createAuthenticationServiceMock,
-        },
-      ],
-    }).compileComponents();
+      providers: [provideMockStore()],
+    }).overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock });
 
     fixture = TestBed.createComponent(AboutPage);
     component = fixture.componentInstance;

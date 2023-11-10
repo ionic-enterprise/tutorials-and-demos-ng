@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TastingNote } from '@app/models';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { firstValueFrom } from 'rxjs';
 import { TastingNotesApiService } from '../tasting-notes-api/tasting-notes-api.service';
 import { TastingNotesDatabaseService } from '../tasting-notes-database/tasting-notes-database.service';

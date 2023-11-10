@@ -12,7 +12,6 @@ describe('SessionService', () => {
   };
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
     service = TestBed.inject(SessionService);
   });
 

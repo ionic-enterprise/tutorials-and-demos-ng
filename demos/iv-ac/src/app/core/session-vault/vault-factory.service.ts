@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BrowserVault, Vault } from '@ionic-enterprise/identity-vault';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 
 @Injectable({
   providedIn: 'root',

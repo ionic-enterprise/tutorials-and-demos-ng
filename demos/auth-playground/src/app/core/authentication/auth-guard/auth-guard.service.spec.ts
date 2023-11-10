@@ -1,23 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { NavController } from '@ionic/angular';
-
-import { AuthGuardService } from './auth-guard.service';
 import { AuthenticationExpediterService } from '@app/core';
 import { createAuthenticationExpediterServiceMock } from '@app/core/testing';
+import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
+import { AuthGuardService } from './auth-guard.service';
 
 describe('AuthGuardService', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        AuthGuardService,
-        {
-          provide: AuthenticationExpediterService,
-          useFactory: createAuthenticationExpediterServiceMock,
-        },
-        { provide: NavController, useFactory: createNavControllerMock },
-      ],
-    });
+    TestBed.overrideProvider(AuthenticationExpediterService, {
+      useFactory: createAuthenticationExpediterServiceMock,
+    }).overrideProvider(NavController, { useFactory: createNavControllerMock });
   });
 
   it('exists', inject([AuthGuardService], (guard: AuthGuardService) => {

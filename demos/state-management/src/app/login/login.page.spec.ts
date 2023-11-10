@@ -1,12 +1,11 @@
-import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { SessionVaultService } from '@app/core';
 import { createSessionVaultServiceMock } from '@app/core/testing';
 import { login, unlockSession } from '@app/store/actions';
 import { AuthState, initialState } from '@app/store/reducers/auth.reducer';
 import { Device } from '@ionic-enterprise/identity-vault';
-import { AlertController, IonicModule, Platform } from '@ionic/angular';
+import { AlertController, Platform } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
 import { createOverlayControllerMock, createOverlayElementMock, createPlatformMock } from '@test/mocks';
@@ -17,34 +16,24 @@ describe('LoginPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     alert = createOverlayElementMock('Alert');
     TestBed.configureTestingModule({
-      declarations: [LoginPage],
-      imports: [FormsModule, IonicModule],
+      imports: [LoginPage],
       providers: [
         provideMockStore<{ auth: AuthState }>({
           initialState: { auth: initialState },
         }),
-        {
-          provide: AlertController,
-          useFactory: () => createOverlayControllerMock('AlertController', alert),
-        },
-        {
-          provide: Platform,
-          useFactory: createPlatformMock,
-        },
-        {
-          provide: SessionVaultService,
-          useFactory: createSessionVaultServiceMock,
-        },
       ],
-    }).compileComponents();
+    })
+      .overrideProvider(AlertController, { useFactory: () => createOverlayControllerMock('AlertController', alert) })
+      .overrideProvider(Platform, { useFactory: createPlatformMock })
+      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
 
     fixture = TestBed.createComponent(LoginPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

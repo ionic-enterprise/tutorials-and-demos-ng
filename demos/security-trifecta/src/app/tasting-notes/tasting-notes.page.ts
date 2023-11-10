@@ -12,20 +12,59 @@ import {
 import { TastingNote } from '@app/models';
 import { TastingNoteEditorComponent } from '@app/tasting-note-editor/tasting-note-editor.component';
 import {
-  IonicModule,
   IonRouterOutlet,
   ModalController,
   ModalOptions,
   NavController,
   ToastController,
-} from '@ionic/angular';
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { sync, logOutOutline, add } from 'ionicons/icons';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonToggle,
+  IonButton,
+  IonIcon,
+  IonContent,
+  IonList,
+  IonItemSliding,
+  IonItem,
+  IonLabel,
+  IonItemOptions,
+  IonItemOption,
+  IonFab,
+  IonFabButton,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tasting-notes',
   templateUrl: 'tasting-notes.page.html',
   styleUrls: ['tasting-notes.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, TastingNoteEditorComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    TastingNoteEditorComponent,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonToggle,
+    IonButton,
+    IonIcon,
+    IonContent,
+    IonList,
+    IonItemSliding,
+    IonItem,
+    IonLabel,
+    IonItemOptions,
+    IonItemOption,
+    IonFab,
+    IonFabButton,
+  ],
 })
 export class TastingNotesPage implements OnInit {
   notes: Array<TastingNote> = [];
@@ -38,11 +77,13 @@ export class TastingNotesPage implements OnInit {
     private preferences: PreferencesService,
     private routerOutlet: IonRouterOutlet,
     private sessionVault: SessionVaultService,
-    private sync: SyncService,
+    private syncService: SyncService,
     private toastController: ToastController,
     private tastingNotes: TastingNotesService,
     private teaCategories: TeaCategoriesService,
-  ) {}
+  ) {
+    addIcons({ sync, logOutOutline, add });
+  }
 
   async ngOnInit(): Promise<void> {
     await this.preferences.load();
@@ -80,7 +121,7 @@ export class TastingNotesPage implements OnInit {
   }
 
   async performSync(): Promise<void> {
-    await this.sync.execute();
+    await this.syncService.execute();
     await this.tastingNotes.refresh();
     this.showSuccess();
     this.notes = [...this.tastingNotes.data];

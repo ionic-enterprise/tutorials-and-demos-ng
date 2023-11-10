@@ -11,7 +11,7 @@ import {
   unlockSession,
   unlockSessionSuccess,
 } from '@app/store/actions';
-import { NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { createNavControllerMock } from '@test/mocks';
 import { Observable, of } from 'rxjs';

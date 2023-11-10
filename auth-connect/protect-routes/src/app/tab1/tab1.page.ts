@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { AuthenticationService } from './../core/authentication.service';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, ExploreContainerComponent],
+  imports: [CommonModule, ExploreContainerComponent, IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
 })
 export class Tab1Page implements OnInit {
   authenticated = false;

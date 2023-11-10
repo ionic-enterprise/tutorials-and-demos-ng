@@ -1,26 +1,25 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed, waitForAsync } from '@angular/core/testing';
-import { provideRouter } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Device } from '@ionic-enterprise/identity-vault';
-import { NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
 import { AppComponent } from './app.component';
 import { PreferencesService, SessionVaultService } from './core';
 import { createPreferencesServiceMock, createSessionVaultServiceMock } from './core/testing';
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [AppComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [provideRouter([])],
+  beforeEach(() => {
+    TestBed.overrideComponent(AppComponent, {
+      add: {
+        imports: [RouterTestingModule],
+      },
     })
       .overrideProvider(NavController, { useFactory: createNavControllerMock })
       .overrideProvider(PreferencesService, { useFactory: createPreferencesServiceMock })
-      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock })
-      .compileComponents();
-  }));
+      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);

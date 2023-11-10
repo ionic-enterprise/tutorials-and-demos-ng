@@ -1,9 +1,8 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { environment } from '@env/environment';
 import { DeviceSecurityType, Vault, VaultType } from '@ionic-enterprise/identity-vault';
 import { VaultFactoryService } from '../vault-factory/vault-factory.service';
-
 import { EncryptionService } from './encryption.service';
 
 describe('EncryptionService', () => {
@@ -31,14 +30,10 @@ describe('EncryptionService', () => {
     mockVault = jasmine.createSpyObj<Vault>('Vault', { ...vaultObject });
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [
-        {
-          provide: VaultFactoryService,
-          useValue: jasmine.createSpyObj('VaultFactoryService', {
-            create: mockVault,
-          }),
-        },
-      ],
+    }).overrideProvider(VaultFactoryService, {
+      useValue: jasmine.createSpyObj('VaultFactoryService', {
+        create: mockVault,
+      }),
     });
     httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(EncryptionService);

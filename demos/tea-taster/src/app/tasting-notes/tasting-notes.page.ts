@@ -3,16 +3,50 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNotesService } from '@app/core';
 import { TastingNote } from '@app/models';
-import { AlertController, IonicModule, IonList, IonRouterOutlet, ModalController, ModalOptions } from '@ionic/angular';
+import { AlertController, IonRouterOutlet, ModalController, ModalOptions } from '@ionic/angular/standalone';
 import { BehaviorSubject, EMPTY, mergeMap, Observable, tap } from 'rxjs';
 import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-editor.component';
+import { addIcons } from 'ionicons';
+import { add } from 'ionicons/icons';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonList,
+  IonItemSliding,
+  IonItem,
+  IonLabel,
+  IonItemOptions,
+  IonItemOption,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tasting-notes',
   templateUrl: './tasting-notes.page.html',
   styleUrls: ['./tasting-notes.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, TastingNoteEditorComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    TastingNoteEditorComponent,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonList,
+    IonItemSliding,
+    IonItem,
+    IonLabel,
+    IonItemOptions,
+    IonItemOption,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+  ],
 })
 export class TastingNotesPage implements OnInit {
   private refresh = new BehaviorSubject<void>(undefined);
@@ -24,7 +58,9 @@ export class TastingNotesPage implements OnInit {
     private modalController: ModalController,
     private routerOutlet: IonRouterOutlet,
     private tastingNotes: TastingNotesService,
-  ) {}
+  ) {
+    addIcons({ add });
+  }
 
   ngOnInit() {
     this.notes$ = this.refresh.pipe(mergeMap(() => this.tastingNotes.getAll()));

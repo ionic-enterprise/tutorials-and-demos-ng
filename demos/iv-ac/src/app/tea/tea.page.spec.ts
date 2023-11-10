@@ -4,10 +4,9 @@ import { By } from '@angular/platform-browser';
 import { TeaService } from '@app/core';
 import { createTeaServiceMock } from '@app/core/testing';
 import { Tea } from '@app/models';
-import { NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
 import { of } from 'rxjs';
-
 import { TeaPage } from './tea.page';
 
 describe('TeaPage', () => {
@@ -17,12 +16,9 @@ describe('TeaPage', () => {
 
   beforeEach(waitForAsync(() => {
     initializeTestData();
-    TestBed.configureTestingModule({
-      imports: [TeaPage],
-    })
-      .overrideProvider(TeaService, { useFactory: createTeaServiceMock })
-      .overrideProvider(NavController, { useFactory: createNavControllerMock })
-      .compileComponents();
+    TestBed.overrideProvider(TeaService, { useFactory: createTeaServiceMock }).overrideProvider(NavController, {
+      useFactory: createNavControllerMock,
+    });
 
     const tea = TestBed.inject(TeaService);
     (tea.getAll as jasmine.Spy).and.returnValue(of(teas));

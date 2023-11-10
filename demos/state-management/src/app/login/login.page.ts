@@ -1,16 +1,43 @@
+import { CommonModule } from '@angular/common';
 import { Component, NgZone, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { SessionVaultService, UnlockMode } from '@app/core';
 import { selectAuthErrorMessage } from '@app/store';
 import { login, unlockSession } from '@app/store/actions';
 import { Device } from '@ionic-enterprise/identity-vault';
-import { AlertController, Platform } from '@ionic/angular';
+import { AlertController, Platform } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { addIcons } from 'ionicons';
+import { logInOutline, lockOpenOutline, arrowRedoOutline } from 'ionicons/icons';
+import {
+  IonContent,
+  IonList,
+  IonRadioGroup,
+  IonListHeader,
+  IonLabel,
+  IonItem,
+  IonRadio,
+  IonIcon,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonContent,
+    IonList,
+    IonRadioGroup,
+    IonListHeader,
+    IonLabel,
+    IonItem,
+    IonRadio,
+    IonIcon,
+  ],
+  standalone: true,
 })
 export class LoginPage implements OnInit {
   email: string;
@@ -42,7 +69,9 @@ export class LoginPage implements OnInit {
     private sessionVault: SessionVaultService,
     private store: Store,
     private zone: NgZone,
-  ) {}
+  ) {
+    addIcons({ logInOutline, lockOpenOutline, arrowRedoOutline });
+  }
 
   async ngOnInit(): Promise<void> {
     this.errorMessage$ = this.store.select(selectAuthErrorMessage);

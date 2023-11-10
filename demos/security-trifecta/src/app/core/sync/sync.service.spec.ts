@@ -8,7 +8,6 @@ import { createTastingNotesDatabaseServiceMock } from '../tasting-notes-database
 import { TastingNotesService } from '../tasting-notes/tasting-notes.service';
 import { createTastingNotesServiceMock } from '../tasting-notes/tasting-notes.service.mock';
 import { TeaCategoriesService } from '../tea-categories/tea-categories.service';
-
 import { SyncService } from './sync.service';
 
 describe('SyncService', () => {
@@ -16,14 +15,10 @@ describe('SyncService', () => {
   let tastingNotes: Array<TastingNote>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        { provide: TastingNotesApiService, useFactory: createTastingNotesApiServiceMock },
-        { provide: TastingNotesDatabaseService, useFactory: createTastingNotesDatabaseServiceMock },
-        { provide: TastingNotesService, useFactory: createTastingNotesServiceMock },
-        { provide: TeaCategoriesService, useFactory: createTastingNotesServiceMock },
-      ],
-    });
+    TestBed.overrideProvider(TastingNotesApiService, { useFactory: createTastingNotesApiServiceMock })
+      .overrideProvider(TastingNotesDatabaseService, { useFactory: createTastingNotesDatabaseServiceMock })
+      .overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock })
+      .overrideProvider(TeaCategoriesService, { useFactory: createTastingNotesServiceMock });
     initializeTestData();
     const tastingNotesApiService = TestBed.inject(TastingNotesApiService);
     (tastingNotesApiService.remove as jasmine.Spy).and.returnValue(of(null));

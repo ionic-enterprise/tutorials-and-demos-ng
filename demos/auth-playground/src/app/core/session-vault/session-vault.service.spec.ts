@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
+import { Preferences } from '@capacitor/preferences';
 import {
   BiometricPermissionState,
   Device,
@@ -7,11 +8,10 @@ import {
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
-import { ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular/standalone';
 import { createOverlayControllerMock, createOverlayElementMock, createPlatformMock } from '@test/mocks';
 import { SessionVaultService, UnlockMode } from './session-vault.service';
 import { VaultFactoryService } from './vault-factory.service';
-import { Preferences } from '@capacitor/preferences';
 
 describe('SessionVaultService', () => {
   let modal: HTMLIonModalElement;
@@ -55,16 +55,9 @@ describe('SessionVaultService', () => {
     modal = createOverlayElementMock('Modal');
     const factory = jasmine.createSpyObj('VaultFactoryService', { create: null });
     (factory.create as jasmine.Spy).and.returnValues(preferencesVault, mockVault);
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: ModalController,
-          useValue: createOverlayControllerMock('ModalController', modal),
-        },
-        { provide: Platform, useFactory: createPlatformMock },
-        { provide: VaultFactoryService, useValue: factory },
-      ],
-    });
+    TestBed.overrideProvider(ModalController, { useValue: createOverlayControllerMock('ModalController', modal) })
+      .overrideProvider(Platform, { useFactory: createPlatformMock })
+      .overrideProvider(VaultFactoryService, { useValue: factory });
     service = TestBed.inject(SessionVaultService);
     (factory.create as jasmine.Spy).and.returnValues(preferencesVault, mockVault);
   });

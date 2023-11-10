@@ -2,14 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
-import { IonicModule, NavController, Platform } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular/standalone';
+import { IonContent } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-start',
   templateUrl: './start.page.html',
   styleUrls: ['./start.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule],
+  imports: [CommonModule, FormsModule, IonContent],
 })
 export class StartPage implements OnInit {
   constructor(

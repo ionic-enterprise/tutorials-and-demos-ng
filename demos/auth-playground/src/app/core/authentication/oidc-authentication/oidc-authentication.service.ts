@@ -10,7 +10,7 @@ import {
   CognitoProvider,
   ProviderOptions,
 } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { Authenticator } from '../authenticator';
 
 @Injectable({

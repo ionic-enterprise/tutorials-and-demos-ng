@@ -1,6 +1,6 @@
 import { Injectable, NgZone, isDevMode } from '@angular/core';
 import { Auth0Provider, AuthConnect, AuthResult, ProviderOptions } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 

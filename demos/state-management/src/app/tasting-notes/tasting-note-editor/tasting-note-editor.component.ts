@@ -1,16 +1,57 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { TastingNote, Tea } from '@app/models';
+import { RatingComponent } from '@app/shared';
 import { selectTeas } from '@app/store';
 import { noteSaved } from '@app/store/actions';
 import { Share } from '@capacitor/share';
-import { ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { addIcons } from 'ionicons';
+import { shareOutline, close } from 'ionicons/icons';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonContent,
+  IonItem,
+  IonInput,
+  IonSelect,
+  IonSelectOption,
+  IonLabel,
+  IonTextarea,
+  IonFooter,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tasting-note-editor',
   templateUrl: './tasting-note-editor.component.html',
   styleUrls: ['./tasting-note-editor.component.scss'],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RatingComponent,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonButton,
+    IonIcon,
+    IonContent,
+    IonItem,
+    IonInput,
+    IonSelect,
+    IonSelectOption,
+    IonLabel,
+    IonTextarea,
+    IonFooter,
+  ],
+  standalone: true,
 })
 export class TastingNoteEditorComponent implements OnInit {
   @Input() note: TastingNote;
@@ -27,7 +68,9 @@ export class TastingNoteEditorComponent implements OnInit {
     private modalController: ModalController,
     private platform: Platform,
     private store: Store,
-  ) {}
+  ) {
+    addIcons({ shareOutline, close });
+  }
 
   get title(): string {
     return this.note ? 'Tasting Note' : 'Add New Tasting Note';

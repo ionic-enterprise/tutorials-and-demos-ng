@@ -2,7 +2,7 @@ import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angul
 import { By } from '@angular/platform-browser';
 import { AuthenticationExpediterService, SessionVaultService } from '@app/core';
 import { createAuthenticationExpediterServiceMock, createSessionVaultServiceMock } from '@app/core/testing';
-import { NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
 import { click, setInputValue } from '@test/util';
 import { LoginPage } from './login.page';
@@ -12,14 +12,9 @@ describe('LoginPage', () => {
   let fixture: ComponentFixture<LoginPage>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [LoginPage],
-      providers: [],
-    })
-      .overrideProvider(AuthenticationExpediterService, { useFactory: createAuthenticationExpediterServiceMock })
+    TestBed.overrideProvider(AuthenticationExpediterService, { useFactory: createAuthenticationExpediterServiceMock })
       .overrideProvider(NavController, { useFactory: createNavControllerMock })
-      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock })
-      .compileComponents();
+      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
 
     fixture = TestBed.createComponent(LoginPage);
     component = fixture.componentInstance;

@@ -1,6 +1,5 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { ModalController } from '@ionic/angular';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ModalController } from '@ionic/angular/standalone';
 import { createOverlayControllerMock } from '../../../test/mocks';
 import { PinDialogComponent } from './pin-dialog.component';
 
@@ -9,17 +8,9 @@ describe('PinDialogComponent', () => {
   let fixture: ComponentFixture<PinDialogComponent>;
   let modalController: ModalController;
 
-  beforeEach(waitForAsync(() => {
-    modalController = createOverlayControllerMock('ModalController');
-    TestBed.configureTestingModule({
-      imports: [PinDialogComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-      .overrideProvider(ModalController, { useValue: modalController })
-      .compileComponents();
-  }));
-
   beforeEach(() => {
+    modalController = createOverlayControllerMock('ModalController');
+    TestBed.overrideProvider(ModalController, { useValue: modalController });
     fixture = TestBed.createComponent(PinDialogComponent);
     component = fixture.componentInstance;
   });

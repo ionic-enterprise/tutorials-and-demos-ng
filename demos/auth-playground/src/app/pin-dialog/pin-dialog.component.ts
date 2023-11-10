@@ -1,14 +1,45 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonicModule, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { close } from 'ionicons/icons';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonContent,
+  IonLabel,
+  IonFooter,
+  IonGrid,
+  IonRow,
+  IonCol,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-pin-dialog',
   templateUrl: './pin-dialog.component.html',
   styleUrls: ['./pin-dialog.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonButton,
+    IonIcon,
+    IonContent,
+    IonLabel,
+    IonFooter,
+    IonGrid,
+    IonRow,
+    IonCol,
+  ],
 })
 export class PinDialogComponent implements OnInit {
   @Input() setPasscodeMode: boolean;
@@ -21,7 +52,9 @@ export class PinDialogComponent implements OnInit {
 
   private verifyPin: string;
 
-  constructor(private modalController: ModalController) {}
+  constructor(private modalController: ModalController) {
+    addIcons({ close });
+  }
 
   get disableEnter(): boolean {
     return !(this.pin.length > 2);

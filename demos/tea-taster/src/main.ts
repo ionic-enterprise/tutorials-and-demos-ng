@@ -5,7 +5,7 @@ import { provideRouter, RouteReuseStrategy } from '@angular/router';
 import { AppComponent } from '@app/app.component';
 import { routes } from '@app/app.routes';
 import { AuthInterceptor, UnauthInterceptor } from '@app/core';
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { environment } from './environments/environment';
 
 if (environment.production) {
@@ -17,7 +17,8 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: UnauthInterceptor, multi: true },
-    importProvidersFrom(HttpClientModule, IonicModule.forRoot({})),
+    importProvidersFrom(HttpClientModule),
     provideRouter(routes),
+    provideIonicAngular({}),
   ],
 });

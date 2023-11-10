@@ -1,4 +1,4 @@
-import { NavController, Platform } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular/standalone';
 
 export const createNavControllerMock = () =>
   jasmine.createSpyObj<NavController>('NavController', ['navigateForward', 'navigateRoot']);

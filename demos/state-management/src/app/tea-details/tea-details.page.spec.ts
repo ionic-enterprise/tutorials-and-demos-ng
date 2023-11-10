@@ -1,17 +1,13 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { Tea } from '@app/models';
-import { SharedModule } from '@app/shared';
 import { selectTeas } from '@app/store';
 import { teaDetailsChangeRating } from '@app/store/actions';
 import { DataState, initialState } from '@app/store/reducers/data.reducer';
-import { IonicModule, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { createActivatedRouteMock, createNavControllerMock } from '@test/mocks';
-
 import { TeaDetailsPage } from './tea-details.page';
 
 describe('TeaDetailsPage', () => {
@@ -20,17 +16,14 @@ describe('TeaDetailsPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TeaDetailsPage],
-      imports: [IonicModule.forRoot(), FormsModule, SharedModule],
       providers: [
         provideMockStore<{ data: DataState }>({
           initialState: { data: initialState },
         }),
-        { provide: ActivatedRoute, useFactory: createActivatedRouteMock },
-        { provide: NavController, useFactory: createNavControllerMock },
       ],
-    }).compileComponents();
-
+    })
+      .overrideProvider(ActivatedRoute, { useFactory: createActivatedRouteMock })
+      .overrideProvider(NavController, { useFactory: createNavControllerMock });
     fixture = TestBed.createComponent(TeaDetailsPage);
     component = fixture.componentInstance;
   }));

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { SessionVaultService } from '../session-vault/session-vault.service';
-import { NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 
 @Injectable()
 export class UnauthInterceptor implements HttpInterceptor {

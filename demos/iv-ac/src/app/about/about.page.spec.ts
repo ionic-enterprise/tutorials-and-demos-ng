@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ModalController } from '@ionic/angular';
+import { createOverlayControllerMock } from '@test/mocks';
 import { AboutPage } from './about.page';
 
 describe('AboutPage', () => {
@@ -6,9 +8,7 @@ describe('AboutPage', () => {
   let fixture: ComponentFixture<AboutPage>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [AboutPage],
-    }).compileComponents();
+    TestBed.overrideProvider(ModalController, { useFactory: () => createOverlayControllerMock('ModalController') });
 
     fixture = TestBed.createComponent(AboutPage);
     component = fixture.componentInstance;

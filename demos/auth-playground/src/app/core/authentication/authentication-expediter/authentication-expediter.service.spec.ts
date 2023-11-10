@@ -12,13 +12,9 @@ describe('AuthenticationExpediterService', () => {
   let service: AuthenticationExpediterService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        { provide: OIDCAuthenticationService, useFactory: createOIDCAuthenticationServiceMock },
-        { provide: BasicAuthenticationService, useFactory: createBasicAuthenticationServiceMock },
-        { provide: SessionVaultService, useFactory: createSessionVaultServiceMock },
-      ],
-    });
+    TestBed.overrideProvider(OIDCAuthenticationService, { useFactory: createOIDCAuthenticationServiceMock })
+      .overrideProvider(BasicAuthenticationService, { useFactory: createBasicAuthenticationServiceMock })
+      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
     service = TestBed.inject(AuthenticationExpediterService);
   });
 

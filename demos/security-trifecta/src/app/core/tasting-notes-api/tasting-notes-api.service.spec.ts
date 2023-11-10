@@ -2,7 +2,6 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 import { TastingNote } from '@app/models';
 import { environment } from '@env/environment';
-
 import { TastingNotesApiService } from './tasting-notes-api.service';
 
 describe('TastingNotesApiService', () => {

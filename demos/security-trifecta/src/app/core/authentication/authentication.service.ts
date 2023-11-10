@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { Auth0Provider, AuthConnect, AuthResult, CognitoProvider, TokenType } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 
 @Injectable({

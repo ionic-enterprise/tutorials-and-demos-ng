@@ -1,9 +1,7 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ModalController } from '@ionic/angular';
-
-import { PinDialogComponent } from './pin-dialog.component';
+import { ModalController } from '@ionic/angular/standalone';
 import { createOverlayControllerMock } from '../../../test/mocks';
+import { PinDialogComponent } from './pin-dialog.component';
 
 describe('PinDialogComponent', () => {
   let component: PinDialogComponent;
@@ -11,16 +9,8 @@ describe('PinDialogComponent', () => {
 
   const modalController = createOverlayControllerMock('ModalController');
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [PinDialogComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-      .overrideProvider(ModalController, { useValue: modalController })
-      .compileComponents();
-  });
-
   beforeEach(() => {
+    TestBed.overrideProvider(ModalController, { useValue: modalController });
     (modalController.dismiss as jasmine.Spy).calls.reset();
     fixture = TestBed.createComponent(PinDialogComponent);
     component = fixture.componentInstance;

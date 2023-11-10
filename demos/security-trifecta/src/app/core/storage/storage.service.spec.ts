@@ -1,32 +1,25 @@
 import { TestBed } from '@angular/core/testing';
 import { KeyValueStorage } from '@ionic-enterprise/secure-storage/ngx';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { createPlatformMock } from '@test/mocks';
 import { EncryptionService } from '../encryption/encryption.service';
 import { createEncryptionServiceMock } from '../testing';
-
 import { StorageService } from './storage.service';
 
 describe('StorageService', () => {
   let service: StorageService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        { provide: EncryptionService, useFactory: createEncryptionServiceMock },
-        {
-          provide: KeyValueStorage,
-          useFactory: () =>
-            jasmine.createSpyObj('KeyValueStorage', {
-              create: Promise.resolve(),
-              get: Promise.resolve(),
-              set: Promise.resolve(),
-            }),
-        },
-        { provide: Platform, useFactory: createPlatformMock },
-      ],
-    });
-
+    TestBed.overrideProvider(EncryptionService, { useFactory: createEncryptionServiceMock })
+      .overrideProvider(KeyValueStorage, {
+        useFactory: () =>
+          jasmine.createSpyObj('KeyValueStorage', {
+            create: Promise.resolve(),
+            get: Promise.resolve(),
+            set: Promise.resolve(),
+          }),
+      })
+      .overrideProvider(Platform, { useFactory: createPlatformMock });
     service = TestBed.inject(StorageService);
   });
 

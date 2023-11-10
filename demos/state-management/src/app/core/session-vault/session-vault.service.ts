@@ -10,7 +10,7 @@ import {
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
-import { ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { VaultFactoryService } from './vault-factory.service';
 

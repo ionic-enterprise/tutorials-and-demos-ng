@@ -1,26 +1,20 @@
-import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { SessionVaultService } from '@app/core';
 import { createSessionVaultServiceMock } from '@app/core/testing';
 import { click } from '@test/util';
-
 import { UnlockCardComponent } from './unlock-card.component';
 
 describe('UnlockCardComponent', () => {
   let component: UnlockCardComponent;
   let fixture: ComponentFixture<UnlockCardComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [UnlockCardComponent],
-    })
-      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock })
-      .compileComponents();
-
+  beforeEach(() => {
+    TestBed.overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
     fixture = TestBed.createComponent(UnlockCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('renders', () => {
     expect(component).toBeTruthy();

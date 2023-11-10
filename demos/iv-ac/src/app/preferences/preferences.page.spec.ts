@@ -1,10 +1,8 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AuthenticationService, SessionVaultService } from '@app/core';
 import { createAuthenticationServiceMock, createSessionVaultServiceMock } from '@app/core/testing';
-import { IonicModule, NavController } from '@ionic/angular';
-import { createNavControllerMock } from '@test/mocks';
-
+import { ModalController, NavController } from '@ionic/angular/standalone';
+import { createNavControllerMock, createOverlayControllerMock } from '@test/mocks';
 import { PreferencesPage } from './preferences.page';
 
 describe('PreferencesPage', () => {
@@ -12,14 +10,10 @@ describe('PreferencesPage', () => {
   let fixture: ComponentFixture<PreferencesPage>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot(), HttpClientTestingModule],
-      providers: [
-        { provide: AuthenticationService, useFactory: createAuthenticationServiceMock },
-        { provide: NavController, useFactory: createNavControllerMock },
-        { provide: SessionVaultService, useFactory: createSessionVaultServiceMock },
-      ],
-    }).compileComponents();
+    TestBed.overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock })
+      .overrideProvider(ModalController, { useFactory: () => createOverlayControllerMock('ModalController') })
+      .overrideProvider(NavController, { useFactory: createNavControllerMock })
+      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
 
     fixture = TestBed.createComponent(PreferencesPage);
     component = fixture.componentInstance;

@@ -1,20 +1,15 @@
-import { createAuthenticationServiceMock } from './../core/authentication.service.mock';
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-
-import { Tab1Page } from './tab1.page';
-import { AuthenticationService } from '../core/authentication.service';
 import { By } from '@angular/platform-browser';
+import { AuthenticationService } from '../core/authentication.service';
+import { createAuthenticationServiceMock } from './../core/authentication.service.mock';
+import { Tab1Page } from './tab1.page';
 
 describe('Tab1Page', () => {
   let component: Tab1Page;
   let fixture: ComponentFixture<Tab1Page>;
 
-  beforeEach(async () => {
-    TestBed.configureTestingModule({
-      imports: [Tab1Page],
-    })
-      .overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock })
-      .compileComponents();
+  beforeEach(() => {
+    TestBed.overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock });
     fixture = TestBed.createComponent(Tab1Page);
     component = fixture.componentInstance;
   });

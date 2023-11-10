@@ -3,14 +3,45 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationExpediterService, SessionVaultService } from '@app/core';
 import { AuthVendor } from '@app/models';
-import { IonicModule, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { logoAmazon, logoMicrosoft } from 'ionicons/icons';
+import {
+  IonContent,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
+  IonList,
+  IonItem,
+  IonInput,
+  IonLabel,
+  IonButton,
+  IonIcon,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonContent,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardSubtitle,
+    IonCardContent,
+    IonList,
+    IonItem,
+    IonInput,
+    IonLabel,
+    IonButton,
+    IonIcon,
+  ],
 })
 export class LoginPage {
   email: string;
@@ -21,7 +52,9 @@ export class LoginPage {
     private auth: AuthenticationExpediterService,
     private navController: NavController,
     private vault: SessionVaultService,
-  ) {}
+  ) {
+    addIcons({ logoAmazon, logoMicrosoft });
+  }
 
   async basicSignIn(): Promise<void> {
     this.errorMessage = '';

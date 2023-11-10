@@ -1,9 +1,9 @@
-import { fakeAsync, tick, waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { TastingNotesService } from '@app/core';
 import { createTastingNotesServiceMock } from '@app/core/testing';
 import { TastingNote } from '@app/models';
-import { AlertController, IonicModule, IonRouterOutlet, ModalController } from '@ionic/angular';
+import { AlertController, IonRouterOutlet, ModalController } from '@ionic/angular/standalone';
 import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
 import { of } from 'rxjs';
 import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-editor.component';
@@ -21,7 +21,7 @@ describe('TastingNotesPage', () => {
     nativeEl: {},
   };
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     initializeTestData();
     alert = createOverlayElementMock('Alert');
     modal = createOverlayElementMock('Modal');
@@ -32,14 +32,13 @@ describe('TastingNotesPage', () => {
       .overrideProvider(AlertController, { useFactory: () => createOverlayControllerMock('AlertController', alert) })
       .overrideProvider(ModalController, { useValue: modalController })
       .overrideProvider(IonRouterOutlet, { useValue: mockRouterOutlet })
-      .overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock })
-      .compileComponents();
+      .overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock });
 
     const tastingNotes = TestBed.inject(TastingNotesService);
     (tastingNotes.getAll as jasmine.Spy).and.returnValue(of(testData));
     fixture = TestBed.createComponent(TastingNotesPage);
     component = fixture.componentInstance;
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

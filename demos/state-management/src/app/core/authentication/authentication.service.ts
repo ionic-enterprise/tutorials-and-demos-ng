@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { User } from '@app/models';
 import { mobileAuthConfig, webAuthConfig } from '@env/environment';
 import { Auth0Provider, AuthConnect, AuthResult, ProviderOptions, TokenType } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 

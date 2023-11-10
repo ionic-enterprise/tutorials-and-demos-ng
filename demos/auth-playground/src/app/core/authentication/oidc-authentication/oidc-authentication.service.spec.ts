@@ -11,7 +11,7 @@ import {
   CognitoProvider,
   ProviderOptions,
 } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { createPlatformMock } from '@test/mocks';
 import { OIDCAuthenticationService } from './oidc-authentication.service';
 
@@ -41,11 +41,8 @@ const builtAuthResult = {
       spyOn(AuthConnect, 'setup').and.callFake(() => Promise.resolve());
       const platform = createPlatformMock();
       (platform.is as jasmine.Spy).and.returnValue(isNative);
-      TestBed.configureTestingModule({
-        providers: [
-          { provide: Platform, useValue: platform },
-          { provide: SessionVaultService, useFactory: createSessionVaultServiceMock },
-        ],
+      TestBed.overrideProvider(Platform, { useValue: platform }).overrideProvider(SessionVaultService, {
+        useFactory: createSessionVaultServiceMock,
       });
       service = TestBed.inject(OIDCAuthenticationService);
     });

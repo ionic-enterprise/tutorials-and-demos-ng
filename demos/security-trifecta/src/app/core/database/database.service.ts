@@ -1,6 +1,6 @@
 import { DbTransaction, SQLite, SQLiteObject } from '@ionic-enterprise/secure-storage/ngx';
 import { Injectable } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { EncryptionService } from '../encryption/encryption.service';
 
 interface Column {

@@ -8,7 +8,7 @@ import {
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
-import { ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular/standalone';
 import { createOverlayControllerMock, createOverlayElementMock, createPlatformMock } from '@test/mocks';
 import { VaultFactoryService } from '../vault-factory/vault-factory.service';
 import { SessionVaultService } from './session-vault.service';
@@ -51,21 +51,13 @@ describe('SessionVaultService', () => {
       deviceSecurityType: DeviceSecurityType.None,
     };
     modal = createOverlayElementMock('Modal');
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: ModalController,
-          useValue: createOverlayControllerMock('ModalController', modal),
-        },
-        { provide: Platform, useFactory: createPlatformMock },
-        {
-          provide: VaultFactoryService,
-          useValue: jasmine.createSpyObj('VaultFactoryService', {
-            create: mockVault,
-          }),
-        },
-      ],
-    });
+    TestBed.overrideProvider(ModalController, { useValue: createOverlayControllerMock('ModalController', modal) })
+      .overrideProvider(Platform, { useFactory: createPlatformMock })
+      .overrideProvider(VaultFactoryService, {
+        useValue: jasmine.createSpyObj('VaultFactoryService', {
+          create: mockVault,
+        }),
+      });
     service = TestBed.inject(SessionVaultService);
   });
 

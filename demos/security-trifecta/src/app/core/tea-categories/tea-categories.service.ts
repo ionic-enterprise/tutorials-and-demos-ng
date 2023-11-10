@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TeaCategory } from '@app/models';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { firstValueFrom } from 'rxjs';
 import { TeaCategoriesApiService } from '../tea-categories-api/tea-categories-api.service';
 import { TeaCategoriesDatabaseService } from '../tea-categories-database/tea-categories-database.service';

@@ -2,15 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Device } from '@ionic-enterprise/identity-vault';
-import { IonicModule, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { SessionVaultService } from './core';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
   constructor(

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { Auth0Provider, AuthConnect } from '@ionic-enterprise/auth';
-import { ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
 import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 import { createSessionVaultServiceMock } from '../testing';

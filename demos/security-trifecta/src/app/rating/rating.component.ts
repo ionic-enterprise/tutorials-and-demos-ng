@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, forwardRef, Input, HostBinding } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonIcon } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { star, starOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-rating',
@@ -15,13 +17,15 @@ import { IonicModule } from '@ionic/angular';
     },
   ],
   standalone: true,
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonIcon],
 })
 export class RatingComponent implements ControlValueAccessor {
   @Input() rating: number;
   @Input() disabled = false;
 
-  constructor() {}
+  constructor() {
+    addIcons({ star, starOutline });
+  }
 
   @HostBinding('style.opacity')
   get opacity(): number {

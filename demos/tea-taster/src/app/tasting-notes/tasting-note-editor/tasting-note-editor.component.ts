@@ -5,15 +5,49 @@ import { TastingNotesService, TeaService } from '@app/core';
 import { TastingNote, Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
 import { Share } from '@capacitor/share';
-import { IonicModule, ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular/standalone';
 import { Observable, of, tap } from 'rxjs';
+import { addIcons } from 'ionicons';
+import { shareOutline } from 'ionicons/icons';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonContent,
+  IonItem,
+  IonInput,
+  IonSelect,
+  IonSelectOption,
+  IonLabel,
+  IonTextarea,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tasting-note-editor',
   templateUrl: './tasting-note-editor.component.html',
   styleUrls: ['./tasting-note-editor.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, RatingComponent, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RatingComponent,
+    ReactiveFormsModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonButton,
+    IonIcon,
+    IonContent,
+    IonItem,
+    IonInput,
+    IonSelect,
+    IonSelectOption,
+    IonLabel,
+    IonTextarea,
+  ],
 })
 export class TastingNoteEditorComponent implements OnInit {
   @Input()
@@ -50,7 +84,9 @@ export class TastingNoteEditorComponent implements OnInit {
     private platform: Platform,
     private tastingNotes: TastingNotesService,
     private tea: TeaService,
-  ) {}
+  ) {
+    addIcons({ shareOutline });
+  }
 
   close() {
     this.modalController.dismiss();

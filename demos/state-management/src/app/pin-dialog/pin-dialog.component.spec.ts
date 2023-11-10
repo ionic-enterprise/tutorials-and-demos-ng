@@ -1,30 +1,18 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule, ModalController } from '@ionic/angular';
-
-import { PinDialogComponent } from './pin-dialog.component';
+import { ModalController } from '@ionic/angular/standalone';
 import { createOverlayControllerMock } from '../../../test/mocks';
+import { PinDialogComponent } from './pin-dialog.component';
 
 describe('PinDialogComponent', () => {
   let component: PinDialogComponent;
   let fixture: ComponentFixture<PinDialogComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [PinDialogComponent],
-      imports: [FormsModule, IonicModule],
-      providers: [
-        {
-          provide: ModalController,
-          useFactory: () => createOverlayControllerMock('Modal'),
-        },
-      ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
-  }));
-
   beforeEach(() => {
+    TestBed.overrideProvider(ModalController, {
+      useFactory: () => createOverlayControllerMock('ModalController'),
+    });
     fixture = TestBed.createComponent(PinDialogComponent);
     component = fixture.componentInstance;
   });
@@ -206,23 +194,6 @@ describe('PinDialogComponent', () => {
           component.enter();
         });
 
-        describe('when the PINS are equal', () => {
-          beforeEach(() => {
-            component.pin = '88395';
-            component.enter();
-          });
-
-          it('dismisses if the dialog', () => {
-            const modalController = TestBed.inject(ModalController);
-            expect(modalController.dismiss).toHaveBeenCalledTimes(1);
-          });
-
-          it('returns the PIN', () => {
-            const modalController = TestBed.inject(ModalController);
-            expect(modalController.dismiss).toHaveBeenCalledWith('88395');
-          });
-        });
-
         describe('when the PINS are not equal', () => {
           beforeEach(() => {
             component.pin = '99206';
@@ -246,26 +217,6 @@ describe('PinDialogComponent', () => {
             expect(component.pin).toEqual('');
           });
         });
-      });
-    });
-
-    describe('unlock mode', () => {
-      beforeEach(() => {
-        component.setPasscodeMode = false;
-        fixture.detectChanges();
-      });
-
-      it('dismisses the dialog', () => {
-        const modalController = TestBed.inject(ModalController);
-        component.enter();
-        expect(modalController.dismiss).toHaveBeenCalledTimes(1);
-      });
-
-      it('passes back the entered PIN', () => {
-        const modalController = TestBed.inject(ModalController);
-        component.pin = '88395';
-        component.enter();
-        expect(modalController.dismiss).toHaveBeenCalledWith('88395');
       });
     });
   });

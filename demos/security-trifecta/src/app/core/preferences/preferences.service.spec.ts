@@ -7,9 +7,7 @@ describe('PreferencesService', () => {
   let service: PreferencesService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [{ provide: StorageService, useFactory: createStorageServiceMock }],
-    });
+    TestBed.overrideProvider(StorageService, { useFactory: createStorageServiceMock });
     service = TestBed.inject(PreferencesService);
   });
 

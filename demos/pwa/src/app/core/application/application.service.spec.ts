@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { SwUpdate } from '@angular/service-worker';
-import { AlertController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular/standalone';
 import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
 import { Subject } from 'rxjs';
 import { ApplicationService } from './application.service';

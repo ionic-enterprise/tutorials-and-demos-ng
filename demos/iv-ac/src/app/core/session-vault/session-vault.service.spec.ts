@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
 import { DeviceSecurityType, IdentityVaultConfig, Vault, VaultType } from '@ionic-enterprise/identity-vault';
-import { ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular/standalone';
 import { createOverlayControllerMock, createOverlayElementMock, createPlatformMock } from '@test/mocks';
 import { SessionVaultService, UnlockMode } from './session-vault.service';
 import { VaultFactoryService } from './vault-factory.service';

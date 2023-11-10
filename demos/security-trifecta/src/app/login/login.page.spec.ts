@@ -1,9 +1,8 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { SessionVaultService, SyncService } from '@app/core';
 import { createSessionVaultServiceMock, createSyncServiceMock } from '@app/core/testing';
-import { IonicModule, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
 import { LoginPage } from './login.page';
 
@@ -11,14 +10,10 @@ describe('LoginPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [LoginPage, HttpClientTestingModule, IonicModule],
-    })
-      .overrideProvider(NavController, { useFactory: createNavControllerMock })
+  beforeEach(() => {
+    TestBed.overrideProvider(NavController, { useFactory: createNavControllerMock })
       .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock })
-      .overrideProvider(SyncService, { useFactory: createSyncServiceMock })
-      .compileComponents();
+      .overrideProvider(SyncService, { useFactory: createSyncServiceMock });
   });
 
   const buildComponent = (sessionIsLocked: boolean) => {

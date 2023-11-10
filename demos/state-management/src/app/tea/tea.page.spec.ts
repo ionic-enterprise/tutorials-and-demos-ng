@@ -5,7 +5,7 @@ import { Tea } from '@app/models';
 import { selectTeas } from '@app/store';
 import { AuthState, initialState as initialAuthState } from '@app/store/reducers/auth.reducer';
 import { DataState, initialState as initialDataState } from '@app/store/reducers/data.reducer';
-import { IonicModule, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { createNavControllerMock } from '@test/mocks';
@@ -19,15 +19,12 @@ describe('TeaPage', () => {
   beforeEach(waitForAsync(() => {
     initializeTestData();
     TestBed.configureTestingModule({
-      declarations: [TeaPage],
-      imports: [IonicModule.forRoot()],
       providers: [
         provideMockStore<{ auth: AuthState; data: DataState }>({
           initialState: { auth: initialAuthState, data: initialDataState },
         }),
-        { provide: NavController, useFactory: createNavControllerMock },
       ],
-    }).compileComponents();
+    }).overrideProvider(NavController, { useFactory: createNavControllerMock });
 
     const store = TestBed.inject(Store) as MockStore;
     store.overrideSelector(selectTeas, teas);

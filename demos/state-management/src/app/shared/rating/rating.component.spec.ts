@@ -1,12 +1,12 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-
 import { RatingComponent } from './rating.component';
 
 @Component({
-  template: ` <app-rating [(ngModel)]="rating" [disabled]="disabled" (ngModelChange)="onChange()"> </app-rating>`,
+  template: `<app-rating [(ngModel)]="rating" [disabled]="disabled" (ngModelChange)="onChange()"> </app-rating>`,
+  standalone: true,
+  imports: [FormsModule, RatingComponent],
 })
 class TestHostComponent {
   disabled = false;
@@ -23,11 +23,6 @@ describe('RatingComponent', () => {
   let fixture: ComponentFixture<TestHostComponent>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [RatingComponent, TestHostComponent],
-      imports: [FormsModule, IonicModule],
-    }).compileComponents();
-
     fixture = TestBed.createComponent(TestHostComponent);
     hostComponent = fixture.componentInstance;
     ratingEl = fixture.nativeElement.querySelector('app-rating');

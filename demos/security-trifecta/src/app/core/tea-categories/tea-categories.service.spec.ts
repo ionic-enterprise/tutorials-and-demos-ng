@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { TeaCategory } from '@app/models';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { createPlatformMock } from '@test/mocks';
 import { of } from 'rxjs';
 import { TeaCategoriesApiService } from '../tea-categories-api/tea-categories-api.service';
@@ -14,13 +14,9 @@ describe('TeaCategoriesService', () => {
   let teaCategories: Array<TeaCategory>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        { provide: Platform, useFactory: createPlatformMock },
-        { provide: TeaCategoriesApiService, useFactory: createTeaCategoriesApiServiceMock },
-        { provide: TeaCategoriesDatabaseService, useFactory: createTeaCategoriesDatabaseServiceMock },
-      ],
-    });
+    TestBed.overrideProvider(Platform, { useFactory: createPlatformMock })
+      .overrideProvider(TeaCategoriesApiService, { useFactory: createTeaCategoriesApiServiceMock })
+      .overrideProvider(TeaCategoriesDatabaseService, { useFactory: createTeaCategoriesDatabaseServiceMock });
     initializeTestData();
     const teaCategoriesApiService = TestBed.inject(TeaCategoriesApiService);
     const teaCategoriesDatabaseService = TestBed.inject(TeaCategoriesDatabaseService);

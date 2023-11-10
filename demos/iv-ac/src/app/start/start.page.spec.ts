@@ -1,9 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { SessionVaultService } from '@app/core';
 import { createSessionVaultServiceMock } from '@app/core/testing';
-import { IonicModule, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
-
 import { StartPage } from './start.page';
 
 describe('StartPage', () => {
@@ -11,13 +10,9 @@ describe('StartPage', () => {
   let fixture: ComponentFixture<StartPage>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot()],
-      providers: [
-        { provide: NavController, useFactory: createNavControllerMock },
-        { provide: SessionVaultService, useFactory: createSessionVaultServiceMock },
-      ],
-    }).compileComponents();
+    TestBed.overrideProvider(NavController, {
+      useFactory: createNavControllerMock,
+    }).overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
 
     fixture = TestBed.createComponent(StartPage);
     component = fixture.componentInstance;

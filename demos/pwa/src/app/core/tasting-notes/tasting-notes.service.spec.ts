@@ -1,8 +1,7 @@
-import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-
-import { TastingNotesService } from './tasting-notes.service';
+import { TestBed } from '@angular/core/testing';
 import { environment } from '@env/environment';
+import { TastingNotesService } from './tasting-notes.service';
 
 describe('TastingNotesService', () => {
   let httpTestingController: HttpTestingController;

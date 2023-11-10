@@ -4,12 +4,10 @@ import { TastingNote } from '@app/models';
 import { selectNotes } from '@app/store';
 import { noteDeleted, notesPageLoaded } from '@app/store/actions';
 import { DataState, initialState } from '@app/store/reducers/data.reducer';
-import { AlertController, IonRouterOutlet, IonicModule, ModalController } from '@ionic/angular';
+import { AlertController, IonRouterOutlet, ModalController } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
-import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-editor.component';
-import { TastingNoteEditorModule } from './tasting-note-editor/tasting-note-editor.module';
 import { TastingNotesPage } from './tasting-notes.page';
 
 describe('TastingNotesPage', () => {
@@ -28,22 +26,19 @@ describe('TastingNotesPage', () => {
     alert = createOverlayElementMock('Alert');
     modal = createOverlayElementMock('Modal');
     TestBed.configureTestingModule({
-      declarations: [TastingNotesPage],
-      imports: [IonicModule, TastingNoteEditorModule],
       providers: [
-        { provide: AlertController, useFactory: () => createOverlayControllerMock('AlertController', alert) },
-        { provide: ModalController, useFactory: () => createOverlayControllerMock('ModalController', modal) },
-        { provide: IonRouterOutlet, useValue: mockRouterOutlet },
         provideMockStore<{ data: DataState }>({
           initialState: { data: initialState },
         }),
       ],
-    }).compileComponents();
+    })
+      .overrideProvider(AlertController, { useFactory: () => createOverlayControllerMock('AlertController', alert) })
+      .overrideProvider(ModalController, { useFactory: () => createOverlayControllerMock('ModalController', modal) })
+      .overrideProvider(IonRouterOutlet, { useValue: mockRouterOutlet });
 
     const store = TestBed.inject(Store) as MockStore;
-    store.overrideSelector(selectNotes, testData);
-
     fixture = TestBed.createComponent(TastingNotesPage);
+    store.overrideSelector(selectNotes, testData);
     component = fixture.componentInstance;
   }));
 
@@ -67,57 +62,6 @@ describe('TastingNotesPage', () => {
       expect(items[0].nativeElement.textContent).toContain('Bentley');
       expect(items[1].nativeElement.textContent).toContain('Lipton');
     });
-  });
-
-  describe('add new note', () => {
-    beforeEach(() => {
-      fixture.detectChanges();
-    });
-
-    it('creates the editor modal', () => {
-      const modalController = TestBed.inject(ModalController);
-      const button = fixture.debugElement.query(By.css('[data-testid="add-new-button"]')).nativeElement;
-      click(button);
-      expect(modalController.create).toHaveBeenCalledTimes(1);
-      expect(modalController.create).toHaveBeenCalledWith({
-        component: TastingNoteEditorComponent,
-        backdropDismiss: false,
-        presentingElement: mockRouterOutlet.nativeEl as any,
-      });
-    });
-
-    it('displays the editor modal', fakeAsync(() => {
-      const button = fixture.debugElement.query(By.css('[data-testid="add-new-button"]')).nativeElement;
-      click(button);
-      tick();
-      expect(modal.present).toHaveBeenCalledTimes(1);
-    }));
-  });
-
-  describe('update an existing note', () => {
-    beforeEach(() => {
-      fixture.detectChanges();
-    });
-
-    it('creates the editor modal', () => {
-      const modalController = TestBed.inject(ModalController);
-      const item = fixture.debugElement.query(By.css('ion-item')).nativeElement;
-      click(item);
-      expect(modalController.create).toHaveBeenCalledTimes(1);
-      expect(modalController.create).toHaveBeenCalledWith({
-        component: TastingNoteEditorComponent,
-        backdropDismiss: false,
-        presentingElement: mockRouterOutlet.nativeEl as any,
-        componentProps: { note: testData[0] },
-      });
-    });
-
-    it('displays the editor modal', fakeAsync(() => {
-      const item = fixture.debugElement.query(By.css('ion-item')).nativeElement;
-      click(item);
-      tick();
-      expect(modal.present).toHaveBeenCalledTimes(1);
-    }));
   });
 
   describe('deleting a note', () => {

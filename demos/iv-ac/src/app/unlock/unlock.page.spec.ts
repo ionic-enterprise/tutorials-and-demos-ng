@@ -1,9 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AuthenticationService, SessionVaultService } from '@app/core';
 import { createAuthenticationServiceMock, createSessionVaultServiceMock } from '@app/core/testing';
-import { IonicModule, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
-
 import { UnlockPage } from './unlock.page';
 
 describe('UnlockPage', () => {
@@ -11,14 +10,9 @@ describe('UnlockPage', () => {
   let fixture: ComponentFixture<UnlockPage>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot()],
-      providers: [
-        { provide: AuthenticationService, useFactory: createAuthenticationServiceMock },
-        { provide: NavController, useFactory: createNavControllerMock },
-        { provide: SessionVaultService, useFactory: createSessionVaultServiceMock },
-      ],
-    }).compileComponents();
+    TestBed.overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock })
+      .overrideProvider(NavController, { useFactory: createNavControllerMock })
+      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
 
     fixture = TestBed.createComponent(UnlockPage);
     component = fixture.componentInstance;

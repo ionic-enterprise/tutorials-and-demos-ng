@@ -6,7 +6,6 @@ import { createTeaServiceMock } from '@app/core/testing';
 import { Tea } from '@app/models';
 import { createActivatedRouteMock } from '@test/mocks';
 import { of } from 'rxjs';
-
 import { TeaDetailsPage } from './tea-details.page';
 
 describe('TeaDetailsPage', () => {
@@ -14,12 +13,9 @@ describe('TeaDetailsPage', () => {
   let fixture: ComponentFixture<TeaDetailsPage>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [TeaDetailsPage],
-    })
-      .overrideProvider(ActivatedRoute, { useFactory: createActivatedRouteMock })
-      .overrideProvider(TeaService, { useFactory: createTeaServiceMock })
-      .compileComponents();
+    TestBed.overrideProvider(ActivatedRoute, { useFactory: createActivatedRouteMock }).overrideProvider(TeaService, {
+      useFactory: createTeaServiceMock,
+    });
 
     fixture = TestBed.createComponent(TeaDetailsPage);
     component = fixture.componentInstance;

@@ -30,11 +30,6 @@
                 "input": "src/assets",
                 "output": "assets"
               },
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
-              },
               "src/manifest.webmanifest"
             ],
             "styles": ["src/theme/variables.scss", "src/global.scss"],
@@ -141,7 +136,8 @@
   },
   "cli": {
     "schematicCollections": ["@ionic/angular-toolkit"],
-    "analytics": false
+    "analytics": false,
+    "packageManager": "pnpm"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

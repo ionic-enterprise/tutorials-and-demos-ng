@@ -19,8 +19,7 @@ describe('BasicAuthenticationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [{ provide: SessionVaultService, useFactory: createSessionVaultServiceMock }],
-    });
+    }).overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
     httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(BasicAuthenticationService);
   });

@@ -18,7 +18,7 @@ import {
 } from '@app/core/testing';
 import { TastingNote } from '@app/models';
 import { TastingNoteEditorComponent } from '@app/tasting-note-editor/tasting-note-editor.component';
-import { IonRouterOutlet, ModalController, NavController, ToastController } from '@ionic/angular';
+import { IonRouterOutlet, ModalController, NavController, ToastController } from '@ionic/angular/standalone';
 import { createNavControllerMock, createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
 import { click } from '@test/util';
 import { TastingNotesPage } from './tasting-notes.page';
@@ -42,11 +42,7 @@ describe('TastingNotesPage', () => {
     toast = createOverlayElementMock('Toast');
     toastController = createOverlayControllerMock('TaastController', toast);
 
-    await TestBed.configureTestingModule({
-      imports: [TastingNotesPage],
-      providers: [],
-    })
-      .overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock })
+    await TestBed.overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock })
       .overrideProvider(IonRouterOutlet, { useValue: mockRouterOutlet })
       .overrideProvider(ModalController, { useValue: modalController })
       .overrideProvider(NavController, { useFactory: createNavControllerMock })

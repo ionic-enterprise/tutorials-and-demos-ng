@@ -8,7 +8,7 @@ import {
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
-import { ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
 import { createOverlayControllerMock, createOverlayElementMock, createPlatformMock } from '@test/mocks';

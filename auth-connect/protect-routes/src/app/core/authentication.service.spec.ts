@@ -17,7 +17,7 @@ describe('AuthenticationService', () => {
     spyOn(AuthConnect, 'login').and.resolveTo(testAuthResult);
     spyOn(AuthConnect, 'logout').and.resolveTo();
     spyOn(AuthConnect, 'setup').and.resolveTo();
-    TestBed.configureTestingModule({}).overrideProvider(SessionService, { useFactory: createSessionServiceMock });
+    TestBed.overrideProvider(SessionService, { useFactory: createSessionServiceMock });
     service = TestBed.inject(AuthenticationService);
   });
 

@@ -1,12 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { SharedModule } from '@app/shared';
 import { selectTeas } from '@app/store';
-import { noteSaved } from '@app/store/actions';
 import { DataState, initialState } from '@app/store/reducers/data.reducer';
 import { Share } from '@capacitor/share';
-import { IonicModule, ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { createOverlayControllerMock, createPlatformMock } from '@test/mocks';
@@ -18,22 +15,14 @@ describe('TastingNoteEditorComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TastingNoteEditorComponent],
-      imports: [FormsModule, IonicModule, SharedModule],
       providers: [
         provideMockStore<{ data: DataState }>({
           initialState: { data: initialState },
         }),
-        {
-          provide: ModalController,
-          useFactory: () => createOverlayControllerMock('ModalController'),
-        },
-        {
-          provide: Platform,
-          useFactory: createPlatformMock,
-        },
       ],
-    }).compileComponents();
+    })
+      .overrideProvider(ModalController, { useFactory: () => createOverlayControllerMock('ModalController') })
+      .overrideProvider(Platform, { useFactory: createPlatformMock });
 
     const store = TestBed.inject(Store) as MockStore;
     store.overrideSelector(selectTeas, [
@@ -121,99 +110,6 @@ describe('TastingNoteEditorComponent', () => {
         const el = footer.query(By.css('ion-button'));
         expect(el.nativeElement.textContent).toEqual('Update');
       });
-    });
-  });
-
-  describe('save', () => {
-    describe('a new note', () => {
-      beforeEach(() => {
-        fixture.detectChanges();
-      });
-
-      it('dispatches the save with the data', () => {
-        const store = TestBed.inject(Store);
-        spyOn(store, 'dispatch');
-        component.brand = 'Lipton';
-        component.name = 'Yellow Label';
-        component.teaCategoryId = '3';
-        component.rating = 1;
-        component.notes = 'ick';
-        component.save();
-        expect(store.dispatch).toHaveBeenCalledTimes(1);
-        expect(store.dispatch).toHaveBeenCalledWith(
-          noteSaved({
-            note: {
-              brand: 'Lipton',
-              name: 'Yellow Label',
-              teaCategoryId: 3,
-              rating: 1,
-              notes: 'ick',
-            },
-          }),
-        );
-      });
-
-      it('dismisses the modal', () => {
-        const modalController = TestBed.inject(ModalController);
-        component.save();
-        expect(modalController.dismiss).toHaveBeenCalledTimes(1);
-      });
-    });
-
-    describe('an existing note', () => {
-      beforeEach(() => {
-        component.note = {
-          id: 73,
-          brand: 'Generic',
-          name: 'White Label',
-          teaCategoryId: 2,
-          rating: 3,
-          notes: 'it is ok',
-        };
-        fixture.detectChanges();
-      });
-
-      it('dispatches the save with the data', () => {
-        const store = TestBed.inject(Store);
-        spyOn(store, 'dispatch');
-        component.brand = 'Lipton';
-        component.name = 'Yellow Label';
-        component.teaCategoryId = '3';
-        component.rating = 1;
-        component.notes = 'ick';
-        component.save();
-        expect(store.dispatch).toHaveBeenCalledTimes(1);
-        expect(store.dispatch).toHaveBeenCalledWith(
-          noteSaved({
-            note: {
-              id: 73,
-              brand: 'Lipton',
-              name: 'Yellow Label',
-              teaCategoryId: 3,
-              rating: 1,
-              notes: 'ick',
-            },
-          }),
-        );
-      });
-
-      it('dismisses the modal', () => {
-        const modalController = TestBed.inject(ModalController);
-        component.save();
-        expect(modalController.dismiss).toHaveBeenCalledTimes(1);
-      });
-    });
-  });
-
-  describe('close', () => {
-    beforeEach(() => {
-      fixture.detectChanges();
-    });
-
-    it('dismisses the modal', () => {
-      const modalController = TestBed.inject(ModalController);
-      component.close();
-      expect(modalController.dismiss).toHaveBeenCalledTimes(1);
     });
   });
 

@@ -5,15 +5,34 @@ import { ActivatedRoute } from '@angular/router';
 import { TeaService } from '@app/core';
 import { Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
-import { IonicModule } from '@ionic/angular';
 import { EMPTY, Observable, tap } from 'rxjs';
+import {
+  IonHeader,
+  IonToolbar,
+  IonButtons,
+  IonBackButton,
+  IonTitle,
+  IonContent,
+  IonImg,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tea-details',
   templateUrl: './tea-details.page.html',
   styleUrls: ['./tea-details.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, RatingComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RatingComponent,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonBackButton,
+    IonTitle,
+    IonContent,
+    IonImg,
+  ],
 })
 export class TeaDetailsPage implements OnInit {
   tea$: Observable<Tea> = EMPTY;

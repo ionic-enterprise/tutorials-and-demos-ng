@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateFn, RouterStateSnapshot } from '@angular/router';
-import { NavController, Platform } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular/standalone';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 

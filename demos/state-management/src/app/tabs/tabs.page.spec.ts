@@ -1,5 +1,5 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { TabsPage } from './tabs.page';
 
 describe('TabsPage', () => {
@@ -7,10 +7,11 @@ describe('TabsPage', () => {
   let fixture: ComponentFixture<TabsPage>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [TabsPage],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
+    TestBed.overrideComponent(TabsPage, {
+      add: {
+        imports: [RouterTestingModule],
+      },
+    });
 
     fixture = TestBed.createComponent(TabsPage);
     component = fixture.componentInstance;

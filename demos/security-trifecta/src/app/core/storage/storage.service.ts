@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { KeyValueStorage } from '@ionic-enterprise/secure-storage/ngx';
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/standalone';
 import { EncryptionService } from '../encryption/encryption.service';
 
 @Injectable({

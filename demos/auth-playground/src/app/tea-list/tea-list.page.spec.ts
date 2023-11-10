@@ -1,5 +1,5 @@
 import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { TeaService } from '@app/core';
 import { createTeaServiceMock } from '@app/core/testing';
@@ -12,13 +12,9 @@ describe('TeaListPage', () => {
   let fixture: ComponentFixture<TeaListPage>;
   let teas: Array<Tea>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     initializeTestData();
-    TestBed.configureTestingModule({
-      imports: [TeaListPage],
-    })
-      .overrideProvider(TeaService, { useFactory: createTeaServiceMock })
-      .compileComponents();
+    TestBed.overrideProvider(TeaService, { useFactory: createTeaServiceMock });
 
     const teaService = TestBed.inject(TeaService);
     (teaService.getAll as jasmine.Spy).and.returnValue(of(teas));
@@ -26,7 +22,7 @@ describe('TeaListPage', () => {
     fixture = TestBed.createComponent(TeaListPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

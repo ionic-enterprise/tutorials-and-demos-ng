@@ -1,13 +1,12 @@
 import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { RouterTestingModule } from '@angular/router/testing';
 import {
   BiometricPermissionState,
   BiometricSecurityStrength,
   Device,
   SupportedBiometricType,
 } from '@ionic-enterprise/identity-vault';
-import { AlertController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular/standalone';
 import { createOverlayControllerMock } from '@test/mocks';
 import { click } from '@test/util';
 import { DeviceInfoPage } from './device-info.page';
@@ -17,11 +16,7 @@ describe('DeviceInfoPage', () => {
   let fixture: ComponentFixture<DeviceInfoPage>;
 
   beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [DeviceInfoPage, RouterTestingModule],
-    })
-      .overrideProvider(AlertController, { useFactory: () => createOverlayControllerMock('AlertController') })
-      .compileComponents();
+    TestBed.overrideProvider(AlertController, { useFactory: () => createOverlayControllerMock('AlertController') });
 
     fixture = TestBed.createComponent(DeviceInfoPage);
     component = fixture.componentInstance;

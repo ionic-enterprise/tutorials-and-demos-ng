@@ -6,7 +6,7 @@ import { AppComponent } from '@app/app.component';
 import { routes } from '@app/app.routes';
 import { AuthInterceptor, EncryptionService, SessionVaultService, UnauthInterceptor } from '@app/core';
 import { KeyValueStorage, SQLite } from '@ionic-enterprise/secure-storage/ngx';
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { environment } from './environments/environment';
 
 if (environment.production) {
@@ -33,7 +33,8 @@ bootstrapApplication(AppComponent, {
       deps: [EncryptionService, SessionVaultService],
       multi: true,
     },
-    importProvidersFrom(HttpClientModule, IonicModule.forRoot({})),
+    importProvidersFrom(HttpClientModule),
     provideRouter(routes),
+    provideIonicAngular({}),
   ],
 });

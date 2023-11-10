@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular/standalone';
 import { SwUpdate } from '@angular/service-worker';
 import { filter } from 'rxjs/operators';
 

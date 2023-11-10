@@ -2,15 +2,48 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
-import { IonicModule, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular/standalone';
 import { take, tap } from 'rxjs';
+import { addIcons } from 'ionicons';
+import { logInOutline } from 'ionicons/icons';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
+  IonInput,
+  IonButton,
+  IonIcon,
+  IonToast,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardSubtitle,
+    IonCardContent,
+    IonInput,
+    IonButton,
+    IonIcon,
+    IonToast,
+  ],
 })
 export class LoginPage {
   loginFailed: boolean = false;
@@ -35,7 +68,9 @@ export class LoginPage {
     private fb: FormBuilder,
     private nav: NavController,
     private sessionVault: SessionVaultService,
-  ) {}
+  ) {
+    addIcons({ logInOutline });
+  }
 
   signIn() {
     const controls = this.loginForm.controls;
