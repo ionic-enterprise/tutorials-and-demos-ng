@@ -7,7 +7,7 @@ import { EncryptionService } from '../encryption/encryption.service';
   providedIn: 'root',
 })
 export class StorageService {
-  private ready: Promise<void> | null;
+  private ready: Promise<void> | null = null;
 
   constructor(
     private encryption: EncryptionService,

@@ -5,7 +5,6 @@ describe('VaultTypePipe', () => {
   const pipe = new VaultTypePipe();
 
   it('returns an empty string with no data', () => {
-    expect(pipe.transform(null)).toEqual('');
     expect(pipe.transform(undefined)).toEqual('');
   });
 

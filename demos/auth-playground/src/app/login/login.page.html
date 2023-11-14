@@ -47,12 +47,12 @@
 
         <div class="error-message" data-testid="login-form-errors">
           <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
-            <div *ngIf="emailInput.errors.email">E-Mail Address must have a valid format</div>
-            <div *ngIf="emailInput.errors.required">E-Mail Address is required</div>
+            <div *ngIf="emailInput.errors && emailInput.errors['email']">E-Mail Address must have a valid format</div>
+            <div *ngIf="emailInput.errors && emailInput.errors['required']">E-Mail Address is required</div>
           </div>
 
           <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
-            <div *ngIf="passwordInput.errors.required">Password is required</div>
+            <div *ngIf="passwordInput.errors && passwordInput.errors['required']">Password is required</div>
           </div>
         </div>
       </form>

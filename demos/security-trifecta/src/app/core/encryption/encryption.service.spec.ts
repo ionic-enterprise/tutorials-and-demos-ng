@@ -111,7 +111,7 @@ describe('EncryptionService', () => {
         }));
 
         it('returns the key', fakeAsync(() => {
-          let key: string;
+          let key: string = '';
           service.getDatabaseKey().then((k) => (key = k));
           tick();
           const req = httpTestingController.expectOne(`${environment.dataService}/keys`);

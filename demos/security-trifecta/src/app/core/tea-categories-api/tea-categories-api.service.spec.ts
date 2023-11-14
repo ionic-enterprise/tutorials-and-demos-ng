@@ -29,7 +29,7 @@ describe('TeaCategoriesApiService', () => {
     });
 
     it('sorts the data by brand and name', () => {
-      let result: Array<TeaCategory>;
+      let result: Array<TeaCategory> = [];
       service.getAll().subscribe((x) => (result = x));
       const req = httpTestingController.expectOne(`${environment.dataService}/tea-categories`);
       req.flush([

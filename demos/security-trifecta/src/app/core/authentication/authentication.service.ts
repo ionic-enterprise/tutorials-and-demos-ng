@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
-import { Auth0Provider, AuthConnect, AuthResult, CognitoProvider, TokenType } from '@ionic-enterprise/auth';
+import { Auth0Provider, AuthConnect, AuthResult, TokenType } from '@ionic-enterprise/auth';
 import { Platform } from '@ionic/angular/standalone';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 
@@ -83,8 +83,8 @@ export class AuthenticationService {
     });
   }
 
-  private async performRefresh(authResult: AuthResult): Promise<AuthResult | undefined> {
-    let newAuthResult: AuthResult | undefined;
+  private async performRefresh(authResult: AuthResult): Promise<AuthResult | null> {
+    let newAuthResult: AuthResult | null = null;
 
     if (await AuthConnect.isRefreshTokenAvailable(authResult)) {
       try {
@@ -100,7 +100,7 @@ export class AuthenticationService {
     return newAuthResult;
   }
 
-  private async getAuthResult(): Promise<AuthResult | null | undefined> {
+  private async getAuthResult(): Promise<AuthResult | null> {
     let authResult = await this.sessionVault.getSession();
     if (authResult && (await AuthConnect.isAccessTokenExpired(authResult))) {
       authResult = await this.performRefresh(authResult);

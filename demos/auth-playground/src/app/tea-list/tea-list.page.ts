@@ -42,7 +42,7 @@ import {
   ],
 })
 export class TeaListPage implements OnInit {
-  teas$: Observable<Array<Array<Tea>>>;
+  teas$: Observable<Array<Array<Tea>>> | undefined;
   private refresh: Subject<void>;
 
   constructor(private teaService: TeaService) {
@@ -61,7 +61,7 @@ export class TeaListPage implements OnInit {
 
   private toMatrix(tea: Array<Tea>): Array<Array<Tea>> {
     const matrix: Array<Array<Tea>> = [];
-    let row = [];
+    let row: Array<Tea> = [];
     tea.forEach((t) => {
       row.push(t);
       if (row.length === 4) {

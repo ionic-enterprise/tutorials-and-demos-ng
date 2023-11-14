@@ -9,7 +9,7 @@ import { TastingNotesDatabaseService } from '../tasting-notes-database/tasting-n
   providedIn: 'root',
 })
 export class TastingNotesService {
-  private tastingNotes: Array<TastingNote>;
+  private tastingNotes: Array<TastingNote> | undefined;
 
   constructor(
     private platform: Platform,
@@ -18,14 +18,14 @@ export class TastingNotesService {
   ) {}
 
   get data(): Array<TastingNote> {
-    return [...this.tastingNotes];
+    return [...(this.tastingNotes ?? [])];
   }
 
   async find(id: number): Promise<TastingNote | undefined> {
     if (!this.tastingNotes) {
       await this.refresh();
     }
-    return this.tastingNotes.find((x) => x.id === id);
+    return this.tastingNotes?.find((x) => x.id === id);
   }
 
   async loadDatabaseFromApi(): Promise<void> {
@@ -43,18 +43,20 @@ export class TastingNotesService {
 
   async remove(note: TastingNote): Promise<void> {
     await (this.platform.is('hybrid') ? this.database.remove(note) : firstValueFrom(this.api.remove(note)));
-    this.tastingNotes = this.tastingNotes.filter((x) => x.id !== note.id);
+    this.tastingNotes = this.tastingNotes?.filter((x) => x.id !== note.id);
   }
 
   async save(note: TastingNote): Promise<TastingNote> {
     const savedNote = await (this.platform.is('hybrid')
       ? this.database.save(note)
       : firstValueFrom(this.api.save(note)));
-    const index = this.tastingNotes.findIndex((x) => x.id === savedNote.id);
-    if (index >= 0) {
-      this.tastingNotes[index] = savedNote;
-    } else {
-      this.tastingNotes.push(savedNote);
+    if (this.tastingNotes) {
+      const index = this.tastingNotes.findIndex((x) => x.id === savedNote.id);
+      if (index >= 0) {
+        this.tastingNotes[index] = savedNote;
+      } else {
+        this.tastingNotes.push(savedNote);
+      }
     }
     return savedNote;
   }

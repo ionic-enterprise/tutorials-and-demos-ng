@@ -6,6 +6,7 @@ import {
   BrowserVault,
   Device,
   DeviceSecurityType,
+  IdentityVaultConfig,
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
@@ -20,7 +21,7 @@ type UnlockMode = 'Device' | 'SessionPIN' | 'NeverLock';
 export class SessionVaultService {
   private lockedSubject: Subject<boolean>;
   private vault: Vault | BrowserVault;
-  private vaultReady: Promise<void>;
+  private vaultReady: Promise<void> | undefined;
 
   constructor(
     vaultFactory: VaultFactoryService,
@@ -43,7 +44,7 @@ export class SessionVaultService {
         await this.vault.initialize({
           key: 'io.ionic.auth-playground-ng',
           type: VaultType.SecureStorage,
-          lockAfterBackgrounded: null,
+          lockAfterBackgrounded: undefined,
           shouldClearVaultAfterTooManyFailedAttempts: true,
           customPasscodeInvalidUnlockAttempts: 2,
           unlockVaultOnLoad: false,
@@ -64,14 +65,14 @@ export class SessionVaultService {
 
   disableLocking(): Promise<void> {
     return this.vault.updateConfig({
-      ...this.vault.config,
-      lockAfterBackgrounded: null,
+      ...(this.vault.config as IdentityVaultConfig),
+      lockAfterBackgrounded: undefined,
     });
   }
 
   enableLocking(): Promise<void> {
     return this.vault.updateConfig({
-      ...this.vault.config,
+      ...(this.vault.config as IdentityVaultConfig),
       lockAfterBackgrounded: 2000,
     });
   }
@@ -150,7 +151,7 @@ export class SessionVaultService {
     }
 
     return this.vault.updateConfig({
-      ...this.vault.config,
+      ...(this.vault.config as IdentityVaultConfig),
       type,
       deviceSecurityType,
     });

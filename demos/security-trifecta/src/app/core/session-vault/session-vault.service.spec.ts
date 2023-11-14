@@ -5,6 +5,7 @@ import {
   BiometricPermissionState,
   Device,
   DeviceSecurityType,
+  IdentityVaultConfig,
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
@@ -71,7 +72,7 @@ describe('SessionVaultService', () => {
       expect(mockVault.initialize).toHaveBeenCalledOnceWith({
         key: 'io.ionic.auth-playground-ng',
         type: VaultType.SecureStorage,
-        lockAfterBackgrounded: null,
+        lockAfterBackgrounded: undefined,
         shouldClearVaultAfterTooManyFailedAttempts: true,
         customPasscodeInvalidUnlockAttempts: 2,
         unlockVaultOnLoad: false,
@@ -93,7 +94,7 @@ describe('SessionVaultService', () => {
         };
         await service.resetUnlockMode();
         expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-        expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
+        expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig as IdentityVaultConfig);
       });
     });
     describe('initialize unlock type', () => {
@@ -112,7 +113,7 @@ describe('SessionVaultService', () => {
           };
           await service.initializeUnlockMode();
           expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
+          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig as IdentityVaultConfig);
         });
 
         it('uses device security if a system PIN is set and biometrics is enabled', async () => {
@@ -125,7 +126,7 @@ describe('SessionVaultService', () => {
           };
           await service.initializeUnlockMode();
           expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
+          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig as IdentityVaultConfig);
         });
 
         it('uses device security if a system PIN is set and biometrics is not enabled', async () => {
@@ -138,7 +139,7 @@ describe('SessionVaultService', () => {
           };
           await service.initializeUnlockMode();
           expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
+          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig as IdentityVaultConfig);
         });
 
         it('provisions FaceID permissions if needed', async () => {

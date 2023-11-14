@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'com.kensodemann.teataster',
   appName: 'Tea Taster',
-  webDir: 'www',
+  webDir: 'www/browser',
   bundledWebRuntime: false,
   plugins: {
     SplashScreen: {

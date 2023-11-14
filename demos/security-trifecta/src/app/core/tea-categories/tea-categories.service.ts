@@ -9,7 +9,7 @@ import { TeaCategoriesDatabaseService } from '../tea-categories-database/tea-cat
   providedIn: 'root',
 })
 export class TeaCategoriesService {
-  private teaCategories: Array<TeaCategory>;
+  private teaCategories: Array<TeaCategory> | undefined;
 
   constructor(
     private platform: Platform,
@@ -18,7 +18,7 @@ export class TeaCategoriesService {
   ) {}
 
   get data(): Array<TeaCategory> {
-    return [...this.teaCategories];
+    return [...(this.teaCategories ?? [])];
   }
 
   async loadDatabaseFromApi(): Promise<void> {
@@ -40,6 +40,6 @@ export class TeaCategoriesService {
     if (!this.teaCategories) {
       await this.refresh();
     }
-    return this.teaCategories.find((x) => x.id === id);
+    return this.teaCategories?.find((x) => x.id === id);
   }
 }

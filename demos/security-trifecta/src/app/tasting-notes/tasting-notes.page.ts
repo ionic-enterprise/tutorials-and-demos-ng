@@ -68,7 +68,7 @@ import {
 })
 export class TastingNotesPage implements OnInit {
   notes: Array<TastingNote> = [];
-  prefersDarkMode: boolean;
+  prefersDarkMode: boolean = false;
 
   constructor(
     private authentication: AuthenticationService,
@@ -87,7 +87,7 @@ export class TastingNotesPage implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.preferences.load();
-    this.prefersDarkMode = this.preferences.prefersDarkMode;
+    this.prefersDarkMode = !!this.preferences.prefersDarkMode;
     this.teaCategories.refresh();
     await this.tastingNotes.refresh();
     this.notes = [...this.tastingNotes.data];

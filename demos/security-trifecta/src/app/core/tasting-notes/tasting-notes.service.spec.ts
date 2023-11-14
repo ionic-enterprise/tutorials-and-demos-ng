@@ -131,7 +131,7 @@ describe('TastingNotesService', () => {
       });
 
       it('resolves the tasting note if it exists', async () => {
-        const cat = await service.find(tastingNotes[2].id);
+        const cat = await service.find(tastingNotes[2].id as number);
         expect(cat).toEqual(tastingNotes[2]);
       });
 
@@ -156,7 +156,7 @@ describe('TastingNotesService', () => {
       });
 
       it('resolves the tasting note if it exists', async () => {
-        const cat = await service.find(tastingNotes[2].id);
+        const cat = await service.find(tastingNotes[2].id as number);
         expect(cat).toEqual(tastingNotes[2]);
       });
 

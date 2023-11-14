@@ -17,7 +17,7 @@ export class TeaService {
 
   getAll(): Observable<Array<Tea>> {
     return this.http
-      .get(`${environment.dataService}/tea-categories`)
+      .get<Array<TeaResponse>>(`${environment.dataService}/tea-categories`)
       .pipe(map((teas: Array<TeaResponse>) => teas.map((t) => this.convert(t))));
   }
 

@@ -66,7 +66,7 @@ const builtAuthResult = {
       });
     });
 
-    ['Auth0', 'Azure', 'AWS'].forEach((vendor: AuthVendor) => {
+    ['Auth0' as AuthVendor, 'Azure' as AuthVendor, 'AWS' as AuthVendor].forEach((vendor: AuthVendor) => {
       describe(vendor, () => {
         let expectedProviderType: typeof Auth0Provider | typeof AzureProvider | typeof CognitoProvider;
         let expectedOptions: ProviderOptions;

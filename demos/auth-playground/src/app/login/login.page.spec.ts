@@ -83,23 +83,23 @@ describe('LoginPage', () => {
     it('displays an error message if the e-mail address is dirty and empty', () => {
       setInputValue(fixture, email, 'test@test.com');
       setInputValue(fixture, email, '');
-      expect(errorDiv.textContent.trim()).toEqual('E-Mail Address is required');
+      expect(errorDiv.textContent?.trim()).toEqual('E-Mail Address is required');
     });
 
     it('displays an error message if the e-mail address has an invalid format', () => {
       setInputValue(fixture, email, 'testtest.com');
-      expect(errorDiv.textContent.trim()).toEqual('E-Mail Address must have a valid format');
+      expect(errorDiv.textContent?.trim()).toEqual('E-Mail Address must have a valid format');
     });
 
     it('clears the error message when the e-mail address has a valid format', () => {
       setInputValue(fixture, email, 'test@test.com');
-      expect(errorDiv.textContent.trim()).toEqual('');
+      expect(errorDiv.textContent?.trim()).toEqual('');
     });
 
     it('displays an error message if the password is dirty and empty', () => {
       setInputValue(fixture, password, 'thisisapassword');
       setInputValue(fixture, password, '');
-      expect(errorDiv.textContent.trim()).toEqual('Password is required');
+      expect(errorDiv.textContent?.trim()).toEqual('Password is required');
     });
   });
 

@@ -14,8 +14,8 @@ import { IonContent, IonLoading } from '@ionic/angular/standalone';
   imports: [CommonModule, LoginCardComponent, UnlockCardComponent, IonContent, IonLoading],
 })
 export class LoginPage implements OnInit {
-  showUnlock: boolean;
-  syncing = false;
+  showUnlock: boolean = false;
+  syncing: boolean = false;
 
   constructor(
     private navController: NavController,

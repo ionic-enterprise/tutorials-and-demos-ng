@@ -39,10 +39,10 @@ import {
 export class LoginCardComponent {
   @Output() loginSuccess = new EventEmitter<void>();
 
-  authenticating = false;
+  authenticating: boolean = false;
   showSessionLocking: boolean;
-  useSessionLocking: boolean;
-  errorMessage: string;
+  useSessionLocking: boolean = false;
+  errorMessage: string = '';
 
   constructor(
     platform: Platform,

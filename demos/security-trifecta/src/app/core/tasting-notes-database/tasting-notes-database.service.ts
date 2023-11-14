@@ -142,6 +142,7 @@ export class TastingNotesDatabaseService {
       });
       return note;
     }
+    return undefined;
   }
 
   async update(note: TastingNote): Promise<TastingNote | undefined> {
@@ -159,6 +160,7 @@ export class TastingNotesDatabaseService {
       });
       return note;
     }
+    return undefined;
   }
 
   private params(length: number): string {

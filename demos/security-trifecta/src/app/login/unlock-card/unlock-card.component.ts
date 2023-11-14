@@ -35,7 +35,7 @@ export class UnlockCardComponent {
   @Output() unlock = new EventEmitter<void>();
   @Output() vaultClear = new EventEmitter<void>();
 
-  errorMessage: string;
+  errorMessage: string = '';
 
   constructor(private sessionVault: SessionVaultService) {
     addIcons({ lockOpenOutline, logInOutline });

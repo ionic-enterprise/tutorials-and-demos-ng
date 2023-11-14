@@ -23,7 +23,7 @@ describe('TastingNoteEditorComponent', () => {
     initializeTestData();
 
     const teaCategories = TestBed.inject(TeaCategoriesService);
-    (Object.getOwnPropertyDescriptor(teaCategories, 'data').get as jasmine.Spy).and.returnValue(categories);
+    (Object.getOwnPropertyDescriptor(teaCategories, 'data')?.get as jasmine.Spy).and.returnValue(categories);
 
     fixture = TestBed.createComponent(TastingNoteEditorComponent);
     component = fixture.componentInstance;

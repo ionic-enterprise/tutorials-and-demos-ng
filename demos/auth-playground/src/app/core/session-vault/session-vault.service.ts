@@ -22,10 +22,10 @@ export type UnlockMode = 'Device' | 'SystemPIN' | 'SessionPIN' | 'NeverLock' | '
 })
 export class SessionVaultService {
   private lockedSubject: Subject<boolean>;
-  private onLockCallback: () => void;
+  private onLockCallback: (() => void) | undefined;
   private vault: Vault | BrowserVault;
   private preferencesVault: Vault | BrowserVault;
-  private vaultReady: Promise<void>;
+  private vaultReady: Promise<void> | undefined;
 
   constructor(
     vaultFactory: VaultFactoryService,
@@ -81,7 +81,7 @@ export class SessionVaultService {
   }
 
   getConfig(): IdentityVaultConfig {
-    return this.vault.config;
+    return this.vault.config as IdentityVaultConfig;
   }
 
   getKeys(): Promise<Array<string>> {
@@ -170,7 +170,7 @@ export class SessionVaultService {
     this.setLastUnlockMode(unlockMode);
 
     return this.vault.updateConfig({
-      ...this.vault.config,
+      ...(this.vault.config as IdentityVaultConfig),
       type,
       deviceSecurityType,
     });

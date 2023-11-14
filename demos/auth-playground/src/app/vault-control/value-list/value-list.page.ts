@@ -43,7 +43,7 @@ import {
   ],
 })
 export class ValueListPage implements OnInit {
-  values: Array<{ key: string; value?: any }>;
+  values: Array<{ key: string; value?: any }> = [];
 
   constructor(
     private alertController: AlertController,

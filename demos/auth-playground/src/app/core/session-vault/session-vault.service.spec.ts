@@ -5,6 +5,7 @@ import {
   BiometricPermissionState,
   Device,
   DeviceSecurityType,
+  IdentityVaultConfig,
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
@@ -156,7 +157,7 @@ describe('SessionVaultService', () => {
           };
           await service.setUnlockMode(unlockMode as UnlockMode);
           expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
+          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig as IdentityVaultConfig);
           expect(preferencesVault.setValue).toHaveBeenCalledTimes(1);
           expect(preferencesVault.setValue).toHaveBeenCalledWith('LastUnlockMode', unlockMode);
         }),
@@ -179,7 +180,7 @@ describe('SessionVaultService', () => {
           };
           await service.initializeUnlockMode();
           expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
+          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig as IdentityVaultConfig);
         });
 
         it('uses device security if a system PIN is set and biometrics is enabled', async () => {
@@ -192,7 +193,7 @@ describe('SessionVaultService', () => {
           };
           await service.initializeUnlockMode();
           expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
+          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig as IdentityVaultConfig);
         });
 
         it('uses system PIN if a system PIN is set and biometrics is not enabled', async () => {
@@ -205,7 +206,7 @@ describe('SessionVaultService', () => {
           };
           await service.initializeUnlockMode();
           expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
-          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig);
+          expect(mockVault.updateConfig).toHaveBeenCalledWith(expectedConfig as IdentityVaultConfig);
         });
       });
 
@@ -298,7 +299,7 @@ describe('SessionVaultService', () => {
 
     describe('getConfig', () => {
       it('resolves the config', () => {
-        expect(service.getConfig()).toEqual(mockVault.config);
+        expect(service.getConfig()).toEqual(mockVault.config as IdentityVaultConfig);
       });
     });
 

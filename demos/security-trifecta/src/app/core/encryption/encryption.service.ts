@@ -10,7 +10,7 @@ import { VaultFactoryService } from '../vault-factory/vault-factory.service';
 })
 export class EncryptionService {
   private vault: Vault | BrowserVault;
-  private vaultReady: Promise<void>;
+  private vaultReady: Promise<void> | undefined;
 
   constructor(
     private http: HttpClient,

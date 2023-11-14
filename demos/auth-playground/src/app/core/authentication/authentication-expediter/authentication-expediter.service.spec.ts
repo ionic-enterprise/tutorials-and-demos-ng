@@ -22,7 +22,7 @@ describe('AuthenticationExpediterService', () => {
     expect(service).toBeTruthy();
   });
 
-  ['Auth0', 'AWS', 'Azure'].forEach((vendor: AuthVendor) => {
+  ['Auth0' as AuthVendor, 'AWS' as AuthVendor, 'Azure' as AuthVendor].forEach((vendor: AuthVendor) => {
     describe(`when using ${vendor}`, () => {
       beforeEach(() => {
         const vault = TestBed.inject(SessionVaultService);

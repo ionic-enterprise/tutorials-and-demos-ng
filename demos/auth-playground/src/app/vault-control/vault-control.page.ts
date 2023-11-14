@@ -52,7 +52,7 @@ export class VaultControlPage {
   disableCustomPasscode = true;
   disableInMemory = true;
   disableLock = true;
-  config: IdentityVaultConfig;
+  config: IdentityVaultConfig | undefined;
 
   constructor(
     private navController: NavController,

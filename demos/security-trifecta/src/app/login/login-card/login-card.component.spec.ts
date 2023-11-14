@@ -93,7 +93,7 @@ describe('LoginCardComponent', () => {
           click(fixture, button);
           tick();
           fixture.detectChanges();
-          expect(errorDiv.textContent.trim()).toBe('Invalid email or password');
+          expect(errorDiv.textContent?.trim()).toBe('Invalid email or password');
         }));
 
         it('does not emit success', fakeAsync(() => {

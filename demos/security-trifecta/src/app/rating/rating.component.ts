@@ -20,8 +20,8 @@ import { star, starOutline } from 'ionicons/icons';
   imports: [CommonModule, IonIcon],
 })
 export class RatingComponent implements ControlValueAccessor {
-  @Input() rating: number;
-  @Input() disabled = false;
+  @Input() rating: number = 0;
+  @Input() disabled: boolean = false;
 
   constructor() {
     addIcons({ star, starOutline });

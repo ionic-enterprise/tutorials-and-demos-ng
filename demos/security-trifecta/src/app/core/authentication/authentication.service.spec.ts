@@ -24,7 +24,7 @@ const testAuthResult = {
     let service: AuthenticationService;
 
     beforeEach(() => {
-      spyOn(AuthConnect, 'decodeToken').and.callFake(() => Promise.resolve(null));
+      spyOn(AuthConnect, 'decodeToken').and.callFake(() => Promise.resolve(null as any));
       spyOn(AuthConnect, 'setup').and.callFake(() => Promise.resolve());
       const platform = createPlatformMock();
       (platform.is as jasmine.Spy).and.returnValue(isNative);

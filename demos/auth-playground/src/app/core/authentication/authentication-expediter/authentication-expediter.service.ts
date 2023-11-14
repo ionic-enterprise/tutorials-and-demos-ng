@@ -52,7 +52,7 @@ export class AuthenticationExpediterService {
     return !!auth && (await auth.isAuthenticated());
   }
 
-  private getAuthService(vendor: AuthVendor): Authenticator | null {
+  private getAuthService(vendor: AuthVendor | null): Authenticator | null {
     switch (vendor) {
       case 'Auth0':
       case 'AWS':

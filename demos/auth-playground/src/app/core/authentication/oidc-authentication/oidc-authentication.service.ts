@@ -5,6 +5,7 @@ import { environment } from '@env/environment';
 import {
   Auth0Provider,
   AuthConnect,
+  AuthProvider,
   AuthResult,
   AzureProvider,
   CognitoProvider,
@@ -18,8 +19,8 @@ import { Authenticator } from '../authenticator';
 })
 export class OIDCAuthenticationService implements Authenticator {
   private authResultKey = 'auth-result';
-  private initializing: Promise<void>;
-  private options: ProviderOptions = null;
+  private initializing: Promise<void> | undefined;
+  private options: ProviderOptions | null = null;
   private provider: Auth0Provider | AzureProvider | CognitoProvider | null = null;
 
   constructor(
@@ -45,20 +46,20 @@ export class OIDCAuthenticationService implements Authenticator {
   async login(): Promise<void> {
     await this.initialize();
     try {
-      const res = await AuthConnect.login(this.provider, this.options);
+      const res = await AuthConnect.login(this.provider as AuthProvider, this.options as ProviderOptions);
       this.sessionVault.setValue(this.authResultKey, res);
-    } catch (err) {
+    } catch (err: any) {
       // eslint-disable-next-line
       console.log('login error:', err);
       const message: string = err.errorMessage;
       if (
-        this.options.clientId === environment.azureConfig.clientId &&
+        this.options?.clientId === environment.azureConfig.clientId &&
         message !== undefined &&
         message.includes('AADB2C90118')
       ) {
         // This is to handle the password reset case for Azure AD and is only applicable to Azure  AD
         // The address you pass back is the custom user flow (policy) endpoint
-        const res = await AuthConnect.login(this.provider, {
+        const res = await AuthConnect.login(this.provider as AuthProvider, {
           ...this.options,
           discoveryUrl:
             'https://dtjacdemo.b2clogin.com/dtjacdemo.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_password_reset',
@@ -83,9 +84,11 @@ export class OIDCAuthenticationService implements Authenticator {
 
   async logout(): Promise<void> {
     await this.initialize();
-    const res = (await this.getAuthResult()) || (await AuthConnect.buildAuthResult(this.provider, this.options, {}));
+    const res =
+      (await this.getAuthResult()) ||
+      (await AuthConnect.buildAuthResult(this.provider as AuthProvider, this.options as ProviderOptions, {}));
     if (res) {
-      await AuthConnect.logout(this.provider, res);
+      await AuthConnect.logout(this.provider as AuthProvider, res);
       await this.sessionVault.clear();
     }
   }
@@ -140,7 +143,7 @@ export class OIDCAuthenticationService implements Authenticator {
 
     if (await AuthConnect.isRefreshTokenAvailable(authResult)) {
       try {
-        newAuthResult = await AuthConnect.refreshSession(this.provider, authResult);
+        newAuthResult = await AuthConnect.refreshSession(this.provider as AuthProvider, authResult);
         this.sessionVault.setValue(this.authResultKey, newAuthResult);
       } catch (err) {
         await this.sessionVault.clear();

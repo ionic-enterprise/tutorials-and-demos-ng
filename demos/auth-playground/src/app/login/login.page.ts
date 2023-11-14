@@ -44,9 +44,9 @@ import {
   ],
 })
 export class LoginPage {
-  email: string;
-  errorMessage: string;
-  password: string;
+  email: string = '';
+  errorMessage: string = '';
+  password: string = '';
 
   constructor(
     private auth: AuthenticationExpediterService,

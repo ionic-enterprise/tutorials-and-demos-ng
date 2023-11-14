@@ -60,7 +60,7 @@ describe('TastingNotesPage', () => {
     (preferences as any).prefersDarkMode = false;
 
     const tastingNotes = TestBed.inject(TastingNotesService);
-    (Object.getOwnPropertyDescriptor(tastingNotes, 'data').get as jasmine.Spy).and.returnValue(notes);
+    (Object.getOwnPropertyDescriptor(tastingNotes, 'data')?.get as jasmine.Spy).and.returnValue(notes);
 
     fixture = TestBed.createComponent(TastingNotesPage);
     component = fixture.componentInstance;
@@ -174,7 +174,7 @@ describe('TastingNotesPage', () => {
       const tastingNotes = TestBed.inject(TastingNotesService);
       const buttons = fixture.nativeElement.querySelectorAll('[data-testid="delete-button"]');
       const button = buttons[1] as HTMLIonButtonElement;
-      (Object.getOwnPropertyDescriptor(tastingNotes, 'data').get as jasmine.Spy).and.returnValue([notes[0], notes[2]]);
+      (Object.getOwnPropertyDescriptor(tastingNotes, 'data')?.get as jasmine.Spy).and.returnValue([notes[0], notes[2]]);
       click(fixture, button);
       tick();
       fixture.detectChanges();

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AboutPage } from './about.page';
-import { ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
 import { createOverlayControllerMock } from '@test/mocks';
 
 describe('AboutPage', () => {

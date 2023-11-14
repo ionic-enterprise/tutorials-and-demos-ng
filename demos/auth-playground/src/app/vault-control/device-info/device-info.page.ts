@@ -39,16 +39,16 @@ import {
   ],
 })
 export class DeviceInfoPage implements OnInit {
-  biometricStrength: string;
-  hasSecureHardware: boolean;
-  canTogglePrivacyScreen: boolean;
-  isBiometricsAllowed: string;
-  isBiometricsEnabled: boolean;
-  isBiometricsSupported: boolean;
-  isPrivacyScreenEnabled: boolean;
-  isLockedOutOfBiometrics: boolean;
-  isSystemPasscodeSet: boolean;
-  availableHardware: Array<string>;
+  biometricStrength: string = '';
+  hasSecureHardware: boolean = false;
+  canTogglePrivacyScreen: boolean = false;
+  isBiometricsAllowed: string = '';
+  isBiometricsEnabled: boolean = false;
+  isBiometricsSupported: boolean = false;
+  isPrivacyScreenEnabled: boolean = false;
+  isLockedOutOfBiometrics: boolean = false;
+  isSystemPasscodeSet: boolean = false;
+  availableHardware: Array<string> = [];
 
   constructor(
     private alertController: AlertController,
@@ -64,7 +64,6 @@ export class DeviceInfoPage implements OnInit {
     this.isPrivacyScreenEnabled = await Device.isHideScreenOnBackgroundEnabled();
     this.isLockedOutOfBiometrics = await Device.isLockedOutOfBiometrics();
     this.isSystemPasscodeSet = await Device.isSystemPasscodeSet();
-    this.availableHardware = await Device.getAvailableHardware();
     this.availableHardware = await Device.getAvailableHardware();
     this.canTogglePrivacyScreen = this.platform.is('hybrid');
   }

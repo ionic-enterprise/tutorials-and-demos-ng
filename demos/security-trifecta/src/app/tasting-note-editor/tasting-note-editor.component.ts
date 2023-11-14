@@ -50,15 +50,15 @@ import {
   ],
 })
 export class TastingNoteEditorComponent implements OnInit {
-  @Input() note: TastingNote;
+  @Input() note: TastingNote | undefined;
 
-  brand: string;
-  name: string;
-  teaCategoryId: string;
-  rating: number;
-  notes: string;
+  brand = '';
+  name = '';
+  teaCategoryId = '';
+  rating = 0;
+  notes = '';
 
-  categories: Array<TeaCategory>;
+  categories: Array<TeaCategory> = [];
 
   constructor(
     private modalController: ModalController,
