@@ -2,24 +2,25 @@ import { CommonModule } from '@angular/common';
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService, UnlockMode } from '@app/core';
-import { selectAuthErrorMessage } from '@app/store';
+import { State, selectAuthErrorMessage } from '@app/store';
 import { login, unlockSession } from '@app/store/actions';
 import { Device } from '@ionic-enterprise/identity-vault';
-import { AlertController, Platform } from '@ionic/angular/standalone';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { addIcons } from 'ionicons';
-import { logInOutline, lockOpenOutline, arrowRedoOutline } from 'ionicons/icons';
 import {
+  AlertController,
   IonContent,
-  IonList,
-  IonRadioGroup,
-  IonListHeader,
-  IonLabel,
-  IonItem,
-  IonRadio,
   IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRadio,
+  IonRadioGroup,
+  Platform,
 } from '@ionic/angular/standalone';
+import { Store } from '@ngrx/store';
+import { addIcons } from 'ionicons';
+import { arrowRedoOutline, lockOpenOutline, logInOutline } from 'ionicons/icons';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -40,12 +41,12 @@ import {
   standalone: true,
 })
 export class LoginPage implements OnInit {
-  email: string;
-  password: string;
-  canUnlock = false;
+  email: string = '';
+  password: string = '';
+  canUnlock: boolean = false;
 
-  displayLockingOptions: boolean;
-  unlockMode: UnlockMode;
+  displayLockingOptions: boolean = false;
+  unlockMode: UnlockMode | undefined;
   unlockModes: Array<{ mode: UnlockMode; label: string }> = [
     {
       mode: 'SessionPIN',
@@ -61,13 +62,13 @@ export class LoginPage implements OnInit {
     },
   ];
 
-  errorMessage$: Observable<string>;
+  errorMessage$: Observable<string> | undefined;
 
   constructor(
     private alertController: AlertController,
     private platform: Platform,
     private sessionVault: SessionVaultService,
-    private store: Store,
+    private store: Store<State>,
     private zone: NgZone,
   ) {
     addIcons({ logInOutline, lockOpenOutline, arrowRedoOutline });

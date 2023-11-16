@@ -63,18 +63,21 @@ describe('DataEffects', () => {
       name: 'Green',
       image: 'assets/img/green.jpg',
       description: 'Green teas are green',
+      rating: 3,
     },
     {
       id: 2,
       name: 'Black',
       image: 'assets/img/black.jpg',
       description: 'Black teas are not green',
+      rating: 2,
     },
     {
       id: 3,
       name: 'Herbal',
       image: 'assets/img/herbal.jpg',
       description: 'Herbal teas are not even tea',
+      rating: 4,
     },
   ];
 
@@ -348,7 +351,7 @@ describe('DataEffects', () => {
       actions$ = of(noteDeleted({ note: notes[1] }));
       effects.noteDeleted$.subscribe(() => {
         expect(notesService.delete).toHaveBeenCalledTimes(1);
-        expect(notesService.delete).toHaveBeenCalledWith(notes[1].id);
+        expect(notesService.delete).toHaveBeenCalledWith(notes[1].id as number);
         done();
       });
     });

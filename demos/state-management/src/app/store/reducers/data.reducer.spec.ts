@@ -59,18 +59,21 @@ const teas: Array<Tea> = [
     name: 'Green',
     image: 'assets/img/green.jpg',
     description: 'Green teas are green',
+    rating: 3,
   },
   {
     id: 2,
     name: 'Black',
     image: 'assets/img/black.jpg',
     description: 'Black teas are not green',
+    rating: 2,
   },
   {
     id: 3,
     name: 'Herbal',
     image: 'assets/img/herbal.jpg',
     description: 'Herbal teas are not even tea',
+    rating: 5,
   },
 ];
 

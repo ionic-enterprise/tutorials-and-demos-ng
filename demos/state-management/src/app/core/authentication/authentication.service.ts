@@ -86,7 +86,7 @@ export class AuthenticationService {
 
   async getUserInfo(): Promise<User | undefined> {
     const res = await this.getAuthResult();
-    const idToken = (await AuthConnect.decodeToken(TokenType.id, res)) as any;
+    const idToken = (await AuthConnect.decodeToken(TokenType.id, res as AuthResult)) as any;
     if (!idToken) {
       return;
     }

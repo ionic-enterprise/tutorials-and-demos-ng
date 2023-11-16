@@ -107,7 +107,7 @@ export class DataEffects {
     this.actions$.pipe(
       ofType(noteDeleted),
       mergeMap((action) =>
-        this.tastingNotesService.delete(action.note.id).pipe(
+        this.tastingNotesService.delete(action.note.id as number).pipe(
           map(() => noteDeletedSuccess({ note: action.note })),
           catchError(() =>
             of(

@@ -3,30 +3,31 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNote, Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
-import { selectTeas } from '@app/store';
+import { State, selectTeas } from '@app/store';
 import { noteSaved } from '@app/store/actions';
 import { Share } from '@capacitor/share';
-import { ModalController, Platform } from '@ionic/angular/standalone';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { addIcons } from 'ionicons';
-import { shareOutline, close } from 'ionicons/icons';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonButtons,
   IonButton,
-  IonIcon,
+  IonButtons,
   IonContent,
-  IonItem,
+  IonFooter,
+  IonHeader,
+  IonIcon,
   IonInput,
+  IonItem,
+  IonLabel,
   IonSelect,
   IonSelectOption,
-  IonLabel,
   IonTextarea,
-  IonFooter,
+  IonTitle,
+  IonToolbar,
+  ModalController,
+  Platform,
 } from '@ionic/angular/standalone';
+import { Store } from '@ngrx/store';
+import { addIcons } from 'ionicons';
+import { close, shareOutline } from 'ionicons/icons';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tasting-note-editor',
@@ -54,20 +55,20 @@ import {
   standalone: true,
 })
 export class TastingNoteEditorComponent implements OnInit {
-  @Input() note: TastingNote;
+  @Input() note: TastingNote | undefined;
 
-  brand: string;
-  name: string;
-  teaCategoryId: string;
-  rating: number;
-  notes: string;
+  brand: string = '';
+  name: string = '';
+  teaCategoryId: string = '';
+  rating: number = 0;
+  notes: string = '';
 
-  teaCategories$: Observable<Array<Tea>>;
+  teaCategories$: Observable<Array<Tea>> | undefined;
 
   constructor(
     private modalController: ModalController,
     private platform: Platform,
-    private store: Store,
+    private store: Store<State>,
   ) {
     addIcons({ shareOutline, close });
   }

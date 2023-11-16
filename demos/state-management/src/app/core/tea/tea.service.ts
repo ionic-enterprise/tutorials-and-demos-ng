@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { Preferences } from '@capacitor/preferences';
 
+type TeaResponse = Omit<Tea, 'image' | 'rating'>;
+
 @Injectable({
   providedIn: 'root',
 })
@@ -16,8 +18,8 @@ export class TeaService {
 
   getAll(): Observable<Array<Tea>> {
     return this.http
-      .get(`${environment.dataService}/tea-categories`)
-      .pipe(mergeMap((teas: Array<any>) => Promise.all(teas.map((t) => this.convert(t)))));
+      .get<Array<TeaResponse>>(`${environment.dataService}/tea-categories`)
+      .pipe(mergeMap((teas: Array<TeaResponse>) => Promise.all(teas.map((t) => this.convert(t)))));
   }
 
   save(tea: Tea): Promise<void> {

@@ -121,6 +121,7 @@ describe('TeaPage', () => {
         id: 1,
         name: 'Green',
         image: 'assets/img/green.jpg',
+        rating: 3,
         description:
           'Green teas have the oxidation process stopped very early on, leaving them with a very subtle flavor and ' +
           'complex undertones. These teas should be steeped at lower temperatures for shorter periods of time.',
@@ -129,6 +130,7 @@ describe('TeaPage', () => {
         id: 2,
         name: 'Black',
         image: 'assets/img/black.jpg',
+        rating: 1,
         description:
           'A fully oxidized tea, black teas have a dark color and a full robust and pronounced flavor. Black teas tend ' +
           'to have a higher caffeine content than other teas.',
@@ -137,6 +139,7 @@ describe('TeaPage', () => {
         id: 3,
         name: 'Herbal',
         image: 'assets/img/herbal.jpg',
+        rating: 5,
         description:
           'Herbal infusions are not actually "tea" but are more accurately characterized as infused beverages ' +
           'consisting of various dried herbs, spices, and fruits.',
@@ -145,6 +148,7 @@ describe('TeaPage', () => {
         id: 4,
         name: 'Oolong',
         image: 'assets/img/oolong.jpg',
+        rating: 3,
         description:
           'Oolong teas are partially oxidized, giving them a flavor that is not as robust as black teas but also ' +
           'not as subtle as green teas. Oolong teas often have a flowery fragrance.',
@@ -153,6 +157,7 @@ describe('TeaPage', () => {
         id: 5,
         name: 'Dark',
         image: 'assets/img/dark.jpg',
+        rating: 2,
         description:
           'From the Hunan and Sichuan provinces of China, dark teas are flavorful aged pro-biotic teas that steeps ' +
           'up very smooth with slightly sweet notes.',
@@ -161,6 +166,7 @@ describe('TeaPage', () => {
         id: 6,
         name: 'Puer',
         image: 'assets/img/puer.jpg',
+        rating: 5,
         description:
           'An aged black tea from china. Puer teas have a strong rich flavor that could be described as "woody" or "peaty."',
       },
@@ -168,6 +174,7 @@ describe('TeaPage', () => {
         id: 7,
         name: 'White',
         image: 'assets/img/white.jpg',
+        rating: 4,
         description:
           'White tea is produced using very young shoots with no oxidation process. White tea has an extremely ' +
           'delicate flavor that is sweet and fragrent. White tea should be steeped at lower temperatures for ' +

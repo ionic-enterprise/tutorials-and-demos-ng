@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Tea } from '@app/models';
-import { selectTeasMatrix } from '@app/store';
+import { State, selectTeasMatrix } from '@app/store';
 import { NavController } from '@ionic/angular/standalone';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import {
   IonHeader,
@@ -44,11 +44,11 @@ import {
   standalone: true,
 })
 export class TeaPage implements OnInit {
-  teas$: Observable<Array<Array<Tea>>>;
+  teas$: Observable<Array<Array<Tea>>> | undefined;
 
   constructor(
     private navController: NavController,
-    private store: Store,
+    private store: Store<State>,
   ) {}
 
   ngOnInit() {

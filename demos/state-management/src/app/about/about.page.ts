@@ -44,10 +44,10 @@ import {
   standalone: true,
 })
 export class AboutPage implements OnInit {
-  author: string;
-  name: string;
-  description: string;
-  version: string;
+  author: string = '';
+  name: string = '';
+  description: string = '';
+  version: string = '';
 
   constructor(private store: Store) {
     addIcons({ logOutOutline });

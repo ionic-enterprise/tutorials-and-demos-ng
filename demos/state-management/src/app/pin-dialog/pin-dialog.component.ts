@@ -42,15 +42,15 @@ import {
   standalone: true,
 })
 export class PinDialogComponent implements OnInit {
-  @Input() setPasscodeMode: boolean;
+  @Input() setPasscodeMode: boolean = false;
 
-  displayPin: string;
-  errorMessage: string;
-  pin: string;
-  prompt: string;
-  title: string;
+  displayPin: string = '';
+  errorMessage: string = '';
+  pin: string = '';
+  prompt: string = '';
+  title: string = '';
 
-  private verifyPin: string;
+  private verifyPin: string = '';
 
   constructor(private modalController: ModalController) {
     addIcons({ close });

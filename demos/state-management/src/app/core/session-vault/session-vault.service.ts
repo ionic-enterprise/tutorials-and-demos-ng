@@ -7,6 +7,7 @@ import {
   BrowserVault,
   Device,
   DeviceSecurityType,
+  IdentityVaultConfig,
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
@@ -79,14 +80,14 @@ export class SessionVaultService {
 
   disableLocking(): Promise<void> {
     return this.vault.updateConfig({
-      ...this.vault.config,
-      lockAfterBackgrounded: null,
+      ...(this.vault.config as IdentityVaultConfig),
+      lockAfterBackgrounded: undefined,
     });
   }
 
   enableLocking(): Promise<void> {
     return this.vault.updateConfig({
-      ...this.vault.config,
+      ...(this.vault.config as IdentityVaultConfig),
       lockAfterBackgrounded: 5000,
     });
   }
@@ -123,7 +124,7 @@ export class SessionVaultService {
     }
 
     return this.vault.updateConfig({
-      ...this.vault.config,
+      ...(this.vault.config as IdentityVaultConfig),
       type,
       deviceSecurityType,
     });

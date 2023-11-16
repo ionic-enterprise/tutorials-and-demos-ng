@@ -43,7 +43,7 @@ describe('TeaService', () => {
     });
 
     it('transforms each tea', fakeAsync(() => {
-      let teas: Array<Tea>;
+      let teas: Array<Tea> = [];
       service.getAll().subscribe((t) => (teas = t));
       const req = httpTestingController.expectOne(`${environment.dataService}/tea-categories`);
       req.flush(resultTeas);

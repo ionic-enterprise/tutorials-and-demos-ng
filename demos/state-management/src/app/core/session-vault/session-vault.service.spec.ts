@@ -5,6 +5,7 @@ import {
   BiometricPermissionState,
   Device,
   DeviceSecurityType,
+  IdentityVaultConfig,
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
@@ -117,7 +118,7 @@ describe('SessionVaultService', () => {
       ].forEach(({ unlockMode, type, deviceSecurityType }) =>
         it(`updates the configuration for ${unlockMode}`, async () => {
           const expectedConfig = {
-            ...mockVault.config,
+            ...(mockVault.config as IdentityVaultConfig),
             type,
             deviceSecurityType,
           };
@@ -159,8 +160,8 @@ describe('SessionVaultService', () => {
         await service.disableLocking();
         expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
         expect(mockVault.updateConfig).toHaveBeenCalledWith({
-          ...mockVault.config,
-          lockAfterBackgrounded: null,
+          ...(mockVault.config as IdentityVaultConfig),
+          lockAfterBackgrounded: undefined,
         });
       });
     });
@@ -170,7 +171,7 @@ describe('SessionVaultService', () => {
         await service.enableLocking();
         expect(mockVault.updateConfig).toHaveBeenCalledTimes(1);
         expect(mockVault.updateConfig).toHaveBeenCalledWith({
-          ...mockVault.config,
+          ...(mockVault.config as IdentityVaultConfig),
           lockAfterBackgrounded: 5000,
         });
       });

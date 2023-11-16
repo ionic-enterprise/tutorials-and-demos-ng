@@ -19,6 +19,7 @@ import {
   unlockSessionSuccess,
 } from '@app/store/actions';
 import { AuthenticationService, SessionVaultService, UnlockMode } from '@app/core';
+import { User } from '@app/models';
 
 @Injectable()
 export class AuthEffects {
@@ -26,8 +27,8 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(login),
       exhaustMap((action) =>
-        from(this.performLogin(action.mode)).pipe(
-          mergeMap(() => this.auth.getUserInfo()),
+        from(this.performLogin(action.mode as UnlockMode)).pipe(
+          mergeMap(() => this.auth.getUserInfo() as Promise<User>),
           map((user) => loginSuccess({ user })),
           catchError(() => of(loginFailure({ errorMessage: 'Unknown error in login' }))),
         ),
@@ -40,7 +41,7 @@ export class AuthEffects {
       ofType(unlockSession),
       exhaustMap(() =>
         from(this.sessionVault.unlock()).pipe(
-          mergeMap(() => this.auth.getUserInfo()),
+          mergeMap(() => this.auth.getUserInfo() as Promise<User>),
           map((user) => unlockSessionSuccess({ user })),
           catchError(() => of(unlockSessionFailure())),
         ),

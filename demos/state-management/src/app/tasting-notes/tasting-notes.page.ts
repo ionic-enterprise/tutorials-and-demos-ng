@@ -1,30 +1,32 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { TastingNote } from '@app/models';
-import { selectNotes } from '@app/store';
-import { noteDeleted, notesPageLoaded } from '@app/store/actions';
-import { AlertController, IonRouterOutlet, ModalController } from '@ionic/angular/standalone';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-editor.component';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { addIcons } from 'ionicons';
-import { add } from 'ionicons/icons';
+import { TastingNote } from '@app/models';
+import { State, selectNotes } from '@app/store';
+import { noteDeleted, notesPageLoaded } from '@app/store/actions';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
+  AlertController,
   IonContent,
-  IonList,
-  IonItemSliding,
-  IonItem,
-  IonLabel,
-  IonItemOptions,
-  IonItemOption,
   IonFab,
   IonFabButton,
+  IonHeader,
   IonIcon,
+  IonItem,
+  IonItemOption,
+  IonItemOptions,
+  IonItemSliding,
+  IonLabel,
+  IonList,
+  IonRouterOutlet,
+  IonTitle,
+  IonToolbar,
+  ModalController,
 } from '@ionic/angular/standalone';
+import { Store } from '@ngrx/store';
+import { addIcons } from 'ionicons';
+import { add } from 'ionicons/icons';
+import { Observable } from 'rxjs';
+import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-editor.component';
 
 @Component({
   selector: 'app-tasting-notes',
@@ -51,14 +53,14 @@ import {
   standalone: true,
 })
 export class TastingNotesPage implements OnInit {
-  @ViewChild(IonList, { static: true }) list: IonList;
-  notes$: Observable<Array<TastingNote>>;
+  @ViewChild(IonList, { static: true }) list: IonList | undefined;
+  notes$: Observable<Array<TastingNote>> | undefined;
 
   constructor(
     private alertController: AlertController,
     private modalController: ModalController,
     private routerOutlet: IonRouterOutlet,
-    private store: Store,
+    private store: Store<State>,
   ) {
     addIcons({ add });
   }
