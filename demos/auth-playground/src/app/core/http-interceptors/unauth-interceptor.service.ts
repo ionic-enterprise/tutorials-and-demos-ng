@@ -1,25 +1,18 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
+import { inject } from '@angular/core';
 import { NavController } from '@ionic/angular/standalone';
-import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-@Injectable()
-export class UnauthInterceptor implements HttpInterceptor {
-  constructor(private navController: NavController) {}
+export const unauthInterceptor: HttpInterceptorFn = (request, next) => {
+  const navController = inject(NavController);
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(req).pipe(
-      tap(
-        (event: HttpEvent<any>) => {
-          null;
-        },
-        (err: any) => {
-          if (err instanceof HttpErrorResponse && err.status === 401) {
-            this.navController.navigateRoot(['/', 'login']);
-          }
-        },
-      ),
-    );
-  }
-}
+  return next(request).pipe(
+    tap({
+      error: (err: any) => {
+        if (err instanceof HttpErrorResponse && err.status === 401) {
+          navController.navigateRoot(['/', 'login']);
+        }
+      },
+    }),
+  );
+};

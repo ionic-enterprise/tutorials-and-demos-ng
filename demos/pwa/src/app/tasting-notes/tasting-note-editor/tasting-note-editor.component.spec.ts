@@ -23,10 +23,7 @@ describe('TastingNoteEditorComponent', () => {
   beforeEach(() => {
     modalController = createOverlayControllerMock('ModalController');
     platform = createPlatformMock();
-    TestBed.configureTestingModule({
-      imports: [TastingNoteEditorComponent],
-    })
-      .overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock })
+    TestBed.overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock })
       .overrideProvider(TeaService, { useFactory: createTeaServiceMock })
       .overrideProvider(ModalController, { useValue: modalController })
       .overrideProvider(Platform, { useValue: platform });

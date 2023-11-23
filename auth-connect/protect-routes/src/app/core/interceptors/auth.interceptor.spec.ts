@@ -1,17 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AuthenticationService } from '../authentication.service';
 import { createAuthenticationServiceMock } from '../authentication.service.mock';
-import { AuthInterceptor } from './auth.interceptor';
+import { authInterceptor } from './auth.interceptor';
 
 describe('AuthInterceptor', () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      providers: [AuthInterceptor],
-    }).overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock }),
-  );
+  beforeEach(() => TestBed.overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock }));
 
-  it('should be created', () => {
-    const interceptor: AuthInterceptor = TestBed.inject(AuthInterceptor);
-    expect(interceptor).toBeTruthy();
+  it('should exist', () => {
+    expect(authInterceptor).toBeTruthy();
   });
 });

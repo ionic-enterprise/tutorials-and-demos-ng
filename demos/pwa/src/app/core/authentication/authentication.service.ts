@@ -25,8 +25,8 @@ export class AuthenticationService {
     const url = this.isNative
       ? 'io.ionic.teataster://auth-action-complete'
       : isDevMode()
-      ? 'http://localhost:8100/auth-action-complete'
-      : 'https://tea-taster-ng.web.app/auth-action-complete';
+        ? 'http://localhost:8100/auth-action-complete'
+        : 'https://tea-taster-ng.web.app/auth-action-complete';
 
     this.authOptions = {
       audience: 'https://io.ionic.demo.ac',
@@ -50,7 +50,7 @@ export class AuthenticationService {
       },
       web: {
         uiMode: 'popup',
-        authFlow: 'implicit',
+        authFlow: 'PKCE',
       },
     });
   }

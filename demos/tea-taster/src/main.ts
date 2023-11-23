@@ -1,10 +1,10 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter, RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import { AppComponent } from '@app/app.component';
 import { routes } from '@app/app.routes';
-import { AuthInterceptor, UnauthInterceptor } from '@app/core';
+import { authInterceptor, unauthInterceptor } from '@app/core';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { environment } from './environments/environment';
 
@@ -15,9 +15,7 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: UnauthInterceptor, multi: true },
-    importProvidersFrom(HttpClientModule),
+    provideHttpClient(withInterceptors([authInterceptor, unauthInterceptor])),
     provideRouter(routes),
     provideIonicAngular({}),
   ],

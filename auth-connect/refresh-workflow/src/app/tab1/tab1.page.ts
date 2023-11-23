@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { AuthenticationService } from './../core/authentication.service';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
 
@@ -9,7 +8,7 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/a
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [CommonModule, ExploreContainerComponent, IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
+  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
 })
 export class Tab1Page implements OnInit {
   authenticated = false;

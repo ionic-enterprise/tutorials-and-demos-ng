@@ -78,7 +78,7 @@ export class AuthenticationService {
       },
       web: {
         uiMode: 'popup',
-        authFlow: 'implicit',
+        authFlow: 'PKCE',
       },
     });
   }

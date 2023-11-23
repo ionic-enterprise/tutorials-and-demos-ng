@@ -54,7 +54,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'implicit',
+            authFlow: 'PKCE',
           },
         });
       });
@@ -94,7 +94,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'implicit',
+            authFlow: 'PKCE',
           },
         });
       });
@@ -226,7 +226,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'implicit',
+            authFlow: 'PKCE',
           },
         });
       });
@@ -356,7 +356,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'implicit',
+            authFlow: 'PKCE',
           },
         });
       });
@@ -414,7 +414,7 @@ const testAuthResult = {
           },
           web: {
             uiMode: 'popup',
-            authFlow: 'implicit',
+            authFlow: 'PKCE',
           },
         });
       });

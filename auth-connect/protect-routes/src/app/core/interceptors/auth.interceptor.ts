@@ -1,29 +1,26 @@
-import { Injectable } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpInterceptorFn } from '@angular/common/http';
 import { Observable, from, mergeMap } from 'rxjs';
 import { AuthenticationService } from '../authentication.service';
 
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authentication: AuthenticationService) {}
+const requestRequiresToken = (req: HttpRequest<any>): boolean => {
+  return !/\/login$/.test(req.url);
+};
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return from(
-      this.requestRequiresToken(request)
-        ? this.authentication.getAccessToken().then((token) => {
-            if (token) {
-              request = request.clone({
-                setHeaders: {
-                  Authorization: 'Bearer ' + token,
-                },
-              });
-            }
-          })
-        : Promise.resolve(),
-    ).pipe(mergeMap(() => next.handle(request)));
-  }
+export const authInterceptor: HttpInterceptorFn = (request, next) => {
+  const authentication = inject(AuthenticationService);
 
-  private requestRequiresToken(req: HttpRequest<any>): boolean {
-    return !/\/login$/.test(req.url);
-  }
-}
+  return from(
+    requestRequiresToken(request)
+      ? authentication.getAccessToken().then((token) => {
+          if (token) {
+            request = request.clone({
+              setHeaders: {
+                Authorization: 'Bearer ' + token,
+              },
+            });
+          }
+        })
+      : Promise.resolve(),
+  ).pipe(mergeMap(() => next(request)));
+};

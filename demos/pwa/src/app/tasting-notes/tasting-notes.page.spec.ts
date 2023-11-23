@@ -26,10 +26,9 @@ describe('TastingNotesPage', () => {
     alert = createOverlayElementMock('Alert');
     modal = createOverlayElementMock('Modal');
     modalController = createOverlayControllerMock('ModalController', modal);
-    TestBed.configureTestingModule({
-      imports: [TastingNotesPage],
+    TestBed.overrideProvider(AlertController, {
+      useFactory: () => createOverlayControllerMock('AlertController', alert),
     })
-      .overrideProvider(AlertController, { useFactory: () => createOverlayControllerMock('AlertController', alert) })
       .overrideProvider(ModalController, { useValue: modalController })
       .overrideProvider(IonRouterOutlet, { useValue: mockRouterOutlet })
       .overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock });
