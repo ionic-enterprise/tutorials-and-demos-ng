@@ -6,20 +6,6 @@ This application uses <a href="https://capacitorjs.com/docs" target="_blank">Cap
 
 The purpose of this application is to show the use of much of the `Vault` and `Device` APIs of Identity Vault as well as how Identity Vault and Auth Connect work together to provide a secure authentication solution.
 
-## Building and Running
-
-If you would like to build this app you need to have access to both Identity Vault and Auth Connect, and you will have had to run the <a href="https://ionic.io/docs/supported-plugins/setup#register-your-product-key" target="_blank">registration process</a> on one of your applications. Once you have done that, you can copy the `.npmrc` file from that application to this one in order to gain access to the native solutions.
-
-Once the access is set up, the build processes is the same as for most Ionic applications:
-
-- `npm install`
-- `npm run build`
-- to start a development server: `npm start`
-- to run on an Android device: `ionic cap run android`
-- to run on an iOS device: `ionic cap run ios` (you may need to run `ionic cap start ios` and update the development team)
-
-One final note: this app may or may not work on an emulator. When working with biometrics it is highly suggested that you test only on actual devices and skip the emulators.
-
 ## Significant Architecture
 
 ### The Session Vault Service
