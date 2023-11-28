@@ -70,8 +70,8 @@ This application demonstrates the use of all three Ionic Security Trifecta in co
 
 ### state-management
 
-This is a variation of the [Tea Taster](#tea-taster) that uses Auth Connect and Identity Vault in conjunction with using NgRX for state management.
+This is a variation of the [Tea Taster](#tea-taster) application that uses Auth Connect and Identity Vault in conjunction with using NgRX for state management.
 
 ### tea-taster
 
-This application is the output of the <a href="" target="_blank">three day Ionic Enterprise Training.
+This application is the output of the <a href="https://ionic-training-decks.firebaseapp.com/course/framework/tabs/angular/page/0" target="_blank">three day Ionic Enterprise Training</a>.

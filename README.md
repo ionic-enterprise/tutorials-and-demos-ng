@@ -25,7 +25,7 @@ Here is an example of doing this for the `iv-ac` demo, which uses Identity Vault
 - `npm start`
 - etc...
 
-**Note:** If you copy the package out like this, you can still use `pnpm` commands rather than `npm` commands if you desire.
+**Note:** you can still use `pnpm` commands rather than `npm` commands if you desire.
 
 ### Build All
 
