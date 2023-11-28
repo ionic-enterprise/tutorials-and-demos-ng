@@ -6,6 +6,10 @@ This application uses <a href="https://capacitorjs.com/docs" target="_blank">Cap
 
 The purpose of this application is to show the use of much of the `Vault` and `Device` APIs of Identity Vault as well as how Identity Vault and Auth Connect work together to provide a secure authentication solution.
 
+## Building Note
+
+This app is part of a mono-repo containing other demos but can also be [built on its own](../../README.md#build-a-stand-alone-project).
+
 ## Significant Architecture
 
 ### The Session Vault Service

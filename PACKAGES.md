@@ -38,11 +38,11 @@ The purpose of this application is to show the use of much of the `Vault` and `D
 
 ### iv-ac
 
-This is a variation of the [Tea Taster](#tea-taster) that uses Auth Connect for authentication and Identity Vault for securely storing the authentication result. The purpose of this demo is to show an example of the usage of these products within the context of a small but functional application.
+This is a variation of the [Tea Taster](#tea-taster) application that uses Auth Connect for authentication and Identity Vault for securely storing the authentication result. The purpose of this demo is to show an example of the usage of these products within the context of a small but functional application.
 
 ### pwa
 
-This is a variation of the [Tea Taster](#tea-taster) that uses Auth Connect and Identity Vault in conjunction with PWA. This application provides an example of how the same code base can be adapted for both mobile and web contexts.
+This is a variation of the [Tea Taster](#tea-taster) application that uses Auth Connect and Identity Vault in conjunction with PWA. This application provides an example of how the same code base can be adapted for both mobile and web contexts.
 
 ### security-trifecta
 
