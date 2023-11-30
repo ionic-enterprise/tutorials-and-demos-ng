@@ -62,12 +62,12 @@ All projects contain the following scripts:
 - `android`: Load the package in Android Studio for deploying to a device or simulator.
 - `ios`: Load the package in Xcode for deploying to a device or simulator.
 
-Use the `--filter` option to specify a package. For example, if you are interested in running `tea-taster` use any of
+Use the `--filter` option to specify a package. For example, if you are interested in running `demo-tea-taster` use any of
 the following commands:
 
-- `pnpm --filter tea-taster start`
-- `pnpm --filter tea-taster android`
-- `pnpm --filter tea-taster ios`
+- `pnpm --filter demo-tea-taster start`
+- `pnpm --filter demo-tea-taster android`
+- `pnpm --filter demo-tea-taster ios`
 
 For more advanced uses of the Ionic or Capacitor CLIs you can also change to the package's directory and run them
 from there.
@@ -75,10 +75,10 @@ from there.
 ## Development Workflow
 
 To develop any if the projects within the mono-repo, use the `--filter` option with a couple of standard scripts.
-For example, to work on the `tea-taster` demo, open a couple of terminal sessions and run the following commands:
+For example, to work on the `demo-tea-taster` demo, open a couple of terminal sessions and run the following commands:
 
-- `pnpm --filter tea-taster start`
-- `pnpm --filter tea-taster test:dev`
+- `pnpm --filter demo-tea-taster start`
+- `pnpm --filter demo-tea-taster test:dev`
 
 ## Credentials
 
