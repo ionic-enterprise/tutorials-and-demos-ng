@@ -39,7 +39,8 @@ The `identity-vault` collection contains applications whose primary purpose is t
 
 ## Demos
 
-The `demos` collection contain applications whose primary purpose does not fit into any of the other package collections.
+The `demos` collection contain applications whose primary purpose does not fit into any of the other
+package collections.
 
 ### `demo-auth-playground`
 
@@ -76,23 +77,27 @@ It uses these products as follows:
 
 - **Authentication:**
   - **Auth Connect** handles the OIDC authentication.
-  - **Identity Vault** stores the the authentication result and protects it behind biometrics, the system passcode, or a custom session PIN based on device capabilities.
+  - **Identity Vault** stores the the authentication result and protects it behind biometrics, the system passcode,
+    or a custom session PIN based on device capabilities.
 - **Mobile Offline First:**
   - **Secure Storage** stores complex data via the the SQL database interface
-  - **Identity Vault** manages the encryption key via a sepereate vault from the authentication vault. This ensures that the encryption key stays out of the code, and is available to the user even when they are off line.
-  - A simple data syncronization procedure has been create for this application.
+  - **Identity Vault** manages the encryption key via a separate vault from the authentication vault. This ensures
+    that the encryption key stays out of the code, and is available to the user even when they are off line.
+  - A simple data synchronization procedure has been create for this application.
     - On mobile:
-      - The database is syncronized with the backend on startup.
+      - The database is synchronized with the backend on startup.
       - Displayed data is read from the database.
       - Data modifications are stored in the database.
-      - Upon the next sync, new data is aquired from the backend.
+      - Upon the next sync, new data is acquired from the backend.
     - On web:
       - The SQL database cannot be used. As such, mobile always gets data from the backend API.
       - The sync operation simply refreshes the data.
 - **Key Value Storage:**
   - **Secure Storage** stores the key-value pair via a special interface.
-  - **Identity Vault** manages the encryption key via a sepereate vault from the authentication vault. This ensures that the encryption key stays out of the code, and is available to the user even when they are off line.
-  - The key-value storage mechanism stores data in an encrypted database on mobile. On web, the data is simply stored in local storage and is not encrypted in any way.
+  - **Identity Vault** manages the encryption key via a separate vault from the authentication vault. This ensures
+    that the encryption key stays out of the code, and is available to the user even when they are off line.
+  - The key-value storage mechanism stores data in an encrypted database on mobile. On web, the data is simply
+    stored in local storage and is not encrypted in any way.
 
 ### `demo-state-management`
 
@@ -101,4 +106,5 @@ with using NgRX for state management.
 
 ### `demo-tea-taster`
 
-This application is the output of the [Ionic Enterprise Training](https://ionic-training-decks.firebaseapp.com/course/framework/tabs/angular/page/0).
+This application is the output of the
+[Ionic Enterprise Training](https://ionic-training-decks.firebaseapp.com/course/framework/tabs/angular/page/0).
