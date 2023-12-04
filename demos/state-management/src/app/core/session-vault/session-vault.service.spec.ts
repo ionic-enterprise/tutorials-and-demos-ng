@@ -34,6 +34,7 @@ describe('SessionVaultService', () => {
       setCustomPasscode: Promise.resolve(),
       updateConfig: Promise.resolve(),
       unlock: Promise.resolve(),
+      onError: undefined,
       onLock: undefined,
       onPasscodeRequested: undefined,
     });

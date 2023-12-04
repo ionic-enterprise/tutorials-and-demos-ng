@@ -45,6 +45,10 @@ export class SessionVaultService {
 
     this.vault.onLock(() => this.store.dispatch(sessionLocked()));
 
+    this.vault.onError((error) => {
+      console.error(error);
+    });
+
     this.vault.onPasscodeRequested(async (isPasscodeSetRequest: boolean) =>
       this.onPasscodeRequest(isPasscodeSetRequest),
     );

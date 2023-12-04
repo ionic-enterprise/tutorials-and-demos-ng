@@ -69,6 +69,10 @@ export class SessionVaultService {
       this.lockedSubject.next(false);
     });
 
+    this.vault.onError((error) => {
+      console.error(error);
+    });
+
     this.vault.onPasscodeRequested(async (isPasscodeSetRequest: boolean) =>
       this.onPasscodeRequest(isPasscodeSetRequest),
     );
