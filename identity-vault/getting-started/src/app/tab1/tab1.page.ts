@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   IonButton,
   IonContent,
@@ -20,7 +20,7 @@ import { Session } from '../models/session';
   standalone: true,
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, IonTitle],
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit, OnDestroy {
   private subscription: Subscription;
   session: Session | null = null;
 
