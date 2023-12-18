@@ -49,7 +49,7 @@ export class SessionVaultService {
   }
 
   async clearSession(): Promise<void> {
-    await this.vault.removeValue('session');
+    await this.vault.clear();
   }
 
   async lock(): Promise<void> {

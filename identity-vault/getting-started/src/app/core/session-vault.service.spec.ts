@@ -100,7 +100,7 @@ describe('SessionVaultService', () => {
   describe('clear session', () => {
     it('removes the session from the vault', async () => {
       await service.clearSession();
-      expect(mockVault.removeValue).toHaveBeenCalledOnceWith('session');
+      expect(mockVault.clear).toHaveBeenCalledOnceWith();
     });
   });
 
