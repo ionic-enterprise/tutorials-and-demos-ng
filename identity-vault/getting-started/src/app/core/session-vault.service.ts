@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
   BrowserVault,
+  Device,
   DeviceSecurityType,
   IdentityVaultConfig,
   Vault,
@@ -57,6 +58,7 @@ export class SessionVaultService {
   }
 
   async updateUnlockMode(mode: UnlockMode): Promise<void> {
+    await Device.showBiometricPrompt({ iosBiometricsLocalizedReason: 'Please authenticate to continue' });
     const type =
       mode === 'BiometricsWithPasscode'
         ? VaultType.DeviceSecurity
