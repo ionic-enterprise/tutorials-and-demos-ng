@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'io.ionic.gettingstartediv',
   appName: 'iv-getting-started',
-  webDir: 'www',
+  webDir: 'www/browser',
   server: {
     androidScheme: 'https',
   },
