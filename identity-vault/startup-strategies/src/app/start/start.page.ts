@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonButton, IonContent, IonItem, IonLabel, IonList, NavController } from '@ionic/angular/standalone';
 import { AuthenticationService } from '../core/authentication.service';
 import { SessionVaultService } from '../core/session-vault.service';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-start',
@@ -11,7 +12,7 @@ import { SessionVaultService } from '../core/session-vault.service';
   standalone: true,
   imports: [CommonModule, IonButton, IonContent, IonItem, IonLabel, IonList],
 })
-export class StartPage implements OnInit {
+export class StartPage {
   showUnlock: boolean = false;
 
   constructor(
@@ -20,8 +21,10 @@ export class StartPage implements OnInit {
     private sessionVault: SessionVaultService,
   ) {}
 
-  async ngOnInit() {
-    await this.performUnlockFlow();
+  ionViewDidEnter() {
+    setTimeout(() => {
+      this.performUnlockFlow();
+    }, 100);
   }
 
   async performUnlockFlow() {

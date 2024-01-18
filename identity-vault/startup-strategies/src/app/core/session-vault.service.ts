@@ -45,6 +45,9 @@ export class SessionVaultService {
   }
 
   async getSession(): Promise<Session | null> {
+    if (await this.vault.isEmpty()) {
+      return null;
+    }
     return this.vault.getValue<Session>('session');
   }
 
@@ -64,6 +67,7 @@ export class SessionVaultService {
     return (
       this.vault.config?.type !== VaultType.SecureStorage &&
       this.vault.config?.type !== VaultType.InMemory &&
+      !(await this.vault.isEmpty()) &&
       (await this.vault.isLocked())
     );
   }

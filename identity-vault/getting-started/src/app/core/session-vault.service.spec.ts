@@ -76,24 +76,40 @@ describe('SessionVaultService', () => {
       });
     });
 
-    it('gets the session from the vault', async () => {
-      await service.getSession();
-      expect(mockVault.getValue).toHaveBeenCalledOnceWith('session');
-    });
+    describe('if the vault is empty', () => {
+      beforeEach(() => {
+        (mockVault.isEmpty as jasmine.Spy).and.resolveTo(true);
+      });
 
-    it('resolves the session from the vault', async () => {
-      expect(await service.getSession()).toEqual({
-        email: 'test@ionic.io',
-        firstName: 'Test',
-        lastName: 'User',
-        accessToken: 'foo',
-        refreshToken: 'bar',
+      it('does not get the session from the vault', async () => {
+        await service.getSession();
+        expect(mockVault.getValue).not.toHaveBeenCalled();
+      });
+
+      it('resolves null', async () => {
+        expect(await service.getSession()).toEqual(null);
       });
     });
 
-    it('resoles null if the session is not in the vault', async () => {
-      (mockVault.getValue as jasmine.Spy).and.resolveTo(null);
-      expect(await service.getSession()).toEqual(null);
+    describe('if the vault is not empty', () => {
+      beforeEach(() => {
+        (mockVault.isEmpty as jasmine.Spy).and.resolveTo(false);
+      });
+
+      it('gets the session from the vault', async () => {
+        await service.getSession();
+        expect(mockVault.getValue).toHaveBeenCalledOnceWith('session');
+      });
+
+      it('resolves the session from the vault', async () => {
+        expect(await service.getSession()).toEqual({
+          email: 'test@ionic.io',
+          firstName: 'Test',
+          lastName: 'User',
+          accessToken: 'foo',
+          refreshToken: 'bar',
+        });
+      });
     });
   });
 
