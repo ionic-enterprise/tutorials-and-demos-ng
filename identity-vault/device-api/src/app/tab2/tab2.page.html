@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Device API </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Device API</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Capabilities</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Secure Hardware</ion-label>
+      <ion-note slot="end">{{hasSecureHardware}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Biometrics Supported</ion-label>
+      <ion-note slot="end">{{isBiometricsSupported}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <div>
+        <p>Available Biometric Hardware:</p>
+        <ul *ngIf="availableHardware?.length">
+          <li *ngFor="let h of availableHardware">{{h}}</li>
+        </ul>
+        <ul *ngIf="availableHardware?.length === 0">
+          <li>None</li>
+        </ul>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

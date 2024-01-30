@@ -94,20 +94,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ^17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -130,17 +130,17 @@ importers:
         specifier: ^20.11.5
         version: 20.11.5
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: ^2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: ^48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -251,20 +251,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ^17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -287,17 +287,17 @@ importers:
         specifier: ^20.11.5
         version: 20.11.5
       '@typescript-eslint/eslint-plugin':
-        specifier: 6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: 6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: 6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: 6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: 2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: 48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -408,20 +408,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ^17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -444,17 +444,17 @@ importers:
         specifier: ^20.11.5
         version: 20.11.5
       '@typescript-eslint/eslint-plugin':
-        specifier: 6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: 6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: 6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: 6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: 2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: 48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -543,8 +543,8 @@ importers:
         specifier: ~5.1.3
         version: 5.1.3(@capacitor/core@5.6.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~5.12.2
-        version: 5.12.2(typescript@5.2.2)
+        specifier: ~5.12.3
+        version: 5.12.3(typescript@5.2.2)
       '@ionic/angular':
         specifier: ~7.6.5
         version: 7.6.5(@angular/core@17.1.0)(@angular/forms@17.1.0)(@angular/router@17.1.0)(rxjs@7.8.1)(zone.js@0.14.3)
@@ -565,20 +565,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ~17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -610,17 +610,17 @@ importers:
         specifier: ~20.11.5
         version: 20.11.5
       '@typescript-eslint/eslint-plugin':
-        specifier: ~6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ~6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ~8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: ~2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: ~48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -709,8 +709,8 @@ importers:
         specifier: ^5.1.3
         version: 5.1.3(@capacitor/core@5.6.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~5.12.2
-        version: 5.12.2(typescript@5.2.2)
+        specifier: ~5.12.3
+        version: 5.12.3(typescript@5.2.2)
       '@ionic/angular':
         specifier: ~7.6.5
         version: 7.6.5(@angular/core@17.1.0)(@angular/forms@17.1.0)(@angular/router@17.1.0)(rxjs@7.8.1)(zone.js@0.14.3)
@@ -731,20 +731,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ^17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -773,17 +773,17 @@ importers:
         specifier: ^20.11.5
         version: 20.11.5
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: ~2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: ~48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -875,8 +875,8 @@ importers:
         specifier: ^5.1.3
         version: 5.1.3(@capacitor/core@5.6.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~5.12.2
-        version: 5.12.2(typescript@5.2.2)
+        specifier: ~5.12.3
+        version: 5.12.3(typescript@5.2.2)
       '@ionic/angular':
         specifier: ~7.6.5
         version: 7.6.5(@angular/core@17.1.0)(@angular/forms@17.1.0)(@angular/router@17.1.0)(rxjs@7.8.1)(zone.js@0.14.3)
@@ -897,20 +897,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ^17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -939,17 +939,17 @@ importers:
         specifier: ^20.11.5
         version: 20.11.5
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: ~2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: ~48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -1035,8 +1035,8 @@ importers:
         specifier: ~5.1.3
         version: 5.1.3(@capacitor/core@5.6.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~5.12.2
-        version: 5.12.2(typescript@5.2.2)
+        specifier: ~5.12.3
+        version: 5.12.3(typescript@5.2.2)
       '@ionic-enterprise/secure-storage':
         specifier: ~3.0.2
         version: 3.0.2(@awesome-cordova-plugins/core@6.6.0)(rxjs@7.8.1)
@@ -1044,11 +1044,11 @@ importers:
         specifier: ~7.6.5
         version: 7.6.5(@angular/core@17.1.0)(@angular/forms@17.1.0)(@angular/router@17.1.0)(rxjs@7.8.1)(zone.js@0.14.3)
       core-js:
-        specifier: ~3.35.0
-        version: 3.35.0
+        specifier: ~3.35.1
+        version: 3.35.1
       date-fns:
-        specifier: ~3.2.0
-        version: 3.2.0
+        specifier: ~3.3.1
+        version: 3.3.1
       ionicons:
         specifier: ~7.2.2
         version: 7.2.2
@@ -1066,17 +1066,17 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -1108,17 +1108,17 @@ importers:
         specifier: ~20.11.5
         version: 20.11.5
       '@typescript-eslint/eslint-plugin':
-        specifier: ~6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ~6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ~8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: ~2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: ~48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -1213,8 +1213,8 @@ importers:
         specifier: ~5.1.3
         version: 5.1.3(@capacitor/core@5.6.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~5.12.2
-        version: 5.12.2(typescript@5.2.2)
+        specifier: ~5.12.3
+        version: 5.12.3(typescript@5.2.2)
       '@ionic/angular':
         specifier: ~7.6.5
         version: 7.6.5(@angular/core@17.1.0)(@angular/forms@17.1.0)(@angular/router@17.1.0)(rxjs@7.8.1)(zone.js@0.14.3)
@@ -1244,20 +1244,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ~17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ~17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ~17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -1286,17 +1286,17 @@ importers:
         specifier: ~20.11.5
         version: 20.11.5
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: ~2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: ~48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -1407,20 +1407,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ^17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -1449,17 +1449,17 @@ importers:
         specifier: ^20.11.5
         version: 20.11.5
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: ~2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: ~48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -1492,6 +1492,154 @@ importers:
         version: 2.1.0(jasmine-core@5.1.1)(karma-jasmine@5.1.0)(karma@6.4.2)
       ts-node:
         specifier: ~10.9.2
+        version: 10.9.2(@types/node@20.11.5)(typescript@5.2.2)
+      typescript:
+        specifier: ~5.2.2
+        version: 5.2.2
+
+  identity-vault/device-api:
+    dependencies:
+      '@angular/animations':
+        specifier: ^17.1.0
+        version: 17.1.0(@angular/core@17.1.0)
+      '@angular/common':
+        specifier: ^17.1.0
+        version: 17.1.0(@angular/core@17.1.0)(rxjs@7.8.1)
+      '@angular/compiler':
+        specifier: ^17.1.0
+        version: 17.1.0(@angular/core@17.1.0)
+      '@angular/core':
+        specifier: ^17.1.0
+        version: 17.1.0(rxjs@7.8.1)(zone.js@0.14.3)
+      '@angular/forms':
+        specifier: ^17.1.0
+        version: 17.1.0(@angular/common@17.1.0)(@angular/core@17.1.0)(@angular/platform-browser@17.1.0)(rxjs@7.8.1)
+      '@angular/platform-browser':
+        specifier: ^17.1.0
+        version: 17.1.0(@angular/animations@17.1.0)(@angular/common@17.1.0)(@angular/core@17.1.0)
+      '@angular/platform-browser-dynamic':
+        specifier: ^17.1.0
+        version: 17.1.0(@angular/common@17.1.0)(@angular/compiler@17.1.0)(@angular/core@17.1.0)(@angular/platform-browser@17.1.0)
+      '@angular/router':
+        specifier: ^17.1.0
+        version: 17.1.0(@angular/common@17.1.0)(@angular/core@17.1.0)(@angular/platform-browser@17.1.0)(rxjs@7.8.1)
+      '@capacitor/android':
+        specifier: 5.6.0
+        version: 5.6.0(@capacitor/core@5.6.0)
+      '@capacitor/app':
+        specifier: 5.0.6
+        version: 5.0.6(@capacitor/core@5.6.0)
+      '@capacitor/core':
+        specifier: 5.6.0
+        version: 5.6.0
+      '@capacitor/haptics':
+        specifier: 5.0.6
+        version: 5.0.6(@capacitor/core@5.6.0)
+      '@capacitor/ios':
+        specifier: 5.6.0
+        version: 5.6.0(@capacitor/core@5.6.0)
+      '@capacitor/keyboard':
+        specifier: 5.0.7
+        version: 5.0.7(@capacitor/core@5.6.0)
+      '@capacitor/status-bar':
+        specifier: 5.0.6
+        version: 5.0.6(@capacitor/core@5.6.0)
+      '@ionic-enterprise/identity-vault':
+        specifier: ~5.12.3
+        version: 5.12.3(typescript@5.2.2)
+      '@ionic/angular':
+        specifier: ^7.6.5
+        version: 7.6.5(@angular/core@17.1.0)(@angular/forms@17.1.0)(@angular/router@17.1.0)(rxjs@7.8.1)(zone.js@0.14.3)
+      ionicons:
+        specifier: ^7.2.2
+        version: 7.2.2
+      rxjs:
+        specifier: ~7.8.1
+        version: 7.8.1
+      tslib:
+        specifier: ^2.6.2
+        version: 2.6.2
+      zone.js:
+        specifier: ~0.14.3
+        version: 0.14.3
+    devDependencies:
+      '@angular-devkit/build-angular':
+        specifier: ^17.1.0
+        version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
+      '@angular-eslint/builder':
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
+      '@angular-eslint/eslint-plugin':
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
+      '@angular-eslint/eslint-plugin-template':
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
+      '@angular-eslint/schematics':
+        specifier: ^17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+      '@angular-eslint/template-parser':
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
+      '@angular/cli':
+        specifier: ^17.1.0
+        version: 17.1.0
+      '@angular/compiler-cli':
+        specifier: ^17.1.0
+        version: 17.1.0(@angular/compiler@17.1.0)(typescript@5.2.2)
+      '@angular/language-service':
+        specifier: ^17.1.0
+        version: 17.1.0
+      '@capacitor/cli':
+        specifier: 5.6.0
+        version: 5.6.0
+      '@ionic/angular-toolkit':
+        specifier: ^11.0.0
+        version: 11.0.0
+      '@types/jasmine':
+        specifier: ~5.1.4
+        version: 5.1.4
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
+      '@typescript-eslint/parser':
+        specifier: ^6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.56.0
+      eslint-plugin-import:
+        specifier: 2.29.1
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
+      eslint-plugin-jsdoc:
+        specifier: 48.0.2
+        version: 48.0.2(eslint@8.56.0)
+      eslint-plugin-prefer-arrow:
+        specifier: 1.2.3
+        version: 1.2.3(eslint@8.56.0)
+      jasmine-core:
+        specifier: ~5.1.1
+        version: 5.1.1
+      jasmine-spec-reporter:
+        specifier: ~7.0.0
+        version: 7.0.0
+      karma:
+        specifier: ~6.4.2
+        version: 6.4.2
+      karma-chrome-launcher:
+        specifier: ~3.2.0
+        version: 3.2.0
+      karma-coverage:
+        specifier: ~2.2.1
+        version: 2.2.1
+      karma-jasmine:
+        specifier: ~5.1.0
+        version: 5.1.0(karma@6.4.2)
+      karma-jasmine-html-reporter:
+        specifier: ~2.1.0
+        version: 2.1.0(jasmine-core@5.1.1)(karma-jasmine@5.1.0)(karma@6.4.2)
+      ts-node:
+        specifier: ^10.9.2
         version: 10.9.2(@types/node@20.11.5)(typescript@5.2.2)
       typescript:
         specifier: ~5.2.2
@@ -1545,8 +1693,8 @@ importers:
         specifier: 5.0.6
         version: 5.0.6(@capacitor/core@5.6.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~5.12.2
-        version: 5.12.2(typescript@5.2.2)
+        specifier: ~5.12.3
+        version: 5.12.3(typescript@5.2.2)
       '@ionic/angular':
         specifier: ^7.6.5
         version: 7.6.5(@angular/core@17.1.0)(@angular/forms@17.1.0)(@angular/router@17.1.0)(rxjs@7.8.1)(zone.js@0.14.3)
@@ -1567,20 +1715,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ^17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -1600,17 +1748,17 @@ importers:
         specifier: ~5.1.4
         version: 5.1.4
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: 2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: 48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -1693,8 +1841,8 @@ importers:
         specifier: 5.0.6
         version: 5.0.6(@capacitor/core@5.6.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~5.12.2
-        version: 5.12.2(typescript@5.2.2)
+        specifier: ~5.12.3
+        version: 5.12.3(typescript@5.2.2)
       '@ionic/angular':
         specifier: ^7.6.5
         version: 7.6.5(@angular/core@17.1.0)(@angular/forms@17.1.0)(@angular/router@17.1.0)(rxjs@7.8.1)(zone.js@0.14.3)
@@ -1715,20 +1863,20 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0(@angular/compiler-cli@17.1.0)(@angular/service-worker@17.1.0)(@types/node@20.11.5)(karma@6.4.2)(typescript@5.2.2)
       '@angular-eslint/builder':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/eslint-plugin-template':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/schematics':
-        specifier: ^17.2.0
-        version: 17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2)
       '@angular-eslint/template-parser':
-        specifier: ^17.2.0
-        version: 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^17.2.1
+        version: 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli':
         specifier: ^17.1.0
         version: 17.1.0
@@ -1748,17 +1896,17 @@ importers:
         specifier: ~5.1.4
         version: 5.1.4
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.19.0
-        version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.19.0
-        version: 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+        specifier: ^6.19.1
+        version: 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       eslint-plugin-import:
         specifier: 2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: 48.0.2
         version: 48.0.2(eslint@8.56.0)
@@ -2054,8 +2202,8 @@ packages:
       - chokidar
     dev: true
 
-  /@angular-eslint/builder@17.2.0(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-xPxgCTPcnFRT8OYs9R5UZVAtzVouIIfdMOqTcB847Cev4H8kqRz0gO5aqkQiL+0erwnLf8D4nRzMTJjSBpQQNw==}
+  /@angular-eslint/builder@17.2.1(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-O30eaR0wCPiP+zKWvXj2JM8hVq30Wok2rp7zJMFm3PurjF9nWIIyexXkE5fa538DYZYxu8N3gQRqhpv5jvTXCg==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
@@ -2070,20 +2218,20 @@ packages:
       - debug
     dev: true
 
-  /@angular-eslint/bundled-angular-compiler@17.2.0:
-    resolution: {integrity: sha512-uBvPbPE2JxqpdLs//Nd5+TRLgjxDxvTYgmGFTKI9Eo98krqps+rhSQCRSHWACukzc25X3Q4ITHfvjODQL8qQkg==}
+  /@angular-eslint/bundled-angular-compiler@17.2.1:
+    resolution: {integrity: sha512-puC0itsZv2QlrDOCcWtq1KZH+DvfrpV+mV78HHhi6+h25R5iIhr8ARKcl3EQxFjvrFq34jhG8pSupxKvFbHVfA==}
     dev: true
 
-  /@angular-eslint/eslint-plugin-template@17.2.0(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-CkcAOWWqNwX0FXeLwJu0Vctso8q/NPHJ95R2Cy8hjwuMyFF83/vDouyeIjYC+SRv6hbevmNa+BbdYXhQZinIHw==}
+  /@angular-eslint/eslint-plugin-template@17.2.1(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-hl1hcHtcm90wyVL1OQGTz16oA0KHon+FFb3Qg0fLXObaXxA495Ecefd9ub5Xxg4JEOPRDi29bF1Y3YKpwflgeg==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/bundled-angular-compiler': 17.2.0
-      '@angular-eslint/utils': 17.2.0(eslint@8.56.0)(typescript@5.2.2)
-      '@typescript-eslint/type-utils': 6.18.0(eslint@8.56.0)(typescript@5.2.2)
-      '@typescript-eslint/utils': 6.18.0(eslint@8.56.0)(typescript@5.2.2)
+      '@angular-eslint/bundled-angular-compiler': 17.2.1
+      '@angular-eslint/utils': 17.2.1(eslint@8.56.0)(typescript@5.2.2)
+      '@typescript-eslint/type-utils': 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+      '@typescript-eslint/utils': 6.19.0(eslint@8.56.0)(typescript@5.2.2)
       aria-query: 5.3.0
       axobject-query: 4.0.0
       eslint: 8.56.0
@@ -2092,27 +2240,27 @@ packages:
       - supports-color
     dev: true
 
-  /@angular-eslint/eslint-plugin@17.2.0(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-8A3hD/11N6QEchsAGggTPmNsa0GS5p44t930slMsxrTvdSlKAo56FzVdxwSkOcejKIJs57oWxoKvtK4UyLYkeA==}
+  /@angular-eslint/eslint-plugin@17.2.1(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-9yA81BHpsaCUKRBtHGN3ieAy8HpIoffzPQMu34lYqZFT4yGHGhYmhQjNSQGBRbV2LD9dVv2U35rMHNmUcozXpw==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/utils': 17.2.0(eslint@8.56.0)(typescript@5.2.2)
-      '@typescript-eslint/utils': 6.18.0(eslint@8.56.0)(typescript@5.2.2)
+      '@angular-eslint/utils': 17.2.1(eslint@8.56.0)(typescript@5.2.2)
+      '@typescript-eslint/utils': 6.19.0(eslint@8.56.0)(typescript@5.2.2)
       eslint: 8.56.0
       typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@angular-eslint/schematics@17.2.0(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-lV2+2H3Hf6FCJfM+cddJ/7ss3qc99OO2wuvTjGNH512mP75tvfLakV+e6TFFdzK0km+ceXvB2VqNXMSShB4PVQ==}
+  /@angular-eslint/schematics@17.2.1(@angular/cli@17.1.0)(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-7ldtIePI4ZTp/TBpeOZkzfv30HSAn//4TgtFuqvojudI8n8batV5FqQ0VNm1e0zitl75t8Zwtr0KYT4I6vh59g==}
     peerDependencies:
       '@angular/cli': '>= 17.0.0 < 18.0.0'
     dependencies:
-      '@angular-eslint/eslint-plugin': 17.2.0(eslint@8.56.0)(typescript@5.2.2)
-      '@angular-eslint/eslint-plugin-template': 17.2.0(eslint@8.56.0)(typescript@5.2.2)
+      '@angular-eslint/eslint-plugin': 17.2.1(eslint@8.56.0)(typescript@5.2.2)
+      '@angular-eslint/eslint-plugin-template': 17.2.1(eslint@8.56.0)(typescript@5.2.2)
       '@angular/cli': 17.1.0
       '@nx/devkit': 17.2.8(nx@17.2.8)
       ignore: 5.3.0
@@ -2128,26 +2276,26 @@ packages:
       - typescript
     dev: true
 
-  /@angular-eslint/template-parser@17.2.0(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-Js9w1IXWPvXEjd05bWkZzRaLw0g0mJPztAWOj3DiU7H9LKkautQq0zZu02cAAnXZim2CsAagEh2GmGjhaYvoKg==}
+  /@angular-eslint/template-parser@17.2.1(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-WPQYFvRju0tCDXQ/pwrzC911pE07JvpeDgcN2elhzV6lxDHJEZpA5O9pnW9qgNA6J6XM9Q7dBkJ22ztAzC4WFw==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/bundled-angular-compiler': 17.2.0
+      '@angular-eslint/bundled-angular-compiler': 17.2.1
       eslint: 8.56.0
       eslint-scope: 8.0.0
       typescript: 5.2.2
     dev: true
 
-  /@angular-eslint/utils@17.2.0(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-J7DsFKb5yxv8te8LQvChNn6MBvKulcBx+jtHX1uen+uuuv8XhZuVMZXS0rolUkdl1Q0mBeHpkuO2q6Vh17pqbQ==}
+  /@angular-eslint/utils@17.2.1(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-qQYTBXy90dWM7fhhpa5i9lTtqqhJisvRa+naCrQx9kBgR458JScLdkVIdcZ9D/rPiDCmKiVUfgcDISnjUeqTqg==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/bundled-angular-compiler': 17.2.0
-      '@typescript-eslint/utils': 6.18.0(eslint@8.56.0)(typescript@5.2.2)
+      '@angular-eslint/bundled-angular-compiler': 17.2.1
+      '@typescript-eslint/utils': 6.19.0(eslint@8.56.0)(typescript@5.2.2)
       eslint: 8.56.0
       typescript: 5.2.2
     transitivePeerDependencies:
@@ -4023,8 +4171,8 @@ packages:
       url-parse: 1.5.10
     dev: false
 
-  /@ionic-enterprise/identity-vault@5.12.2(typescript@5.2.2):
-    resolution: {integrity: sha512-BynwntSYQM0OWjbHqjP072xyTFyAX0naYgh7iwTSarxXoHC2wsqFxThtfTs1QqeQqsexWULvCTEJSGaBIBWA4w==}
+  /@ionic-enterprise/identity-vault@5.12.3(typescript@5.2.2):
+    resolution: {integrity: sha512-47+gb0k4jyxNIYNX6EKXhuYvc/ioXrAqZgcFDWtmgppsbzfOHkO6lyhj1sYpDvD+OfhebkrCJdPlkJiQkzrnxQ==}
     engines: {cordovaDependencies: {3.0.0: {cordova-android: '>=6.3.0'}, 4.0.0: {cordova-android: '>=9.0.0-dev'}, 5.0.0: {cordova: '>=10.0.0', cordova-android: '>=10.0.0'}}}
     peerDependencies:
       typescript: '>=3.5'
@@ -5020,8 +5168,8 @@ packages:
       '@types/yargs-parser': 21.0.3
     dev: true
 
-  /@typescript-eslint/eslint-plugin@6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-DUCUkQNklCQYnrBSSikjVChdc84/vMPDQSgJTHBZ64G9bA9w0Crc0rd2diujKbTdp6w2J47qkeHQLoi0rpLCdg==}
+  /@typescript-eslint/eslint-plugin@6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-roQScUGFruWod9CEyoV5KlCYrubC/fvG8/1zXuT0WTcxX87GnMMmnksMwSg99lo1xiKrBzw2icsJPMAw1OtKxg==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
       '@typescript-eslint/parser': ^6.0.0 || ^6.0.0-alpha
@@ -5032,11 +5180,11 @@ packages:
         optional: true
     dependencies:
       '@eslint-community/regexpp': 4.10.0
-      '@typescript-eslint/parser': 6.19.0(eslint@8.56.0)(typescript@5.2.2)
-      '@typescript-eslint/scope-manager': 6.19.0
-      '@typescript-eslint/type-utils': 6.19.0(eslint@8.56.0)(typescript@5.2.2)
-      '@typescript-eslint/utils': 6.19.0(eslint@8.56.0)(typescript@5.2.2)
-      '@typescript-eslint/visitor-keys': 6.19.0
+      '@typescript-eslint/parser': 6.19.1(eslint@8.56.0)(typescript@5.2.2)
+      '@typescript-eslint/scope-manager': 6.19.1
+      '@typescript-eslint/type-utils': 6.19.1(eslint@8.56.0)(typescript@5.2.2)
+      '@typescript-eslint/utils': 6.19.1(eslint@8.56.0)(typescript@5.2.2)
+      '@typescript-eslint/visitor-keys': 6.19.1
       debug: 4.3.4
       eslint: 8.56.0
       graphemer: 1.4.0
@@ -5062,8 +5210,8 @@ packages:
       - typescript
     dev: true
 
-  /@typescript-eslint/parser@6.19.0(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-1DyBLG5SH7PYCd00QlroiW60YJ4rWMuUGa/JBV0iZuqi4l4IK3twKPq5ZkEebmGqRjXWVgsUzfd3+nZveewgow==}
+  /@typescript-eslint/parser@6.19.1(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-WEfX22ziAh6pRE9jnbkkLGp/4RhTpffr2ZK5bJ18M8mIfA8A+k97U9ZyaXCEJRlmMHh7R9MJZWXp/r73DzINVQ==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0
@@ -5072,10 +5220,10 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/scope-manager': 6.19.0
-      '@typescript-eslint/types': 6.19.0
-      '@typescript-eslint/typescript-estree': 6.19.0(typescript@5.2.2)
-      '@typescript-eslint/visitor-keys': 6.19.0
+      '@typescript-eslint/scope-manager': 6.19.1
+      '@typescript-eslint/types': 6.19.1
+      '@typescript-eslint/typescript-estree': 6.19.1(typescript@5.2.2)
+      '@typescript-eslint/visitor-keys': 6.19.1
       debug: 4.3.4
       eslint: 8.56.0
       typescript: 5.2.2
@@ -5091,14 +5239,6 @@ packages:
       '@typescript-eslint/visitor-keys': 5.62.0
     dev: true
 
-  /@typescript-eslint/scope-manager@6.18.0:
-    resolution: {integrity: sha512-o/UoDT2NgOJ2VfHpfr+KBY2ErWvCySNUIX/X7O9g8Zzt/tXdpfEU43qbNk8LVuWUT2E0ptzTWXh79i74PP0twA==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-    dependencies:
-      '@typescript-eslint/types': 6.18.0
-      '@typescript-eslint/visitor-keys': 6.18.0
-    dev: true
-
   /@typescript-eslint/scope-manager@6.19.0:
     resolution: {integrity: sha512-dO1XMhV2ehBI6QN8Ufi7I10wmUovmLU0Oru3n5LVlM2JuzB4M+dVphCPLkVpKvGij2j/pHBWuJ9piuXx+BhzxQ==}
     engines: {node: ^16.0.0 || >=18.0.0}
@@ -5107,24 +5247,12 @@ packages:
       '@typescript-eslint/visitor-keys': 6.19.0
     dev: true
 
-  /@typescript-eslint/type-utils@6.18.0(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-ZeMtrXnGmTcHciJN1+u2CigWEEXgy1ufoxtWcHORt5kGvpjjIlK9MUhzHm4RM8iVy6dqSaZA/6PVkX6+r+ChjQ==}
+  /@typescript-eslint/scope-manager@6.19.1:
+    resolution: {integrity: sha512-4CdXYjKf6/6aKNMSly/BP4iCSOpvMmqtDzRtqFyyAae3z5kkqEjKndR5vDHL8rSuMIIWP8u4Mw4VxLyxZW6D5w==}
     engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      eslint: ^7.0.0 || ^8.0.0
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
     dependencies:
-      '@typescript-eslint/typescript-estree': 6.18.0(typescript@5.2.2)
-      '@typescript-eslint/utils': 6.18.0(eslint@8.56.0)(typescript@5.2.2)
-      debug: 4.3.4
-      eslint: 8.56.0
-      ts-api-utils: 1.0.3(typescript@5.2.2)
-      typescript: 5.2.2
-    transitivePeerDependencies:
-      - supports-color
+      '@typescript-eslint/types': 6.19.1
+      '@typescript-eslint/visitor-keys': 6.19.1
     dev: true
 
   /@typescript-eslint/type-utils@6.19.0(eslint@8.56.0)(typescript@5.2.2):
@@ -5147,18 +5275,38 @@ packages:
       - supports-color
     dev: true
 
+  /@typescript-eslint/type-utils@6.19.1(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-0vdyld3ecfxJuddDjACUvlAeYNrHP/pDeQk2pWBR2ESeEzQhg52DF53AbI9QCBkYE23lgkhLCZNkHn2hEXXYIg==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      eslint: ^7.0.0 || ^8.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/typescript-estree': 6.19.1(typescript@5.2.2)
+      '@typescript-eslint/utils': 6.19.1(eslint@8.56.0)(typescript@5.2.2)
+      debug: 4.3.4
+      eslint: 8.56.0
+      ts-api-utils: 1.0.3(typescript@5.2.2)
+      typescript: 5.2.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@typescript-eslint/types@5.62.0:
     resolution: {integrity: sha512-87NVngcbVXUahrRTqIK27gD2t5Cu1yuCXxbLcFtCzZGlfyVWWh8mLHkoxzjsB6DDNnvdL+fW8MiwPEJyGJQDgQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@typescript-eslint/types@6.18.0:
-    resolution: {integrity: sha512-/RFVIccwkwSdW/1zeMx3hADShWbgBxBnV/qSrex6607isYjj05t36P6LyONgqdUrNLl5TYU8NIKdHUYpFvExkA==}
+  /@typescript-eslint/types@6.19.0:
+    resolution: {integrity: sha512-lFviGV/vYhOy3m8BJ/nAKoAyNhInTdXpftonhWle66XHAtT1ouBlkjL496b5H5hb8dWXHwtypTqgtb/DEa+j5A==}
     engines: {node: ^16.0.0 || >=18.0.0}
     dev: true
 
-  /@typescript-eslint/types@6.19.0:
-    resolution: {integrity: sha512-lFviGV/vYhOy3m8BJ/nAKoAyNhInTdXpftonhWle66XHAtT1ouBlkjL496b5H5hb8dWXHwtypTqgtb/DEa+j5A==}
+  /@typescript-eslint/types@6.19.1:
+    resolution: {integrity: sha512-6+bk6FEtBhvfYvpHsDgAL3uo4BfvnTnoge5LrrCj2eJN8g3IJdLTD4B/jK3Q6vo4Ql/Hoip9I8aB6fF+6RfDqg==}
     engines: {node: ^16.0.0 || >=18.0.0}
     dev: true
 
@@ -5183,28 +5331,6 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/typescript-estree@6.18.0(typescript@5.2.2):
-    resolution: {integrity: sha512-klNvl+Ql4NsBNGB4W9TZ2Od03lm7aGvTbs0wYaFYsplVPhr+oeXjlPZCDI4U9jgJIDK38W1FKhacCFzCC+nbIg==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@typescript-eslint/types': 6.18.0
-      '@typescript-eslint/visitor-keys': 6.18.0
-      debug: 4.3.4
-      globby: 11.1.0
-      is-glob: 4.0.3
-      minimatch: 9.0.3
-      semver: 7.5.4
-      ts-api-utils: 1.0.3(typescript@5.2.2)
-      typescript: 5.2.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@typescript-eslint/typescript-estree@6.19.0(typescript@5.2.2):
     resolution: {integrity: sha512-o/zefXIbbLBZ8YJ51NlkSAt2BamrK6XOmuxSR3hynMIzzyMY33KuJ9vuMdFSXW+H0tVvdF9qBPTHA91HDb4BIQ==}
     engines: {node: ^16.0.0 || >=18.0.0}
@@ -5216,6 +5342,28 @@ packages:
     dependencies:
       '@typescript-eslint/types': 6.19.0
       '@typescript-eslint/visitor-keys': 6.19.0
+      debug: 4.3.4
+      globby: 11.1.0
+      is-glob: 4.0.3
+      minimatch: 9.0.3
+      semver: 7.5.4
+      ts-api-utils: 1.0.3(typescript@5.2.2)
+      typescript: 5.2.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@typescript-eslint/typescript-estree@6.19.1(typescript@5.2.2):
+    resolution: {integrity: sha512-aFdAxuhzBFRWhy+H20nYu19+Km+gFfwNO4TEqyszkMcgBDYQjmPJ61erHxuT2ESJXhlhrO7I5EFIlZ+qGR8oVA==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/types': 6.19.1
+      '@typescript-eslint/visitor-keys': 6.19.1
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
@@ -5247,25 +5395,6 @@ packages:
       - typescript
     dev: true
 
-  /@typescript-eslint/utils@6.18.0(eslint@8.56.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-wiKKCbUeDPGaYEYQh1S580dGxJ/V9HI7K5sbGAVklyf+o5g3O+adnS4UNJajplF4e7z2q0uVBaTdT/yLb4XAVA==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      eslint: ^7.0.0 || ^8.0.0
-    dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@8.56.0)
-      '@types/json-schema': 7.0.15
-      '@types/semver': 7.5.6
-      '@typescript-eslint/scope-manager': 6.18.0
-      '@typescript-eslint/types': 6.18.0
-      '@typescript-eslint/typescript-estree': 6.18.0(typescript@5.2.2)
-      eslint: 8.56.0
-      semver: 7.5.4
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    dev: true
-
   /@typescript-eslint/utils@6.19.0(eslint@8.56.0)(typescript@5.2.2):
     resolution: {integrity: sha512-QR41YXySiuN++/dC9UArYOg4X86OAYP83OWTewpVx5ct1IZhjjgTLocj7QNxGhWoTqknsgpl7L+hGygCO+sdYw==}
     engines: {node: ^16.0.0 || >=18.0.0}
@@ -5285,6 +5414,25 @@ packages:
       - typescript
     dev: true
 
+  /@typescript-eslint/utils@6.19.1(eslint@8.56.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-JvjfEZuP5WoMqwh9SPAPDSHSg9FBHHGhjPugSRxu5jMfjvBpq5/sGTD+9M9aQ5sh6iJ8AY/Kk/oUYVEMAPwi7w==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      eslint: ^7.0.0 || ^8.0.0
+    dependencies:
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.56.0)
+      '@types/json-schema': 7.0.15
+      '@types/semver': 7.5.6
+      '@typescript-eslint/scope-manager': 6.19.1
+      '@typescript-eslint/types': 6.19.1
+      '@typescript-eslint/typescript-estree': 6.19.1(typescript@5.2.2)
+      eslint: 8.56.0
+      semver: 7.5.4
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
   /@typescript-eslint/visitor-keys@5.62.0:
     resolution: {integrity: sha512-07ny+LHRzQXepkGg6w0mFY41fVUNBrL2Roj/++7V1txKugfjm/Ci/qSND03r2RhlJhJYMcTn9AhhSSqQp0Ysyw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -5293,19 +5441,19 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@typescript-eslint/visitor-keys@6.18.0:
-    resolution: {integrity: sha512-1wetAlSZpewRDb2h9p/Q8kRjdGuqdTAQbkJIOUMLug2LBLG+QOjiWoSj6/3B/hA9/tVTFFdtiKvAYoYnSRW/RA==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-    dependencies:
-      '@typescript-eslint/types': 6.18.0
-      eslint-visitor-keys: 3.4.3
-    dev: true
-
   /@typescript-eslint/visitor-keys@6.19.0:
     resolution: {integrity: sha512-hZaUCORLgubBvtGpp1JEFEazcuEdfxta9j4iUwdSAr7mEsYYAp3EAUyCZk3VEEqGj6W+AV4uWyrDGtrlawAsgQ==}
     engines: {node: ^16.0.0 || >=18.0.0}
     dependencies:
       '@typescript-eslint/types': 6.19.0
+      eslint-visitor-keys: 3.4.3
+    dev: true
+
+  /@typescript-eslint/visitor-keys@6.19.1:
+    resolution: {integrity: sha512-gkdtIO+xSO/SmI0W68DBg4u1KElmIUo3vXzgHyGPs6cxgB0sa3TlptRAAE0hUY1hM6FcDKEv7aIwiTGm76cXfQ==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    dependencies:
+      '@typescript-eslint/types': 6.19.1
       eslint-visitor-keys: 3.4.3
     dev: true
 
@@ -6546,8 +6694,8 @@ packages:
       browserslist: 4.22.2
     dev: true
 
-  /core-js@3.35.0:
-    resolution: {integrity: sha512-ntakECeqg81KqMueeGJ79Q5ZgQNR+6eaE8sxGCx62zMbAIj65q+uYvatToew3m6eAGdU4gNZwpZ34NMe4GYswg==}
+  /core-js@3.35.1:
+    resolution: {integrity: sha512-IgdsbxNyMskrTFxa9lWHyMwAJU5gXOPP+1yO+K59d50VLVAIDAbs7gIv705KzALModfK3ZrSZTPNpC0PQgIZuw==}
     requiresBuild: true
     dev: false
 
@@ -6666,8 +6814,8 @@ packages:
     resolution: {integrity: sha512-2iy1EkLdlBzQGvbweYRFxmFath8+K7+AKB0TlhHWkNuH+TmovaMH/Wp7V7R4u7f4SnX3OgLsU9t1NI9ioDnUpg==}
     engines: {node: '>=8'}
 
-  /date-fns@3.2.0:
-    resolution: {integrity: sha512-E4KWKavANzeuusPi0jUjpuI22SURAznGkx7eZV+4i6x2A+IZxAMcajgkvuDAU1bg40+xuhW1zRdVIIM/4khuIg==}
+  /date-fns@3.3.1:
+    resolution: {integrity: sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==}
     dev: false
 
   /date-format@4.0.14:
@@ -6927,8 +7075,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /dotenv@16.3.1:
-    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+  /dotenv@16.3.2:
+    resolution: {integrity: sha512-HTlk5nmhkm8F6JcdXvHIzaorzCoziNQT9mGxLPVXW8wJF1TiGSL60ZGB4gHWabHOaMmWmhvk2/lPHfnBiT78AQ==}
     engines: {node: '>=12'}
     dev: true
 
@@ -7231,7 +7379,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils@2.8.0(@typescript-eslint/parser@6.19.0)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0):
+  /eslint-module-utils@2.8.0(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0):
     resolution: {integrity: sha512-aWajIYfsqCKRDgUfjEXNN/JlrzauMuSEy5sbd7WXbtW3EH6A6MpwEh42c7qD+MqQo9QMJ6fWLAeIJynx0g6OAw==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -7252,7 +7400,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+      '@typescript-eslint/parser': 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       debug: 3.2.7(supports-color@5.5.0)
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
@@ -7260,7 +7408,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.19.0)(eslint@8.56.0):
+  /eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0):
     resolution: {integrity: sha512-BbPC0cuExzhiMo4Ff1BTVwHpjjv28C5R+btTOGaCRC7UEz801up0JadwkeSk5Ued6TG34uaczuVuH6qyy5YUxw==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -7270,7 +7418,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 6.19.0(eslint@8.56.0)(typescript@5.2.2)
+      '@typescript-eslint/parser': 6.19.1(eslint@8.56.0)(typescript@5.2.2)
       array-includes: 3.1.7
       array.prototype.findlastindex: 1.2.3
       array.prototype.flat: 1.3.2
@@ -7279,7 +7427,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.19.0)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0)
       hasown: 2.0.0
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -7988,7 +8136,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
@@ -9886,7 +10034,7 @@ packages:
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
       cliui: 8.0.1
-      dotenv: 16.3.1
+      dotenv: 16.3.2
       dotenv-expand: 10.0.0
       enquirer: 2.3.6
       figures: 3.2.0
