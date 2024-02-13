@@ -1,0 +1,16 @@
+<ion-content class="ion-padding">
+  <div id="container">
+    <ion-list *ngIf="showUnlock">
+      <ion-item>
+        <ion-label>
+          <ion-button expand="block" (click)="performUnlockFlow()">Unlock</ion-button>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-button expand="block" (click)="redoLogin()">Redo Login</ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
