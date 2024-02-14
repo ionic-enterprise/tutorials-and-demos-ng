@@ -76,7 +76,7 @@ export class SessionVaultService {
 
   async updateUnlockMode(mode: UnlockMode): Promise<void> {
     const type = await this.getVaultType(mode);
-    const deviceSecurityType = type === VaultType.DeviceSecurity ? DeviceSecurityType.Both : DeviceSecurityType.None;
+    const deviceSecurityType = type === VaultType.DeviceSecurity ? DeviceSecurityType.Biometrics : DeviceSecurityType.None;
     const lockAfterBackgrounded = type === VaultType.InMemory ? 30000 : 2000;
     await this.vault.updateConfig({
       ...(this.vault.config as IdentityVaultConfig),
