@@ -35,10 +35,13 @@ export class SessionVaultService {
       key: 'io.ionic.gettingstartediv',
       type: VaultType.InMemory,
       deviceSecurityType: DeviceSecurityType.None,
-      lockAfterBackgrounded: 30000,
+      lockAfterBackgrounded: 2000,
     });
 
-    this.vault.onLock(() => this.lockedSubject.next(true));
+    this.vault.onLock(() => {
+      alert('locked');
+      this.lockedSubject.next(true);
+    });
     this.vault.onUnlock(() => this.lockedSubject.next(false));
   }
 
@@ -77,7 +80,7 @@ export class SessionVaultService {
   async updateUnlockMode(mode: UnlockMode): Promise<void> {
     const type = await this.getVaultType(mode);
     const deviceSecurityType = type === VaultType.DeviceSecurity ? DeviceSecurityType.Both : DeviceSecurityType.None;
-    const lockAfterBackgrounded = type === VaultType.InMemory ? 30000 : 2000;
+    const lockAfterBackgrounded = type === VaultType.InMemory ? 2000 : 2000;
     await this.vault.updateConfig({
       ...(this.vault.config as IdentityVaultConfig),
       type,
