@@ -38,10 +38,7 @@ export class SessionVaultService {
       lockAfterBackgrounded: 30000,
     });
 
-    this.vault.onLock(() => {
-      alert('locked');
-      this.lockedSubject.next(true);
-    });
+    this.vault.onLock(() => this.lockedSubject.next(true));
     this.vault.onUnlock(() => this.lockedSubject.next(false));
   }
 
