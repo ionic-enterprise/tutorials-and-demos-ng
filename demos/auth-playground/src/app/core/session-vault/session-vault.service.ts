@@ -51,15 +51,20 @@ export class SessionVaultService {
           type: VaultType.SecureStorage,
         });
 
-        await this.vault.initialize({
-          key: 'io.ionic.auth-playground-ng',
-          type: VaultType.SecureStorage,
-          deviceSecurityType: DeviceSecurityType.None,
-          lockAfterBackgrounded: 5000,
-          shouldClearVaultAfterTooManyFailedAttempts: true,
-          customPasscodeInvalidUnlockAttempts: 2,
-          unlockVaultOnLoad: false,
-        });
+        try {
+          await this.vault.initialize({
+            key: 'io.ionic.auth-playground-ng',
+            type: VaultType.SecureStorage,
+            deviceSecurityType: DeviceSecurityType.None,
+            lockAfterBackgrounded: 5000,
+            shouldClearVaultAfterTooManyFailedAttempts: true,
+            customPasscodeInvalidUnlockAttempts: 2,
+            unlockVaultOnLoad: false,
+          });
+        } catch (e: unknown) {
+          await this.vault.clear();
+          await this.setUnlockMode('NeverLock');
+        }
 
         this.vault.onLock(() => {
           if (this.onLockCallback) {

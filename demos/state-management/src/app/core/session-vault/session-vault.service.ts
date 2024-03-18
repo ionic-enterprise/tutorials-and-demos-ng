@@ -34,14 +34,19 @@ export class SessionVaultService {
   }
 
   async initialize(): Promise<void> {
-    this.vault.initialize({
-      key: 'io.ionic.teatasterngrx',
-      type: VaultType.SecureStorage,
-      lockAfterBackgrounded: 5000,
-      shouldClearVaultAfterTooManyFailedAttempts: true,
-      customPasscodeInvalidUnlockAttempts: 2,
-      unlockVaultOnLoad: false,
-    });
+    try {
+      this.vault.initialize({
+        key: 'io.ionic.teatasterngrx',
+        type: VaultType.SecureStorage,
+        lockAfterBackgrounded: 5000,
+        shouldClearVaultAfterTooManyFailedAttempts: true,
+        customPasscodeInvalidUnlockAttempts: 2,
+        unlockVaultOnLoad: false,
+      });
+    } catch (e: unknown) {
+      await this.vault.clear();
+      await this.setUnlockMode('NeverLock');
+    }
 
     this.vault.onLock(() => this.store.dispatch(sessionLocked()));
 

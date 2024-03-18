@@ -41,14 +41,19 @@ export class SessionVaultService {
       this.vaultReady = new Promise(async (resolve) => {
         await this.platform.ready();
 
-        await this.vault.initialize({
-          key: 'io.ionic.auth-playground-ng',
-          type: VaultType.SecureStorage,
-          lockAfterBackgrounded: undefined,
-          shouldClearVaultAfterTooManyFailedAttempts: true,
-          customPasscodeInvalidUnlockAttempts: 2,
-          unlockVaultOnLoad: false,
-        });
+        try {
+          await this.vault.initialize({
+            key: 'io.ionic.auth-playground-ng',
+            type: VaultType.SecureStorage,
+            lockAfterBackgrounded: undefined,
+            shouldClearVaultAfterTooManyFailedAttempts: true,
+            customPasscodeInvalidUnlockAttempts: 2,
+            unlockVaultOnLoad: false,
+          });
+        } catch (e: unknown) {
+          await this.vault.clear();
+          await this.setUnlockMode('NeverLock');
+        }
 
         this.vault.onLock(() => this.lockedSubject.next(true));
         this.vault.onUnlock(() => this.lockedSubject.next(false));
