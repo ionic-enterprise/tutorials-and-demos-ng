@@ -64,6 +64,14 @@ export class SessionVaultService {
     await this.vault.lock();
   }
 
+  async isEmpty(): Promise<boolean> {
+    return this.vault.isEmpty();
+  }
+
+  async isLocked(): Promise<boolean> {
+    return this.vault.isLocked();
+  }
+
   async updateUnlockMode(mode: UnlockMode): Promise<void> {
     const type =
       mode === 'BiometricsWithPasscode'
