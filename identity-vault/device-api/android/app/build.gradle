@@ -8,7 +8,7 @@ android {
         }
     }
     namespace "io.ionic.gettingstartediv"
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "io.ionic.gettingstartediv"
         minSdkVersion rootProject.ext.minSdkVersion

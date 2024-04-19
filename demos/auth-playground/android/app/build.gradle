@@ -8,7 +8,7 @@ android {
         }
     }
     namespace "io.ionic.authplaygroundng"
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "io.ionic.authplaygroundng"
         minSdkVersion rootProject.ext.minSdkVersion
