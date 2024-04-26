@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
 
   private handlePreferencesChange() {
     this.preferences.preferencesChanged$.subscribe(() => {
-      document.body.classList.toggle('dark', !!this.preferences.prefersDarkMode);
+      document.documentElement.classList.toggle('ion-palette-dark', !!this.preferences.prefersDarkMode);
     });
   }
 
