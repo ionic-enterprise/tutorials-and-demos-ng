@@ -27,10 +27,6 @@
 
 @import '@ionic/angular/css/palettes/dark.system.css';
 
-html {
-  --ion-dynamic-font: var(--ion-default-dynamic-font);
-}
-
 .error-message {
   padding: 2rem;
   color: var(--ion-color-danger, #ff0000);
