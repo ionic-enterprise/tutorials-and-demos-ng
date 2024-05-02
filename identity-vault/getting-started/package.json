@@ -31,7 +31,7 @@
     "@capacitor/ios": "^6.0.0",
     "@capacitor/keyboard": "^6.0.0",
     "@capacitor/status-bar": "^6.0.0",
-    "@ionic-enterprise/identity-vault": "~5.13.0",
+    "@ionic-enterprise/identity-vault": "5.13.1-dev-22df81d.0",
     "@ionic/angular": "^8.0.1",
     "ionicons": "^7.3.1",
     "rxjs": "~7.8.1",
