@@ -1,10 +1,11 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { User } from '@app/models';
 import { environment } from '@env/environment';
 import { SessionVaultService } from '../../session-vault/session-vault.service';
 import { createSessionVaultServiceMock } from '../../testing';
 import { BasicAuthenticationService } from './basic-authentication.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 type AuthResponse = {
   success: boolean;
@@ -18,7 +19,8 @@ describe('BasicAuthenticationService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [],
+      providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()],
     }).overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
     httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(BasicAuthenticationService);

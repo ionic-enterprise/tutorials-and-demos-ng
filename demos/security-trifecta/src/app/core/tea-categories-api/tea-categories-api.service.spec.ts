@@ -1,8 +1,9 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { TeaCategory } from '@app/models';
 import { environment } from '@env/environment';
 import { TeaCategoriesApiService } from './tea-categories-api.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('TeaCategoriesApiService', () => {
   let httpTestingController: HttpTestingController;
@@ -10,7 +11,8 @@ describe('TeaCategoriesApiService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [],
+      providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()],
     });
     httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(TeaCategoriesApiService);

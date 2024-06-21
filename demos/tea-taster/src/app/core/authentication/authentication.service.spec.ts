@@ -1,8 +1,9 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { Session } from '@app/models';
 import { environment } from '@env/environment';
 import { AuthenticationService } from './authentication.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('AuthenticationService', () => {
   let httpTestingController: HttpTestingController;
@@ -10,7 +11,8 @@ describe('AuthenticationService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [],
+      providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()],
     });
     httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(AuthenticationService);
