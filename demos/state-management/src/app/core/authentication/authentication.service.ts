@@ -30,19 +30,30 @@ export class AuthenticationService {
     this.isNative = platform.is('hybrid');
     this.authOptions = this.isNative ? mobileAuthConfig : webAuthConfig;
     this.vaultService = vaultService;
-    this.initialize();
 
     this.authenticationChange$ = this.authenticationChange.asObservable();
   }
 
+  public initialize(): Promise<void> {
+    return AuthConnect.setup({
+      platform: this.isNative ? 'capacitor' : 'web',
+      logLevel: 'DEBUG',
+      ios: {
+        webView: 'private',
+      },
+      web: {
+        uiMode: 'popup',
+        authFlow: 'PKCE',
+      },
+    });
+  }
+
   public async login(): Promise<void> {
-    await this.initialize();
     this.authResult = await AuthConnect.login(this.provider, this.authOptions);
     await this.saveAuthResult(this.authResult);
   }
 
   public async logout(): Promise<void> {
-    await this.initialize();
     if (this.authResult) {
       await AuthConnect.logout(this.provider, this.authResult);
       this.authResult = null;
@@ -74,12 +85,10 @@ export class AuthenticationService {
   }
 
   public async isAuthenticated(): Promise<boolean> {
-    await this.initialize();
     return !!(await this.getAuthResult());
   }
 
   public async getAccessToken(): Promise<string | undefined> {
-    await this.initialize();
     const res = await this.getAuthResult();
     return res?.accessToken;
   }
@@ -102,29 +111,6 @@ export class AuthenticationService {
       firstName: idToken.firstName,
       lastName: idToken.lastName,
     };
-  }
-
-  private initialize(): Promise<void> {
-    if (!this.initializing) {
-      this.initializing = new Promise((resolve) => {
-        this.setup().then(() => resolve());
-      });
-    }
-    return this.initializing;
-  }
-
-  private setup(): Promise<void> {
-    return AuthConnect.setup({
-      platform: this.isNative ? 'capacitor' : 'web',
-      logLevel: 'DEBUG',
-      ios: {
-        webView: 'private',
-      },
-      web: {
-        uiMode: 'popup',
-        authFlow: 'PKCE',
-      },
-    });
   }
 
   private async onAuthChange(isAuthenticated: boolean): Promise<void> {

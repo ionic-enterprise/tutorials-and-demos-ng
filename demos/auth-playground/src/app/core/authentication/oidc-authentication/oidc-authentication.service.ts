@@ -19,15 +19,26 @@ import { Authenticator } from '../authenticator';
 })
 export class OIDCAuthenticationService implements Authenticator {
   private authResultKey = 'auth-result';
-  private initializing: Promise<void> | undefined;
   private options: ProviderOptions | null = null;
   private provider: Auth0Provider | AzureProvider | CognitoProvider | null = null;
 
   constructor(
     private sessionVault: SessionVaultService,
     private platform: Platform,
-  ) {
-    this.initialize();
+  ) {}
+
+  initialize(): Promise<void> {
+    return AuthConnect.setup({
+      platform: this.platform.is('hybrid') ? 'capacitor' : 'web',
+      logLevel: 'DEBUG',
+      ios: {
+        webView: 'private',
+      },
+      web: {
+        uiMode: 'popup',
+        authFlow: 'implicit',
+      },
+    });
   }
 
   setAuthProvider(vendor: AuthVendor): void {
@@ -44,7 +55,6 @@ export class OIDCAuthenticationService implements Authenticator {
   }
 
   async login(): Promise<void> {
-    await this.initialize();
     try {
       const res = await AuthConnect.login(this.provider as AuthProvider, this.options as ProviderOptions);
       this.sessionVault.setValue(this.authResultKey, res);
@@ -72,18 +82,15 @@ export class OIDCAuthenticationService implements Authenticator {
   }
 
   async isAuthenticated(): Promise<boolean> {
-    await this.initialize();
     return !!(await this.getAuthResult());
   }
 
   async getAccessToken(): Promise<string | void> {
-    await this.initialize();
     const res = await this.getAuthResult();
     return res?.accessToken;
   }
 
   async logout(): Promise<void> {
-    await this.initialize();
     const res =
       (await this.getAuthResult()) ||
       (await AuthConnect.buildAuthResult(this.provider as AuthProvider, this.options as ProviderOptions, {}));
@@ -105,29 +112,6 @@ export class OIDCAuthenticationService implements Authenticator {
       ...opt,
       ...urls,
     };
-  }
-
-  private initialize(): Promise<void> {
-    if (!this.initializing) {
-      this.initializing = new Promise((resolve) => {
-        this.performInit().then(() => resolve());
-      });
-    }
-    return this.initializing;
-  }
-
-  private async performInit(): Promise<void> {
-    await AuthConnect.setup({
-      platform: this.platform.is('hybrid') ? 'capacitor' : 'web',
-      logLevel: 'DEBUG',
-      ios: {
-        webView: 'private',
-      },
-      web: {
-        uiMode: 'popup',
-        authFlow: 'implicit',
-      },
-    });
   }
 
   private async getAuthResult(): Promise<AuthResult | undefined> {

@@ -51,18 +51,21 @@ const builtAuthResult = {
       expect(service).toBeTruthy();
     });
 
-    it('initializes', () => {
-      expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
-      expect(AuthConnect.setup).toHaveBeenCalledWith({
-        platform: isNative ? 'capacitor' : 'web',
-        logLevel: 'DEBUG',
-        ios: {
-          webView: 'private',
-        },
-        web: {
-          uiMode: 'popup',
-          authFlow: 'implicit',
-        },
+    describe('initialization', () => {
+      it('initializes auth connect', () => {
+        service.initialize();
+        expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
+        expect(AuthConnect.setup).toHaveBeenCalledWith({
+          platform: isNative ? 'capacitor' : 'web',
+          logLevel: 'DEBUG',
+          ios: {
+            webView: 'private',
+          },
+          web: {
+            uiMode: 'popup',
+            authFlow: 'implicit',
+          },
+        });
       });
     });
 

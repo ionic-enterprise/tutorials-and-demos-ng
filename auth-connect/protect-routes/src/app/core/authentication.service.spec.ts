@@ -25,8 +25,11 @@ describe('AuthenticationService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('performs a setup', () => {
-    expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
+  describe('initialization', () => {
+    it('sets up auth connect', async () => {
+      await service.initialize();
+      expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('is authenticated', () => {

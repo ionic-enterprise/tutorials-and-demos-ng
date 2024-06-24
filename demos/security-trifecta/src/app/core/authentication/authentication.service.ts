@@ -21,56 +21,8 @@ export class AuthenticationService {
     this.isMobile = platform.is('hybrid');
   }
 
-  async login(): Promise<void> {
-    await this.initialize();
-    const authResult = await AuthConnect.login(
-      this.provider,
-      this.isMobile ? environment.mobileAuthConfig : environment.webAuthConfig,
-    );
-    await this.sessionVault.setSession(authResult);
-  }
-
-  async logout(): Promise<void> {
-    await this.initialize();
-    const authResult = await this.sessionVault.getSession();
-    if (authResult) {
-      await AuthConnect.logout(this.provider, authResult);
-      await this.sessionVault.clearSession();
-    }
-    await this.sessionVault.resetUnlockMode();
-  }
-
-  async isAuthenticated(): Promise<boolean> {
-    await this.initialize();
-    return !!(await this.getAuthResult());
-  }
-
-  async getAccessToken(): Promise<string | void> {
-    await this.initialize();
-    const authResult = await this.getAuthResult();
-    return authResult?.accessToken;
-  }
-
-  async getUserEmail(): Promise<string | void> {
-    await this.initialize();
-    const authResult = await this.sessionVault.getSession();
-    if (authResult) {
-      const { email } = (await AuthConnect.decodeToken(TokenType.id, authResult)) as { email?: string };
-      return email;
-    }
-  }
-
-  private async initialize(): Promise<void> {
-    if (!this.initializing) {
-      this.initializing = new Promise((resolve) => {
-        this.performInit().then(() => resolve());
-      });
-    }
-    return this.initializing;
-  }
-
-  private async performInit(): Promise<void> {
-    await AuthConnect.setup({
+  initialize(): Promise<void> {
+    return AuthConnect.setup({
       platform: this.isMobile ? 'capacitor' : 'web',
       logLevel: 'DEBUG',
       ios: {
@@ -81,6 +33,40 @@ export class AuthenticationService {
         authFlow: 'PKCE',
       },
     });
+  }
+
+  async login(): Promise<void> {
+    const authResult = await AuthConnect.login(
+      this.provider,
+      this.isMobile ? environment.mobileAuthConfig : environment.webAuthConfig,
+    );
+    await this.sessionVault.setSession(authResult);
+  }
+
+  async logout(): Promise<void> {
+    const authResult = await this.sessionVault.getSession();
+    if (authResult) {
+      await AuthConnect.logout(this.provider, authResult);
+      await this.sessionVault.clearSession();
+    }
+    await this.sessionVault.resetUnlockMode();
+  }
+
+  async isAuthenticated(): Promise<boolean> {
+    return !!(await this.getAuthResult());
+  }
+
+  async getAccessToken(): Promise<string | void> {
+    const authResult = await this.getAuthResult();
+    return authResult?.accessToken;
+  }
+
+  async getUserEmail(): Promise<string | void> {
+    const authResult = await this.sessionVault.getSession();
+    if (authResult) {
+      const { email } = (await AuthConnect.decodeToken(TokenType.id, authResult)) as { email?: string };
+      return email;
+    }
   }
 
   private async performRefresh(authResult: AuthResult): Promise<AuthResult | null> {

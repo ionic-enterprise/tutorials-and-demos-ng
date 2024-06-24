@@ -46,23 +46,21 @@ describe('AuthenticationService', () => {
     expect(authService).toBeTruthy();
   });
 
-  it('initializes once', async () => {
-    await authService.isAuthenticated();
-    await authService.login();
-    await authService.isAuthenticated();
-    await authService.logout();
-
-    expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
-    expect(AuthConnect.setup).toHaveBeenCalledWith({
-      platform: 'web',
-      logLevel: 'DEBUG',
-      ios: {
-        webView: 'private',
-      },
-      web: {
-        uiMode: 'popup',
-        authFlow: 'PKCE',
-      },
+  describe('initialize', () => {
+    it('sets up Auth Connect', async () => {
+      await authService.initialize();
+      expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
+      expect(AuthConnect.setup).toHaveBeenCalledWith({
+        platform: 'web',
+        logLevel: 'DEBUG',
+        ios: {
+          webView: 'private',
+        },
+        web: {
+          uiMode: 'popup',
+          authFlow: 'PKCE',
+        },
+      });
     });
   });
 

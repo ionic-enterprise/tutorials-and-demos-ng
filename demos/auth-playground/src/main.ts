@@ -7,21 +7,28 @@ import { routes } from '@app/app.routes';
 import { SessionVaultService, authInterceptor, unauthInterceptor } from '@app/core';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { environment } from './environments/environment';
+import { OIDCAuthenticationService } from '@app/core/authentication/oidc-authentication/oidc-authentication.service';
 
 if (environment.production) {
   enableProdMode();
 }
 
 const appInitFactory =
-  (sessionVault: SessionVaultService): (() => Promise<void>) =>
+  (auth: OIDCAuthenticationService, sessionVault: SessionVaultService): (() => Promise<void>) =>
   async () => {
+    await auth.initialize();
     await sessionVault.initialize();
   };
 
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: APP_INITIALIZER, useFactory: appInitFactory, deps: [SessionVaultService], multi: true },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitFactory,
+      deps: [OIDCAuthenticationService, SessionVaultService],
+      multi: true,
+    },
     provideHttpClient(withInterceptors([authInterceptor, unauthInterceptor])),
     provideRouter(routes),
     provideIonicAngular({}),

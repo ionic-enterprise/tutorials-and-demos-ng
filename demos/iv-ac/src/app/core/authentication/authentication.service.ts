@@ -8,7 +8,6 @@ import { SessionVaultService } from '../session-vault/session-vault.service';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  private initializing: Promise<void> | undefined;
   private isNative;
   private authOptions: ProviderOptions;
   private provider = new Auth0Provider();
@@ -35,11 +34,10 @@ export class AuthenticationService {
       redirectUri: url,
     };
 
-    this.initialize();
     this.authenticationChange$ = this.authenticationChange.asObservable();
   }
 
-  private setup(): Promise<void> {
+  initialize(): Promise<void> {
     return AuthConnect.setup({
       platform: this.isNative ? 'capacitor' : 'web',
       logLevel: 'DEBUG',
@@ -53,24 +51,12 @@ export class AuthenticationService {
     });
   }
 
-  private initialize(): Promise<void> {
-    if (!this.initializing) {
-      this.initializing = new Promise((resolve) => {
-        this.setup().then(() => resolve());
-      });
-    }
-
-    return this.initializing;
-  }
-
   public async login(): Promise<void> {
-    await this.initialize();
     const authResult = await AuthConnect.login(this.provider, this.authOptions);
     await this.saveAuthResult(authResult);
   }
 
   public async logout(): Promise<void> {
-    await this.initialize();
     let authResult = await this.getAuthResult();
     if (!authResult) {
       authResult = await AuthConnect.buildAuthResult(this.provider, this.authOptions, {});
@@ -94,12 +80,10 @@ export class AuthenticationService {
   }
 
   public async isAuthenticated(): Promise<boolean> {
-    await this.initialize();
     return !!(await this.getAuthResult());
   }
 
   public async getAccessToken(): Promise<string | undefined> {
-    await this.initialize();
     const res = await this.getAuthResult();
     return res?.accessToken;
   }

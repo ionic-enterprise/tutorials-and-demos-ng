@@ -38,13 +38,9 @@ const testAuthResult = {
       expect(service).toBeTruthy();
     });
 
-    describe('login', () => {
-      beforeEach(() => {
-        spyOn(AuthConnect, 'login').and.callFake(() => Promise.resolve(testAuthResult as AuthResult));
-      });
-
-      it('initializes', async () => {
-        await service.login();
+    describe('initialization', () => {
+      it('sets up auth connect', async () => {
+        await service.initialize();
         expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
         expect(AuthConnect.setup).toHaveBeenCalledWith({
           platform: isNative ? 'capacitor' : 'web',
@@ -57,6 +53,12 @@ const testAuthResult = {
             authFlow: 'PKCE',
           },
         });
+      });
+    });
+
+    describe('login', () => {
+      beforeEach(() => {
+        spyOn(AuthConnect, 'login').and.callFake(() => Promise.resolve(testAuthResult as AuthResult));
       });
 
       it('calls the auth connect login', async () => {
@@ -81,22 +83,6 @@ const testAuthResult = {
         spyOn(AuthConnect, 'isAccessTokenExpired').and.callFake(() => Promise.resolve(false));
         spyOn(AuthConnect, 'isRefreshTokenAvailable').and.callFake(() => Promise.resolve(false));
         spyOn(AuthConnect, 'refreshSession').and.callFake(() => Promise.resolve(refreshedAuthResult as AuthResult));
-      });
-
-      it('initializes', async () => {
-        await service.isAuthenticated();
-        expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
-        expect(AuthConnect.setup).toHaveBeenCalledWith({
-          platform: isNative ? 'capacitor' : 'web',
-          logLevel: 'DEBUG',
-          ios: {
-            webView: 'private',
-          },
-          web: {
-            uiMode: 'popup',
-            authFlow: 'PKCE',
-          },
-        });
       });
 
       describe('if there is no auth result', () => {
@@ -215,22 +201,6 @@ const testAuthResult = {
         spyOn(AuthConnect, 'isRefreshTokenAvailable').and.callFake(() => Promise.resolve(true));
       });
 
-      it('initializes', async () => {
-        await service.getAccessToken();
-        expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
-        expect(AuthConnect.setup).toHaveBeenCalledWith({
-          platform: isNative ? 'capacitor' : 'web',
-          logLevel: 'DEBUG',
-          ios: {
-            webView: 'private',
-          },
-          web: {
-            uiMode: 'popup',
-            authFlow: 'PKCE',
-          },
-        });
-      });
-
       describe('if there is no auth result', () => {
         beforeEach(() => {
           const sessionVault = TestBed.inject(SessionVaultService);
@@ -345,22 +315,6 @@ const testAuthResult = {
         (AuthConnect.decodeToken as jasmine.Spy).and.resolveTo({ email: 'test@testy.com' });
       });
 
-      it('initializes', async () => {
-        await service.getUserEmail();
-        expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
-        expect(AuthConnect.setup).toHaveBeenCalledWith({
-          platform: isNative ? 'capacitor' : 'web',
-          logLevel: 'DEBUG',
-          ios: {
-            webView: 'private',
-          },
-          web: {
-            uiMode: 'popup',
-            authFlow: 'PKCE',
-          },
-        });
-      });
-
       it('gets the auth result', async () => {
         const sessionVault = TestBed.inject(SessionVaultService);
         await service.getUserEmail();
@@ -401,22 +355,6 @@ const testAuthResult = {
         spyOn(AuthConnect, 'logout').and.callFake(() => Promise.resolve());
         spyOn(AuthConnect, 'isAccessTokenExpired').and.callFake(() => Promise.resolve(false));
         spyOn(AuthConnect, 'isRefreshTokenAvailable').and.callFake(() => Promise.resolve(true));
-      });
-
-      it('initializes', async () => {
-        await service.logout();
-        expect(AuthConnect.setup).toHaveBeenCalledTimes(1);
-        expect(AuthConnect.setup).toHaveBeenCalledWith({
-          platform: isNative ? 'capacitor' : 'web',
-          logLevel: 'DEBUG',
-          ios: {
-            webView: 'private',
-          },
-          web: {
-            uiMode: 'popup',
-            authFlow: 'PKCE',
-          },
-        });
       });
 
       it('gets the current auth result', async () => {

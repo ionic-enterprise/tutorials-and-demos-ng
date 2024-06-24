@@ -9,7 +9,6 @@ import { SessionService } from './session.service';
 export class AuthenticationService {
   private authOptions: ProviderOptions;
   private provider: Auth0Provider;
-  private isReady: Promise<void>;
 
   constructor(private session: SessionService) {
     const isNative = Capacitor.isNativePlatform();
@@ -22,8 +21,11 @@ export class AuthenticationService {
       redirectUri: isNative ? 'io.ionic.acdemo://auth-action-complete' : 'http://localhost:8100/auth-action-complete',
       scope: 'openid offline_access email picture profile',
     };
+  }
 
-    this.isReady = AuthConnect.setup({
+  initialize(): Promise<void> {
+    const isNative = Capacitor.isNativePlatform();
+    return AuthConnect.setup({
       platform: isNative ? 'capacitor' : 'web',
       logLevel: 'DEBUG',
       ios: {
@@ -42,13 +44,11 @@ export class AuthenticationService {
   }
 
   async login(): Promise<void> {
-    await this.isReady;
     const authResult = await AuthConnect.login(this.provider, this.authOptions);
     this.saveAuthResult(authResult);
   }
 
   async logout(): Promise<void> {
-    await this.isReady;
     const authResult = await this.getAuthResult();
     if (authResult) {
       await AuthConnect.logout(this.provider, authResult);
@@ -57,7 +57,6 @@ export class AuthenticationService {
   }
 
   async getAccessToken(): Promise<string | undefined> {
-    await this.isReady;
     const res = await this.getAuthResult();
     return res?.accessToken;
   }
