@@ -1,43 +1,42 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ModalController } from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import { close } from 'ionicons/icons';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonButtons,
   IonButton,
-  IonIcon,
+  IonButtons,
+  IonCol,
   IonContent,
-  IonLabel,
   IonFooter,
   IonGrid,
+  IonHeader,
+  IonIcon,
+  IonLabel,
   IonRow,
-  IonCol,
+  IonTitle,
+  IonToolbar,
+  ModalController,
 } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { close } from 'ionicons/icons';
 
 @Component({
   selector: 'app-pin-dialog',
   templateUrl: './pin-dialog.component.html',
   styleUrls: ['./pin-dialog.component.scss'],
   imports: [
-    CommonModule,
-    FormsModule,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonButtons,
+    NgIf,
+    NgFor,
     IonButton,
-    IonIcon,
+    IonButtons,
+    IonCol,
     IonContent,
-    IonLabel,
     IonFooter,
     IonGrid,
+    IonHeader,
+    IonIcon,
+    IonLabel,
     IonRow,
-    IonCol,
+    IonTitle,
+    IonToolbar,
   ],
   standalone: true,
 })
@@ -91,21 +90,29 @@ export class PinDialogComponent implements OnInit {
 
   enter() {
     if (this.setPasscodeMode) {
-      if (!this.verifyPin) {
-        this.initVerifyMode();
-      } else if (this.verifyPin === this.pin) {
-        this.modalController.dismiss(this.pin);
-      } else {
-        this.errorMessage = 'PINS do not match';
-        this.initSetPasscodeMode();
-      }
+      this.handleSetPasscodeFlow();
     } else {
-      this.modalController.dismiss(this.pin);
+      this.handleGetPasscodeFlow();
     }
   }
 
   cancel() {
     this.modalController.dismiss(undefined, 'cancel');
+  }
+
+  private handleGetPasscodeFlow() {
+    this.modalController.dismiss(this.pin);
+  }
+
+  private handleSetPasscodeFlow() {
+    if (!this.verifyPin) {
+      this.initVerifyMode();
+    } else if (this.verifyPin !== this.pin) {
+      this.errorMessage = 'PINS do not match';
+      this.initSetPasscodeMode();
+    } else {
+      this.modalController.dismiss(this.pin);
+    }
   }
 
   private initSetPasscodeMode() {

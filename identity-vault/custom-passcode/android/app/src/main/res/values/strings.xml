@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">iv-custom-passcode</string>
+    <string name="title_activity_main">iv-custom-passcode</string>
+    <string name="package_name">io.ionic.custompasscodeiv</string>
+    <string name="custom_url_scheme">io.ionic.custompasscodeiv</string>
+</resources>

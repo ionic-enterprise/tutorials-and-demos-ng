@@ -1528,6 +1528,157 @@ importers:
         specifier: ~5.5.4
         version: 5.5.4
 
+  identity-vault/custom-passcode:
+    dependencies:
+      '@angular/animations':
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))
+      '@angular/common':
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1)
+      '@angular/compiler':
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))
+      '@angular/core':
+        specifier: ^18.1.1
+        version: 18.1.1(rxjs@7.8.1)(zone.js@0.14.8)
+      '@angular/forms':
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(@angular/platform-browser@18.1.1(@angular/animations@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(rxjs@7.8.1)
+      '@angular/platform-browser':
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/animations@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))
+      '@angular/platform-browser-dynamic':
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/compiler@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(@angular/platform-browser@18.1.1(@angular/animations@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))
+      '@angular/router':
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(@angular/platform-browser@18.1.1(@angular/animations@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(rxjs@7.8.1)
+      '@capacitor/android':
+        specifier: ^6.1.1
+        version: 6.1.1(@capacitor/core@6.1.1)
+      '@capacitor/app':
+        specifier: ^6.0.0
+        version: 6.0.0(@capacitor/core@6.1.1)
+      '@capacitor/core':
+        specifier: ^6.1.1
+        version: 6.1.1
+      '@capacitor/haptics':
+        specifier: ^6.0.0
+        version: 6.0.0(@capacitor/core@6.1.1)
+      '@capacitor/ios':
+        specifier: ^6.1.1
+        version: 6.1.1(@capacitor/core@6.1.1)
+      '@capacitor/keyboard':
+        specifier: ^6.0.1
+        version: 6.0.1(@capacitor/core@6.1.1)
+      '@capacitor/status-bar':
+        specifier: ^6.0.0
+        version: 6.0.0(@capacitor/core@6.1.1)
+      '@ionic-enterprise/identity-vault':
+        specifier: ~5.14.2
+        version: 5.14.2(typescript@5.5.4)
+      '@ionic/angular':
+        specifier: ^8.2.5
+        version: 8.2.5(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(@angular/forms@18.1.1(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(@angular/platform-browser@18.1.1(@angular/animations@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(rxjs@7.8.1))(@angular/router@18.1.1(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(@angular/platform-browser@18.1.1(@angular/animations@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(rxjs@7.8.1))(rxjs@7.8.1)(zone.js@0.14.8)
+      '@stencil/core':
+        specifier: 4.18.1
+        version: 4.18.1
+      ionicons:
+        specifier: ^7.4.0
+        version: 7.4.0
+      rxjs:
+        specifier: ~7.8.1
+        version: 7.8.1
+      tslib:
+        specifier: ^2.6.3
+        version: 2.6.3
+      zone.js:
+        specifier: ~0.14.8
+        version: 0.14.8
+    devDependencies:
+      '@angular-devkit/build-angular':
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/compiler-cli@18.1.1(@angular/compiler@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(typescript@5.5.4))(@angular/service-worker@18.1.1(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(@types/node@20.14.11)(chokidar@3.6.0)(karma@6.4.3)(typescript@5.5.4)
+      '@angular-eslint/builder':
+        specifier: ^18.1.0
+        version: 18.1.0(eslint@8.57.0)(typescript@5.5.4)
+      '@angular-eslint/eslint-plugin':
+        specifier: ^18.1.0
+        version: 18.1.0(@typescript-eslint/utils@7.17.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
+      '@angular-eslint/eslint-plugin-template':
+        specifier: ^18.1.0
+        version: 18.1.0(@typescript-eslint/utils@7.17.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
+      '@angular-eslint/schematics':
+        specifier: ^18.1.0
+        version: 18.1.0(@angular-devkit/core@18.1.1(chokidar@3.6.0))(@angular-devkit/schematics@18.1.1(chokidar@3.6.0))(@typescript-eslint/utils@7.17.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
+      '@angular-eslint/template-parser':
+        specifier: ^18.1.0
+        version: 18.1.0(eslint@8.57.0)(typescript@5.5.4)
+      '@angular/cli':
+        specifier: ^18.1.1
+        version: 18.1.1(chokidar@3.6.0)
+      '@angular/compiler-cli':
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/compiler@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(typescript@5.5.4)
+      '@angular/language-service':
+        specifier: ^18.1.1
+        version: 18.1.1
+      '@capacitor/cli':
+        specifier: ^6.1.1
+        version: 6.1.1
+      '@ionic/angular-toolkit':
+        specifier: ^11.0.1
+        version: 11.0.1(chokidar@3.6.0)
+      '@types/jasmine':
+        specifier: ~5.1.4
+        version: 5.1.4
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^7.17.0
+        version: 7.17.0(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
+      '@typescript-eslint/parser':
+        specifier: ^7.17.0
+        version: 7.17.0(eslint@8.57.0)(typescript@5.5.4)
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.0
+      eslint-plugin-import:
+        specifier: 2.29.1
+        version: 2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)
+      eslint-plugin-jsdoc:
+        specifier: 48.8.3
+        version: 48.8.3(eslint@8.57.0)
+      eslint-plugin-prefer-arrow:
+        specifier: 1.2.3
+        version: 1.2.3(eslint@8.57.0)
+      jasmine-core:
+        specifier: ~5.2.0
+        version: 5.2.0
+      jasmine-spec-reporter:
+        specifier: ~7.0.0
+        version: 7.0.0
+      karma:
+        specifier: ~6.4.3
+        version: 6.4.3
+      karma-chrome-launcher:
+        specifier: ~3.2.0
+        version: 3.2.0
+      karma-coverage:
+        specifier: ~2.2.1
+        version: 2.2.1
+      karma-jasmine:
+        specifier: ~5.1.0
+        version: 5.1.0(karma@6.4.3)
+      karma-jasmine-html-reporter:
+        specifier: ~2.1.0
+        version: 2.1.0(jasmine-core@5.2.0)(karma-jasmine@5.1.0(karma@6.4.3))(karma@6.4.3)
+      ts-node:
+        specifier: ^10.9.2
+        version: 10.9.2(@types/node@20.14.11)(typescript@5.5.4)
+      typescript:
+        specifier: ~5.5.4
+        version: 5.5.4
+
   identity-vault/device-api:
     dependencies:
       '@angular/animations':

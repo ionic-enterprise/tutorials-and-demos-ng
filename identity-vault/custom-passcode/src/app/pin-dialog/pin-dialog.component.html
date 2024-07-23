@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+    @if (!setPasscodeMode) {
+      <ion-buttons slot="start">
+        <ion-button (click)="cancel()" data-testid="cancel-button"> Cancel </ion-button>
+      </ion-buttons>
+    }
+    <ion-buttons slot="end">
+      <ion-button [strong]="true" data-testid="submit-button" (click)="submit()" [disabled]="disableEnter"
+        >Enter
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <ion-label data-testid="prompt">
+    <div class="prompt">{{ prompt }}</div>
+  </ion-label>
+  <ion-label data-testid="display-pin">
+    <div class="pin">{{ displayPin }}</div>
+  </ion-label>
+  <ion-label color="danger" data-testid="error-message">
+    <div class="error">{{ errorMessage }}</div>
+  </ion-label>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      @for (n of [1, 2, 3]; track n) {
+        <ion-col>
+          <ion-button
+            expand="block"
+            fill="outline"
+            (click)="append(n)"
+            [disabled]="disableInput"
+            data-testclass="number-button"
+            >{{ n }}</ion-button
+          >
+        </ion-col>
+      }
+    </ion-row>
+    <ion-row>
+      @for (n of [4, 5, 6]; track n) {
+        <ion-col>
+          <ion-button
+            expand="block"
+            fill="outline"
+            (click)="append(n)"
+            [disabled]="disableInput"
+            data-testclass="number-button"
+            >{{ n }}</ion-button
+          >
+        </ion-col>
+      }
+    </ion-row>
+    <ion-row>
+      @for (n of [7, 8, 9]; track n) {
+        <ion-col>
+          <ion-button
+            expand="block"
+            fill="outline"
+            (click)="append(n)"
+            [disabled]="disableInput"
+            data-testclass="number-button"
+            >{{ n }}</ion-button
+          >
+        </ion-col>
+      }
+    </ion-row>
+    <ion-row>
+      <ion-col> </ion-col>
+      <ion-col>
+        <ion-button
+          expand="block"
+          fill="outline"
+          (click)="append(0)"
+          [disabled]="disableInput"
+          data-testclass="number-button"
+          >0</ion-button
+        >
+      </ion-col>
+      <ion-col>
+        <ion-button
+          icon-only
+          color="tertiary"
+          expand="block"
+          (click)="remove()"
+          [disabled]="disableDelete"
+          data-testid="delete-button"
+        >
+          <ion-icon name="backspace"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
