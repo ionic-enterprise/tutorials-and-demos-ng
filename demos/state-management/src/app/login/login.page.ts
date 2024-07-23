@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService, UnlockMode } from '@app/core';
-import { State, selectAuthErrorMessage } from '@app/store';
+import { selectAuthErrorMessage } from '@app/store';
 import { login, unlockSession } from '@app/store/actions';
 import { Device } from '@ionic-enterprise/identity-vault';
 import {
@@ -68,7 +68,7 @@ export class LoginPage implements OnInit {
     private alertController: AlertController,
     private platform: Platform,
     private sessionVault: SessionVaultService,
-    private store: Store<State>,
+    private store: Store,
     private zone: NgZone,
   ) {
     addIcons({ logInOutline, lockOpenOutline, arrowRedoOutline });

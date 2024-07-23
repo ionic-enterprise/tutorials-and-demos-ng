@@ -26,8 +26,8 @@ import { AuthenticationService, TastingNotesService, TeaService } from '@app/cor
 
 @Injectable()
 export class DataEffects {
-  sessionLoaded$ = createEffect(() =>
-    this.actions$.pipe(
+  sessionLoaded$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(loginSuccess, startup, unlockSessionSuccess),
       mergeMap(() =>
         from(this.auth.isAuthenticated()).pipe(
@@ -42,11 +42,11 @@ export class DataEffects {
           ),
         ),
       ),
-    ),
-  );
+    );
+  });
 
-  teaRatingChanged$ = createEffect(() =>
-    this.actions$.pipe(
+  teaRatingChanged$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(teaDetailsChangeRating),
       mergeMap((action) =>
         from(this.teaService.save({ ...action.tea, rating: action.rating })).pipe(
@@ -64,11 +64,11 @@ export class DataEffects {
           ),
         ),
       ),
-    ),
-  );
+    );
+  });
 
-  notesPageLoaded$ = createEffect(() =>
-    this.actions$.pipe(
+  notesPageLoaded$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(notesPageLoaded),
       mergeMap(() =>
         this.tastingNotesService.getAll().pipe(
@@ -82,11 +82,11 @@ export class DataEffects {
           ),
         ),
       ),
-    ),
-  );
+    );
+  });
 
-  noteSaved$ = createEffect(() =>
-    this.actions$.pipe(
+  noteSaved$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(noteSaved),
       mergeMap((action) =>
         this.tastingNotesService.save(action.note).pipe(
@@ -100,11 +100,11 @@ export class DataEffects {
           ),
         ),
       ),
-    ),
-  );
+    );
+  });
 
-  noteDeleted$ = createEffect(() =>
-    this.actions$.pipe(
+  noteDeleted$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(noteDeleted),
       mergeMap((action) =>
         this.tastingNotesService.delete(action.note.id as number).pipe(
@@ -118,8 +118,8 @@ export class DataEffects {
           ),
         ),
       ),
-    ),
-  );
+    );
+  });
 
   constructor(
     private actions$: Actions,

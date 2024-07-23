@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNote, Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
-import { State, selectTeas } from '@app/store';
+import { selectTeas } from '@app/store';
 import { noteSaved } from '@app/store/actions';
 import { Share } from '@capacitor/share';
 import {
@@ -68,7 +68,7 @@ export class TastingNoteEditorComponent implements OnInit {
   constructor(
     private modalController: ModalController,
     private platform: Platform,
-    private store: Store<State>,
+    private store: Store,
   ) {
     addIcons({ shareOutline, close });
   }

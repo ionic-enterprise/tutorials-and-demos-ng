@@ -23,8 +23,8 @@ import { User } from '@app/models';
 
 @Injectable()
 export class AuthEffects {
-  login$ = createEffect(() =>
-    this.actions$.pipe(
+  login$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(login),
       exhaustMap((action) =>
         from(this.performLogin(action.mode as UnlockMode)).pipe(
@@ -33,11 +33,11 @@ export class AuthEffects {
           catchError(() => of(loginFailure({ errorMessage: 'Unknown error in login' }))),
         ),
       ),
-    ),
-  );
+    );
+  });
 
-  unlockSession$ = createEffect(() =>
-    this.actions$.pipe(
+  unlockSession$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(unlockSession),
       exhaustMap(() =>
         from(this.sessionVault.unlock()).pipe(
@@ -46,11 +46,11 @@ export class AuthEffects {
           catchError(() => of(unlockSessionFailure())),
         ),
       ),
-    ),
-  );
+    );
+  });
 
-  logout$ = createEffect(() =>
-    this.actions$.pipe(
+  logout$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(logout),
       exhaustMap(() =>
         from(this.auth.logout()).pipe(
@@ -59,36 +59,38 @@ export class AuthEffects {
           catchError(() => of(logoutFailure({ errorMessage: 'Unknown error in logout' }))),
         ),
       ),
-    ),
-  );
+    );
+  });
 
   navigateToLogin$ = createEffect(
-    () =>
-      this.actions$.pipe(
+    () => {
+      return this.actions$.pipe(
         ofType(logoutSuccess, sessionLocked),
         tap(() => this.navController.navigateRoot(['/', 'login'])),
-      ),
+      );
+    },
     { dispatch: false },
   );
 
   navigateToRoot$ = createEffect(
-    () =>
-      this.actions$.pipe(
+    () => {
+      return this.actions$.pipe(
         ofType(loginSuccess, unlockSessionSuccess),
         tap(() => this.navController.navigateRoot(['/'])),
-      ),
+      );
+    },
     { dispatch: false },
   );
 
-  unauthError$ = createEffect(() =>
-    this.actions$.pipe(
+  unauthError$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(unauthError),
       tap(() => {
         this.sessionVault.clearSession();
       }),
       map(() => logoutSuccess()),
-    ),
-  );
+    );
+  });
 
   constructor(
     private actions$: Actions,

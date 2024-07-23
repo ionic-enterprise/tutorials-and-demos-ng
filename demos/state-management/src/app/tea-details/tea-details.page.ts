@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
-import { State, selectTea } from '@app/store';
+import { selectTea } from '@app/store';
 import { teaDetailsChangeRating } from '@app/store/actions';
 import {
   IonBackButton,
@@ -43,7 +43,7 @@ export class TeaDetailsPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private store: Store<State>,
+    private store: Store,
   ) {}
 
   ngOnInit() {

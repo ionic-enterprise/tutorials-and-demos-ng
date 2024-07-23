@@ -2,24 +2,24 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Tea } from '@app/models';
-import { State, selectTeasMatrix } from '@app/store';
-import { NavController } from '@ionic/angular/standalone';
-import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { selectTeasMatrix } from '@app/store';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
   IonCard,
-  IonImg,
+  IonCardContent,
   IonCardHeader,
   IonCardTitle,
-  IonCardContent,
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonHeader,
+  IonImg,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+  NavController,
 } from '@ionic/angular/standalone';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tea',
@@ -48,7 +48,7 @@ export class TeaPage implements OnInit {
 
   constructor(
     private navController: NavController,
-    private store: Store<State>,
+    private store: Store,
   ) {}
 
   ngOnInit() {

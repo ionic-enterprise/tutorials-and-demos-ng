@@ -1,7 +1,7 @@
 import { TastingNote, Tea } from '@app/models';
 import { State } from '@app/store';
 import { DataState } from '@app/store/reducers/data.reducer';
-import { createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 const toMatrix = (tea: Array<Tea>): Array<Array<Tea>> => {
   const matrix: Array<Array<Tea>> = [];
@@ -21,7 +21,7 @@ const toMatrix = (tea: Array<Tea>): Array<Array<Tea>> => {
   return matrix;
 };
 
-export const selectData = (state: State) => state.data;
+export const selectData = createFeatureSelector<DataState>('data');
 export const selectTeas = createSelector(selectData, (state: DataState) => state.teas);
 export const selectTea = (id: number) =>
   createSelector(selectTeas, (teas: Array<Tea>) => teas.find((t) => t.id === id));

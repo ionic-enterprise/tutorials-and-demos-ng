@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNote } from '@app/models';
-import { State, selectNotes } from '@app/store';
+import { selectNotes } from '@app/store';
 import { noteDeleted, notesPageLoaded } from '@app/store/actions';
 import {
   AlertController,
@@ -60,7 +60,7 @@ export class TastingNotesPage implements OnInit {
     private alertController: AlertController,
     private modalController: ModalController,
     private routerOutlet: IonRouterOutlet,
-    private store: Store<State>,
+    private store: Store,
   ) {
     addIcons({ add });
   }

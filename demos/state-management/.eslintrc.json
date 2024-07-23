@@ -1,6 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["projects/**/*"],
+  "plugins": ["@ngrx"],
   "overrides": [
     {
       "files": ["*.ts"],
@@ -8,7 +9,11 @@
         "project": ["tsconfig.json"],
         "createDefaultProgram": true
       },
-      "extends": ["plugin:@angular-eslint/recommended", "plugin:@angular-eslint/template/process-inline-templates"],
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:@ngrx/all"
+      ],
       "rules": {
         "@angular-eslint/component-class-suffix": [
           "error",
