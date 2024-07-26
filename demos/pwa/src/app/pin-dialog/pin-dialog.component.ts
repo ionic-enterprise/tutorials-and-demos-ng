@@ -1,4 +1,3 @@
-import { NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import {
   IonButton,
@@ -24,8 +23,6 @@ import { close } from 'ionicons/icons';
   styleUrls: ['./pin-dialog.component.scss'],
   standalone: true,
   imports: [
-    NgIf,
-    NgFor,
     IonButton,
     IonButtons,
     IonCol,
