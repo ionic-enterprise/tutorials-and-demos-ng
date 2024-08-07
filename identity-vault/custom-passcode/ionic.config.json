@@ -1,0 +1,7 @@
+{
+  "name": "iv-custom-passcode",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
