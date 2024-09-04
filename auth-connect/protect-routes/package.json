@@ -32,7 +32,7 @@
     "@capacitor/keyboard": "^6.0.2",
     "@capacitor/preferences": "^6.0.2",
     "@capacitor/status-bar": "^6.0.1",
-    "@ionic-enterprise/auth": "^6.0.1",
+    "@ionic-enterprise/auth": "6.0.2-dev-20240829T145808.0",
     "@ionic/angular": "^8.2.7",
     "ionicons": "^7.4.0",
     "rxjs": "~7.8.1",

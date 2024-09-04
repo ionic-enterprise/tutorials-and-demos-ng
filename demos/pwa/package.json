@@ -35,7 +35,7 @@
     "@capacitor/preferences": "^6.0.2",
     "@capacitor/share": "^6.0.2",
     "@capacitor/splash-screen": "^6.0.2",
-    "@ionic-enterprise/auth": "^6.0.1",
+    "@ionic-enterprise/auth": "6.0.2-dev-20240829T145808.0",
     "@ionic-enterprise/identity-vault": "~5.14.3",
     "@ionic/angular": "~8.2.7",
     "ionicons": "~7.4.0",
