@@ -21,7 +21,12 @@ export class StartPage implements OnInit {
 
   async ngOnInit() {
     if (this.platform.is('hybrid') && (await this.session.canUnlock())) {
-      this.navController.navigateRoot('/unlock');
+      try {
+        await this.session.unlockVault();
+        this.navController.navigateRoot('/tabs/tea');
+      } catch (err: unknown) {
+        this.navController.navigateRoot('/unlock');
+      }
     } else {
       this.navController.navigateRoot('/tabs/tea');
     }
