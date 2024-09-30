@@ -13,9 +13,13 @@ export class AppComponent implements OnDestroy {
   private subscription: Subscription;
 
   constructor(navController: NavController, sessionVault: SessionVaultService) {
-    this.subscription = sessionVault.locked$.subscribe((lock) => {
+    this.subscription = sessionVault.locked$.subscribe(async (lock) => {
       if (lock) {
-        navController.navigateRoot(['/']);
+        try {
+          await sessionVault.unlock();
+        } catch (err: unknown) {
+          navController.navigateRoot(['unlock']);
+        }
       }
     });
   }

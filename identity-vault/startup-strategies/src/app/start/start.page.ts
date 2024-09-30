@@ -1,6 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { IonButton, IonContent, IonItem, IonLabel, IonList, NavController } from '@ionic/angular/standalone';
+import { Component, OnInit } from '@angular/core';
+import { IonContent, NavController } from '@ionic/angular/standalone';
 import { AuthenticationService } from '../core/authentication.service';
 import { SessionVaultService } from '../core/session-vault.service';
 
@@ -9,9 +8,9 @@ import { SessionVaultService } from '../core/session-vault.service';
   templateUrl: './start.page.html',
   styleUrls: ['./start.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonButton, IonContent, IonItem, IonLabel, IonList],
+  imports: [IonContent],
 })
-export class StartPage {
+export class StartPage implements OnInit {
   showUnlock: boolean = false;
 
   constructor(
@@ -20,20 +19,9 @@ export class StartPage {
     private sessionVault: SessionVaultService,
   ) {}
 
-  ionViewDidEnter() {
-    setTimeout(() => {
-      this.performUnlockFlow();
-    }, 100);
-  }
-
-  async performUnlockFlow() {
+  async ngOnInit(): Promise<void> {
     await this.attemptUnlock();
     await this.attemptNavigation();
-  }
-
-  async redoLogin() {
-    await this.authentication.logout();
-    this.navController.navigateRoot(['login']);
   }
 
   private async attemptNavigation(): Promise<void> {
@@ -51,7 +39,7 @@ export class StartPage {
       try {
         await this.sessionVault.unlock();
       } catch (err: unknown) {
-        this.showUnlock = true;
+        this.navController.navigateRoot(['unlock']);
       }
     }
   }

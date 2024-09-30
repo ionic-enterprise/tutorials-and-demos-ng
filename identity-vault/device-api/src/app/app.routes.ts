@@ -18,4 +18,8 @@ export const routes: Routes = [
     path: 'start',
     loadComponent: () => import('./start/start.page').then((m) => m.StartPage),
   },
+  {
+    path: 'unlock',
+    loadComponent: () => import('./unlock/unlock.page').then((m) => m.UnlockPage),
+  },
 ];
