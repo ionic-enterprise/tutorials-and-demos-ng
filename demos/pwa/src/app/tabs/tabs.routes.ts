@@ -6,22 +6,25 @@ export const routes: Routes = [
   {
     path: '',
     component: TabsPage,
-    canActivate: [authGuard],
     children: [
       {
         path: 'tea',
+        canActivate: [authGuard],
         loadComponent: () => import('../tea/tea.page').then((c) => c.TeaPage),
       },
       {
         path: 'tea/tea-details/:id',
+        canActivate: [authGuard],
         loadComponent: () => import('../tea-details/tea-details.page').then((c) => c.TeaDetailsPage),
       },
       {
         path: 'tasting-notes',
+        canActivate: [authGuard],
         loadComponent: () => import('../tasting-notes/tasting-notes.page').then((c) => c.TastingNotesPage),
       },
       {
         path: 'about',
+        canActivate: [authGuard],
         loadComponent: () => import('../about/about.page').then((c) => c.AboutPage),
       },
       {
