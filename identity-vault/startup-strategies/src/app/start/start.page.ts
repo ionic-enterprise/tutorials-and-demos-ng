@@ -20,11 +20,11 @@ export class StartPage implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    await this.attemptUnlock();
-    await this.attemptNavigation();
+    await this.performUnlock();
+    await this.performNavigation();
   }
 
-  private async attemptNavigation(): Promise<void> {
+  private async performNavigation(): Promise<void> {
     if (!(await this.sessionVault.isLocked())) {
       if (await this.authentication.isAuthenticated()) {
         this.navController.navigateRoot(['tabs', 'tab1']);
@@ -34,7 +34,7 @@ export class StartPage implements OnInit {
     }
   }
 
-  private async attemptUnlock(): Promise<void> {
+  private async performUnlock(): Promise<void> {
     if (await this.sessionVault.isLocked()) {
       try {
         await this.sessionVault.unlock();
