@@ -25,6 +25,163 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
 
+  auth-connect/current-ui:
+    dependencies:
+      '@angular/animations':
+        specifier: ^18.2.7
+        version: 18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))
+      '@angular/common':
+        specifier: ^18.2.7
+        version: 18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
+      '@angular/compiler':
+        specifier: ^18.2.7
+        version: 18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))
+      '@angular/core':
+        specifier: ^18.2.7
+        version: 18.2.7(rxjs@7.8.1)(zone.js@0.14.10)
+      '@angular/forms':
+        specifier: ^18.2.7
+        version: 18.2.7(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(@angular/platform-browser@18.2.7(@angular/animations@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(rxjs@7.8.1)
+      '@angular/platform-browser':
+        specifier: ^18.2.7
+        version: 18.2.7(@angular/animations@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))
+      '@angular/platform-browser-dynamic':
+        specifier: ^18.2.7
+        version: 18.2.7(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/compiler@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(@angular/platform-browser@18.2.7(@angular/animations@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))
+      '@angular/router':
+        specifier: ^18.2.7
+        version: 18.2.7(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(@angular/platform-browser@18.2.7(@angular/animations@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(rxjs@7.8.1)
+      '@capacitor/android':
+        specifier: ^6.1.2
+        version: 6.1.2(@capacitor/core@6.1.2)
+      '@capacitor/app':
+        specifier: ^6.0.1
+        version: 6.0.1(@capacitor/core@6.1.2)
+      '@capacitor/core':
+        specifier: ^6.1.2
+        version: 6.1.2
+      '@capacitor/haptics':
+        specifier: ^6.0.1
+        version: 6.0.1(@capacitor/core@6.1.2)
+      '@capacitor/ios':
+        specifier: ^6.1.2
+        version: 6.1.2(@capacitor/core@6.1.2)
+      '@capacitor/keyboard':
+        specifier: ^6.0.2
+        version: 6.0.2(@capacitor/core@6.1.2)
+      '@capacitor/preferences':
+        specifier: ^6.0.2
+        version: 6.0.2(@capacitor/core@6.1.2)
+      '@capacitor/status-bar':
+        specifier: ^6.0.1
+        version: 6.0.1(@capacitor/core@6.1.2)
+      '@ionic-enterprise/auth':
+        specifier: 6.0.2
+        version: 6.0.2(@capacitor/core@6.1.2)
+      '@ionic/angular':
+        specifier: ^8.3.2
+        version: 8.3.2(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(@angular/forms@18.2.7(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(@angular/platform-browser@18.2.7(@angular/animations@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(rxjs@7.8.1))(@angular/router@18.2.7(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(@angular/platform-browser@18.2.7(@angular/animations@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(rxjs@7.8.1))(rxjs@7.8.1)(zone.js@0.14.10)
+      ionicons:
+        specifier: ^7.4.0
+        version: 7.4.0
+      rxjs:
+        specifier: ~7.8.1
+        version: 7.8.1
+      tslib:
+        specifier: ^2.7.0
+        version: 2.7.0
+      zone.js:
+        specifier: ~0.14.10
+        version: 0.14.10
+    devDependencies:
+      '@angular-devkit/build-angular':
+        specifier: ^18.2.7
+        version: 18.2.7(@angular/compiler-cli@18.2.7(@angular/compiler@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.5.4))(@angular/service-worker@18.2.7(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(@types/node@22.7.5)(chokidar@3.6.0)(karma@6.4.4)(typescript@5.5.4)
+      '@angular-eslint/builder':
+        specifier: ^18.3.1
+        version: 18.3.1(eslint@8.57.1)(typescript@5.5.4)
+      '@angular-eslint/eslint-plugin':
+        specifier: ^18.3.1
+        version: 18.3.1(@typescript-eslint/utils@8.8.1(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)
+      '@angular-eslint/eslint-plugin-template':
+        specifier: ^18.3.1
+        version: 18.3.1(@typescript-eslint/utils@8.8.1(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)
+      '@angular-eslint/schematics':
+        specifier: ^18.3.1
+        version: 18.3.1(@angular-devkit/core@18.2.7(chokidar@3.6.0))(@angular-devkit/schematics@18.2.7(chokidar@3.6.0))(@typescript-eslint/utils@8.8.1(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)
+      '@angular-eslint/template-parser':
+        specifier: ^18.3.1
+        version: 18.3.1(eslint@8.57.1)(typescript@5.5.4)
+      '@angular/cli':
+        specifier: ^18.2.7
+        version: 18.2.7(chokidar@3.6.0)
+      '@angular/compiler-cli':
+        specifier: ^18.2.7
+        version: 18.2.7(@angular/compiler@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.5.4)
+      '@angular/language-service':
+        specifier: ^18.2.7
+        version: 18.2.7
+      '@capacitor/cli':
+        specifier: ^6.1.2
+        version: 6.1.2
+      '@ionic/angular-toolkit':
+        specifier: ^12.1.1
+        version: 12.1.1(chokidar@3.6.0)
+      '@types/jasmine':
+        specifier: ~5.1.4
+        version: 5.1.4
+      '@types/node':
+        specifier: ^22.7.5
+        version: 22.7.5
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^8.8.1
+        version: 8.8.1(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)
+      '@typescript-eslint/parser':
+        specifier: ^8.8.1
+        version: 8.8.1(eslint@8.57.1)(typescript@5.5.4)
+      eslint:
+        specifier: ^8.57.1
+        version: 8.57.1
+      eslint-plugin-import:
+        specifier: ^2.31.0
+        version: 2.31.0(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)
+      eslint-plugin-jsdoc:
+        specifier: ^50.3.1
+        version: 50.3.1(eslint@8.57.1)
+      eslint-plugin-prefer-arrow:
+        specifier: ^1.2.3
+        version: 1.2.3(eslint@8.57.1)
+      jasmine-core:
+        specifier: ^5.3.0
+        version: 5.3.0
+      jasmine-spec-reporter:
+        specifier: ^7.0.0
+        version: 7.0.0
+      karma:
+        specifier: ^6.4.4
+        version: 6.4.4
+      karma-chrome-launcher:
+        specifier: ^3.2.0
+        version: 3.2.0
+      karma-coverage:
+        specifier: ^2.2.1
+        version: 2.2.1
+      karma-coverage-istanbul-reporter:
+        specifier: ^3.0.3
+        version: 3.0.3
+      karma-jasmine:
+        specifier: ^5.1.0
+        version: 5.1.0(karma@6.4.4)
+      karma-jasmine-html-reporter:
+        specifier: ^2.1.0
+        version: 2.1.0(jasmine-core@5.3.0)(karma-jasmine@5.1.0(karma@6.4.4))(karma@6.4.4)
+      ts-node:
+        specifier: ^10.9.2
+        version: 10.9.2(@types/node@22.7.5)(typescript@5.5.4)
+      typescript:
+        specifier: ~5.5.4
+        version: 5.5.4
+
   auth-connect/getting-started:
     dependencies:
       '@angular/animations':
@@ -8572,7 +8729,7 @@ snapshots:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@babel/code-frame': 7.25.7
-      '@babel/generator': 7.25.0
+      '@babel/generator': 7.25.7
       '@babel/helper-compilation-targets': 7.25.7
       '@babel/helper-module-transforms': 7.25.7(@babel/core@7.25.2)
       '@babel/helpers': 7.25.7
@@ -9419,7 +9576,7 @@ snapshots:
       '@ionic/utils-subprocess': 2.1.14
       '@ionic/utils-terminal': 2.3.5
       commander: 9.5.0
-      debug: 4.3.4
+      debug: 4.3.7
       env-paths: 2.2.1
       kleur: 4.1.5
       native-run: 2.0.1
@@ -9851,7 +10008,7 @@ snapshots:
 
   '@ionic/utils-array@2.1.6':
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.7
       tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
@@ -9903,7 +10060,7 @@ snapshots:
     dependencies:
       '@ionic/utils-object': 2.1.6
       '@ionic/utils-terminal': 2.3.4
-      debug: 4.3.4
+      debug: 4.3.7
       signal-exit: 3.0.7
       tree-kill: 1.2.2
       tslib: 2.7.0
@@ -9930,7 +10087,7 @@ snapshots:
 
   '@ionic/utils-stream@3.1.6':
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.7
       tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
@@ -9956,7 +10113,7 @@ snapshots:
       '@ionic/utils-stream': 3.1.6
       '@ionic/utils-terminal': 2.3.4
       cross-spawn: 7.0.3
-      debug: 4.3.4
+      debug: 4.3.7
       tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
@@ -9978,7 +10135,7 @@ snapshots:
   '@ionic/utils-terminal@2.3.4':
     dependencies:
       '@types/slice-ansi': 4.0.0
-      debug: 4.3.4
+      debug: 4.3.7
       signal-exit: 3.0.7
       slice-ansi: 4.0.0
       string-width: 4.2.3
@@ -11415,7 +11572,7 @@ snapshots:
       dom-serializer: 2.0.0
       domhandler: 5.0.3
       htmlparser2: 8.0.2
-      postcss: 8.4.41
+      postcss: 8.4.47
       postcss-media-query-parser: 0.2.3
 
   cross-fetch@3.1.8(encoding@0.1.13):
@@ -11434,12 +11591,12 @@ snapshots:
 
   css-loader@7.1.2(webpack@5.94.0(esbuild@0.23.0)):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.41)
-      postcss: 8.4.41
-      postcss-modules-extract-imports: 3.1.0(postcss@8.4.41)
-      postcss-modules-local-by-default: 4.0.5(postcss@8.4.41)
-      postcss-modules-scope: 3.2.0(postcss@8.4.41)
-      postcss-modules-values: 4.0.0(postcss@8.4.41)
+      icss-utils: 5.1.0(postcss@8.4.47)
+      postcss: 8.4.47
+      postcss-modules-extract-imports: 3.1.0(postcss@8.4.47)
+      postcss-modules-local-by-default: 4.0.5(postcss@8.4.47)
+      postcss-modules-scope: 3.2.0(postcss@8.4.47)
+      postcss-modules-values: 4.0.0(postcss@8.4.47)
       postcss-value-parser: 4.2.0
       semver: 7.6.3
     optionalDependencies:
@@ -12554,9 +12711,9 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
 
-  icss-utils@5.1.0(postcss@8.4.41):
+  icss-utils@5.1.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.41
+      postcss: 8.4.47
 
   ieee754@1.2.1: {}
 
@@ -12775,7 +12932,7 @@ snapshots:
 
   istanbul-lib-instrument@6.0.3:
     dependencies:
-      '@babel/core': 7.25.2
+      '@babel/core': 7.25.7
       '@babel/parser': 7.25.7
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.2
@@ -13808,26 +13965,26 @@ snapshots:
 
   postcss-media-query-parser@0.2.3: {}
 
-  postcss-modules-extract-imports@3.1.0(postcss@8.4.41):
+  postcss-modules-extract-imports@3.1.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.41
+      postcss: 8.4.47
 
-  postcss-modules-local-by-default@4.0.5(postcss@8.4.41):
+  postcss-modules-local-by-default@4.0.5(postcss@8.4.47):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.41)
-      postcss: 8.4.41
+      icss-utils: 5.1.0(postcss@8.4.47)
+      postcss: 8.4.47
       postcss-selector-parser: 6.1.2
       postcss-value-parser: 4.2.0
 
-  postcss-modules-scope@3.2.0(postcss@8.4.41):
+  postcss-modules-scope@3.2.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.41
+      postcss: 8.4.47
       postcss-selector-parser: 6.1.2
 
-  postcss-modules-values@4.0.0(postcss@8.4.41):
+  postcss-modules-values@4.0.0(postcss@8.4.47):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.41)
-      postcss: 8.4.41
+      icss-utils: 5.1.0(postcss@8.4.47)
+      postcss: 8.4.47
 
   postcss-selector-parser@6.1.2:
     dependencies:
@@ -14050,7 +14207,7 @@ snapshots:
       adjust-sourcemap-loader: 4.0.0
       convert-source-map: 1.9.0
       loader-utils: 2.0.4
-      postcss: 8.4.41
+      postcss: 8.4.47
       source-map: 0.6.1
 
   resolve@1.22.8:
