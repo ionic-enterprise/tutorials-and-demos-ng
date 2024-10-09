@@ -11,7 +11,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button *ngIf="!authenticated" (click)="login()" data-testid="login-button">Login</ion-button>
-  <ion-button *ngIf="authenticated" (click)="logout()" data-testid="logout-button">Logout</ion-button>
-  <pre>{{ accessToken }}</pre>
+  @if (authenticated) {
+    <ion-button (click)="logout()" data-testid="logout-button">Logout</ion-button>
+    <pre>{{ accessToken }}</pre>
+  } @else {
+    <ion-button (click)="login()" data-testid="login-button">Login</ion-button>
+  }
 </ion-content>

@@ -17,21 +17,22 @@
     </ion-list-header>
     <ion-item>
       <ion-label>Secure Hardware</ion-label>
-      <ion-note slot="end">{{hasSecureHardware}}</ion-note>
+      <ion-note slot="end">{{ hasSecureHardware }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>Biometrics Supported</ion-label>
-      <ion-note slot="end">{{isBiometricsSupported}}</ion-note>
+      <ion-note slot="end">{{ isBiometricsSupported }}</ion-note>
     </ion-item>
     <ion-item>
       <div>
         <p>Available Biometric Hardware:</p>
-        <ul *ngIf="availableHardware?.length">
-          <li *ngFor="let h of availableHardware">{{h}}</li>
-        </ul>
-        <ul *ngIf="availableHardware?.length === 0">
+        @if (availableHardware.length) {
+          @for (h of availableHardware; track h) {
+            <li>{{ h }}</li>
+          }
+        } @else {
           <li>None</li>
-        </ul>
+        }
       </div>
     </ion-item>
     <ion-list-header>
@@ -39,27 +40,27 @@
     </ion-list-header>
     <ion-item>
       <ion-label>Biometric Strength Level</ion-label>
-      <ion-note slot="end">{{biometricStrengthLevel}}</ion-note>
+      <ion-note slot="end">{{ biometricStrengthLevel }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>Biometric Allowed</ion-label>
-      <ion-note slot="end">{{isBiometricsAllowed}}</ion-note>
+      <ion-note slot="end">{{ isBiometricsAllowed }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>Biometrics Enabled</ion-label>
-      <ion-note slot="end">{{isBiometricsEnabled}}</ion-note>
+      <ion-note slot="end">{{ isBiometricsEnabled }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>Hide Screen Enabled</ion-label>
-      <ion-note slot="end">{{isHideScreenOnBackgroundEnabled}}</ion-note>
+      <ion-note slot="end">{{ isHideScreenOnBackgroundEnabled }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>Locked Out of Biometrics</ion-label>
-      <ion-note slot="end">{{isLockedOutOfBiometrics}}</ion-note>
+      <ion-note slot="end">{{ isLockedOutOfBiometrics }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>System Passcode Set</ion-label>
-      <ion-note slot="end">{{isSystemPasscodeSet}}</ion-note>
+      <ion-note slot="end">{{ isSystemPasscodeSet }}</ion-note>
     </ion-item>
     <ion-list-header>
       <ion-label>Actions</ion-label>
@@ -74,7 +75,7 @@
     <ion-item>
       <ion-label>
         <ion-button expand="block" (click)="toggleHideScreenOnBackground()"
-          >{{this.isHideScreenOnBackgroundEnabled ? 'Disable' : 'Enable'}} Security Screen</ion-button
+          >{{ this.isHideScreenOnBackgroundEnabled ? 'Disable' : 'Enable' }} Security Screen</ion-button
         >
       </ion-label>
     </ion-item>

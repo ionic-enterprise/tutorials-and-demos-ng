@@ -1,7 +1,10 @@
 <ion-content class="main-content">
   <div class="auth-card">
-    <app-unlock-card *ngIf="showUnlock" (unlock)="onUnlock()" (vaultClear)="onVaultClear()" data-testid="unlock-card" />
-    <app-login-card *ngIf="!showUnlock" (loginSuccess)="onLoginSuccess()" data-testid="login-card" />
+    @if (showUnlock) {
+      <app-unlock-card (unlock)="onUnlock()" (vaultClear)="onVaultClear()" data-testid="unlock-card" />
+    } @else {
+      <app-login-card (loginSuccess)="onLoginSuccess()" data-testid="login-card" />
+    }
   </div>
   <ion-loading [isOpen]="syncing" message="Syncing..."></ion-loading>
 </ion-content>

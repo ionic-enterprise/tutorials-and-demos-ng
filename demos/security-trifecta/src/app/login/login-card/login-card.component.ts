@@ -1,21 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
-import { Platform } from '@ionic/angular/standalone';
+import {
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonCheckbox,
+  IonIcon,
+  IonLoading,
+  Platform,
+} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logInOutline } from 'ionicons/icons';
-import {
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent,
-  IonButton,
-  IonIcon,
-  IonCheckbox,
-  IonLoading,
-} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login-card',
@@ -23,16 +22,15 @@ import {
   styleUrls: ['./login-card.component.scss'],
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
-    IonCard,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardSubtitle,
-    IonCardContent,
     IonButton,
-    IonIcon,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
     IonCheckbox,
+    IonIcon,
     IonLoading,
   ],
 })

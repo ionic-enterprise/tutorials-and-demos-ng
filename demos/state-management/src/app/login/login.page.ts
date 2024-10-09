@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService, UnlockMode } from '@app/core';
@@ -27,16 +27,16 @@ import { Observable } from 'rxjs';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   imports: [
-    CommonModule,
+    AsyncPipe,
     FormsModule,
     IonContent,
-    IonList,
-    IonRadioGroup,
-    IonListHeader,
-    IonLabel,
-    IonItem,
-    IonRadio,
     IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonRadio,
+    IonRadioGroup,
   ],
   standalone: true,
 })

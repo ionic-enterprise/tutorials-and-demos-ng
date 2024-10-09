@@ -2,9 +2,11 @@
   <ion-toolbar>
     <ion-title>{{ title }}</ion-title>
     <ion-buttons slot="primary">
-      <ion-button *ngIf="sharingIsAvailable" [disabled]="!allowSharing" id="share-button" (click)="share()">
-        <ion-icon slot="icon-only" name="share-outline"></ion-icon>
-      </ion-button>
+      @if (sharingIsAvailable) {
+        <ion-button [disabled]="!allowSharing" id="share-button" (click)="share()">
+          <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+        </ion-button>
+      }
       <ion-button id="cancel-button" (click)="close()">
         <ion-icon slot="icon-only" name="close"></ion-icon>
       </ion-button>
@@ -38,7 +40,9 @@
     </ion-item>
     <ion-item>
       <ion-select name="tea-type-select" [(ngModel)]="teaCategoryId" #teaTypeSelect="ngModel" label="Type" required>
-        <ion-select-option *ngFor="let t of teaCategories$ | async" value="{{ t.id }}">{{ t.name }}</ion-select-option>
+        @for (t of teaCategories$ | async; track t.id) {
+          <ion-select-option value="{{ t.id }}">{{ t.name }}</ion-select-option>
+        }
       </ion-select>
     </ion-item>
     <ion-item>

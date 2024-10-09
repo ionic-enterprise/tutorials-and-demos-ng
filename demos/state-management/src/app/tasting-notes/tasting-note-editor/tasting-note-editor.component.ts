@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNote, Tea } from '@app/models';
@@ -34,23 +34,23 @@ import { Observable } from 'rxjs';
   templateUrl: './tasting-note-editor.component.html',
   styleUrls: ['./tasting-note-editor.component.scss'],
   imports: [
-    CommonModule,
+    AsyncPipe,
     FormsModule,
     RatingComponent,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonButtons,
     IonButton,
-    IonIcon,
+    IonButtons,
     IonContent,
-    IonItem,
+    IonFooter,
+    IonHeader,
+    IonIcon,
     IonInput,
+    IonItem,
+    IonLabel,
     IonSelect,
     IonSelectOption,
-    IonLabel,
     IonTextarea,
-    IonFooter,
+    IonTitle,
+    IonToolbar,
   ],
   standalone: true,
 })

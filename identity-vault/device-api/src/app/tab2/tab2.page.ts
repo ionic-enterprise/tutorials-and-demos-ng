@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Device } from '@ionic-enterprise/identity-vault';
 import {
@@ -19,19 +18,7 @@ import {
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true,
-  imports: [
-    CommonModule,
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonListHeader,
-    IonNote,
-    IonTitle,
-    IonToolbar,
-  ],
+  imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonListHeader, IonNote, IonTitle, IonToolbar],
 })
 export class Tab2Page implements OnInit {
   hasSecureHardware: Boolean = false;

@@ -46,20 +46,28 @@
         </ion-list>
 
         <div class="error-message" data-testid="login-form-errors">
-          <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
-            <div *ngIf="emailInput.errors && emailInput.errors['email']">E-Mail Address must have a valid format</div>
-            <div *ngIf="emailInput.errors && emailInput.errors['required']">E-Mail Address is required</div>
-          </div>
-
-          <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
-            <div *ngIf="passwordInput.errors && passwordInput.errors['required']">Password is required</div>
-          </div>
+          @if (emailInput.invalid && (emailInput.dirty || emailInput.touched) && emailInput.errors) {
+            @if (emailInput.errors['email']) {
+              <div>E-Mail Address must have a valid format</div>
+            }
+            @if (emailInput.errors['required']) {
+              <div>E-Mail Address is required</div>
+            }
+          }
+          @if (
+            passwordInput.invalid &&
+            (passwordInput.dirty || passwordInput.touched) &&
+            passwordInput.errors &&
+            passwordInput.errors['required']
+          ) {
+            <div>Password is required</div>
+          }
         </div>
       </form>
 
       <div class="auth-button-area">
         <div>--OR--</div>
-        <ion-button expand="block" color="auth0" (click)="oidcSignIn('Auth0')" data-testid="atuh0-signin-button">
+        <ion-button expand="block" color="auth0" (click)="oidcSignIn('Auth0')" data-testid="auth0-signin-button">
           <ion-icon slot="end" src="assets/auth0-logo.svg"></ion-icon>
           Sign In with Auth0</ion-button
         >

@@ -5,9 +5,11 @@
       <ion-button id="cancel-button" (click)="close()" data-testid="cancel-button"> Cancel </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button *ngIf="sharingIsAvailable" [disabled]="!allowSharing" data-testid="share-button" (click)="share()">
-        <ion-icon slot="icon-only" name="share-outline"></ion-icon>
-      </ion-button>
+      @if (sharingIsAvailable) {
+        <ion-button [disabled]="!allowSharing" data-testid="share-button" (click)="share()">
+          <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+        </ion-button>
+      }
       <ion-button [strong]="true" [disabled]="!editorForm.valid" (click)="save()" data-testid="save-button">{{
         buttonLabel
       }}</ion-button>
@@ -39,7 +41,9 @@
     </ion-item>
     <ion-item>
       <ion-select name="tea-type-select" label="Type" formControlName="teaCategoryId" data-testid="tea-type-select">
-        <ion-select-option *ngFor="let t of teaCategories$ | async" [value]="t.id">{{ t.name }}</ion-select-option>
+        @for (t of teaCategories$ | async; track t.id) {
+          <ion-select-option [value]="t.id">{{ t.name }}</ion-select-option>
+        }
       </ion-select>
     </ion-item>
     <ion-item>

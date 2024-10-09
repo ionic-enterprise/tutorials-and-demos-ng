@@ -1,25 +1,24 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationExpediterService, SessionVaultService } from '@app/core';
 import { AuthVendor } from '@app/models';
-import { NavController } from '@ionic/angular/standalone';
+import {
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonContent,
+  IonIcon,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonList,
+  NavController,
+} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoAmazon, logoMicrosoft } from 'ionicons/icons';
-import {
-  IonContent,
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent,
-  IonList,
-  IonItem,
-  IonInput,
-  IonLabel,
-  IonButton,
-  IonIcon,
-} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +26,6 @@ import {
   styleUrls: ['./login.page.scss'],
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
     IonContent,
     IonCard,

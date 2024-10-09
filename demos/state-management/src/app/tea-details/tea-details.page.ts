@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -24,16 +24,16 @@ import { tap } from 'rxjs/operators';
   templateUrl: './tea-details.page.html',
   styleUrls: ['./tea-details.page.scss'],
   imports: [
-    CommonModule,
+    AsyncPipe,
     FormsModule,
     RatingComponent,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonButtons,
     IonBackButton,
+    IonButtons,
     IonContent,
+    IonHeader,
     IonImg,
+    IonTitle,
+    IonToolbar,
   ],
   standalone: true,
 })

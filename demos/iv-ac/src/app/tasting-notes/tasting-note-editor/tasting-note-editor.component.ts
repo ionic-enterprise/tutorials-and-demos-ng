@@ -1,29 +1,30 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TastingNotesService, TeaService } from '@app/core';
 import { TastingNote, Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
 import { Share } from '@capacitor/share';
-import { ModalController, Platform } from '@ionic/angular/standalone';
-import { Observable, of, tap } from 'rxjs';
-import { addIcons } from 'ionicons';
-import { shareOutline } from 'ionicons/icons';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonButtons,
   IonButton,
-  IonIcon,
+  IonButtons,
   IonContent,
-  IonItem,
+  IonHeader,
+  IonIcon,
   IonInput,
+  IonItem,
+  IonLabel,
   IonSelect,
   IonSelectOption,
-  IonLabel,
   IonTextarea,
+  IonTitle,
+  IonToolbar,
+  ModalController,
+  Platform,
 } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { shareOutline } from 'ionicons/icons';
+import { Observable, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-tasting-note-editor',
@@ -31,22 +32,22 @@ import {
   styleUrls: ['./tasting-note-editor.component.scss'],
   standalone: true,
   imports: [
-    CommonModule,
+    AsyncPipe,
     RatingComponent,
     ReactiveFormsModule,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonButtons,
     IonButton,
-    IonIcon,
+    IonButtons,
     IonContent,
-    IonItem,
+    IonHeader,
+    IonIcon,
     IonInput,
+    IonItem,
+    IonLabel,
     IonSelect,
     IonSelectOption,
-    IonLabel,
     IonTextarea,
+    IonTitle,
+    IonToolbar,
   ],
 })
 export class TastingNoteEditorComponent implements OnInit {

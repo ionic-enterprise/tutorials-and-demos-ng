@@ -1,20 +1,20 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { TeaService } from '@app/core';
 import { Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
-import { EMPTY, Observable, tap } from 'rxjs';
 import {
-  IonHeader,
-  IonToolbar,
-  IonButtons,
   IonBackButton,
-  IonTitle,
+  IonButtons,
   IonContent,
+  IonHeader,
   IonImg,
+  IonTitle,
+  IonToolbar,
 } from '@ionic/angular/standalone';
+import { EMPTY, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-tea-details',
@@ -22,16 +22,16 @@ import {
   styleUrls: ['./tea-details.page.scss'],
   standalone: true,
   imports: [
-    CommonModule,
+    AsyncPipe,
     FormsModule,
     RatingComponent,
-    IonHeader,
-    IonToolbar,
-    IonButtons,
     IonBackButton,
-    IonTitle,
+    IonButtons,
     IonContent,
+    IonHeader,
     IonImg,
+    IonTitle,
+    IonToolbar,
   ],
 })
 export class TeaDetailsPage implements OnInit {

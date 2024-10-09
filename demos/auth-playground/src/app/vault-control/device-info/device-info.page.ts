@@ -1,20 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Device } from '@ionic-enterprise/identity-vault';
-import { AlertController, Platform } from '@ionic/angular/standalone';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonButtons,
+  AlertController,
   IonBackButton,
+  IonButton,
+  IonButtons,
   IonContent,
-  IonList,
+  IonHeader,
   IonItem,
   IonLabel,
+  IonList,
   IonNote,
-  IonButton,
+  IonTitle,
+  IonToolbar,
+  Platform,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -23,19 +23,18 @@ import {
   styleUrls: ['./device-info.page.scss'],
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonButtons,
     IonBackButton,
+    IonButton,
+    IonButtons,
     IonContent,
-    IonList,
+    IonHeader,
     IonItem,
     IonLabel,
+    IonList,
     IonNote,
-    IonButton,
+    IonTitle,
+    IonToolbar,
   ],
 })
 export class DeviceInfoPage implements OnInit {

@@ -12,11 +12,13 @@
       </ion-button>
     </div>
 
-    <div class="ion-padding ion-text-center" *ngIf="showSessionLocking">
-      <ion-checkbox [(ngModel)]="useSessionLocking" (ionChange)="useSessionLockingChanged()"
-        >Use Session Locking</ion-checkbox
-      >
-    </div>
+    @if (showSessionLocking) {
+      <div class="ion-padding ion-text-center">
+        <ion-checkbox [(ngModel)]="useSessionLocking" (ionChange)="useSessionLockingChanged()"
+          >Use Session Locking</ion-checkbox
+        >
+      </div>
+    }
 
     <div class="error-message ion-text-center">
       <div>{{ errorMessage }}</div>
