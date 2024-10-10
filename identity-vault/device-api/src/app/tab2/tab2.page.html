@@ -26,13 +26,15 @@
     <ion-item>
       <div>
         <p>Available Biometric Hardware:</p>
-        @if (availableHardware.length) {
-          @for (h of availableHardware; track h) {
-            <li>{{ h }}</li>
+        <ul>
+          @if (availableHardware.length) {
+            @for (h of availableHardware; track h) {
+              <li>{{ h }}</li>
+            }
+          } @else {
+            <li>None</li>
           }
-        } @else {
-          <li>None</li>
-        }
+        </ul>
       </div>
     </ion-item>
     <ion-list-header>
