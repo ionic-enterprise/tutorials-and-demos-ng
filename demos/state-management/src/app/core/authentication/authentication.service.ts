@@ -69,9 +69,8 @@ export class AuthenticationService {
       } catch (err) {
         return null;
       }
-      this.saveAuthResult(newAuthResult);
     }
-
+    this.saveAuthResult(newAuthResult);
     return newAuthResult;
   }
 

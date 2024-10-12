@@ -136,7 +136,7 @@ describe('AuthenticationService', () => {
 
             it('clears the vault', async () => {
               await authService.isAuthenticated();
-              expect(sessionVault.clear).toHaveBeenCalledTimes(2);
+              expect(sessionVault.clear).toHaveBeenCalledTimes(1);
             });
 
             it('resolves false', async () => {
@@ -241,7 +241,7 @@ describe('AuthenticationService', () => {
 
             it('clears the vault', async () => {
               await authService.getAccessToken();
-              expect(sessionVault.clear).toHaveBeenCalledTimes(2);
+              expect(sessionVault.clear).toHaveBeenCalledTimes(1);
             });
 
             it('resolves undefined', async () => {

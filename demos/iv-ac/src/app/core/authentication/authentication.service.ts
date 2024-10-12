@@ -65,12 +65,6 @@ export class AuthenticationService {
     await this.saveAuthResult(null);
   }
 
-  private async onAuthChange(isAuthenticated: boolean): Promise<void> {
-    this.ngZone.run(() => {
-      this.authenticationChange.next(isAuthenticated);
-    });
-  }
-
   public async getAuthResult(): Promise<AuthResult | null> {
     let authResult = await this.sessionVault.getSession();
     if (authResult && (await AuthConnect.isAccessTokenExpired(authResult))) {
@@ -96,11 +90,8 @@ export class AuthenticationService {
       } catch (err) {
         null;
       }
-
-      this.saveAuthResult(newAuthResult);
     }
-
-    this.saveAuthResult(null);
+    this.saveAuthResult(newAuthResult);
     return newAuthResult;
   }
 
@@ -112,5 +103,11 @@ export class AuthenticationService {
     }
 
     this.onAuthChange(!!authResult);
+  }
+
+  private async onAuthChange(isAuthenticated: boolean): Promise<void> {
+    this.ngZone.run(() => {
+      this.authenticationChange.next(isAuthenticated);
+    });
   }
 }
