@@ -11,7 +11,6 @@ import { IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon }
   selector: 'app-unlock',
   templateUrl: './unlock.page.html',
   styleUrls: ['./unlock.page.scss'],
-  standalone: true,
   imports: [CommonModule, FormsModule, IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon],
 })
 export class UnlockPage {
@@ -42,8 +41,9 @@ export class UnlockPage {
       await this.sessionVault.unlock();
       this.navController.navigateRoot(['/']);
     } catch (error) {
+      console.error(error);
       // you could alert or otherwise set an error message
-      // the most common failure is the user cancelling, so we just don't navigate
+      // the most common failure is the user canceling, so we just don't navigate
     }
   }
 }

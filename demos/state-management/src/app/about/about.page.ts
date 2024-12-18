@@ -41,13 +41,12 @@ import {
     IonLabel,
     IonNote,
   ],
-  standalone: true,
 })
 export class AboutPage implements OnInit {
-  author: string = '';
-  name: string = '';
-  description: string = '';
-  version: string = '';
+  author = '';
+  name = '';
+  description = '';
+  version = '';
 
   constructor(private store: Store) {
     addIcons({ logOutOutline });

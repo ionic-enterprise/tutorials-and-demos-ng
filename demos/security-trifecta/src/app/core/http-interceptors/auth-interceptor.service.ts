@@ -4,7 +4,7 @@ import { from } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { AuthenticationService } from '../authentication/authentication.service';
 
-const requestRequiresToken = (req: HttpRequest<any>): boolean => {
+const requestRequiresToken = (req: HttpRequest<unknown>): boolean => {
   return !/\/login$/.test(req.url);
 };
 

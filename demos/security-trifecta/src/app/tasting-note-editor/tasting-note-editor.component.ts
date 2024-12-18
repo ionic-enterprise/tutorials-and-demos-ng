@@ -28,7 +28,6 @@ import {
   selector: 'app-tasting-note-editor',
   templateUrl: './tasting-note-editor.component.html',
   styleUrls: ['./tasting-note-editor.component.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
@@ -58,7 +57,7 @@ export class TastingNoteEditorComponent implements OnInit {
   rating = 0;
   notes = '';
 
-  categories: Array<TeaCategory> = [];
+  categories: TeaCategory[] = [];
 
   constructor(
     private modalController: ModalController,

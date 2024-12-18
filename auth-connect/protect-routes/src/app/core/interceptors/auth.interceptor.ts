@@ -1,9 +1,9 @@
-import { Injectable, inject } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpInterceptorFn } from '@angular/common/http';
-import { Observable, from, mergeMap } from 'rxjs';
+import { HttpInterceptorFn, HttpRequest } from '@angular/common/http';
+import { inject } from '@angular/core';
+import { from, mergeMap } from 'rxjs';
 import { AuthenticationService } from '../authentication.service';
 
-const requestRequiresToken = (req: HttpRequest<any>): boolean => {
+const requestRequiresToken = (req: HttpRequest<unknown>): boolean => {
   return !/\/login$/.test(req.url);
 };
 

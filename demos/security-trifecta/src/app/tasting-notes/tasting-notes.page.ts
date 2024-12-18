@@ -43,7 +43,6 @@ import {
   selector: 'app-tasting-notes',
   templateUrl: 'tasting-notes.page.html',
   styleUrls: ['tasting-notes.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
@@ -67,8 +66,8 @@ import {
   ],
 })
 export class TastingNotesPage implements OnInit {
-  notes: Array<TastingNote> = [];
-  prefersDarkMode: boolean = false;
+  notes: TastingNote[] = [];
+  prefersDarkMode = false;
 
   constructor(
     private authentication: AuthenticationService,

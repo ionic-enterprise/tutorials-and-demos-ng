@@ -27,7 +27,6 @@ import {
   selector: 'app-vault-control',
   templateUrl: 'vault-control.page.html',
   styleUrls: ['vault-control.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,

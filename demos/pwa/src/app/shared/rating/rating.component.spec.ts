@@ -5,7 +5,6 @@ import { RatingComponent } from './rating.component';
 
 @Component({
   template: `<app-rating [(ngModel)]="rating" [disabled]="disabled" (ngModelChange)="onChange()"> </app-rating>`,
-  standalone: true,
   imports: [FormsModule, RatingComponent],
 })
 class TestHostComponent {

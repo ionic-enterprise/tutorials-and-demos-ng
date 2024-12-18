@@ -3,7 +3,7 @@ import { CanActivateFn } from '@angular/router';
 import { NavController } from '@ionic/angular/standalone';
 import { AuthenticationService } from '../authentication.service';
 
-export const authGuard: CanActivateFn = async (route, state) => {
+export const authGuard: CanActivateFn = async () => {
   const authentication = inject(AuthenticationService);
   const navigation = inject(NavController);
 

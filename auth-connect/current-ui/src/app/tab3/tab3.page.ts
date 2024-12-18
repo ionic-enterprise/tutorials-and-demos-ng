@@ -6,9 +6,6 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/stan
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss'],
-  standalone: true,
   imports: [ExploreContainerComponent, IonHeader, IonToolbar, IonTitle, IonContent],
 })
-export class Tab3Page {
-  constructor() {}
-}
+export class Tab3Page {}

@@ -24,7 +24,6 @@ import {
   selector: 'app-value-list',
   templateUrl: './value-list.page.html',
   styleUrls: ['./value-list.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
@@ -43,7 +42,8 @@ import {
   ],
 })
 export class ValueListPage implements OnInit {
-  values: Array<{ key: string; value?: any }> = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  values: { key: string; value?: any }[] = [];
 
   constructor(
     private alertController: AlertController,

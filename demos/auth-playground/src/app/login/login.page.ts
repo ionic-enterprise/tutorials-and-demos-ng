@@ -24,7 +24,6 @@ import { logoAmazon, logoMicrosoft } from 'ionicons/icons';
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: true,
   imports: [
     FormsModule,
     IonContent,
@@ -42,9 +41,9 @@ import { logoAmazon, logoMicrosoft } from 'ionicons/icons';
   ],
 })
 export class LoginPage {
-  email: string = '';
-  errorMessage: string = '';
-  password: string = '';
+  email = '';
+  errorMessage = '';
+  password = '';
 
   constructor(
     private auth: AuthenticationExpediterService,
@@ -61,6 +60,7 @@ export class LoginPage {
       await this.auth.login('Basic', { email: this.email, password: this.password });
       this.navController.navigateRoot(['/']);
     } catch (err) {
+      console.error(err);
       this.errorMessage = 'Login failed. Please try again.';
     }
   }
@@ -72,6 +72,7 @@ export class LoginPage {
       await this.auth.login(vendor);
       this.navController.navigateRoot(['/']);
     } catch (err) {
+      console.error(err);
       this.errorMessage = 'Login failed. Please try again.';
     }
   }

@@ -9,7 +9,6 @@ import { star, starOutline } from 'ionicons/icons';
   selector: 'app-rating',
   templateUrl: './rating.component.html',
   styleUrls: ['./rating.component.scss'],
-  standalone: true,
   imports: [CommonModule, FormsModule, IonIcon],
   providers: [
     {
@@ -20,8 +19,8 @@ import { star, starOutline } from 'ionicons/icons';
   ],
 })
 export class RatingComponent implements ControlValueAccessor {
-  @Input() rating: number = 0;
-  @Input() disabled: boolean = false;
+  @Input() rating = 0;
+  @Input() disabled = false;
 
   constructor() {
     addIcons({ star, starOutline });
@@ -32,8 +31,10 @@ export class RatingComponent implements ControlValueAccessor {
     return this.disabled ? 0.25 : 1;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
   onChange = (_rating: number) => {};
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onTouched = () => {};
 
   ratingClicked(rating: number): void {

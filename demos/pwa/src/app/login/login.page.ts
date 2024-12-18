@@ -23,7 +23,6 @@ import {
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     IonHeader,
@@ -41,7 +40,7 @@ import {
   ],
 })
 export class LoginPage {
-  loginFailed: boolean = false;
+  loginFailed = false;
 
   constructor(
     private auth: AuthenticationService,
@@ -55,6 +54,7 @@ export class LoginPage {
       await this.auth.login();
       this.nav.navigateRoot(['/']);
     } catch (e) {
+      console.error(e);
       this.loginFailed = true;
     }
   }

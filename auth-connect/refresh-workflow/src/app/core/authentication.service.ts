@@ -73,8 +73,8 @@ export class AuthenticationService {
     if (await AuthConnect.isRefreshTokenAvailable(authResult)) {
       try {
         newAuthResult = await AuthConnect.refreshSession(this.provider, authResult);
-      } catch (err) {
-        null;
+      } catch (err: unknown) {
+        console.error(err);
       }
     }
     await this.saveAuthResult(newAuthResult);

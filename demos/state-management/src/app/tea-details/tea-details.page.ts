@@ -35,10 +35,9 @@ import { tap } from 'rxjs/operators';
     IonTitle,
     IonToolbar,
   ],
-  standalone: true,
 })
 export class TeaDetailsPage implements OnInit {
-  rating: number = 0;
+  rating = 0;
   tea$: Observable<Tea | undefined> | undefined;
 
   constructor(

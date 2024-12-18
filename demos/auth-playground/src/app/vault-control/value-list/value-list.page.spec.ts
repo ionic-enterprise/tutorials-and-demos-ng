@@ -8,6 +8,7 @@ import { click } from '@test/util';
 import { ValueListPage } from './value-list.page';
 
 describe('ValueListPage', () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let alert: any;
   let component: ValueListPage;
   let fixture: ComponentFixture<ValueListPage>;

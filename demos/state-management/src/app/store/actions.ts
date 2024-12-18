@@ -1,6 +1,6 @@
-import { createAction, props } from '@ngrx/store';
-import { Session, TastingNote, Tea, User } from '@app/models';
 import { UnlockMode } from '@app/core';
+import { TastingNote, Tea, User } from '@app/models';
+import { createAction, props } from '@ngrx/store';
 
 export const startup = createAction('[Application] startup');
 export const login = createAction('[Login Page] login', props<{ mode?: UnlockMode }>());
@@ -20,7 +20,7 @@ export const unauthError = createAction('[Auth API] unauthenticated error');
 export const sessionLocked = createAction('[Vault API] session locked');
 export const sessionUnlocked = createAction('[Vault API] session unlocked');
 
-export const initialLoadSuccess = createAction('[Data API] initial data load success', props<{ teas: Array<Tea> }>());
+export const initialLoadSuccess = createAction('[Data API] initial data load success', props<{ teas: Tea[] }>());
 export const initialLoadFailure = createAction(
   '[Data API] initial data load failure',
   props<{ errorMessage: string }>(),
@@ -39,7 +39,7 @@ export const teaDetailsChangeRatingFailure = createAction(
 export const notesPageLoaded = createAction('[Notes Page] loaded');
 export const notesPageLoadedSuccess = createAction(
   '[Data API] notes page loaded success',
-  props<{ notes: Array<TastingNote> }>(),
+  props<{ notes: TastingNote[] }>(),
 );
 export const notesPageLoadedFailure = createAction(
   '[Data API] notes page loaded failure',

@@ -10,6 +10,7 @@ describe('LoginCardComponent', () => {
   let fixture: ComponentFixture<LoginCardComponent>;
 
   beforeEach(() => {
+    spyOn(console, 'error').and.callFake(() => null);
     TestBed.overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock }).overrideProvider(
       SessionVaultService,
       { useFactory: createSessionVaultServiceMock },

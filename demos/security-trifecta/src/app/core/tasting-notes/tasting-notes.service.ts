@@ -9,7 +9,7 @@ import { TastingNotesDatabaseService } from '../tasting-notes-database/tasting-n
   providedIn: 'root',
 })
 export class TastingNotesService {
-  private tastingNotes: Array<TastingNote> | undefined;
+  private tastingNotes: TastingNote[] | undefined;
 
   constructor(
     private platform: Platform,
@@ -17,7 +17,7 @@ export class TastingNotesService {
     private database: TastingNotesDatabaseService,
   ) {}
 
-  get data(): Array<TastingNote> {
+  get data(): TastingNote[] {
     return [...(this.tastingNotes ?? [])];
   }
 

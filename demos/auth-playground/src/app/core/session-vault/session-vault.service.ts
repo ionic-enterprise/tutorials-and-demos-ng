@@ -43,6 +43,7 @@ export class SessionVaultService {
 
   initialize(): Promise<void> {
     if (!this.vaultReady) {
+      // eslint-disable-next-line no-async-promise-executor
       this.vaultReady = new Promise(async (resolve) => {
         await this.platform.ready();
 
@@ -62,6 +63,7 @@ export class SessionVaultService {
             unlockVaultOnLoad: false,
           });
         } catch (e: unknown) {
+          console.error(e);
           await this.vault.clear();
           await this.setUnlockMode('NeverLock');
         }
@@ -93,19 +95,19 @@ export class SessionVaultService {
     return this.vault.config as IdentityVaultConfig;
   }
 
-  getKeys(): Promise<Array<string>> {
+  getKeys(): Promise<string[]> {
     return this.vault.getKeys();
   }
 
-  getValue(key: string): Promise<any> {
-    return this.vault.getValue(key);
+  getValue<T>(key: string): Promise<T | null> {
+    return this.vault.getValue<T>(key);
   }
 
   lock(): Promise<void> {
     return this.vault.lock();
   }
 
-  setValue(key: string, value: any): Promise<void> {
+  setValue<T>(key: string, value: T): Promise<void> {
     return this.vault.setValue(key, value);
   }
 
@@ -194,7 +196,7 @@ export class SessionVaultService {
     return this.vault.getValue(`AccessToken${tokenName || ''}`);
   }
 
-  getAuthResponse(): Promise<any | undefined | null> {
+  getAuthResponse<T>(): Promise<T | undefined | null> {
     return this.vault.getValue('AuthResponse');
   }
 
@@ -214,7 +216,7 @@ export class SessionVaultService {
     return this.vault.setValue(`AccessToken${tokenName || ''}`, value);
   }
 
-  setAuthResponse(value: any): Promise<void> {
+  setAuthResponse<T>(value: T): Promise<void> {
     return this.vault.setValue('AuthResponse', value);
   }
 
@@ -243,7 +245,9 @@ export class SessionVaultService {
     if ((await Device.isBiometricsAllowed()) === BiometricPermissionState.Prompt) {
       try {
         await Device.showBiometricPrompt({ iosBiometricsLocalizedReason: 'Please authenticate to continue' });
-      } catch (error) {}
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 

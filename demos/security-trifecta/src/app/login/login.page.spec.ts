@@ -7,7 +7,6 @@ import { createNavControllerMock } from '@test/mocks';
 import { LoginPage } from './login.page';
 
 describe('LoginPage', () => {
-  let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 
   beforeEach(() => {
@@ -20,7 +19,6 @@ describe('LoginPage', () => {
     const vault = TestBed.inject(SessionVaultService);
     (vault.sessionIsLocked as jasmine.Spy).and.resolveTo(sessionIsLocked);
     fixture = TestBed.createComponent(LoginPage);
-    component = fixture.componentInstance;
     fixture.detectChanges();
   };
 

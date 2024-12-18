@@ -21,7 +21,6 @@ import {
   selector: 'app-preferences',
   templateUrl: './preferences.page.html',
   styleUrls: ['./preferences.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -78,7 +77,7 @@ export class PreferencesPage implements OnInit {
     this.modalController.dismiss();
   }
 
-  useBiometricsChanged(event: any) {
+  useBiometricsChanged(event: { detail: { checked: boolean } }) {
     this.useBiometrics = event.detail.checked;
     if (this.useBiometrics) {
       this.useCustomPasscode = false;
@@ -86,7 +85,7 @@ export class PreferencesPage implements OnInit {
     this.setVaultLockMode();
   }
 
-  useSystemPasscodeChanged(event: any) {
+  useSystemPasscodeChanged(event: { detail: { checked: boolean } }) {
     this.useSystemPasscode = event.detail.checked;
     if (this.useSystemPasscode) {
       this.useCustomPasscode = false;
@@ -94,7 +93,7 @@ export class PreferencesPage implements OnInit {
     this.setVaultLockMode();
   }
 
-  useCustomPasscodeChanged(event: any) {
+  useCustomPasscodeChanged(event: { detail: { checked: boolean } }) {
     this.useCustomPasscode = event.detail.checked;
     if (this.useCustomPasscode) {
       this.useBiometrics = false;
@@ -103,7 +102,7 @@ export class PreferencesPage implements OnInit {
     this.setVaultLockMode();
   }
 
-  hideInBackgroundChanged(event: any) {
+  hideInBackgroundChanged(event: { detail: { checked: boolean } }) {
     this.hideInBackground = event.detail.checked;
     this.session.hideContentsInBackground(this.hideInBackground);
   }

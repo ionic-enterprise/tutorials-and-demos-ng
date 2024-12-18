@@ -14,9 +14,9 @@ export class TeaCategoriesApiService {
     private http: HttpClient,
   ) {}
 
-  getAll(): Observable<Array<TeaCategory>> {
+  getAll(): Observable<TeaCategory[]> {
     return this.http
-      .get<Array<TeaCategory>>(`${environment.dataService}/tea-categories`)
+      .get<TeaCategory[]>(`${environment.dataService}/tea-categories`)
       .pipe(map((x) => x.sort((a, b) => this.compare.byName(a, b))));
   }
 }

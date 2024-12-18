@@ -12,6 +12,7 @@ describe('LoginPage', () => {
   let fixture: ComponentFixture<LoginPage>;
 
   beforeEach(waitForAsync(() => {
+    spyOn(console, 'error').and.callFake(() => null);
     TestBed.overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock }).overrideProvider(
       NavController,
       { useFactory: createNavControllerMock },
@@ -43,12 +44,6 @@ describe('LoginPage', () => {
       let auth: AuthenticationService;
 
       beforeEach(() => {
-        const session = {
-          accessToken: 'test-access-token',
-          refreshToken: 'test-refresh-token',
-          idToken: 'test-id-token',
-        };
-
         auth = TestBed.inject(AuthenticationService);
       });
 
@@ -58,7 +53,7 @@ describe('LoginPage', () => {
       });
 
       describe('on success', () => {
-        const session: any = {
+        const session = {
           accessToken: 'test-access-token',
           refreshToken: 'test-refresh-token',
           idToken: 'test-id-token',

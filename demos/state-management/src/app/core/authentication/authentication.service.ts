@@ -11,7 +11,7 @@ import { SessionVaultService } from '../session-vault/session-vault.service';
 })
 export class AuthenticationService {
   public authenticationChange$: Observable<boolean>;
-  private authenticationChange: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  private authenticationChange = new BehaviorSubject<boolean>(false);
 
   private readonly provider = new Auth0Provider();
 
@@ -21,7 +21,6 @@ export class AuthenticationService {
   private vaultService: SessionVaultService;
   private initializing: Promise<void> | undefined;
 
-  // @ts-ignore
   constructor(
     vaultService: SessionVaultService,
     platform: Platform,
@@ -67,7 +66,7 @@ export class AuthenticationService {
       try {
         newAuthResult = await AuthConnect.refreshSession(this.provider, authResult);
       } catch (err) {
-        return null;
+        console.error(err);
       }
     }
     this.saveAuthResult(newAuthResult);
@@ -94,6 +93,7 @@ export class AuthenticationService {
 
   async getUserInfo(): Promise<User | undefined> {
     const res = await this.getAuthResult();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const idToken = (await AuthConnect.decodeToken(TokenType.id, res as AuthResult)) as any;
     if (!idToken) {
       return;

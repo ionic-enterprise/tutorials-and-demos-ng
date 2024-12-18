@@ -19,7 +19,7 @@ import {
 } from '@app/store/actions';
 import { DataState, initialState, reducer } from './data.reducer';
 
-const notes: Array<TastingNote> = [
+const notes: TastingNote[] = [
   {
     id: 42,
     brand: 'Lipton',
@@ -53,7 +53,7 @@ const user: User = {
   email: 'goodtobebad@gru.org',
 };
 
-const teas: Array<Tea> = [
+const teas: Tea[] = [
   {
     id: 1,
     name: 'Green',
@@ -77,7 +77,7 @@ const teas: Array<Tea> = [
   },
 ];
 
-const createState = (stateChanges: { teas?: Array<Tea>; loading?: boolean; errorMessage?: string }): DataState => ({
+const createState = (stateChanges: { teas?: Tea[]; loading?: boolean; errorMessage?: string }): DataState => ({
   ...initialState,
   ...stateChanges,
 });

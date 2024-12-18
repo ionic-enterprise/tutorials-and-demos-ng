@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-explicit-any: off, @typescript-eslint/no-empty-function: off */
 import { Injectable } from '@angular/core';
 import { TeaCategory } from '@app/models';
 import { DatabaseService } from '../database/database.service';
@@ -8,21 +9,16 @@ import { DatabaseService } from '../database/database.service';
 export class TeaCategoriesDatabaseService {
   constructor(private database: DatabaseService) {}
 
-  async getAll(): Promise<Array<TeaCategory>> {
-    const cats: Array<TeaCategory> = [];
+  async getAll(): Promise<TeaCategory[]> {
+    const cats: TeaCategory[] = [];
     const handle = await this.database.getHandle();
     if (handle) {
       await handle.transaction((tx) =>
-        tx.executeSql(
-          'SELECT id, name, description FROM TeaCategories ORDER BY name',
-          [],
-          // tslint:disable-next-line:variable-name
-          (_t: any, r: any) => {
-            for (let i = 0; i < r.rows.length; i++) {
-              cats.push(r.rows.item(i));
-            }
-          },
-        ),
+        tx.executeSql('SELECT id, name, description FROM TeaCategories ORDER BY name', [], (_t: any, r: any) => {
+          for (let i = 0; i < r.rows.length; i++) {
+            cats.push(r.rows.item(i));
+          }
+        }),
       );
     }
     return cats;
@@ -43,7 +39,7 @@ export class TeaCategoriesDatabaseService {
     }
   }
 
-  async pruneOthers(categories: Array<TeaCategory>): Promise<void> {
+  async pruneOthers(categories: TeaCategory[]): Promise<void> {
     const handle = await this.database.getHandle();
     const idsToKeep = categories.map((x) => x.id);
     if (handle) {

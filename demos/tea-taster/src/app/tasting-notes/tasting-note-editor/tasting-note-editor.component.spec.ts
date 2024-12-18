@@ -222,7 +222,7 @@ describe('TastingNoteEditorComponent', () => {
   describe('share', () => {
     describe('in a web context', () => {
       beforeEach(() => {
-        (platform.is as any).withArgs('hybrid').and.returnValue(false);
+        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
         fixture.detectChanges();
       });
 
@@ -233,7 +233,7 @@ describe('TastingNoteEditorComponent', () => {
 
     describe('in a mobile context', () => {
       beforeEach(() => {
-        (platform.is as any).withArgs('hybrid').and.returnValue(true);
+        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
         fixture.detectChanges();
       });
 

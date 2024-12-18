@@ -30,6 +30,7 @@ export class EncryptionService {
 
   initialize(): Promise<void> {
     if (!this.vaultReady) {
+      // eslint-disable-next-line no-async-promise-executor
       this.vaultReady = new Promise(async (resolve) => {
         await this.vault.initialize({
           key: 'io.ionic.csdemosecurestoragekeys',

@@ -52,18 +52,17 @@ import { Observable } from 'rxjs';
     IonTitle,
     IonToolbar,
   ],
-  standalone: true,
 })
 export class TastingNoteEditorComponent implements OnInit {
   @Input() note: TastingNote | undefined;
 
-  brand: string = '';
-  name: string = '';
-  teaCategoryId: string = '';
-  rating: number = 0;
-  notes: string = '';
+  brand = '';
+  name = '';
+  teaCategoryId = '';
+  rating = 0;
+  notes = '';
 
-  teaCategories$: Observable<Array<Tea>> | undefined;
+  teaCategories$: Observable<Tea[]> | undefined;
 
   constructor(
     private modalController: ModalController,

@@ -14,7 +14,7 @@ import { TeaPage } from './tea.page';
 describe('TeaPage', () => {
   let component: TeaPage;
   let fixture: ComponentFixture<TeaPage>;
-  let teas: Array<Tea>;
+  let teas: Tea[];
 
   beforeEach(waitForAsync(() => {
     initializeTestData();

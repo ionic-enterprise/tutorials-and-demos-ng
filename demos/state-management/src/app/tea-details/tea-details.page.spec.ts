@@ -36,7 +36,7 @@ describe('TeaDetailsPage', () => {
     let store: MockStore;
     beforeEach(() => {
       const route = TestBed.inject(ActivatedRoute);
-      (route.snapshot.paramMap.get as any).withArgs('id').and.returnValue('7');
+      (route.snapshot.paramMap.get as jasmine.Spy).withArgs('id').and.returnValue('7');
       store = TestBed.inject(Store) as MockStore;
       store.overrideSelector(selectTeas, [
         {

@@ -23,7 +23,6 @@ import {
   selector: 'app-tea-ist',
   templateUrl: 'tea-list.page.html',
   styleUrls: ['tea-list.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
@@ -42,7 +41,7 @@ import {
   ],
 })
 export class TeaListPage implements OnInit {
-  teas$: Observable<Array<Array<Tea>>> | undefined;
+  teas$: Observable<Tea[][]> | undefined;
   private refresh: Subject<void>;
 
   constructor(private teaService: TeaService) {
@@ -51,7 +50,7 @@ export class TeaListPage implements OnInit {
 
   ngOnInit(): void {
     this.teas$ = this.refresh.pipe(
-      mergeMap(() => this.teaService.getAll().pipe(map((teas: Array<Tea>) => this.toMatrix(teas)))),
+      mergeMap(() => this.teaService.getAll().pipe(map((teas: Tea[]) => this.toMatrix(teas)))),
     );
   }
 
@@ -59,9 +58,9 @@ export class TeaListPage implements OnInit {
     this.refresh.next();
   }
 
-  private toMatrix(tea: Array<Tea>): Array<Array<Tea>> {
-    const matrix: Array<Array<Tea>> = [];
-    let row: Array<Tea> = [];
+  private toMatrix(tea: Tea[]): Tea[][] {
+    const matrix: Tea[][] = [];
+    let row: Tea[] = [];
     tea.forEach((t) => {
       row.push(t);
       if (row.length === 4) {

@@ -21,7 +21,6 @@ import {
   selector: 'app-device-info',
   templateUrl: './device-info.page.html',
   styleUrls: ['./device-info.page.scss'],
-  standalone: true,
   imports: [
     FormsModule,
     IonBackButton,
@@ -38,16 +37,16 @@ import {
   ],
 })
 export class DeviceInfoPage implements OnInit {
-  biometricStrength: string = '';
-  hasSecureHardware: boolean = false;
-  canTogglePrivacyScreen: boolean = false;
-  isBiometricsAllowed: string = '';
-  isBiometricsEnabled: boolean = false;
-  isBiometricsSupported: boolean = false;
-  isPrivacyScreenEnabled: boolean = false;
-  isLockedOutOfBiometrics: boolean = false;
-  isSystemPasscodeSet: boolean = false;
-  availableHardware: Array<string> = [];
+  biometricStrength = '';
+  hasSecureHardware = false;
+  canTogglePrivacyScreen = false;
+  isBiometricsAllowed = '';
+  isBiometricsEnabled = false;
+  isBiometricsSupported = false;
+  isPrivacyScreenEnabled = false;
+  isLockedOutOfBiometrics = false;
+  isSystemPasscodeSet = false;
+  availableHardware: string[] = [];
 
   constructor(
     private alertController: AlertController,
@@ -77,6 +76,7 @@ export class DeviceInfoPage implements OnInit {
       await Device.showBiometricPrompt({ iosBiometricsLocalizedReason: 'This is only a test' });
       this.displayBioResultAlert('Success!!');
     } catch (error) {
+      console.error(error);
       this.displayBioResultAlert('Failed. User likely cancelled the operation.');
     }
   }

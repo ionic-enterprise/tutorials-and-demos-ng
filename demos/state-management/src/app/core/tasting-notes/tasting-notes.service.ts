@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 export class TastingNotesService {
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Array<TastingNote>> {
-    return this.http.get<Array<TastingNote>>(`${environment.dataService}/user-tasting-notes`);
+  getAll(): Observable<TastingNote[]> {
+    return this.http.get<TastingNote[]>(`${environment.dataService}/user-tasting-notes`);
   }
 
   delete(id: number): Observable<void> {

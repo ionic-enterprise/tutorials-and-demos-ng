@@ -6,7 +6,6 @@ import { AuthenticationService } from './../core/authentication.service';
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  standalone: true,
   imports: [IonButton, IonContent, IonHeader, IonTitle, IonToolbar],
 })
 export class Tab1Page implements OnInit {

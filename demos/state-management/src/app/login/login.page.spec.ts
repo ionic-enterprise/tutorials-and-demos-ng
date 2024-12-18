@@ -66,13 +66,13 @@ describe('LoginPage', () => {
   describe('on mobile', () => {
     beforeEach(() => {
       const platform = TestBed.inject(Platform);
-      (platform.is as any).withArgs('hybrid').and.returnValue(true);
+      (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
     });
 
     describe('with a session that can be unlocked', () => {
       beforeEach(async () => {
         const vault = TestBed.inject(SessionVaultService);
-        (vault.canUnlock as any).and.returnValue(Promise.resolve(true));
+        (vault.canUnlock as jasmine.Spy).and.returnValue(Promise.resolve(true));
         await component.ngOnInit();
         fixture.detectChanges();
       });
@@ -100,7 +100,7 @@ describe('LoginPage', () => {
       describe('when the session becomes invalid', () => {
         beforeEach(() => {
           const vault = TestBed.inject(SessionVaultService);
-          (vault.canUnlock as any).and.returnValue(Promise.resolve(false));
+          (vault.canUnlock as jasmine.Spy).and.returnValue(Promise.resolve(false));
         });
 
         it('does not dispatch the unlock', async () => {
@@ -131,7 +131,7 @@ describe('LoginPage', () => {
     describe('without a session that can be unlocked', () => {
       beforeEach(async () => {
         const vault = TestBed.inject(SessionVaultService);
-        (vault.canUnlock as any).and.returnValue(Promise.resolve(false));
+        (vault.canUnlock as jasmine.Spy).and.returnValue(Promise.resolve(false));
         await component.ngOnInit();
         fixture.detectChanges();
       });
@@ -169,7 +169,7 @@ describe('LoginPage', () => {
       describe('when biometrics is available', () => {
         beforeEach(async () => {
           spyOn(Device, 'isBiometricsEnabled');
-          (Device.isBiometricsEnabled as any).and.returnValue(Promise.resolve(true));
+          (Device.isBiometricsEnabled as jasmine.Spy).and.returnValue(Promise.resolve(true));
           await component.ngOnInit();
           fixture.detectChanges();
         });
@@ -191,7 +191,7 @@ describe('LoginPage', () => {
   describe('on web', () => {
     beforeEach(() => {
       const platform = TestBed.inject(Platform);
-      (platform.is as any).withArgs('hybrid').and.returnValue(false);
+      (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
     });
 
     it('displays the login button', () => {

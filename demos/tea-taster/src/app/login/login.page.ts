@@ -26,7 +26,6 @@ import {
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -46,7 +45,7 @@ import {
   ],
 })
 export class LoginPage {
-  loginFailed: boolean = false;
+  loginFailed = false;
 
   get emailError(): string {
     const email = this.loginForm.controls.email;

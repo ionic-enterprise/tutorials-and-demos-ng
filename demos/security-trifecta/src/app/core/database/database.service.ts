@@ -44,7 +44,7 @@ export class DatabaseService {
     return null;
   }
 
-  private createTableSQL(name: string, columns: Array<Column>): string {
+  private createTableSQL(name: string, columns: Column[]): string {
     let cols = '';
     columns.forEach((c, i) => {
       cols += `${i ? ', ' : ''}${c.name} ${c.type}`;

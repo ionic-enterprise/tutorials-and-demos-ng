@@ -48,6 +48,7 @@ export const reducer = createReducer(
     }),
   ),
   on(Actions.logoutSuccess, (state): AuthState => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { user, ...newState } = {
       ...state,
       loading: false,
@@ -63,10 +64,12 @@ export const reducer = createReducer(
     }),
   ),
   on(Actions.unauthError, (state): AuthState => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { user, ...newState } = state;
     return newState;
   }),
   on(Actions.sessionLocked, (state): AuthState => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { user, ...newState } = state;
     return newState;
   }),

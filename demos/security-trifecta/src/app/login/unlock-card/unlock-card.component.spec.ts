@@ -10,6 +10,7 @@ describe('UnlockCardComponent', () => {
   let fixture: ComponentFixture<UnlockCardComponent>;
 
   beforeEach(() => {
+    spyOn(console, 'error').and.callFake(() => null);
     TestBed.overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
     fixture = TestBed.createComponent(UnlockCardComponent);
     component = fixture.componentInstance;

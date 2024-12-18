@@ -20,7 +20,6 @@ import { EMPTY, Observable, tap } from 'rxjs';
   selector: 'app-tea-details',
   templateUrl: './tea-details.page.html',
   styleUrls: ['./tea-details.page.scss'],
-  standalone: true,
   imports: [
     AsyncPipe,
     FormsModule,
@@ -36,7 +35,7 @@ import { EMPTY, Observable, tap } from 'rxjs';
 })
 export class TeaDetailsPage implements OnInit {
   tea$: Observable<Tea> = EMPTY;
-  rating: number = 0;
+  rating = 0;
 
   constructor(
     private route: ActivatedRoute,

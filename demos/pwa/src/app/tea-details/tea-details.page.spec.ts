@@ -28,6 +28,7 @@ describe('TeaDetailsPage', () => {
   describe('initialization', () => {
     beforeEach(() => {
       const route = TestBed.inject(ActivatedRoute);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (route.snapshot.paramMap.get as any).withArgs('id').and.returnValue('7');
       const tea = TestBed.inject(TeaService);
       (tea.get as jasmine.Spy).and.returnValue(

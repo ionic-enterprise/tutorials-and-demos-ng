@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { EMPTY, Observable } from 'rxjs';
-
+import { Injectable } from '@angular/core';
 import { TastingNote } from '@app/models';
 import { environment } from '@env/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +10,8 @@ import { environment } from '@env/environment';
 export class TastingNotesService {
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Array<TastingNote>> {
-    return this.http.get<Array<TastingNote>>(`${environment.dataService}/user-tasting-notes`);
+  getAll(): Observable<TastingNote[]> {
+    return this.http.get<TastingNote[]>(`${environment.dataService}/user-tasting-notes`);
   }
 
   delete(id: number): Observable<void> {

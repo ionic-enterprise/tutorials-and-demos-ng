@@ -11,7 +11,7 @@ import { TeaCategoriesService } from './tea-categories.service';
 
 describe('TeaCategoriesService', () => {
   let service: TeaCategoriesService;
-  let teaCategories: Array<TeaCategory>;
+  let teaCategories: TeaCategory[];
 
   beforeEach(() => {
     TestBed.overrideProvider(Platform, { useFactory: createPlatformMock })

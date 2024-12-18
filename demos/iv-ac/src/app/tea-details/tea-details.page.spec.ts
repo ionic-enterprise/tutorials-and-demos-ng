@@ -28,7 +28,7 @@ describe('TeaDetailsPage', () => {
   describe('initialization', () => {
     beforeEach(() => {
       const route = TestBed.inject(ActivatedRoute);
-      (route.snapshot.paramMap.get as any).withArgs('id').and.returnValue('7');
+      (route.snapshot.paramMap.get as jasmine.Spy).withArgs('id').and.returnValue('7');
       const tea = TestBed.inject(TeaService);
       (tea.get as jasmine.Spy).and.returnValue(
         of({

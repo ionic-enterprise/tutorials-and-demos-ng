@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { EMPTY, map, Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { Session } from '@app/models';
 import { environment } from '@env/environment';
+import { map, Observable } from 'rxjs';
 
 interface LoginResponse extends Session {
   success: boolean;

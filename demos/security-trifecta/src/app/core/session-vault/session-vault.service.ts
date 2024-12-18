@@ -38,6 +38,7 @@ export class SessionVaultService {
 
   initialize() {
     if (!this.vaultReady) {
+      // eslint-disable-next-line no-async-promise-executor
       this.vaultReady = new Promise(async (resolve) => {
         await this.platform.ready();
 
@@ -51,6 +52,7 @@ export class SessionVaultService {
             unlockVaultOnLoad: false,
           });
         } catch (e: unknown) {
+          console.error(e);
           await this.vault.clear();
           await this.setUnlockMode('NeverLock');
         }

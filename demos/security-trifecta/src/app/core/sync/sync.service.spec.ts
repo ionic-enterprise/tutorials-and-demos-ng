@@ -12,7 +12,7 @@ import { SyncService } from './sync.service';
 
 describe('SyncService', () => {
   let service: SyncService;
-  let tastingNotes: Array<TastingNote>;
+  let tastingNotes: TastingNote[];
 
   beforeEach(() => {
     TestBed.overrideProvider(TastingNotesApiService, { useFactory: createTastingNotesApiServiceMock })
@@ -49,6 +49,7 @@ describe('SyncService', () => {
     it('removes the ID for the INSERT items', async () => {
       const tastingNotesApiService = TestBed.inject(TastingNotesApiService);
       await service.execute();
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { id, ...note } = tastingNotes[0];
       expect(tastingNotesApiService.save).toHaveBeenCalledWith(note);
     });

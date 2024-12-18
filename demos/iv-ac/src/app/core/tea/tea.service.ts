@@ -11,14 +11,14 @@ type TeaResponse = Omit<Tea, 'image' | 'rating'>;
   providedIn: 'root',
 })
 export class TeaService {
-  private images: Array<string> = ['green', 'black', 'herbal', 'oolong', 'dark', 'puer', 'white', 'yellow'];
+  private images: string[] = ['green', 'black', 'herbal', 'oolong', 'dark', 'puer', 'white', 'yellow'];
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Array<Tea>> {
+  getAll(): Observable<Tea[]> {
     return this.http
-      .get<Array<TeaResponse>>(`${environment.dataService}/tea-categories`)
-      .pipe(mergeMap((teas: Array<TeaResponse>) => Promise.all(teas.map((t) => this.convert(t)))));
+      .get<TeaResponse[]>(`${environment.dataService}/tea-categories`)
+      .pipe(mergeMap((teas: TeaResponse[]) => Promise.all(teas.map((t) => this.convert(t)))));
   }
 
   get(id: number): Observable<Tea> {

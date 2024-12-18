@@ -32,10 +32,12 @@ export class SyncService {
   }
 
   private async applyTastingNotesDatabaseChanges(): Promise<void> {
-    const saves: Array<Promise<any>> = [];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const saves: Promise<any>[] = [];
     const notes = await this.tastingNotesDatabase.getAll(true);
     notes.forEach((note) => {
       if (note.syncStatus === 'INSERT') {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { id, ...noteWithoutId } = note;
         saves.push(firstValueFrom(this.tastingNotesApi.save(noteWithoutId)));
       }

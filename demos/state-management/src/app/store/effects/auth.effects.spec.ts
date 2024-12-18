@@ -18,7 +18,7 @@ import { Observable, of } from 'rxjs';
 import { AuthEffects } from './auth.effects';
 
 describe('AuthEffects', () => {
-  let actions$: Observable<any>;
+  let actions$: Observable<unknown>;
   let effects: AuthEffects;
 
   beforeEach(() => {
@@ -113,7 +113,7 @@ describe('AuthEffects', () => {
 
       it('dispatches login success', (done) => {
         const auth = TestBed.inject(AuthenticationService);
-        (auth.getUserInfo as any).and.returnValue(
+        (auth.getUserInfo as jasmine.Spy).and.returnValue(
           Promise.resolve({
             id: 73,
             firstName: 'Ken',
@@ -140,7 +140,7 @@ describe('AuthEffects', () => {
     describe('on login error', () => {
       beforeEach(() => {
         const auth = TestBed.inject(AuthenticationService);
-        (auth.login as any).and.returnValue(Promise.reject(new Error('the server is blowing chunks')));
+        (auth.login as jasmine.Spy).and.returnValue(Promise.reject(new Error('the server is blowing chunks')));
       });
 
       it('does not enable locking', (done) => {
@@ -187,7 +187,7 @@ describe('AuthEffects', () => {
 
       it('dispatches unlock success', (done) => {
         const auth = TestBed.inject(AuthenticationService);
-        (auth.getUserInfo as any).and.returnValue(
+        (auth.getUserInfo as jasmine.Spy).and.returnValue(
           Promise.resolve({
             id: 73,
             firstName: 'Ken',
@@ -214,7 +214,7 @@ describe('AuthEffects', () => {
     describe('unlock failure', () => {
       beforeEach(() => {
         const vault = TestBed.inject(SessionVaultService);
-        (vault.unlock as any).and.returnValue(Promise.reject(new Error('the vault is blowing chunks')));
+        (vault.unlock as jasmine.Spy).and.returnValue(Promise.reject(new Error('the vault is blowing chunks')));
       });
 
       it('dispatches unlock failure', (done) => {
@@ -232,7 +232,7 @@ describe('AuthEffects', () => {
   describe('logout$', () => {
     beforeEach(() => {
       const auth = TestBed.inject(AuthenticationService);
-      (auth.logout as any).and.returnValue(of(undefined));
+      (auth.logout as jasmine.Spy).and.returnValue(of(undefined));
     });
 
     it('performs a logout operation', (done) => {
@@ -266,7 +266,7 @@ describe('AuthEffects', () => {
     describe('on a logout error', () => {
       beforeEach(() => {
         const auth = TestBed.inject(AuthenticationService);
-        (auth.logout as any).and.returnValue(Promise.reject(new Error('the server is blowing chunks')));
+        (auth.logout as jasmine.Spy).and.returnValue(Promise.reject(new Error('the server is blowing chunks')));
       });
 
       it('does not clear the session from storage', (done) => {

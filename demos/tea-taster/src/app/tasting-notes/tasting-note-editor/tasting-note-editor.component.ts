@@ -30,7 +30,6 @@ import { Observable, of, tap } from 'rxjs';
   selector: 'app-tasting-note-editor',
   templateUrl: './tasting-note-editor.component.html',
   styleUrls: ['./tasting-note-editor.component.scss'],
-  standalone: true,
   imports: [
     AsyncPipe,
     RatingComponent,
@@ -62,9 +61,9 @@ export class TastingNoteEditorComponent implements OnInit {
     notes: ['', Validators.required],
   });
 
-  buttonLabel: string = '';
-  title: string = '';
-  teaCategories$: Observable<Array<Tea>> = of([]);
+  buttonLabel = '';
+  title = '';
+  teaCategories$: Observable<Tea[]> = of([]);
   mc = inject(ModalController);
 
   get sharingIsAvailable(): boolean {

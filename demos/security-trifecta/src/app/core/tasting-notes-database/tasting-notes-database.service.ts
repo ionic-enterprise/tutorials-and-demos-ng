@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-explicit-any: off, @typescript-eslint/no-empty-function: off */
 import { Injectable } from '@angular/core';
 import { TastingNote } from '@app/models';
 import { AuthenticationService } from '../authentication/authentication.service';
@@ -12,8 +13,8 @@ export class TastingNotesDatabaseService {
     private authentication: AuthenticationService,
   ) {}
 
-  async getAll(includeDeleted = false): Promise<Array<TastingNote>> {
-    const notes: Array<TastingNote> = [];
+  async getAll(includeDeleted = false): Promise<TastingNote[]> {
+    const notes: TastingNote[] = [];
     const handle = await this.database.getHandle();
     if (handle) {
       const email = await this.authentication.getUserEmail();
@@ -24,7 +25,6 @@ export class TastingNotesDatabaseService {
         tx.executeSql(
           `SELECT id, name, brand, notes, rating, teaCategoryId, syncStatus FROM TastingNotes WHERE ${predicate}`,
           [email],
-          // tslint:disable-next-line:variable-name
           (_t: any, r: any) => {
             for (let i = 0; i < r.rows.length; i++) {
               notes.push(r.rows.item(i));
@@ -69,7 +69,7 @@ export class TastingNotesDatabaseService {
     }
   }
 
-  async pruneOthers(notes: Array<TastingNote>): Promise<void> {
+  async pruneOthers(notes: TastingNote[]): Promise<void> {
     const handle = await this.database.getHandle();
     const idsToKeep = notes.map((note) => note.id);
     if (handle) {
@@ -125,20 +125,15 @@ export class TastingNotesDatabaseService {
     if (handle) {
       const email = await this.authentication.getUserEmail();
       await handle.transaction((tx) => {
-        tx.executeSql(
-          'SELECT COALESCE(MAX(id), 0) + 1 AS newId FROM TastingNotes',
-          [],
-          // tslint:disable-next-line:variable-name
-          (_t: any, r: any) => {
-            note.id = r.rows.item(0).newId;
-            tx.executeSql(
-              'INSERT INTO TastingNotes (id, name, brand, notes, rating, teaCategoryId, userEmail, syncStatus)' +
-                " VALUES (?, ?, ?, ?, ?, ?, ?, 'INSERT')",
-              [note.id, note.name, note.brand, note.notes, note.rating, note.teaCategoryId, email],
-              () => {},
-            );
-          },
-        );
+        tx.executeSql('SELECT COALESCE(MAX(id), 0) + 1 AS newId FROM TastingNotes', [], (_t: any, r: any) => {
+          note.id = r.rows.item(0).newId;
+          tx.executeSql(
+            'INSERT INTO TastingNotes (id, name, brand, notes, rating, teaCategoryId, userEmail, syncStatus)' +
+              " VALUES (?, ?, ?, ?, ?, ?, ?, 'INSERT')",
+            [note.id, note.name, note.brand, note.notes, note.rating, note.teaCategoryId, email],
+            () => {},
+          );
+        });
       });
       return note;
     }

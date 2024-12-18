@@ -12,7 +12,7 @@ export class AuthenticationService {
   private authOptions: ProviderOptions;
   private provider = new Auth0Provider();
 
-  private authenticationChange: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  private authenticationChange = new BehaviorSubject<boolean>(false);
   public authenticationChange$: Observable<boolean>;
 
   constructor(
@@ -88,7 +88,7 @@ export class AuthenticationService {
       try {
         newAuthResult = await AuthConnect.refreshSession(this.provider, authResult);
       } catch (err) {
-        null;
+        console.error(err);
       }
     }
     this.saveAuthResult(newAuthResult);

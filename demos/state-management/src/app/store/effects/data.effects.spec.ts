@@ -20,10 +20,10 @@ import { Observable, of, throwError } from 'rxjs';
 import { DataEffects } from './data.effects';
 
 describe('DataEffects', () => {
-  let actions$: Observable<any>;
+  let actions$: Observable<unknown>;
   let effects: DataEffects;
 
-  const notes: Array<TastingNote> = [
+  const notes: TastingNote[] = [
     {
       id: 42,
       brand: 'Lipton',
@@ -57,7 +57,7 @@ describe('DataEffects', () => {
     email: 'goodtobebad@gru.org',
   };
 
-  const teas: Array<Tea> = [
+  const teas: Tea[] = [
     {
       id: 1,
       name: 'Green',
@@ -112,12 +112,12 @@ describe('DataEffects', () => {
       describe('when not authenticated', () => {
         beforeEach(() => {
           const auth = TestBed.inject(AuthenticationService);
-          (auth.isAuthenticated as any).and.returnValue(Promise.resolve(false));
+          (auth.isAuthenticated as jasmine.Spy).and.returnValue(Promise.resolve(false));
         });
 
         it('does not fetch the teas', (done) => {
           const teaService = TestBed.inject(TeaService);
-          (teaService.getAll as any).and.returnValue(of(undefined));
+          (teaService.getAll as jasmine.Spy).and.returnValue(of(undefined));
           actions$ = of(action);
           effects.sessionLoaded$.subscribe(() => {
             expect(teaService.getAll).not.toHaveBeenCalled();
@@ -140,12 +140,12 @@ describe('DataEffects', () => {
       describe('when authenticated', () => {
         beforeEach(() => {
           const auth = TestBed.inject(AuthenticationService);
-          (auth.isAuthenticated as any).and.returnValue(Promise.resolve(true));
+          (auth.isAuthenticated as jasmine.Spy).and.returnValue(Promise.resolve(true));
         });
 
         it('fetches the teas', (done) => {
           const teaService = TestBed.inject(TeaService);
-          (teaService.getAll as any).and.returnValue(of(undefined));
+          (teaService.getAll as jasmine.Spy).and.returnValue(of(undefined));
           actions$ = of(action);
           effects.sessionLoaded$.subscribe(() => {
             expect(teaService.getAll).toHaveBeenCalledTimes(1);
@@ -156,7 +156,7 @@ describe('DataEffects', () => {
         describe('on success', () => {
           beforeEach(() => {
             const teaService = TestBed.inject(TeaService);
-            (teaService.getAll as any).and.returnValue(of(teas));
+            (teaService.getAll as jasmine.Spy).and.returnValue(of(teas));
           });
 
           it('dispatches initial load success', (done) => {
@@ -174,7 +174,7 @@ describe('DataEffects', () => {
         describe('on an exception', () => {
           beforeEach(() => {
             const teaService = TestBed.inject(TeaService);
-            (teaService.getAll as any).and.returnValue(throwError(new Error('the server is blowing chunks')));
+            (teaService.getAll as jasmine.Spy).and.returnValue(throwError(new Error('the server is blowing chunks')));
           });
 
           it('dispatches initial load failure', (done) => {
@@ -219,7 +219,9 @@ describe('DataEffects', () => {
     describe('on an exception', () => {
       beforeEach(() => {
         const teaService = TestBed.inject(TeaService);
-        (teaService.save as any).and.returnValue(Promise.reject(new Error('private storage is blowing chunks?')));
+        (teaService.save as jasmine.Spy).and.returnValue(
+          Promise.reject(new Error('private storage is blowing chunks?')),
+        );
       });
 
       it('dispatches tea rating change failure', (done) => {
@@ -238,7 +240,7 @@ describe('DataEffects', () => {
   describe('notesPageLoaded$', () => {
     beforeEach(() => {
       const notesService = TestBed.inject(TastingNotesService);
-      (notesService.getAll as any).and.returnValue(of(notes));
+      (notesService.getAll as jasmine.Spy).and.returnValue(of(notes));
     });
 
     it('loads the notes', (done) => {
@@ -266,7 +268,7 @@ describe('DataEffects', () => {
     describe('on an exception', () => {
       beforeEach(() => {
         const notesService = TestBed.inject(TastingNotesService);
-        (notesService.getAll as any).and.returnValue(throwError(new Error('the server is blowing chunks')));
+        (notesService.getAll as jasmine.Spy).and.returnValue(throwError(new Error('the server is blowing chunks')));
       });
 
       it('dispatches notes loaded failure with a generic message', (done) => {
@@ -295,7 +297,7 @@ describe('DataEffects', () => {
       };
       noteWithId = { ...note, id: 99385 };
       const notesService = TestBed.inject(TastingNotesService);
-      (notesService.save as any).and.returnValue(of(noteWithId));
+      (notesService.save as jasmine.Spy).and.returnValue(of(noteWithId));
     });
 
     it('saves the notes', (done) => {
@@ -324,7 +326,7 @@ describe('DataEffects', () => {
     describe('on an exception', () => {
       beforeEach(() => {
         const notesService = TestBed.inject(TastingNotesService);
-        (notesService.save as any).and.returnValue(throwError(new Error('the server is blowing chunks')));
+        (notesService.save as jasmine.Spy).and.returnValue(throwError(new Error('the server is blowing chunks')));
       });
 
       it('dispatches note saved failure with a generic message', (done) => {
@@ -343,7 +345,7 @@ describe('DataEffects', () => {
   describe('noteDeleted$', () => {
     beforeEach(() => {
       const notesService = TestBed.inject(TastingNotesService);
-      (notesService.delete as any).and.returnValue(of(null));
+      (notesService.delete as jasmine.Spy).and.returnValue(of(null));
     });
 
     it('deletes the notes', (done) => {
@@ -372,7 +374,7 @@ describe('DataEffects', () => {
     describe('on an exception', () => {
       beforeEach(() => {
         const notesService = TestBed.inject(TastingNotesService);
-        (notesService.delete as any).and.returnValue(throwError(new Error('the server is blowing chunks')));
+        (notesService.delete as jasmine.Spy).and.returnValue(throwError(new Error('the server is blowing chunks')));
       });
 
       it('dispatches note deleted failure with a generic message', (done) => {

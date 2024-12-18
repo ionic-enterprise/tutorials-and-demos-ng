@@ -25,6 +25,7 @@ describe('SessionVaultService', () => {
   let mockVault: Vault;
 
   beforeEach(() => {
+    spyOn(console, 'error').and.callFake(() => null);
     mockVault = jasmine.createSpyObj<Vault>('Vault', {
       clear: Promise.resolve(),
       initialize: Promise.resolve(),

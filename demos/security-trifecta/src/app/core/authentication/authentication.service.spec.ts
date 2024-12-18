@@ -24,6 +24,8 @@ const testAuthResult = {
     let service: AuthenticationService;
 
     beforeEach(() => {
+      spyOn(console, 'error').and.callFake(() => null);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       spyOn(AuthConnect, 'decodeToken').and.callFake(() => Promise.resolve(null as any));
       spyOn(AuthConnect, 'setup').and.callFake(() => Promise.resolve());
       const platform = createPlatformMock();

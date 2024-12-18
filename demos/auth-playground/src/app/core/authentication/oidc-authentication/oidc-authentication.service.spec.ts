@@ -38,6 +38,7 @@ const builtAuthResult = {
     let service: OIDCAuthenticationService;
 
     beforeEach(() => {
+      spyOn(console, 'error').and.callFake(() => null);
       spyOn(AuthConnect, 'setup').and.callFake(() => Promise.resolve());
       const platform = createPlatformMock();
       (platform.is as jasmine.Spy).and.returnValue(isNative);

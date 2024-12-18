@@ -3,8 +3,9 @@ import { NavController } from '@ionic/angular/standalone';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { from, of } from 'rxjs';
 import { catchError, exhaustMap, map, mergeMap, tap } from 'rxjs/operators';
-import { AuthMode } from '@ionic-enterprise/identity-vault';
 
+import { AuthenticationService, SessionVaultService, UnlockMode } from '@app/core';
+import { User } from '@app/models';
 import {
   login,
   loginFailure,
@@ -18,8 +19,6 @@ import {
   unlockSessionFailure,
   unlockSessionSuccess,
 } from '@app/store/actions';
-import { AuthenticationService, SessionVaultService, UnlockMode } from '@app/core';
-import { User } from '@app/models';
 
 @Injectable()
 export class AuthEffects {

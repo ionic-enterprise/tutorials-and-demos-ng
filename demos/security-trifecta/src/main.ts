@@ -1,5 +1,5 @@
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { APP_INITIALIZER, enableProdMode } from '@angular/core';
+import { enableProdMode, inject, provideAppInitializer } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import { AppComponent } from '@app/app.component';
@@ -36,12 +36,14 @@ bootstrapApplication(AppComponent, {
     KeyValueStorage,
     SQLite,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appInitFactory,
-      deps: [AuthenticationService, EncryptionService, SessionVaultService],
-      multi: true,
-    },
+    provideAppInitializer(() => {
+      const initializerFn = appInitFactory(
+        inject(AuthenticationService),
+        inject(EncryptionService),
+        inject(SessionVaultService),
+      );
+      return initializerFn();
+    }),
     provideHttpClient(withInterceptors([authInterceptor, unauthInterceptor])),
     provideRouter(routes),
     provideIonicAngular({}),

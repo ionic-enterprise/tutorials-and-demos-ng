@@ -43,6 +43,7 @@ describe('AuthenticationService', () => {
     });
 
     describe('on success', () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let response: any;
       beforeEach(() => {
         response = {
@@ -77,6 +78,7 @@ describe('AuthenticationService', () => {
     });
 
     describe('on failure', () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let response: any;
       beforeEach(() => {
         response = { success: false };

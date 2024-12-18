@@ -18,7 +18,6 @@ import {
   selector: 'app-unlock-card',
   templateUrl: './unlock-card.component.html',
   styleUrls: ['./unlock-card.component.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
@@ -35,7 +34,7 @@ export class UnlockCardComponent {
   @Output() unlock = new EventEmitter<void>();
   @Output() vaultClear = new EventEmitter<void>();
 
-  errorMessage: string = '';
+  errorMessage = '';
 
   constructor(private sessionVault: SessionVaultService) {
     addIcons({ lockOpenOutline, logInOutline });
@@ -51,6 +50,7 @@ export class UnlockCardComponent {
       await this.sessionVault.getSession();
       this.unlock.emit();
     } catch (err) {
+      console.error(err);
       this.errorMessage = 'Unlock failed';
     }
   }

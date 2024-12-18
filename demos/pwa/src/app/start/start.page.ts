@@ -9,7 +9,6 @@ import { IonContent } from '@ionic/angular/standalone';
   selector: 'app-start',
   templateUrl: './start.page.html',
   styleUrls: ['./start.page.scss'],
-  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, IonContent],
 })
 export class StartPage implements OnInit {

@@ -39,6 +39,7 @@ export class SessionVaultService {
         lockAfterBackgrounded: 30000,
       });
     } catch (e: unknown) {
+      console.error(e);
       await this.vault.clear();
       await this.updateUnlockMode('InMemory');
     }
@@ -116,7 +117,7 @@ export class SessionVaultService {
       try {
         await Device.showBiometricPrompt({ iosBiometricsLocalizedReason: 'Please authenticate to continue' });
       } catch (error) {
-        null;
+        console.error(error);
       }
     }
   }

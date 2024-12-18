@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, enableProdMode } from '@angular/core';
+import { enableProdMode, inject, provideAppInitializer } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
@@ -19,7 +19,10 @@ const appInitFactory =
 
 bootstrapApplication(AppComponent, {
   providers: [
-    { provide: APP_INITIALIZER, useFactory: appInitFactory, deps: [AuthenticationService], multi: true },
+    provideAppInitializer(() => {
+      const initializerFn = appInitFactory(inject(AuthenticationService));
+      return initializerFn();
+    }),
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideRouter(routes),
     provideIonicAngular({}),

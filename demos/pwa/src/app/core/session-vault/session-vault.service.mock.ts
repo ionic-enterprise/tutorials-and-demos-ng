@@ -12,6 +12,7 @@ export const createSessionVaultServiceMock = () => {
     isHidingContentsInBackground: Promise.resolve(false),
     getUnlockMode: Promise.resolve('SecureStorage'),
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (service as any).locked = new Subject();
   return service;
 };

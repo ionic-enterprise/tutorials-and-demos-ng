@@ -38,16 +38,15 @@ import { Observable } from 'rxjs';
     IonRadio,
     IonRadioGroup,
   ],
-  standalone: true,
 })
 export class LoginPage implements OnInit {
-  email: string = '';
-  password: string = '';
-  canUnlock: boolean = false;
+  email = '';
+  password = '';
+  canUnlock = false;
 
-  displayLockingOptions: boolean = false;
+  displayLockingOptions = false;
   unlockMode: UnlockMode | undefined;
-  unlockModes: Array<{ mode: UnlockMode; label: string }> = [
+  unlockModes: { mode: UnlockMode; label: string }[] = [
     {
       mode: 'SessionPIN',
       label: 'Session PIN Unlock',

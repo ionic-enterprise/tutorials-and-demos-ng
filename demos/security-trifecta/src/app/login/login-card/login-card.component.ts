@@ -20,7 +20,6 @@ import { logInOutline } from 'ionicons/icons';
   selector: 'app-login-card',
   templateUrl: './login-card.component.html',
   styleUrls: ['./login-card.component.scss'],
-  standalone: true,
   imports: [
     FormsModule,
     IonButton,
@@ -37,10 +36,10 @@ import { logInOutline } from 'ionicons/icons';
 export class LoginCardComponent {
   @Output() loginSuccess = new EventEmitter<void>();
 
-  authenticating: boolean = false;
+  authenticating = false;
   showSessionLocking: boolean;
-  useSessionLocking: boolean = false;
-  errorMessage: string = '';
+  useSessionLocking = false;
+  errorMessage = '';
 
   constructor(
     platform: Platform,
@@ -58,6 +57,7 @@ export class LoginCardComponent {
       await this.authentication.login();
       this.loginSuccess.emit();
     } catch (err) {
+      console.error(err);
       this.errorMessage = 'Invalid email or password';
     } finally {
       this.authenticating = false;

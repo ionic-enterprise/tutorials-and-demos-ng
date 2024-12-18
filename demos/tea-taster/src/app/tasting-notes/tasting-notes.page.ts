@@ -28,7 +28,6 @@ import {
   selector: 'app-tasting-notes',
   templateUrl: './tasting-notes.page.html',
   styleUrls: ['./tasting-notes.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
@@ -51,7 +50,7 @@ import {
 export class TastingNotesPage implements OnInit {
   private refresh = new BehaviorSubject<void>(undefined);
   @ViewChild(IonList, { static: true }) list: IonList | undefined;
-  notes$: Observable<Array<TastingNote>> = EMPTY;
+  notes$: Observable<TastingNote[]> = EMPTY;
 
   constructor(
     private alertController: AlertController,

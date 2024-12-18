@@ -21,7 +21,6 @@ import { close } from 'ionicons/icons';
   selector: 'app-pin-dialog',
   templateUrl: './pin-dialog.component.html',
   styleUrls: ['./pin-dialog.component.scss'],
-  standalone: true,
   imports: [
     IonButton,
     IonButtons,
@@ -38,15 +37,15 @@ import { close } from 'ionicons/icons';
   ],
 })
 export class PinDialogComponent implements OnInit {
-  @Input() setPasscodeMode: boolean = false;
+  @Input() setPasscodeMode = false;
 
-  displayPin: string = '';
-  errorMessage: string = '';
-  pin: string = '';
-  prompt: string = '';
-  title: string = '';
+  displayPin = '';
+  errorMessage = '';
+  pin = '';
+  prompt = '';
+  title = '';
 
-  private verifyPin: string = '';
+  private verifyPin = '';
 
   constructor(private modalController: ModalController) {
     addIcons({ close });

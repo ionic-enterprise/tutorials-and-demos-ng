@@ -3,7 +3,7 @@ import { inject } from '@angular/core';
 import { from, mergeMap, tap } from 'rxjs';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 
-const requestRequiresToken = (req: HttpRequest<any>): boolean => {
+const requestRequiresToken = (req: HttpRequest<unknown>): boolean => {
   return !/\/login$/.test(req.url);
 };
 

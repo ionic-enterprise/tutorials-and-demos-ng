@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { provideRouter } from '@angular/router';
-
-import { TabsPage } from './tabs.page';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TabsPage } from './tabs.page';
 
 describe('TabsPage', () => {
   let component: TabsPage;

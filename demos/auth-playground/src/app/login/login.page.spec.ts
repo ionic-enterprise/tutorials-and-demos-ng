@@ -12,6 +12,7 @@ describe('LoginPage', () => {
   let fixture: ComponentFixture<LoginPage>;
 
   beforeEach(waitForAsync(() => {
+    spyOn(console, 'error').and.callFake(() => null);
     TestBed.overrideProvider(AuthenticationExpediterService, { useFactory: createAuthenticationExpediterServiceMock })
       .overrideProvider(NavController, { useFactory: createNavControllerMock })
       .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });

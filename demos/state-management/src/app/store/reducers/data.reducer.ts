@@ -3,8 +3,8 @@ import * as Actions from '@app/store/actions';
 import { createReducer, on } from '@ngrx/store';
 
 export interface DataState {
-  notes: Array<TastingNote>;
-  teas: Array<Tea>;
+  notes: TastingNote[];
+  teas: Tea[];
   loading: boolean;
   errorMessage: string;
 }

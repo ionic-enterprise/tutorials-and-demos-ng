@@ -1,4 +1,4 @@
-import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { TastingNotesService, TeaCategoriesService } from '@app/core';
 import { createTastingNotesServiceMock, createTeaCategoriesServiceMock } from '@app/core/testing';
@@ -9,7 +9,7 @@ import { click } from '@test/util';
 import { TastingNoteEditorComponent } from './tasting-note-editor.component';
 
 describe('TastingNoteEditorComponent', () => {
-  let categories: Array<TeaCategory>;
+  let categories: TeaCategory[];
   let component: TastingNoteEditorComponent;
   let fixture: ComponentFixture<TastingNoteEditorComponent>;
   let modalController: ModalController;

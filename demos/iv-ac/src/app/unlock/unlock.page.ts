@@ -2,16 +2,22 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
-import { NavController, Platform } from '@ionic/angular/standalone';
+import {
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardTitle,
+  IonContent,
+  IonIcon,
+  NavController,
+} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { lockOpenOutline, arrowRedoOutline } from 'ionicons/icons';
-import { IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon } from '@ionic/angular/standalone';
+import { arrowRedoOutline, lockOpenOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-unlock',
   templateUrl: './unlock.page.html',
   styleUrls: ['./unlock.page.scss'],
-  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon],
 })
 export class UnlockPage {
@@ -27,7 +33,9 @@ export class UnlockPage {
     try {
       await this.session.getSession();
       this.navController.navigateRoot('/tabs/tea');
-    } catch (err) {}
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   async redoClicked() {

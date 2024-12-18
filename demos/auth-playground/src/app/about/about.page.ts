@@ -25,7 +25,6 @@ import {
   selector: 'app-about',
   templateUrl: 'about.page.html',
   styleUrls: ['about.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
@@ -44,11 +43,11 @@ import {
   ],
 })
 export class AboutPage implements OnInit {
-  author: string = '';
-  name: string = '';
-  version: string = '';
-  authConnectVersion: string = '';
-  identityVaultVersion: string = '';
+  author = '';
+  name = '';
+  version = '';
+  authConnectVersion = '';
+  identityVaultVersion = '';
 
   constructor(
     private auth: AuthenticationExpediterService,

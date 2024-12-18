@@ -14,9 +14,9 @@ export class TastingNotesApiService {
     private http: HttpClient,
   ) {}
 
-  getAll(): Observable<Array<TastingNote>> {
+  getAll(): Observable<TastingNote[]> {
     return this.http
-      .get<Array<TastingNote>>(`${environment.dataService}/user-tasting-notes`)
+      .get<TastingNote[]>(`${environment.dataService}/user-tasting-notes`)
       .pipe(map((x) => x.sort((a, b) => this.compare.byBrandAndName(a, b))));
   }
 

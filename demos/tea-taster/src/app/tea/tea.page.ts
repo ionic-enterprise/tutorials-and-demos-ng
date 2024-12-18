@@ -24,7 +24,6 @@ import {
   selector: 'app-tea',
   templateUrl: './tea.page.html',
   styleUrls: ['./tea.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
@@ -43,7 +42,7 @@ import {
   ],
 })
 export class TeaPage implements OnInit {
-  teaMatrix$: Observable<Array<Array<Tea>>> = of([]);
+  teaMatrix$: Observable<Tea[][]> = of([]);
 
   constructor(
     private nav: NavController,
@@ -58,8 +57,8 @@ export class TeaPage implements OnInit {
     this.nav.navigateForward(['tabs', 'tea', 'tea-details', id]);
   }
 
-  private toMatrix(tea: Array<Tea>): Array<Array<Tea>> {
-    const matrix: Array<Array<Tea>> = [];
+  private toMatrix(tea: Tea[]): Tea[][] {
+    const matrix: Tea[][] = [];
     let row: Tea[] = [];
     tea.forEach((t) => {
       row.push(t);

@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CompareService {
-  constructor() {}
-
   byName(x1: { name: string }, x2: { name: string }): number {
     return this.byStringProp(x1, x2, 'name');
   }
@@ -18,10 +16,14 @@ export class CompareService {
     return this.byBrand(x1, x2) || this.byName(x1, x2);
   }
 
-  private byStringProp(x1: any, x2: any, propName: string): number {
-    const str1 = x1[propName].trim().toUpperCase();
-    const str2 = x2[propName].trim().toUpperCase();
+  private byStringProp(
+    x1: Partial<{ brand: string; name: string }>,
+    x2: Partial<{ brand: string; name: string }>,
+    propName: 'brand' | 'name',
+  ): number {
+    const str1 = x1[propName]?.trim().toUpperCase();
+    const str2 = x2[propName]?.trim().toUpperCase();
 
-    return str1.localeCompare(str2);
+    return str1?.localeCompare(str2 || '') ?? -1;
   }
 }

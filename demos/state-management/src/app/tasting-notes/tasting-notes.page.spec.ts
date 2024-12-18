@@ -15,7 +15,7 @@ describe('TastingNotesPage', () => {
   let fixture: ComponentFixture<TastingNotesPage>;
   let alert: HTMLIonAlertElement;
   let modal: HTMLIonModalElement;
-  let testData: Array<TastingNote>;
+  let testData: TastingNote[];
 
   const mockRouterOutlet = {
     nativeEl: {},

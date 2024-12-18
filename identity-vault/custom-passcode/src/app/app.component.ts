@@ -6,7 +6,6 @@ import { SessionVaultService } from './core/session-vault.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  standalone: true,
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnDestroy {
@@ -18,6 +17,7 @@ export class AppComponent implements OnDestroy {
         try {
           await sessionVault.unlock();
         } catch (err: unknown) {
+          console.error(err);
           navController.navigateRoot(['unlock']);
         }
       }

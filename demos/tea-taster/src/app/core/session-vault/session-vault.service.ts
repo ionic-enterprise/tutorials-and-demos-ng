@@ -8,8 +8,6 @@ import { Preferences } from '@capacitor/preferences';
 export class SessionVaultService {
   private key = 'auth-session';
 
-  constructor() {}
-
   async set(session: Session): Promise<void> {
     await Preferences.set({ key: this.key, value: JSON.stringify(session) });
   }

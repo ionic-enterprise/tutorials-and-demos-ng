@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-explicit-any: off */
 import { Subject } from 'rxjs';
 import { PreferencesService } from './preferences.service';
 

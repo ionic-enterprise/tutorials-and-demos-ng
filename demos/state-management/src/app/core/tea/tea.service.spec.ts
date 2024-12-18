@@ -7,8 +7,8 @@ import { TeaService } from './tea.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('TeaService', () => {
-  let expectedTeas: Array<Tea>;
-  let resultTeas: Array<any>;
+  let expectedTeas: Tea[];
+  let resultTeas: Omit<Tea, 'image' | 'rating'>[];
   let httpTestingController: HttpTestingController;
   let service: TeaService;
 
@@ -45,7 +45,7 @@ describe('TeaService', () => {
     });
 
     it('transforms each tea', fakeAsync(() => {
-      let teas: Array<Tea> = [];
+      let teas: Tea[] = [];
       service.getAll().subscribe((t) => (teas = t));
       const req = httpTestingController.expectOne(`${environment.dataService}/tea-categories`);
       req.flush(resultTeas);
@@ -129,6 +129,7 @@ describe('TeaService', () => {
       },
     ];
     resultTeas = expectedTeas.map((t: Tea) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { image, rating, ...tea } = t;
       return tea;
     });

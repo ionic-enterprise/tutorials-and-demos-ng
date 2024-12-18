@@ -28,7 +28,7 @@ describe('TastingNotesPage', () => {
   let fixture: ComponentFixture<TastingNotesPage>;
   let modal: HTMLIonModalElement;
   let toast: HTMLIonToastElement;
-  let notes: Array<TastingNote>;
+  let notes: TastingNote[];
   let modalController: ModalController;
   let toastController: ToastController;
 
@@ -57,6 +57,7 @@ describe('TastingNotesPage', () => {
     initializeTestData();
 
     const preferences = TestBed.inject(PreferencesService);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (preferences as any).prefersDarkMode = false;
 
     const tastingNotes = TestBed.inject(TastingNotesService);
@@ -112,7 +113,7 @@ describe('TastingNotesPage', () => {
       expect(modalController.create).toHaveBeenCalledWith({
         component: TastingNoteEditorComponent,
         backdropDismiss: false,
-        presentingElement: mockRouterOutlet.nativeEl as any,
+        presentingElement: mockRouterOutlet.nativeEl as HTMLElement,
       });
     }));
 
@@ -139,7 +140,7 @@ describe('TastingNotesPage', () => {
       expect(modalController.create).toHaveBeenCalledWith({
         component: TastingNoteEditorComponent,
         backdropDismiss: false,
-        presentingElement: mockRouterOutlet.nativeEl as any,
+        presentingElement: mockRouterOutlet.nativeEl as HTMLElement,
         componentProps: { note: notes[1] },
       });
     }));

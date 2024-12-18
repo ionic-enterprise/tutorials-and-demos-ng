@@ -11,7 +11,7 @@ import { TastingNotesService } from './tasting-notes.service';
 
 describe('TastingNotesService', () => {
   let service: TastingNotesService;
-  let tastingNotes: Array<TastingNote>;
+  let tastingNotes: TastingNote[];
 
   beforeEach(() => {
     TestBed.overrideProvider(Platform, { useFactory: createPlatformMock })

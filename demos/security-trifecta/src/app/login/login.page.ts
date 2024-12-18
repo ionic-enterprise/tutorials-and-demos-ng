@@ -8,12 +8,11 @@ import { UnlockCardComponent } from './unlock-card/unlock-card.component';
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: true,
   imports: [LoginCardComponent, UnlockCardComponent, IonContent, IonLoading],
 })
 export class LoginPage implements OnInit {
-  showUnlock: boolean = false;
-  syncing: boolean = false;
+  showUnlock = false;
+  syncing = false;
 
   constructor(
     private navController: NavController,

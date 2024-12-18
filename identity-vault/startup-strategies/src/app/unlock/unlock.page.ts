@@ -19,7 +19,6 @@ import { SessionVaultService } from '../core/session-vault.service';
   selector: 'app-unlock',
   templateUrl: './unlock.page.html',
   styleUrls: ['./unlock.page.scss'],
-  standalone: true,
   imports: [
     IonButton,
     IonContent,
@@ -50,7 +49,7 @@ export class UnlockPage {
       await this.sessionVault.unlock();
       this.navController.navigateRoot(['tabs', 'tab1']);
     } catch (err: unknown) {
-      null;
+      console.error(err);
     }
   }
 }

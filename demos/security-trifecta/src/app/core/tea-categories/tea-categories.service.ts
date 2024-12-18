@@ -9,7 +9,7 @@ import { TeaCategoriesDatabaseService } from '../tea-categories-database/tea-cat
   providedIn: 'root',
 })
 export class TeaCategoriesService {
-  private teaCategories: Array<TeaCategory> | undefined;
+  private teaCategories: TeaCategory[] | undefined;
 
   constructor(
     private platform: Platform,
@@ -17,7 +17,7 @@ export class TeaCategoriesService {
     private api: TeaCategoriesApiService,
   ) {}
 
-  get data(): Array<TeaCategory> {
+  get data(): TeaCategory[] {
     return [...(this.teaCategories ?? [])];
   }
 

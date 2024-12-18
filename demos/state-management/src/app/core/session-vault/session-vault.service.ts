@@ -44,6 +44,7 @@ export class SessionVaultService {
         unlockVaultOnLoad: false,
       });
     } catch (e: unknown) {
+      console.error(e);
       await this.vault.clear();
       await this.setUnlockMode('NeverLock');
     }

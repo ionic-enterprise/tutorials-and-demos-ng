@@ -8,7 +8,7 @@ export const unauthInterceptor: HttpInterceptorFn = (request, next) => {
 
   return next(request).pipe(
     tap({
-      error: (err: any) => {
+      error: (err: unknown) => {
         if (err instanceof HttpErrorResponse && err.status === 401) {
           navController.navigateRoot(['/', 'login']);
         }
