@@ -58,8 +58,8 @@ export class OIDCAuthenticationService implements Authenticator {
     try {
       const res = await AuthConnect.login(this.provider as AuthProvider, this.options as ProviderOptions);
       this.sessionVault.setValue(this.authResultKey, res);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      // eslint-disable-next-line
       console.log('login error:', err);
       const message: string = err.errorMessage;
       if (
@@ -130,6 +130,7 @@ export class OIDCAuthenticationService implements Authenticator {
         newAuthResult = await AuthConnect.refreshSession(this.provider as AuthProvider, authResult);
         this.sessionVault.setValue(this.authResultKey, newAuthResult);
       } catch (err) {
+        console.error(err);
         await this.sessionVault.clear();
       }
     } else {

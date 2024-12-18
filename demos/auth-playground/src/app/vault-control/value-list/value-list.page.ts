@@ -42,7 +42,8 @@ import {
   ],
 })
 export class ValueListPage implements OnInit {
-  values: Array<{ key: string; value?: any }> = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  values: { key: string; value?: any }[] = [];
 
   constructor(
     private alertController: AlertController,

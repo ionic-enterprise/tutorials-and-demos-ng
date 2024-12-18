@@ -7,11 +7,11 @@ import { createSessionVaultServiceMock } from '../../testing';
 import { BasicAuthenticationService } from './basic-authentication.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-type AuthResponse = {
+interface AuthResponse {
   success: boolean;
   token?: string;
   user?: User;
-};
+}
 
 describe('BasicAuthenticationService', () => {
   let httpTestingController: HttpTestingController;

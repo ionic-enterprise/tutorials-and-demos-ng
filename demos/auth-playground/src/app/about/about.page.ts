@@ -43,11 +43,11 @@ import {
   ],
 })
 export class AboutPage implements OnInit {
-  author: string = '';
-  name: string = '';
-  version: string = '';
-  authConnectVersion: string = '';
-  identityVaultVersion: string = '';
+  author = '';
+  name = '';
+  version = '';
+  authConnectVersion = '';
+  identityVaultVersion = '';
 
   constructor(
     private auth: AuthenticationExpediterService,

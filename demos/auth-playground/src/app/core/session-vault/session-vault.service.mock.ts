@@ -25,6 +25,7 @@ export const createSessionVaultServiceMock = () => {
     setAuthVendor: Promise.resolve(),
     getAuthVendor: Promise.resolve(null),
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (service as any).locked = new Subject();
   return service;
 };

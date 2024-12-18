@@ -10,7 +10,7 @@ import { TeaListPage } from './tea-list.page';
 describe('TeaListPage', () => {
   let component: TeaListPage;
   let fixture: ComponentFixture<TeaListPage>;
-  let teas: Array<Tea>;
+  let teas: Tea[];
 
   beforeEach(() => {
     initializeTestData();

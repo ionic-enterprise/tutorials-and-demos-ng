@@ -4,6 +4,7 @@ import { from } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { AuthenticationExpediterService } from '../authentication/authentication-expediter/authentication-expediter.service';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const requestRequiresToken = (req: HttpRequest<any>): boolean => {
   return !/\/login$/.test(req.url);
 };

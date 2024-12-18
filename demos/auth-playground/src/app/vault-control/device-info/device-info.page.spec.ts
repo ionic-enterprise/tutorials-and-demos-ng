@@ -16,6 +16,7 @@ describe('DeviceInfoPage', () => {
   let fixture: ComponentFixture<DeviceInfoPage>;
 
   beforeEach(waitForAsync(() => {
+    spyOn(console, 'error').and.callFake(() => null);
     TestBed.overrideProvider(AlertController, { useFactory: () => createOverlayControllerMock('AlertController') });
 
     fixture = TestBed.createComponent(DeviceInfoPage);

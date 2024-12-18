@@ -8,8 +8,8 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 type TeaResponse = Omit<Tea, 'image'>;
 
 describe('TeaService', () => {
-  let expectedTeas: Array<Tea>;
-  let resultTeas: Array<TeaResponse>;
+  let expectedTeas: Tea[];
+  let resultTeas: TeaResponse[];
   let httpTestingController: HttpTestingController;
   let service: TeaService;
 
@@ -36,7 +36,7 @@ describe('TeaService', () => {
     });
 
     it('transforms each tea', fakeAsync(() => {
-      let teas: Array<Tea> = [];
+      let teas: Tea[] = [];
       service.getAll().subscribe((t) => (teas = t));
       const req = httpTestingController.expectOne(`${environment.dataService}/tea-categories`);
       req.flush(resultTeas);
@@ -98,6 +98,7 @@ describe('TeaService', () => {
       },
     ];
     resultTeas = expectedTeas.map((t: Tea) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { image, ...tea } = t;
       return tea;
     });

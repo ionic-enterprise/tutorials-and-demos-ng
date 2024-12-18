@@ -8,6 +8,7 @@ export const unauthInterceptor: HttpInterceptorFn = (request, next) => {
 
   return next(request).pipe(
     tap({
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       error: (err: any) => {
         if (err instanceof HttpErrorResponse && err.status === 401) {
           navController.navigateRoot(['/', 'login']);

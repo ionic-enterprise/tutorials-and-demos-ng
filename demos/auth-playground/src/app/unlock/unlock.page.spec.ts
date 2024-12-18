@@ -12,6 +12,7 @@ describe('UnlockPage', () => {
   let fixture: ComponentFixture<UnlockPage>;
 
   beforeEach(() => {
+    spyOn(console, 'error').and.callFake(() => null);
     TestBed.overrideProvider(AuthenticationExpediterService, { useFactory: createAuthenticationExpediterServiceMock })
       .overrideProvider(NavController, { useFactory: createNavControllerMock })
       .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
