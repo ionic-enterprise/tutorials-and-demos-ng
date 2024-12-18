@@ -10,7 +10,7 @@ import { SessionVaultService } from '../core/session-vault.service';
   imports: [IonContent],
 })
 export class StartPage implements OnInit {
-  showUnlock: boolean = false;
+  showUnlock = false;
 
   constructor(
     private authentication: AuthenticationService,
@@ -38,6 +38,7 @@ export class StartPage implements OnInit {
       try {
         await this.sessionVault.unlock();
       } catch (err: unknown) {
+        console.error(err);
         this.navController.navigateRoot(['unlock']);
       }
     }

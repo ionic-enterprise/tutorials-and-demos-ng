@@ -49,7 +49,7 @@ export class UnlockPage {
       await this.sessionVault.unlock();
       this.navController.navigateRoot(['tabs', 'tab1']);
     } catch (err: unknown) {
-      null;
+      console.error(err);
     }
   }
 }

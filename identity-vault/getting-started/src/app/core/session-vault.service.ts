@@ -37,6 +37,7 @@ export class SessionVaultService {
         lockAfterBackgrounded: 2000,
       });
     } catch (e: unknown) {
+      console.error(e);
       await this.vault.clear();
       await this.updateUnlockMode('SecureStorage');
     }
