@@ -8,6 +8,7 @@ describe('AuthenticationService', () => {
   let service: AuthenticationService;
 
   beforeEach(() => {
+    spyOn(console, 'error').and.callFake(() => null);
     spyOn(AuthConnect, 'isAccessTokenAvailable').and.resolveTo(true);
     spyOn(AuthConnect, 'isAccessTokenExpired').and.resolveTo(false);
     spyOn(AuthConnect, 'isRefreshTokenAvailable').and.resolveTo(false);
