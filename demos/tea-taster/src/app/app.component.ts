@@ -10,8 +10,6 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   imports: [CommonModule, IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
-  constructor() {}
-
   ngOnInit() {
     SplashScreen.hide();
   }

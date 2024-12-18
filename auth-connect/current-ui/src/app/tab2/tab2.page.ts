@@ -8,6 +8,4 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/stan
   styleUrls: ['tab2.page.scss'],
   imports: [ExploreContainerComponent, IonHeader, IonToolbar, IonTitle, IonContent],
 })
-export class Tab2Page {
-  constructor() {}
-}
+export class Tab2Page {}
