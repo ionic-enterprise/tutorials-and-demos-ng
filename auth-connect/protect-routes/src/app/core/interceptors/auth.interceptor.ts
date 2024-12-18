@@ -1,8 +1,9 @@
-import { Injectable, inject } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpInterceptorFn } from '@angular/common/http';
-import { Observable, from, mergeMap } from 'rxjs';
+import { HttpInterceptorFn, HttpRequest } from '@angular/common/http';
+import { inject } from '@angular/core';
+import { from, mergeMap } from 'rxjs';
 import { AuthenticationService } from '../authentication.service';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const requestRequiresToken = (req: HttpRequest<any>): boolean => {
   return !/\/login$/.test(req.url);
 };

@@ -62,7 +62,7 @@ describe('AuthenticationService', () => {
     it('resolves to the access token if there is a stored auth result', async () => {
       const session = TestBed.inject(SessionService);
       (session.getSession as jasmine.Spy).and.resolveTo(testAuthResult);
-      expect(await service.getAccessToken()).toBe('test-access-token');
+      expect(await service.getAccessToken()).toBe('the-access-token');
     });
   });
 
