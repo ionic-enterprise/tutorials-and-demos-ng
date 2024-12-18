@@ -20,18 +20,16 @@ import {
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonListHeader, IonNote, IonTitle, IonToolbar],
 })
 export class Tab2Page implements OnInit {
-  hasSecureHardware: Boolean = false;
-  isBiometricsSupported: Boolean = false;
-  availableHardware: Array<string> = [];
+  hasSecureHardware = false;
+  isBiometricsSupported = false;
+  availableHardware: string[] = [];
 
-  biometricStrengthLevel: string = '';
-  isBiometricsAllowed: string = '';
-  isBiometricsEnabled: boolean = false;
-  isHideScreenOnBackgroundEnabled: boolean = false;
-  isLockedOutOfBiometrics: boolean = false;
-  isSystemPasscodeSet: boolean = false;
-
-  constructor() {}
+  biometricStrengthLevel = '';
+  isBiometricsAllowed = '';
+  isBiometricsEnabled = false;
+  isHideScreenOnBackgroundEnabled = false;
+  isLockedOutOfBiometrics = false;
+  isSystemPasscodeSet = false;
 
   async ngOnInit(): Promise<void> {
     this.hasSecureHardware = await Device.hasSecureHardware();
@@ -57,7 +55,7 @@ export class Tab2Page implements OnInit {
         iosBiometricsLocalizedReason: 'Just to show you how this works',
       });
     } catch (e) {
-      // This is the most likely scenario
+      console.error(e);
       alert('user cancelled biometrics prompt');
     }
   }

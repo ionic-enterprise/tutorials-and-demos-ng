@@ -23,7 +23,7 @@ import { BiometricPermissionState, Device } from '@ionic-enterprise/identity-vau
 })
 export class Tab1Page implements OnInit {
   session: Session | null = null;
-  disableBiometrics: boolean = false;
+  disableBiometrics = false;
 
   constructor(
     private authentication: AuthenticationService,

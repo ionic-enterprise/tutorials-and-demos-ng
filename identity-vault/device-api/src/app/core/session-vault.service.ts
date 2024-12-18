@@ -117,7 +117,7 @@ export class SessionVaultService {
       try {
         await Device.showBiometricPrompt({ iosBiometricsLocalizedReason: 'Please authenticate to continue' });
       } catch (error) {
-        null;
+        console.error(error);
       }
     }
   }
