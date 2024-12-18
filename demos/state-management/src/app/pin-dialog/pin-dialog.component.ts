@@ -35,7 +35,6 @@ import { close } from 'ionicons/icons';
     IonTitle,
     IonToolbar,
   ],
-  standalone: true,
 })
 export class PinDialogComponent implements OnInit {
   @Input() setPasscodeMode: boolean = false;

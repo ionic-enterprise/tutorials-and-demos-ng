@@ -38,7 +38,6 @@ import { Observable } from 'rxjs';
     IonRadio,
     IonRadioGroup,
   ],
-  standalone: true,
 })
 export class LoginPage implements OnInit {
   email: string = '';

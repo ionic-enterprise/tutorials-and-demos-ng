@@ -52,7 +52,6 @@ import { Observable } from 'rxjs';
     IonTitle,
     IonToolbar,
   ],
-  standalone: true,
 })
 export class TastingNoteEditorComponent implements OnInit {
   @Input() note: TastingNote | undefined;

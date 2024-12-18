@@ -10,7 +10,6 @@ import { IonContent } from '@ionic/angular/standalone';
   templateUrl: './start.page.html',
   styleUrls: ['./start.page.scss'],
   imports: [CommonModule, FormsModule, IonContent],
-  standalone: true,
 })
 export class StartPage implements OnInit {
   constructor(

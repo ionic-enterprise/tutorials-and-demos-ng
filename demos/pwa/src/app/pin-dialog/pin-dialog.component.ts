@@ -21,7 +21,6 @@ import { close } from 'ionicons/icons';
   selector: 'app-pin-dialog',
   templateUrl: './pin-dialog.component.html',
   styleUrls: ['./pin-dialog.component.scss'],
-  standalone: true,
   imports: [
     IonButton,
     IonButtons,

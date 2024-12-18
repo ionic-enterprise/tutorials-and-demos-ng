@@ -7,7 +7,6 @@ import { SessionVaultService } from '../core/session-vault.service';
   selector: 'app-start',
   templateUrl: './start.page.html',
   styleUrls: ['./start.page.scss'],
-  standalone: true,
   imports: [IonContent],
 })
 export class StartPage implements OnInit {

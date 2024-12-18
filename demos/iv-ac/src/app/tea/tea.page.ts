@@ -24,7 +24,6 @@ import {
   selector: 'app-tea',
   templateUrl: './tea.page.html',
   styleUrls: ['./tea.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,

@@ -8,7 +8,6 @@ import { UnlockCardComponent } from './unlock-card/unlock-card.component';
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: true,
   imports: [LoginCardComponent, UnlockCardComponent, IonContent, IonLoading],
 })
 export class LoginPage implements OnInit {

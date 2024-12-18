@@ -28,7 +28,6 @@ import {
   selector: 'app-tasting-note-editor',
   templateUrl: './tasting-note-editor.component.html',
   styleUrls: ['./tasting-note-editor.component.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,

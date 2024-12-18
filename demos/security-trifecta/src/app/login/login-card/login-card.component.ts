@@ -20,7 +20,6 @@ import { logInOutline } from 'ionicons/icons';
   selector: 'app-login-card',
   templateUrl: './login-card.component.html',
   styleUrls: ['./login-card.component.scss'],
-  standalone: true,
   imports: [
     FormsModule,
     IonButton,

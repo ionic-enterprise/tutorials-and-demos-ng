@@ -9,7 +9,6 @@ import { star, starOutline } from 'ionicons/icons';
   selector: 'app-rating',
   templateUrl: './rating.component.html',
   styleUrls: ['./rating.component.scss'],
-  standalone: true,
   imports: [CommonModule, FormsModule, IonIcon],
   providers: [
     {

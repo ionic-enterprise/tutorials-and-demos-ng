@@ -21,7 +21,6 @@ import {
   selector: 'app-preferences',
   templateUrl: './preferences.page.html',
   styleUrls: ['./preferences.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     ReactiveFormsModule,

@@ -35,7 +35,6 @@ import { tap } from 'rxjs/operators';
     IonTitle,
     IonToolbar,
   ],
-  standalone: true,
 })
 export class TeaDetailsPage implements OnInit {
   rating: number = 0;

@@ -19,7 +19,6 @@ import { SessionVaultService } from '../core/session-vault.service';
   selector: 'app-unlock',
   templateUrl: './unlock.page.html',
   styleUrls: ['./unlock.page.scss'],
-  standalone: true,
   imports: [
     IonButton,
     IonContent,

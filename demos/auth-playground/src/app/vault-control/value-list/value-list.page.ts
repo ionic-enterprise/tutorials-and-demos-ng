@@ -24,7 +24,6 @@ import {
   selector: 'app-value-list',
   templateUrl: './value-list.page.html',
   styleUrls: ['./value-list.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,

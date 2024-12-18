@@ -23,7 +23,6 @@ import {
   selector: 'app-tea-ist',
   templateUrl: 'tea-list.page.html',
   styleUrls: ['tea-list.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,

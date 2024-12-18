@@ -41,7 +41,6 @@ import {
     IonLabel,
     IonNote,
   ],
-  standalone: true,
 })
 export class AboutPage implements OnInit {
   author: string = '';

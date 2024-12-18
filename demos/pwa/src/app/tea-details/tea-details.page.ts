@@ -20,7 +20,6 @@ import { EMPTY, Observable, tap } from 'rxjs';
   selector: 'app-tea-details',
   templateUrl: './tea-details.page.html',
   styleUrls: ['./tea-details.page.scss'],
-  standalone: true,
   imports: [
     AsyncPipe,
     FormsModule,

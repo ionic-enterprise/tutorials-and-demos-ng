@@ -18,7 +18,6 @@ import {
   selector: 'app-unlock-card',
   templateUrl: './unlock-card.component.html',
   styleUrls: ['./unlock-card.component.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,

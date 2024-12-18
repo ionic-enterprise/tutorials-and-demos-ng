@@ -21,7 +21,6 @@ import {
   selector: 'app-device-info',
   templateUrl: './device-info.page.html',
   styleUrls: ['./device-info.page.scss'],
-  standalone: true,
   imports: [
     FormsModule,
     IonBackButton,

@@ -50,7 +50,6 @@ import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-e
     IonFabButton,
     IonIcon,
   ],
-  standalone: true,
 })
 export class TastingNotesPage implements OnInit {
   @ViewChild(IonList, { static: true }) list: IonList | undefined;

@@ -24,7 +24,6 @@ import { logoAmazon, logoMicrosoft } from 'ionicons/icons';
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: true,
   imports: [
     FormsModule,
     IonContent,

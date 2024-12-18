@@ -28,7 +28,6 @@ import {
   selector: 'app-tasting-notes',
   templateUrl: './tasting-notes.page.html',
   styleUrls: ['./tasting-notes.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,

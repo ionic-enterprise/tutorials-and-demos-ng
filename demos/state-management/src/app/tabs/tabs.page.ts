@@ -10,7 +10,6 @@ import { IonTabs, IonTabBar, IonTabButton, IonLabel, IonIcon } from '@ionic/angu
   templateUrl: './tabs.page.html',
   styleUrls: ['./tabs.page.scss'],
   imports: [CommonModule, FormsModule, IonTabs, IonTabBar, IonTabButton, IonLabel, IonIcon],
-  standalone: true,
 })
 export class TabsPage {
   constructor() {

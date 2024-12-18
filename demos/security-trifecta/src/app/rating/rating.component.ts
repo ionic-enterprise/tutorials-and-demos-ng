@@ -16,7 +16,6 @@ import { star, starOutline } from 'ionicons/icons';
       multi: true,
     },
   ],
-  standalone: true,
   imports: [CommonModule, IonIcon],
 })
 export class RatingComponent implements ControlValueAccessor {

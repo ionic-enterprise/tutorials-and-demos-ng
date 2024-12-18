@@ -9,7 +9,6 @@ import { AuthenticationService } from '../core/authentication.service';
   selector: 'app-auth-action-complete',
   templateUrl: './auth-action-complete.page.html',
   styleUrls: ['./auth-action-complete.page.scss'],
-  standalone: true,
   imports: [CommonModule, FormsModule, IonContent],
 })
 export class AuthActionCompletePage {

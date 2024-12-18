@@ -17,7 +17,6 @@ import {
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  standalone: true,
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonListHeader, IonNote, IonTitle, IonToolbar],
 })
 export class Tab2Page implements OnInit {

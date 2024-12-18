@@ -11,7 +11,6 @@ import { IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon }
   selector: 'app-unlock',
   templateUrl: './unlock.page.html',
   styleUrls: ['./unlock.page.scss'],
-  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon],
 })
 export class UnlockPage {

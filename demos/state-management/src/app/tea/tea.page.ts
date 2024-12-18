@@ -41,7 +41,6 @@ import { Observable } from 'rxjs';
     IonCardTitle,
     IonCardContent,
   ],
-  standalone: true,
 })
 export class TeaPage implements OnInit {
   teas$: Observable<Array<Array<Tea>>> | undefined;

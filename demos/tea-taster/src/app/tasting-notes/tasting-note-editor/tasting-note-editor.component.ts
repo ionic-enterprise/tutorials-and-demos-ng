@@ -30,7 +30,6 @@ import { Observable, of, tap } from 'rxjs';
   selector: 'app-tasting-note-editor',
   templateUrl: './tasting-note-editor.component.html',
   styleUrls: ['./tasting-note-editor.component.scss'],
-  standalone: true,
   imports: [
     AsyncPipe,
     RatingComponent,

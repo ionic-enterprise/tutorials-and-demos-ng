@@ -17,7 +17,6 @@ import { Session } from '../models/session';
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  standalone: true,
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, IonTitle],
 })
 export class Tab1Page implements OnInit, OnDestroy {
