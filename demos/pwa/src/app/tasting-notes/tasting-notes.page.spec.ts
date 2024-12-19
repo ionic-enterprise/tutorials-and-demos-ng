@@ -63,7 +63,7 @@ describe('TastingNotesPage', () => {
       expect(modalController.create).toHaveBeenCalledWith({
         component: TastingNoteEditorComponent,
         backdropDismiss: false,
-        presentingElement: mockRouterOutlet.nativeEl as any,
+        presentingElement: mockRouterOutlet.nativeEl as HTMLElement,
       });
     });
 
@@ -87,7 +87,7 @@ describe('TastingNotesPage', () => {
       expect(modalController.create).toHaveBeenCalledWith({
         component: TastingNoteEditorComponent,
         backdropDismiss: false,
-        presentingElement: mockRouterOutlet.nativeEl as any,
+        presentingElement: mockRouterOutlet.nativeEl as HTMLElement,
         componentProps: { note: testData[0] },
       });
     });

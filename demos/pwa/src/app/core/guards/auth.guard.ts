@@ -1,12 +1,9 @@
 import { inject } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivateFn, RouterStateSnapshot } from '@angular/router';
+import { CanActivateFn } from '@angular/router';
 import { NavController } from '@ionic/angular/standalone';
 import { AuthenticationService } from '../authentication/authentication.service';
 
-export const authGuard: CanActivateFn = async (
-  route: ActivatedRouteSnapshot,
-  state: RouterStateSnapshot,
-): Promise<boolean> => {
+export const authGuard: CanActivateFn = async (): Promise<boolean> => {
   const authService = inject(AuthenticationService);
   const navController = inject(NavController);
 

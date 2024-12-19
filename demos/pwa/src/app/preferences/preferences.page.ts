@@ -77,6 +77,7 @@ export class PreferencesPage implements OnInit {
     this.modalController.dismiss();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   useBiometricsChanged(event: any) {
     this.useBiometrics = event.detail.checked;
     if (this.useBiometrics) {
@@ -85,6 +86,7 @@ export class PreferencesPage implements OnInit {
     this.setVaultLockMode();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   useSystemPasscodeChanged(event: any) {
     this.useSystemPasscode = event.detail.checked;
     if (this.useSystemPasscode) {
@@ -93,6 +95,7 @@ export class PreferencesPage implements OnInit {
     this.setVaultLockMode();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   useCustomPasscodeChanged(event: any) {
     this.useCustomPasscode = event.detail.checked;
     if (this.useCustomPasscode) {
@@ -102,6 +105,7 @@ export class PreferencesPage implements OnInit {
     this.setVaultLockMode();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   hideInBackgroundChanged(event: any) {
     this.hideInBackground = event.detail.checked;
     this.session.hideContentsInBackground(this.hideInBackground);

@@ -3,8 +3,7 @@ import { inject } from '@angular/core';
 import { from, mergeMap } from 'rxjs';
 import { AuthenticationService } from '../authentication.service';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const requestRequiresToken = (req: HttpRequest<any>): boolean => {
+const requestRequiresToken = (req: HttpRequest<unknown>): boolean => {
   return !/\/login$/.test(req.url);
 };
 

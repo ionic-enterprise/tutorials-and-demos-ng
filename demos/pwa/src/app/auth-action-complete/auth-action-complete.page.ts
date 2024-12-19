@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonSpinner } from '@ionic/angular/standalone';
 
@@ -9,6 +9,4 @@ import { IonContent, IonSpinner } from '@ionic/angular/standalone';
   styleUrls: ['./auth-action-complete.page.scss'],
   imports: [CommonModule, FormsModule, IonContent, IonSpinner],
 })
-export class AuthActionCompletePage {
-  constructor() {}
-}
+export class AuthActionCompletePage {}

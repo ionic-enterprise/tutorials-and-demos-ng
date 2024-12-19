@@ -54,6 +54,7 @@ export class LoginPage {
       await this.auth.login();
       this.nav.navigateRoot(['/']);
     } catch (e) {
+      console.error(e);
       this.loginFailed = true;
     }
   }

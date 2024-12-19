@@ -31,8 +31,10 @@ export class RatingComponent implements ControlValueAccessor {
     return this.disabled ? 0.25 : 1;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
   onChange = (_rating: number) => {};
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onTouched = () => {};
 
   ratingClicked(rating: number): void {

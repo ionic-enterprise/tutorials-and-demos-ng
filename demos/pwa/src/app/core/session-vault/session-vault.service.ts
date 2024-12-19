@@ -62,6 +62,7 @@ export class SessionVaultService {
     try {
       await this.vault.initialize(config);
     } catch (e: unknown) {
+      console.error(e);
       await this.vault.clear();
       await this.setUnlockMode('SecureStorage');
     }
@@ -147,7 +148,7 @@ export class SessionVaultService {
       try {
         await Device.showBiometricPrompt({ iosBiometricsLocalizedReason: 'Please authenticate to continue' });
       } catch (error) {
-        null;
+        console.error(error);
       }
     }
   }
