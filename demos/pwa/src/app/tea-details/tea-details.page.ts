@@ -35,7 +35,7 @@ import { EMPTY, Observable, tap } from 'rxjs';
 })
 export class TeaDetailsPage implements OnInit {
   tea$: Observable<Tea> = EMPTY;
-  rating: number = 0;
+  rating = 0;
 
   constructor(
     private route: ActivatedRoute,

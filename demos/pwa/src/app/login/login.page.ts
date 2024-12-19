@@ -40,7 +40,7 @@ import {
   ],
 })
 export class LoginPage {
-  loginFailed: boolean = false;
+  loginFailed = false;
 
   constructor(
     private auth: AuthenticationService,

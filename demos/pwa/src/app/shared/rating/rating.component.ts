@@ -19,8 +19,8 @@ import { star, starOutline } from 'ionicons/icons';
   ],
 })
 export class RatingComponent implements ControlValueAccessor {
-  @Input() rating: number = 0;
-  @Input() disabled: boolean = false;
+  @Input() rating = 0;
+  @Input() disabled = false;
 
   constructor() {
     addIcons({ star, starOutline });
