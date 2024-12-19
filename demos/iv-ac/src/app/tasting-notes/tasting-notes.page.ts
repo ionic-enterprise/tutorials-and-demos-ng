@@ -50,7 +50,7 @@ import {
 export class TastingNotesPage implements OnInit {
   private refresh = new BehaviorSubject<void>(undefined);
   @ViewChild(IonList, { static: true }) list: IonList | undefined;
-  notes$: Observable<Array<TastingNote>> = EMPTY;
+  notes$: Observable<TastingNote[]> = EMPTY;
 
   constructor(
     private alertController: AlertController,

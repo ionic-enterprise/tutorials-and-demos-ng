@@ -9,8 +9,8 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 describe('TeaService', () => {
   let httpTestingController: HttpTestingController;
   let service: TeaService;
-  let expectedTeas: Array<Tea>;
-  let resultTeas: Array<Omit<Tea, 'image' | 'rating'>>;
+  let expectedTeas: Tea[];
+  let resultTeas: Omit<Tea, 'image' | 'rating'>[];
 
   beforeEach(() => {
     initializeTestData();
@@ -43,7 +43,7 @@ describe('TeaService', () => {
     });
 
     it('adds an image to each', fakeAsync(() => {
-      let teas: Array<Tea> = [];
+      let teas: Tea[] = [];
       service.getAll().subscribe((t) => (teas = t));
       const req = httpTestingController.expectOne(`${environment.dataService}/tea-categories`);
       req.flush(resultTeas);

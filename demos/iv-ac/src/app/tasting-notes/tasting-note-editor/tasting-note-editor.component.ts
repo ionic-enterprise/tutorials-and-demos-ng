@@ -61,9 +61,9 @@ export class TastingNoteEditorComponent implements OnInit {
     notes: ['', Validators.required],
   });
 
-  buttonLabel: string = '';
-  title: string = '';
-  teaCategories$: Observable<Array<Tea>> = of([]);
+  buttonLabel = '';
+  title = '';
+  teaCategories$: Observable<Tea[]> = of([]);
   mc = inject(ModalController);
 
   get sharingIsAvailable(): boolean {
