@@ -129,8 +129,7 @@ export class OIDCAuthenticationService implements Authenticator {
       try {
         newAuthResult = await AuthConnect.refreshSession(this.provider as AuthProvider, authResult);
         this.sessionVault.setValue(this.authResultKey, newAuthResult);
-      } catch (err) {
-        console.error(err);
+      } catch {
         await this.sessionVault.clear();
       }
     } else {

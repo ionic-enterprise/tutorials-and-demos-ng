@@ -49,8 +49,7 @@ export class UnlockCardComponent {
     try {
       await this.sessionVault.getSession();
       this.unlock.emit();
-    } catch (err) {
-      console.error(err);
+    } catch {
       this.errorMessage = 'Unlock failed';
     }
   }

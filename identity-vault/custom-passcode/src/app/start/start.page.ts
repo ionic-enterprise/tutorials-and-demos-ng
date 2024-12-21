@@ -37,8 +37,7 @@ export class StartPage implements OnInit {
     if (await this.sessionVault.isLocked()) {
       try {
         await this.sessionVault.unlock();
-      } catch (err: unknown) {
-        console.error(err);
+      } catch {
         this.navController.navigateRoot(['unlock']);
       }
     }

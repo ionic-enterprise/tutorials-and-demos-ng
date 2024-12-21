@@ -53,8 +53,7 @@ export class LoginPage {
     try {
       await this.auth.login();
       this.nav.navigateRoot(['/']);
-    } catch (e) {
-      console.error(e);
+    } catch {
       this.loginFailed = true;
     }
   }

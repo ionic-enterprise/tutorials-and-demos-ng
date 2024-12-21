@@ -75,8 +75,7 @@ export class DeviceInfoPage implements OnInit {
     try {
       await Device.showBiometricPrompt({ iosBiometricsLocalizedReason: 'This is only a test' });
       this.displayBioResultAlert('Success!!');
-    } catch (error) {
-      console.error(error);
+    } catch {
       this.displayBioResultAlert('Failed. User likely cancelled the operation.');
     }
   }

@@ -76,8 +76,7 @@ export class AuthenticationService {
       try {
         newAuthResult = await AuthConnect.refreshSession(this.provider, authResult);
         this.sessionVault.setSession(newAuthResult);
-      } catch (err) {
-        console.error(err);
+      } catch {
         await this.sessionVault.clearSession();
       }
     } else {

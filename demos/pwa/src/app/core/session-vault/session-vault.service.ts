@@ -61,8 +61,7 @@ export class SessionVaultService {
   async initialize(): Promise<void> {
     try {
       await this.vault.initialize(config);
-    } catch (e: unknown) {
-      console.error(e);
+    } catch {
       await this.vault.clear();
       await this.setUnlockMode('SecureStorage');
     }

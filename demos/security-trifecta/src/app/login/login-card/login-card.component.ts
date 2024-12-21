@@ -56,8 +56,7 @@ export class LoginCardComponent {
       await this.sessionVault.disableLocking();
       await this.authentication.login();
       this.loginSuccess.emit();
-    } catch (err) {
-      console.error(err);
+    } catch {
       this.errorMessage = 'Invalid email or password';
     } finally {
       this.authenticating = false;

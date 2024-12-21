@@ -59,8 +59,7 @@ export class LoginPage {
       await this.vault.initializeUnlockMode();
       await this.auth.login('Basic', { email: this.email, password: this.password });
       this.navController.navigateRoot(['/']);
-    } catch (err) {
-      console.error(err);
+    } catch {
       this.errorMessage = 'Login failed. Please try again.';
     }
   }
@@ -71,8 +70,7 @@ export class LoginPage {
       await this.vault.initializeUnlockMode();
       await this.auth.login(vendor);
       this.navController.navigateRoot(['/']);
-    } catch (err) {
-      console.error(err);
+    } catch {
       this.errorMessage = 'Login failed. Please try again.';
     }
   }

@@ -43,8 +43,7 @@ export class SessionVaultService {
         customPasscodeInvalidUnlockAttempts: 2,
         unlockVaultOnLoad: false,
       });
-    } catch (e: unknown) {
-      console.error(e);
+    } catch {
       await this.vault.clear();
       await this.setUnlockMode('NeverLock');
     }

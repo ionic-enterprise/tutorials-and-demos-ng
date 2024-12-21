@@ -16,8 +16,7 @@ export class AppComponent implements OnDestroy {
       if (lock) {
         try {
           await sessionVault.unlock();
-        } catch (err: unknown) {
-          console.error(err);
+        } catch {
           navController.navigateRoot(['unlock']);
         }
       }
