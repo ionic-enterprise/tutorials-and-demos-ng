@@ -16,8 +16,14 @@ export class AppComponent implements OnInit {
     navController: NavController,
     private sessionVault: SessionVaultService,
   ) {
-    sessionVault.locked.subscribe((locked) => {
-      if (locked) navController.navigateRoot('/start');
+    sessionVault.locked.subscribe(async (locked) => {
+      if (locked) {
+        try {
+          await sessionVault.unlockVault();
+        } catch {
+          navController.navigateRoot('/unlock');
+        }
+      }
     });
 
     this.init();
