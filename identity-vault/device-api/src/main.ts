@@ -1,12 +1,12 @@
 import { enableProdMode, inject, provideAppInitializer } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
+import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { SessionVaultService } from './app/core/session-vault.service';
 import { environment } from './environments/environment';
-import { Device } from '@ionic-enterprise/identity-vault';
 
 if (environment.production) {
   enableProdMode();
@@ -16,7 +16,7 @@ const appInitFactory =
   (vault: SessionVaultService): (() => Promise<void>) =>
   async () => {
     await vault.initialize();
-    await Device.setHideScreenOnBackground(true);
+    await PrivacyScreen.enable();
   };
 
 bootstrapApplication(AppComponent, {

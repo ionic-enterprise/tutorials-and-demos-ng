@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { Device } from '@ionic-enterprise/identity-vault';
-import { NavController } from '@ionic/angular/standalone';
+import { IonApp, IonRouterOutlet, NavController } from '@ionic/angular/standalone';
 import { SessionVaultService } from './core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +26,6 @@ export class AppComponent implements OnInit {
 
     SplashScreen.hide();
 
-    Device.setHideScreenOnBackground(true);
+    PrivacyScreen.enable();
   }
 }

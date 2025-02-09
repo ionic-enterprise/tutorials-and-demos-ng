@@ -32,11 +32,12 @@
     "@capacitor/ios": "^7.0.1",
     "@capacitor/keyboard": "^7.0.0",
     "@capacitor/preferences": "^7.0.0",
+    "@capacitor/privacy-screen": "^1.0.0",
     "@capacitor/share": "^7.0.0",
     "@capacitor/splash-screen": "^7.0.0",
     "@capacitor/status-bar": "^7.0.0",
     "@ionic-enterprise/auth": "7.0.1",
-    "@ionic-enterprise/identity-vault": "~5.14.5",
+    "@ionic-enterprise/identity-vault": "~6.0.1",
     "@ionic/angular": "~8.4.3",
     "@ngrx/effects": "19.0.1",
     "@ngrx/store": "19.0.1",
@@ -59,7 +60,7 @@
     "@types/jasminewd2": "~2.0.13",
     "@types/node": "~22.13.1",
     "angular-eslint": "^19.1.0",
-    "eslint": "^9.20.0",
+    "eslint": "^9.20.1",
     "jasmine-core": "~5.6.0",
     "jasmine-spec-reporter": "~7.0.0",
     "karma": "~6.4.4",
@@ -70,6 +71,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ts-node": "~10.9.2",
     "typescript": "~5.7.3",
-    "typescript-eslint": "^8.23.0"
+    "typescript-eslint": "^8.24.0"
   }
 }

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { Device } from '@ionic-enterprise/identity-vault';
 import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
 import { AppComponent } from './app.component';
@@ -34,10 +34,9 @@ describe('AppComponent', () => {
   });
 
   it('set the privacy screen', () => {
-    spyOn(Device, 'setHideScreenOnBackground');
+    spyOn(PrivacyScreen, 'enable');
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    expect(Device.setHideScreenOnBackground).toHaveBeenCalledTimes(1);
-    expect(Device.setHideScreenOnBackground).toHaveBeenCalledWith(true);
+    expect(PrivacyScreen.enable).toHaveBeenCalledTimes(1);
   });
 });

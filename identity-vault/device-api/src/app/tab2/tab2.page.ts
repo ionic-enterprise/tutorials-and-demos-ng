@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { Device } from '@ionic-enterprise/identity-vault';
 import {
   IonButton,
@@ -39,14 +40,20 @@ export class Tab2Page implements OnInit {
     this.biometricStrengthLevel = await Device.getBiometricStrengthLevel();
     this.isBiometricsAllowed = await Device.isBiometricsAllowed();
     this.isBiometricsEnabled = await Device.isBiometricsEnabled();
-    this.isHideScreenOnBackgroundEnabled = await Device.isHideScreenOnBackgroundEnabled();
+    const { enabled } = await PrivacyScreen.isEnabled();
+    this.isHideScreenOnBackgroundEnabled = enabled;
     this.isLockedOutOfBiometrics = await Device.isLockedOutOfBiometrics();
     this.isSystemPasscodeSet = await Device.isSystemPasscodeSet();
   }
 
   async toggleHideScreenOnBackground(): Promise<void> {
-    await Device.setHideScreenOnBackground(!this.isHideScreenOnBackgroundEnabled);
-    this.isHideScreenOnBackgroundEnabled = await Device.isHideScreenOnBackgroundEnabled();
+    if (this.isHideScreenOnBackgroundEnabled) {
+      PrivacyScreen.disable();
+    } else {
+      PrivacyScreen.enable();
+    }
+    const { enabled } = await PrivacyScreen.isEnabled();
+    this.isHideScreenOnBackgroundEnabled = enabled;
   }
 
   async showBiometricPrompt(): Promise<void> {

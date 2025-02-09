@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
 import { Capacitor } from '@capacitor/core';
 import { Preferences } from '@capacitor/preferences';
+import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { AuthResult } from '@ionic-enterprise/auth';
 import {
   BiometricPermissionState,
@@ -123,7 +124,11 @@ export class SessionVaultService {
   }
 
   async hideContentsInBackground(value: boolean): Promise<void> {
-    await Device.setHideScreenOnBackground(value, true);
+    if (value) {
+      PrivacyScreen.enable({ android: { dimBackground: true } });
+    } else {
+      PrivacyScreen.disable();
+    }
     return Preferences.set({ key: hideInBackgroundKey, value: JSON.stringify(value) });
   }
 

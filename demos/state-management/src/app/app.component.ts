@@ -1,12 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Device } from '@ionic-enterprise/identity-vault';
-import { Platform } from '@ionic/angular/standalone';
+import { PrivacyScreen } from '@capacitor/privacy-screen';
+import { SplashScreen } from '@capacitor/splash-screen';
+import { IonApp, IonRouterOutlet, Platform } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { SessionVaultService } from './core';
 import { startup } from './store/actions';
-import { SplashScreen } from '@capacitor/splash-screen';
-import { CommonModule } from '@angular/common';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +21,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    Device.setHideScreenOnBackground(true);
+    PrivacyScreen.enable();
     SplashScreen.hide();
     if (!this.platform.is('hybrid') || (!(await this.session.isEmpty()) && !(await this.session.isLocked()))) {
       this.store.dispatch(startup());

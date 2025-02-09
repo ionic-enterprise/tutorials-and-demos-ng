@@ -1,5 +1,6 @@
 import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { PrivacyScreen } from '@capacitor/privacy-screen';
 import {
   BiometricPermissionState,
   BiometricSecurityStrength,
@@ -27,11 +28,12 @@ describe('DeviceInfoPage', () => {
     spyOn(Device, 'isBiometricsAllowed').and.returnValue(Promise.resolve(BiometricPermissionState.Prompt));
     spyOn(Device, 'isBiometricsEnabled').and.returnValue(Promise.resolve(false));
     spyOn(Device, 'isBiometricsSupported').and.returnValue(Promise.resolve(true));
-    spyOn(Device, 'isHideScreenOnBackgroundEnabled').and.returnValue(Promise.resolve(true));
     spyOn(Device, 'isLockedOutOfBiometrics').and.returnValue(Promise.resolve(false));
     spyOn(Device, 'isSystemPasscodeSet').and.returnValue(Promise.resolve(true));
     spyOn(Device, 'getAvailableHardware').and.returnValue(Promise.resolve([SupportedBiometricType.Face]));
-    spyOn(Device, 'setHideScreenOnBackground').and.returnValue(Promise.resolve());
+    spyOn(PrivacyScreen, 'isEnabled').and.returnValue(Promise.resolve({ enabled: true }));
+    spyOn(PrivacyScreen, 'enable').and.returnValue(Promise.resolve());
+    spyOn(PrivacyScreen, 'disable').and.returnValue(Promise.resolve());
 
     fixture.detectChanges();
   }));
@@ -45,17 +47,16 @@ describe('DeviceInfoPage', () => {
       const button = fixture.debugElement.query(By.css('[data-testid="toggle-privacy-button"]'));
       click(fixture, button.nativeElement);
       tick();
-      expect(Device.setHideScreenOnBackground).toHaveBeenCalledTimes(1);
-      expect(Device.setHideScreenOnBackground).toHaveBeenCalledWith(false);
+      expect(PrivacyScreen.disable).toHaveBeenCalledTimes(1);
     }));
 
     it('resets the flag', fakeAsync(() => {
-      (Device.isHideScreenOnBackgroundEnabled as jasmine.Spy).calls.reset();
-      (Device.isHideScreenOnBackgroundEnabled as jasmine.Spy).and.returnValue(Promise.resolve(false));
+      (PrivacyScreen.isEnabled as jasmine.Spy).calls.reset();
+      (PrivacyScreen.isEnabled as jasmine.Spy).and.returnValue(Promise.resolve({ enabled: false }));
       const button = fixture.debugElement.query(By.css('[data-testid="toggle-privacy-button"]'));
       click(fixture, button.nativeElement);
       tick();
-      expect(Device.isHideScreenOnBackgroundEnabled).toHaveBeenCalledTimes(1);
+      expect(PrivacyScreen.isEnabled).toHaveBeenCalledTimes(1);
       expect(component.isPrivacyScreenEnabled).toEqual(false);
     }));
   });

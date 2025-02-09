@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { Device } from '@ionic-enterprise/identity-vault';
 import {
   AlertController,
@@ -59,7 +60,8 @@ export class DeviceInfoPage implements OnInit {
     this.isBiometricsAllowed = await Device.isBiometricsAllowed();
     this.isBiometricsEnabled = await Device.isBiometricsEnabled();
     this.isBiometricsSupported = await Device.isBiometricsSupported();
-    this.isPrivacyScreenEnabled = await Device.isHideScreenOnBackgroundEnabled();
+    const { enabled } = await PrivacyScreen.isEnabled();
+    this.isPrivacyScreenEnabled = enabled;
     this.isLockedOutOfBiometrics = await Device.isLockedOutOfBiometrics();
     this.isSystemPasscodeSet = await Device.isSystemPasscodeSet();
     this.availableHardware = await Device.getAvailableHardware();
@@ -67,8 +69,13 @@ export class DeviceInfoPage implements OnInit {
   }
 
   async togglePrivacy() {
-    await Device.setHideScreenOnBackground(!this.isPrivacyScreenEnabled);
-    this.isPrivacyScreenEnabled = await Device.isHideScreenOnBackgroundEnabled();
+    if (this.isPrivacyScreenEnabled) {
+      await PrivacyScreen.disable();
+    } else {
+      await PrivacyScreen.enable();
+    }
+    const { enabled } = await PrivacyScreen.isEnabled();
+    this.isPrivacyScreenEnabled = enabled;
   }
 
   async showBiometricPrompt() {
