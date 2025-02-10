@@ -72,6 +72,11 @@ the following commands:
 For more advanced uses of the Ionic or Capacitor CLIs you can also change to the package's directory and run them
 from there.
 
+## Testing
+
+Due to the way Karma works by default, you may need to hoist aggressively to get the tests to run. Have a look at the
+`.npmrc` file for detailed instructions.
+
 ## Development Workflow
 
 To develop any if the projects within the mono-repo, use the `--filter` option with a couple of standard scripts.
@@ -79,6 +84,8 @@ For example, to work on the `demo-tea-taster` demo, open a couple of terminal se
 
 - `pnpm --filter demo-tea-taster start`
 - `pnpm --filter demo-tea-taster test:dev`
+
+See note on testing above if the tests fail right off.
 
 ## Credentials
 
