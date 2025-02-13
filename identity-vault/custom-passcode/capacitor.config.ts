@@ -4,8 +4,10 @@ const config: CapacitorConfig = {
   appId: 'io.ionic.custompasscodeiv',
   appName: 'iv-custom-passcode',
   webDir: 'www/browser',
-  server: {
-    androidScheme: 'https',
+  plugins: {
+    StatusBar: {
+      overlaysWebView: false,
+    },
   },
 };
 
