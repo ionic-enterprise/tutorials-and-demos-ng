@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Inbox </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="removeAllMessages()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="removeMessage()">
+        <ion-icon slot="icon-only" name="remove-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="addMessage()">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    @for (message of messages; track message; let idx = $index) {
+      <app-message [message]="message" [idx]="idx"></app-message>
+    }
+  </ion-list>
+</ion-content>

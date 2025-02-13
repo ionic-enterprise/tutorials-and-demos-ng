@@ -1,0 +1,20 @@
+@if (message) {
+  <ion-item [routerLink]="'/message/' + idx?.toString()" [detail]="false">
+    <div slot="start" [class]="message.isUnread ? 'dot dot-unread' : 'dot'"></div>
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ message.fromName }}
+        <span class="date">
+          <ion-note>{{ message.date }}</ion-note>
+          @if (isIos()) {
+            <ion-icon aria-hidden="true" name="chevron-forward" size="small"></ion-icon>
+          }
+        </span>
+      </h2>
+      <h3>{{ message.subject }}</h3>
+      <p>
+        {{ message.message }}
+      </p>
+    </ion-label>
+  </ion-item>
+}
