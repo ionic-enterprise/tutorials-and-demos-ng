@@ -11,7 +11,7 @@ export class MobileKVStore implements KVStorageProvider {
     const handle = await this.database.getHandle();
     if (handle) {
       await handle.transaction((tx) => {
-        tx.executeSql('DELETE FROM KeyValuePairs', undefined, () => {});
+        tx.executeSql('DELETE FROM KeyValuePairs WHERE collection = ?', [this.collection], () => {});
       });
     }
   }
