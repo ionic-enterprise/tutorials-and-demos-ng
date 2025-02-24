@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
+import { Capacitor } from '@capacitor/core';
 import {
   IonButton,
   IonCard,
@@ -11,7 +12,6 @@ import {
   IonCheckbox,
   IonIcon,
   IonLoading,
-  Platform,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logInOutline } from 'ionicons/icons';
@@ -42,11 +42,10 @@ export class LoginCardComponent {
   errorMessage = '';
 
   constructor(
-    platform: Platform,
     private authentication: AuthenticationService,
     private sessionVault: SessionVaultService,
   ) {
-    this.showSessionLocking = platform.is('hybrid');
+    this.showSessionLocking = Capacitor.isNativePlatform();
     addIcons({ logInOutline });
   }
 

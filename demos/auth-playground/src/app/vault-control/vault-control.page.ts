@@ -3,25 +3,26 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
 import { VaultTypePipe } from '@app/shared/vault-type.pipe';
+import { Capacitor } from '@capacitor/core';
 import { Device, IdentityVaultConfig, VaultType } from '@ionic-enterprise/identity-vault';
-import { NavController, Platform } from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import { ellipsisVerticalOutline, hardwareChipOutline, listOutline } from 'ionicons/icons';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonList,
-  IonItem,
-  IonLabel,
-  IonNote,
   IonButton,
+  IonContent,
   IonFab,
   IonFabButton,
-  IonIcon,
   IonFabList,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonNote,
+  IonTitle,
+  IonToolbar,
+  NavController,
 } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { ellipsisVerticalOutline, hardwareChipOutline, listOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-vault-control',
@@ -55,7 +56,6 @@ export class VaultControlPage {
 
   constructor(
     private navController: NavController,
-    private platform: Platform,
     private sessionVault: SessionVaultService,
   ) {
     addIcons({ ellipsisVerticalOutline, hardwareChipOutline, listOutline });
@@ -63,7 +63,7 @@ export class VaultControlPage {
 
   async ionViewDidEnter() {
     this.config = this.sessionVault.getConfig();
-    if (this.platform.is('hybrid')) {
+    if (Capacitor.isNativePlatform()) {
       this.disableCustomPasscode = false;
       this.disableInMemory = false;
       this.disableLock = this.config.type === VaultType.SecureStorage;

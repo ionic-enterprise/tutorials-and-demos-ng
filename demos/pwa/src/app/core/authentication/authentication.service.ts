@@ -1,6 +1,6 @@
 import { Injectable, NgZone, isDevMode } from '@angular/core';
+import { Capacitor } from '@capacitor/core';
 import { Auth0Provider, AuthConnect, AuthResult, ProviderOptions } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular/standalone';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 
@@ -18,9 +18,8 @@ export class AuthenticationService {
   constructor(
     private ngZone: NgZone,
     private sessionVault: SessionVaultService,
-    platform: Platform,
   ) {
-    this.isNative = platform.is('hybrid');
+    this.isNative = Capacitor.isNativePlatform();
     const url = this.isNative
       ? 'io.ionic.teataster://auth-action-complete'
       : isDevMode()

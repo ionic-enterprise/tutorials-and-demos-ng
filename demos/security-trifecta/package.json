@@ -15,7 +15,7 @@
     "ios": "cap open ios",
     "lint": "ng lint",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port=8100",
     "test": "ng test --no-watch",
     "test:debug": "ng test --browsers=Chrome",
     "test:dev": "ng test"

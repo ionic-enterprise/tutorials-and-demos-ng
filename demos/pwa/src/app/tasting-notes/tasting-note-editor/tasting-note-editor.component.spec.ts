@@ -2,16 +2,16 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { TastingNotesService, TeaService } from '@app/core';
 import { createTastingNotesServiceMock, createTeaServiceMock } from '@app/core/testing';
+import { Capacitor } from '@capacitor/core';
 import { Share } from '@capacitor/share';
-import { ModalController, Platform } from '@ionic/angular/standalone';
-import { createOverlayControllerMock, createPlatformMock } from '@test/mocks';
+import { ModalController } from '@ionic/angular/standalone';
+import { createOverlayControllerMock } from '@test/mocks';
 import { of } from 'rxjs';
 import { TastingNoteEditorComponent } from './tasting-note-editor.component';
 
 describe('TastingNoteEditorComponent', () => {
   let component: TastingNoteEditorComponent;
   let fixture: ComponentFixture<TastingNoteEditorComponent>;
-  let platform: Platform;
   let modalController: ModalController;
 
   const click = (button: HTMLElement) => {
@@ -22,11 +22,9 @@ describe('TastingNoteEditorComponent', () => {
 
   beforeEach(() => {
     modalController = createOverlayControllerMock('ModalController');
-    platform = createPlatformMock();
     TestBed.overrideProvider(TastingNotesService, { useFactory: createTastingNotesServiceMock })
       .overrideProvider(TeaService, { useFactory: createTeaServiceMock })
-      .overrideProvider(ModalController, { useValue: modalController })
-      .overrideProvider(Platform, { useValue: platform });
+      .overrideProvider(ModalController, { useValue: modalController });
     fixture = TestBed.createComponent(TastingNoteEditorComponent);
     component = fixture.componentInstance;
     const tea = TestBed.inject(TeaService);
@@ -221,7 +219,7 @@ describe('TastingNoteEditorComponent', () => {
   describe('share', () => {
     describe('in a web context', () => {
       beforeEach(() => {
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
         fixture.detectChanges();
       });
 
@@ -232,7 +230,7 @@ describe('TastingNoteEditorComponent', () => {
 
     describe('in a mobile context', () => {
       beforeEach(() => {
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
         fixture.detectChanges();
       });
 

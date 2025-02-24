@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TeaCategory } from '@app/models';
-import { Platform } from '@ionic/angular/standalone';
+import { Capacitor } from '@capacitor/core';
 import { firstValueFrom } from 'rxjs';
 import { TeaCategoriesApiService } from '../tea-categories-api/tea-categories-api.service';
 import { TeaCategoriesDatabaseService } from '../tea-categories-database/tea-categories-database.service';
@@ -12,7 +12,6 @@ export class TeaCategoriesService {
   private teaCategories: TeaCategory[] | undefined;
 
   constructor(
-    private platform: Platform,
     private database: TeaCategoriesDatabaseService,
     private api: TeaCategoriesApiService,
   ) {}
@@ -22,7 +21,7 @@ export class TeaCategoriesService {
   }
 
   async loadDatabaseFromApi(): Promise<void> {
-    if (this.platform.is('hybrid')) {
+    if (Capacitor.isNativePlatform()) {
       const cats = await firstValueFrom(this.api.getAll());
       this.database.pruneOthers(cats);
       const upserts = cats.map((x) => this.database.upsert(x));
@@ -31,7 +30,7 @@ export class TeaCategoriesService {
   }
 
   async refresh(): Promise<void> {
-    this.teaCategories = await (this.platform.is('hybrid')
+    this.teaCategories = await (Capacitor.isNativePlatform()
       ? this.database.getAll()
       : firstValueFrom(this.api.getAll()));
   }

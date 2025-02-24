@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SessionVaultService } from '@app/core/session-vault/session-vault.service';
 import { AuthVendor } from '@app/models';
+import { Capacitor } from '@capacitor/core';
 import { environment } from '@env/environment';
 import {
   Auth0Provider,
@@ -11,7 +12,6 @@ import {
   CognitoProvider,
   ProviderOptions,
 } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular/standalone';
 import { Authenticator } from '../authenticator';
 
 @Injectable({
@@ -22,14 +22,11 @@ export class OIDCAuthenticationService implements Authenticator {
   private options: ProviderOptions | null = null;
   private provider: Auth0Provider | AzureProvider | CognitoProvider | null = null;
 
-  constructor(
-    private sessionVault: SessionVaultService,
-    private platform: Platform,
-  ) {}
+  constructor(private sessionVault: SessionVaultService) {}
 
   initialize(): Promise<void> {
     return AuthConnect.setup({
-      platform: this.platform.is('hybrid') ? 'capacitor' : 'web',
+      platform: Capacitor.isNativePlatform() ? 'capacitor' : 'web',
       logLevel: 'DEBUG',
       ios: {
         webView: 'private',
@@ -101,7 +98,7 @@ export class OIDCAuthenticationService implements Authenticator {
   }
 
   private handleWebOptions(opt: ProviderOptions): ProviderOptions {
-    const urls = this.platform.is('hybrid')
+    const urls = Capacitor.isNativePlatform()
       ? {}
       : {
           redirectUri: environment.webRedirects.redirectUri,

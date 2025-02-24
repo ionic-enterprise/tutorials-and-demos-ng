@@ -1,8 +1,8 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from '@app/models';
+import { Capacitor } from '@capacitor/core';
 import { mobileAuthConfig, webAuthConfig } from '@env/environment';
 import { Auth0Provider, AuthConnect, AuthResult, ProviderOptions, TokenType } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular/standalone';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SessionVaultService } from '../session-vault/session-vault.service';
 
@@ -19,14 +19,12 @@ export class AuthenticationService {
   private authOptions: ProviderOptions;
   private authResult: AuthResult | null = null;
   private vaultService: SessionVaultService;
-  private initializing: Promise<void> | undefined;
 
   constructor(
     vaultService: SessionVaultService,
-    platform: Platform,
     private ngZone: NgZone,
   ) {
-    this.isNative = platform.is('hybrid');
+    this.isNative = Capacitor.isNativePlatform();
     this.authOptions = this.isNative ? mobileAuthConfig : webAuthConfig;
     this.vaultService = vaultService;
 

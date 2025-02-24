@@ -2,8 +2,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { SessionVaultService } from '@app/core';
 import { createSessionVaultServiceMock } from '@app/core/testing';
-import { NavController, Platform } from '@ionic/angular/standalone';
-import { createNavControllerMock, createPlatformMock } from '@test/mocks';
+import { Capacitor } from '@capacitor/core';
+import { NavController } from '@ionic/angular/standalone';
+import { createNavControllerMock } from '@test/mocks';
 import { click } from '@test/util';
 import { VaultControlPage } from './vault-control.page';
 
@@ -12,9 +13,10 @@ describe('VaultControlPage', () => {
   let fixture: ComponentFixture<VaultControlPage>;
 
   beforeEach(() => {
-    TestBed.overrideProvider(NavController, { useFactory: createNavControllerMock })
-      .overrideProvider(Platform, { useFactory: createPlatformMock })
-      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
+    TestBed.overrideProvider(NavController, { useFactory: createNavControllerMock }).overrideProvider(
+      SessionVaultService,
+      { useFactory: createSessionVaultServiceMock },
+    );
     fixture = TestBed.createComponent(VaultControlPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -27,8 +29,7 @@ describe('VaultControlPage', () => {
   describe('on mobile', () => {
     let sessionVault: SessionVaultService;
     beforeEach(async () => {
-      const platform = TestBed.inject(Platform);
-      (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+      spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
       await component.ionViewDidEnter();
       sessionVault = TestBed.inject(SessionVaultService);
     });

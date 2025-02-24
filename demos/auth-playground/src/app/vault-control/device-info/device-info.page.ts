@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Capacitor } from '@capacitor/core';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { Device } from '@ionic-enterprise/identity-vault';
 import {
@@ -15,7 +16,6 @@ import {
   IonNote,
   IonTitle,
   IonToolbar,
-  Platform,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -49,10 +49,7 @@ export class DeviceInfoPage implements OnInit {
   isSystemPasscodeSet = false;
   availableHardware: string[] = [];
 
-  constructor(
-    private alertController: AlertController,
-    private platform: Platform,
-  ) {}
+  constructor(private alertController: AlertController) {}
 
   async ngOnInit() {
     this.biometricStrength = await Device.getBiometricStrengthLevel();
@@ -65,7 +62,7 @@ export class DeviceInfoPage implements OnInit {
     this.isLockedOutOfBiometrics = await Device.isLockedOutOfBiometrics();
     this.isSystemPasscodeSet = await Device.isSystemPasscodeSet();
     this.availableHardware = await Device.getAvailableHardware();
-    this.canTogglePrivacyScreen = this.platform.is('hybrid');
+    this.canTogglePrivacyScreen = Capacitor.isNativePlatform();
   }
 
   async togglePrivacy() {

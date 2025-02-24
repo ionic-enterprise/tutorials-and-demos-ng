@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { TastingNotesService, TeaService } from '@app/core';
 import { TastingNote, Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
+import { Capacitor } from '@capacitor/core';
 import { Share } from '@capacitor/share';
 import {
   IonButton,
@@ -20,7 +21,6 @@ import {
   IonTitle,
   IonToolbar,
   ModalController,
-  Platform,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { shareOutline } from 'ionicons/icons';
@@ -67,7 +67,7 @@ export class TastingNoteEditorComponent implements OnInit {
   mc = inject(ModalController);
 
   get sharingIsAvailable(): boolean {
-    return this.platform.is('hybrid');
+    return Capacitor.isNativePlatform();
   }
 
   get allowSharing(): boolean {
@@ -81,7 +81,6 @@ export class TastingNoteEditorComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private modalController: ModalController,
-    private platform: Platform,
     private tastingNotes: TastingNotesService,
     private tea: TeaService,
   ) {

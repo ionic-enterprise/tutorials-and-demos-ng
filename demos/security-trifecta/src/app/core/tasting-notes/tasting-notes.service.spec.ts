@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { TastingNote } from '@app/models';
-import { Platform } from '@ionic/angular/standalone';
-import { createPlatformMock } from '@test/mocks';
+import { Capacitor } from '@capacitor/core';
 import { of } from 'rxjs';
 import { TastingNotesApiService } from '../tasting-notes-api/tasting-notes-api.service';
 import { createTastingNotesApiServiceMock } from '../tasting-notes-api/tasting-notes-api.service.mock';
@@ -14,9 +13,10 @@ describe('TastingNotesService', () => {
   let tastingNotes: TastingNote[];
 
   beforeEach(() => {
-    TestBed.overrideProvider(Platform, { useFactory: createPlatformMock })
-      .overrideProvider(TastingNotesApiService, { useFactory: createTastingNotesApiServiceMock })
-      .overrideProvider(TastingNotesDatabaseService, { useFactory: createTastingNotesDatabaseServiceMock });
+    TestBed.overrideProvider(TastingNotesApiService, { useFactory: createTastingNotesApiServiceMock }).overrideProvider(
+      TastingNotesDatabaseService,
+      { useFactory: createTastingNotesDatabaseServiceMock },
+    );
     initializeTestData();
     const tastingNotesApiService = TestBed.inject(TastingNotesApiService);
     const tastingNotesDatabaseService = TestBed.inject(TastingNotesDatabaseService);
@@ -32,8 +32,7 @@ describe('TastingNotesService', () => {
   describe('load', () => {
     describe('on mobile', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
       });
 
       it('gets the tasting notes', async () => {
@@ -59,8 +58,7 @@ describe('TastingNotesService', () => {
 
     describe('on web', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
       });
 
       it('does not interact with the database', async () => {
@@ -76,8 +74,7 @@ describe('TastingNotesService', () => {
   describe('refresh', () => {
     describe('on mobile', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
       });
 
       it('gets the tasting notes from the database', async () => {
@@ -96,8 +93,7 @@ describe('TastingNotesService', () => {
 
     describe('on web', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
       });
 
       it('gets the tasting notes', async () => {
@@ -118,8 +114,7 @@ describe('TastingNotesService', () => {
   describe('find', () => {
     describe('on mobile', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
       });
 
       it('gets the data if it is not cached', async () => {
@@ -143,8 +138,7 @@ describe('TastingNotesService', () => {
 
     describe('on web', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
       });
 
       it('gets the data if it is not cached', async () => {
@@ -182,9 +176,8 @@ describe('TastingNotesService', () => {
       describe('on mobile', () => {
         beforeEach(() => {
           const database = TestBed.inject(TastingNotesDatabaseService);
-          const platform = TestBed.inject(Platform);
           (database.save as jasmine.Spy).and.returnValue(Promise.resolve({ id: 73, ...note }));
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+          spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
         });
 
         it('saves the note to the database', async () => {
@@ -210,9 +203,8 @@ describe('TastingNotesService', () => {
       describe('on the web', () => {
         beforeEach(() => {
           const api = TestBed.inject(TastingNotesApiService);
-          const platform = TestBed.inject(Platform);
           (api.save as jasmine.Spy).and.returnValue(of({ id: 73, ...note }));
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+          spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
         });
 
         it('posts the new note', async () => {
@@ -249,9 +241,8 @@ describe('TastingNotesService', () => {
       describe('on mobile', () => {
         beforeEach(() => {
           const database = TestBed.inject(TastingNotesDatabaseService);
-          const platform = TestBed.inject(Platform);
           (database.save as jasmine.Spy).and.returnValue(Promise.resolve(note));
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+          spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
         });
 
         it('save the note in the database', async () => {
@@ -277,9 +268,8 @@ describe('TastingNotesService', () => {
       describe('on the web', () => {
         beforeEach(() => {
           const api = TestBed.inject(TastingNotesApiService);
-          const platform = TestBed.inject(Platform);
           (api.save as jasmine.Spy).and.returnValue(of(note));
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+          spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
         });
 
         it('saves the existing note', async () => {
@@ -309,8 +299,7 @@ describe('TastingNotesService', () => {
 
     describe('on mobile', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
       });
 
       it('marks the note for deletion', async () => {
@@ -336,8 +325,7 @@ describe('TastingNotesService', () => {
       beforeEach(() => {
         const api = TestBed.inject(TastingNotesApiService);
         (api.remove as jasmine.Spy).and.returnValue(of(null));
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
       });
 
       it('removes the existing note', async () => {

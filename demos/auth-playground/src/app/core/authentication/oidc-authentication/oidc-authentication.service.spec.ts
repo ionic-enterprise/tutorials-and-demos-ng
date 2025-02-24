@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { SessionVaultService } from '@app/core/session-vault/session-vault.service';
 import { createSessionVaultServiceMock } from '@app/core/testing';
 import { AuthVendor } from '@app/models';
+import { Capacitor } from '@capacitor/core';
 import { environment } from '@env/environment';
 import {
   Auth0Provider,
@@ -11,8 +12,6 @@ import {
   CognitoProvider,
   ProviderOptions,
 } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular/standalone';
-import { createPlatformMock } from '@test/mocks';
 import { OIDCAuthenticationService } from './oidc-authentication.service';
 
 const refreshedAuthResult = {
@@ -40,9 +39,8 @@ const builtAuthResult = {
     beforeEach(() => {
       spyOn(console, 'error').and.callFake(() => null);
       spyOn(AuthConnect, 'setup').and.callFake(() => Promise.resolve());
-      const platform = createPlatformMock();
-      (platform.is as jasmine.Spy).and.returnValue(isNative);
-      TestBed.overrideProvider(Platform, { useValue: platform }).overrideProvider(SessionVaultService, {
+      spyOn(Capacitor, 'isNativePlatform').and.returnValue(isNative);
+      TestBed.overrideProvider(SessionVaultService, {
         useFactory: createSessionVaultServiceMock,
       });
       service = TestBed.inject(OIDCAuthenticationService);

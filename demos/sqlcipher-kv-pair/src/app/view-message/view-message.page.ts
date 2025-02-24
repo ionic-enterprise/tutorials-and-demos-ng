@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Capacitor } from '@capacitor/core';
 import {
   IonBackButton,
   IonButtons,
@@ -10,7 +11,6 @@ import {
   IonLabel,
   IonNote,
   IonToolbar,
-  Platform,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { personCircle } from 'ionicons/icons';
@@ -28,7 +28,6 @@ export class ViewMessagePage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private email: EmailMessagesService,
-    private platform: Platform,
   ) {
     addIcons({ personCircle });
   }
@@ -40,7 +39,6 @@ export class ViewMessagePage implements OnInit {
   }
 
   getBackButtonText() {
-    const isIos = this.platform.is('ios');
-    return isIos ? 'Inbox' : '';
+    return Capacitor.getPlatform() === 'ios' ? 'Inbox' : '';
   }
 }

@@ -1,6 +1,6 @@
-import { DbTransaction, SQLite, SQLiteObject } from '@ionic-enterprise/secure-storage/ngx';
 import { Injectable } from '@angular/core';
-import { Platform } from '@ionic/angular/standalone';
+import { Capacitor } from '@capacitor/core';
+import { DbTransaction, SQLite, SQLiteObject } from '@ionic-enterprise/secure-storage/ngx';
 import { EncryptionService } from '../encryption/encryption.service';
 
 interface Column {
@@ -16,7 +16,6 @@ export class DatabaseService {
 
   constructor(
     private encryption: EncryptionService,
-    private platform: Platform,
     private sqlite: SQLite,
   ) {}
 
@@ -31,7 +30,7 @@ export class DatabaseService {
   }
 
   private async openDatabase(): Promise<SQLiteObject | null> {
-    if (this.platform.is('hybrid')) {
+    if (Capacitor.isNativePlatform()) {
       const key = await this.encryption.getDatabaseKey();
       if (key) {
         return this.sqlite.create({

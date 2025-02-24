@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
+import { Capacitor } from '@capacitor/core';
 import { KeyValueStorage } from '@ionic-enterprise/secure-storage/ngx';
-import { Platform } from '@ionic/angular/standalone';
-import { createPlatformMock } from '@test/mocks';
 import { EncryptionService } from '../encryption/encryption.service';
 import { createEncryptionServiceMock } from '../testing';
 import { StorageService } from './storage.service';
@@ -10,16 +9,17 @@ describe('StorageService', () => {
   let service: StorageService;
 
   beforeEach(() => {
-    TestBed.overrideProvider(EncryptionService, { useFactory: createEncryptionServiceMock })
-      .overrideProvider(KeyValueStorage, {
+    TestBed.overrideProvider(EncryptionService, { useFactory: createEncryptionServiceMock }).overrideProvider(
+      KeyValueStorage,
+      {
         useFactory: () =>
           jasmine.createSpyObj('KeyValueStorage', {
             create: Promise.resolve(),
             get: Promise.resolve(),
             set: Promise.resolve(),
           }),
-      })
-      .overrideProvider(Platform, { useFactory: createPlatformMock });
+      },
+    );
     service = TestBed.inject(StorageService);
   });
 
@@ -29,8 +29,7 @@ describe('StorageService', () => {
 
   describe('on web', () => {
     beforeEach(() => {
-      const platform = TestBed.inject(Platform);
-      (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+      spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
     });
 
     it('creates the storage without a key on the first call (set)', async () => {
@@ -58,8 +57,7 @@ describe('StorageService', () => {
 
   describe('on mobile', () => {
     beforeEach(() => {
-      const platform = TestBed.inject(Platform);
-      (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+      spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
     });
 
     it('creates the storage without a key on the first call (set)', async () => {

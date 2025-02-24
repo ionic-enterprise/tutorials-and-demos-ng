@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
 import { DeviceSecurityType, IdentityVaultConfig, Vault, VaultType } from '@ionic-enterprise/identity-vault';
-import { ModalController, Platform } from '@ionic/angular/standalone';
-import { createOverlayControllerMock, createOverlayElementMock, createPlatformMock } from '@test/mocks';
+import { ModalController } from '@ionic/angular/standalone';
+import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
 import { SessionVaultService, UnlockMode } from './session-vault.service';
 import { VaultFactoryService } from './vault-factory.service';
 
@@ -42,7 +42,6 @@ describe('SessionVaultService', () => {
           provide: ModalController,
           useValue: createOverlayControllerMock('ModalController', modal),
         },
-        { provide: Platform, useFactory: createPlatformMock },
         {
           provide: VaultFactoryService,
           useValue: jasmine.createSpyObj('VaultFactoryService', {

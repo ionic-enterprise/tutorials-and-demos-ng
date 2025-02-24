@@ -5,6 +5,7 @@ import { TastingNote, Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
 import { selectTeas } from '@app/store';
 import { noteSaved } from '@app/store/actions';
+import { Capacitor } from '@capacitor/core';
 import { Share } from '@capacitor/share';
 import {
   IonButton,
@@ -22,7 +23,6 @@ import {
   IonTitle,
   IonToolbar,
   ModalController,
-  Platform,
 } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { addIcons } from 'ionicons';
@@ -66,7 +66,6 @@ export class TastingNoteEditorComponent implements OnInit {
 
   constructor(
     private modalController: ModalController,
-    private platform: Platform,
     private store: Store,
   ) {
     addIcons({ shareOutline, close });
@@ -81,7 +80,7 @@ export class TastingNoteEditorComponent implements OnInit {
   }
 
   get sharingIsAvailable(): boolean {
-    return this.platform.is('hybrid');
+    return Capacitor.isNativePlatform();
   }
 
   get allowSharing(): boolean {

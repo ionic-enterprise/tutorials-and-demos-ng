@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IonIcon, IonItem, IonLabel, IonNote, Platform } from '@ionic/angular/standalone';
+import { Capacitor } from '@capacitor/core';
+import { IonIcon, IonItem, IonLabel, IonNote } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { chevronForward } from 'ionicons/icons';
 import { EmailMessage } from '../core/email-messages.service';
@@ -16,11 +17,11 @@ export class MessageComponent {
   @Input() message?: EmailMessage;
   @Input() idx?: number;
 
-  constructor(private platform: Platform) {
+  constructor() {
     addIcons({ chevronForward });
   }
 
   isIos() {
-    return this.platform.is('ios');
+    return Capacitor.getPlatform() === 'ios';
   }
 }

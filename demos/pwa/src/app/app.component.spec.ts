@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Capacitor } from '@capacitor/core';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { Platform } from '@ionic/angular/standalone';
 import { AppComponent } from './app.component';
 import { ApplicationService, SessionVaultService } from './core';
 import { createApplicationServiceMock, createSessionVaultServiceMock } from './core/testing';
@@ -30,8 +30,7 @@ describe('AppComponent', () => {
 
   describe('in a hybrid mobile context', () => {
     beforeEach(() => {
-      const platform = TestBed.inject(Platform);
-      spyOn(platform, 'is').withArgs('hybrid').and.returnValue(true);
+      spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
       const fixture = TestBed.createComponent(AppComponent);
       fixture.detectChanges();
     });
@@ -44,8 +43,7 @@ describe('AppComponent', () => {
 
   describe('in a web context', () => {
     beforeEach(() => {
-      const platform = TestBed.inject(Platform);
-      spyOn(platform, 'is').withArgs('hybrid').and.returnValue(false);
+      spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
       const fixture = TestBed.createComponent(AppComponent);
       fixture.detectChanges();
     });

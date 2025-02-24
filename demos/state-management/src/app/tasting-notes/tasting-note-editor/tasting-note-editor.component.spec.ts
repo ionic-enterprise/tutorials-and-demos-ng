@@ -2,11 +2,12 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { selectTeas } from '@app/store';
 import { DataState, initialState } from '@app/store/reducers/data.reducer';
+import { Capacitor } from '@capacitor/core';
 import { Share } from '@capacitor/share';
-import { ModalController, Platform } from '@ionic/angular/standalone';
+import { ModalController } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { createOverlayControllerMock, createPlatformMock } from '@test/mocks';
+import { createOverlayControllerMock } from '@test/mocks';
 import { TastingNoteEditorComponent } from './tasting-note-editor.component';
 
 describe('TastingNoteEditorComponent', () => {
@@ -20,9 +21,7 @@ describe('TastingNoteEditorComponent', () => {
           initialState: { data: initialState },
         }),
       ],
-    })
-      .overrideProvider(ModalController, { useFactory: () => createOverlayControllerMock('ModalController') })
-      .overrideProvider(Platform, { useFactory: createPlatformMock });
+    }).overrideProvider(ModalController, { useFactory: () => createOverlayControllerMock('ModalController') });
 
     const store = TestBed.inject(Store) as MockStore;
     store.overrideSelector(selectTeas, [
@@ -116,8 +115,7 @@ describe('TastingNoteEditorComponent', () => {
   describe('share', () => {
     describe('in a web context', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
         fixture.detectChanges();
       });
 
@@ -128,8 +126,7 @@ describe('TastingNoteEditorComponent', () => {
 
     describe('in a mobile context', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
         fixture.detectChanges();
       });
 

@@ -13,7 +13,7 @@ const auth0Config: ProviderOptions = {
   discoveryUrl: 'https://dev-2uspt-sz.us.auth0.com/.well-known/openid-configuration',
   redirectUri: 'msauth://auth-action-complete',
   logoutUrl: 'msauth://auth-action-complete',
-  scope: 'openid email picture profile',
+  scope: 'openid email picture profile offline_access',
 };
 
 const awsConfig: ProviderOptions = {

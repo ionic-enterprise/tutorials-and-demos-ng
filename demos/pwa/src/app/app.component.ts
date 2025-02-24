@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Capacitor } from '@capacitor/core';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { NavController, Platform } from '@ionic/angular/standalone';
+import { IonApp, IonRouterOutlet, NavController } from '@ionic/angular/standalone';
 import { ApplicationService, SessionVaultService } from './core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,6 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 export class AppComponent implements OnInit {
   constructor(
     private application: ApplicationService,
-    private platform: Platform,
     private sessionVault: SessionVaultService,
     navController: NavController,
   ) {
@@ -38,7 +37,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     SplashScreen.hide();
-    if (!this.platform.is('hybrid')) {
+    if (!Capacitor.isNativePlatform()) {
       this.application.registerForUpdates();
     }
   }

@@ -4,11 +4,12 @@ import { SessionVaultService } from '@app/core';
 import { createSessionVaultServiceMock } from '@app/core/testing';
 import { login, unlockSession } from '@app/store/actions';
 import { AuthState, initialState } from '@app/store/reducers/auth.reducer';
+import { Capacitor } from '@capacitor/core';
 import { Device } from '@ionic-enterprise/identity-vault';
-import { AlertController, Platform } from '@ionic/angular/standalone';
+import { AlertController } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
-import { createOverlayControllerMock, createOverlayElementMock, createPlatformMock } from '@test/mocks';
+import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
 import { LoginPage } from './login.page';
 
 describe('LoginPage', () => {
@@ -27,7 +28,6 @@ describe('LoginPage', () => {
       ],
     })
       .overrideProvider(AlertController, { useFactory: () => createOverlayControllerMock('AlertController', alert) })
-      .overrideProvider(Platform, { useFactory: createPlatformMock })
       .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
 
     fixture = TestBed.createComponent(LoginPage);
@@ -65,8 +65,7 @@ describe('LoginPage', () => {
 
   describe('on mobile', () => {
     beforeEach(() => {
-      const platform = TestBed.inject(Platform);
-      (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+      spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
     });
 
     describe('with a session that can be unlocked', () => {
@@ -190,8 +189,7 @@ describe('LoginPage', () => {
 
   describe('on web', () => {
     beforeEach(() => {
-      const platform = TestBed.inject(Platform);
-      (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+      spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
     });
 
     it('displays the login button', () => {

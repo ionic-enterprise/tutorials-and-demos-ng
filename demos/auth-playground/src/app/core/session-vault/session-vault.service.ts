@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AuthVendor } from '@app/models';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
+import { Capacitor } from '@capacitor/core';
+import { Preferences } from '@capacitor/preferences';
 import {
   BiometricPermissionState,
   BrowserVault,
@@ -10,10 +12,9 @@ import {
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
-import { ModalController, Platform } from '@ionic/angular/standalone';
+import { ModalController } from '@ionic/angular/standalone';
 import { Observable, Subject } from 'rxjs';
 import { VaultFactoryService } from './vault-factory.service';
-import { Preferences } from '@capacitor/preferences';
 
 export type UnlockMode = 'Device' | 'SystemPIN' | 'SessionPIN' | 'NeverLock' | 'ForceLogin';
 
@@ -30,7 +31,6 @@ export class SessionVaultService {
   constructor(
     vaultFactory: VaultFactoryService,
     private modalController: ModalController,
-    private platform: Platform,
   ) {
     this.lockedSubject = new Subject();
     this.preferencesVault = vaultFactory.create();
@@ -45,8 +45,6 @@ export class SessionVaultService {
     if (!this.vaultReady) {
       // eslint-disable-next-line no-async-promise-executor
       this.vaultReady = new Promise(async (resolve) => {
-        await this.platform.ready();
-
         await this.preferencesVault.initialize({
           key: 'io.ionic.auth-playground-ng-preferences',
           type: VaultType.SecureStorage,
@@ -128,7 +126,7 @@ export class SessionVaultService {
   }
 
   async initializeUnlockMode() {
-    if (this.platform.is('hybrid')) {
+    if (Capacitor.isNativePlatform()) {
       if (await Device.isSystemPasscodeSet()) {
         if (await Device.isBiometricsEnabled()) {
           await this.setUnlockMode('Device');

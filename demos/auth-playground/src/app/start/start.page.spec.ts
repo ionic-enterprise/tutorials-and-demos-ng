@@ -1,8 +1,9 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { SessionVaultService } from '@app/core';
 import { createSessionVaultServiceMock } from '@app/core/testing';
-import { NavController, Platform } from '@ionic/angular/standalone';
-import { createNavControllerMock, createPlatformMock } from '@test/mocks';
+import { Capacitor } from '@capacitor/core';
+import { NavController } from '@ionic/angular/standalone';
+import { createNavControllerMock } from '@test/mocks';
 import { StartPage } from './start.page';
 
 describe('StartPage', () => {
@@ -10,9 +11,10 @@ describe('StartPage', () => {
   let fixture: ComponentFixture<StartPage>;
 
   beforeEach(() => {
-    TestBed.overrideProvider(NavController, { useFactory: createNavControllerMock })
-      .overrideProvider(Platform, { useFactory: createPlatformMock })
-      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
+    TestBed.overrideProvider(NavController, { useFactory: createNavControllerMock }).overrideProvider(
+      SessionVaultService,
+      { useFactory: createSessionVaultServiceMock },
+    );
 
     fixture = TestBed.createComponent(StartPage);
     component = fixture.componentInstance;
@@ -32,8 +34,7 @@ describe('StartPage', () => {
 
       describe('on mobile', () => {
         beforeEach(() => {
-          const platform = TestBed.inject(Platform);
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+          spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
         });
 
         it('navigates to the unlock page', fakeAsync(() => {
@@ -47,8 +48,7 @@ describe('StartPage', () => {
 
       describe('on web', () => {
         beforeEach(() => {
-          const platform = TestBed.inject(Platform);
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+          spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
         });
 
         it('navigates to the tea list', fakeAsync(() => {
@@ -69,8 +69,7 @@ describe('StartPage', () => {
 
       describe('on mobile', () => {
         beforeEach(() => {
-          const platform = TestBed.inject(Platform);
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+          spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
         });
 
         it('navigates to the tea list page', fakeAsync(() => {
@@ -84,8 +83,7 @@ describe('StartPage', () => {
 
       describe('on web', () => {
         beforeEach(() => {
-          const platform = TestBed.inject(Platform);
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+          spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
         });
 
         it('navigates to the tea list', fakeAsync(() => {

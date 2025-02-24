@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { TeaCategory } from '@app/models';
-import { Platform } from '@ionic/angular/standalone';
-import { createPlatformMock } from '@test/mocks';
+import { Capacitor } from '@capacitor/core';
 import { of } from 'rxjs';
 import { TeaCategoriesApiService } from '../tea-categories-api/tea-categories-api.service';
 import { createTeaCategoriesApiServiceMock } from '../tea-categories-api/tea-categories-api.service.mock';
@@ -14,9 +13,9 @@ describe('TeaCategoriesService', () => {
   let teaCategories: TeaCategory[];
 
   beforeEach(() => {
-    TestBed.overrideProvider(Platform, { useFactory: createPlatformMock })
-      .overrideProvider(TeaCategoriesApiService, { useFactory: createTeaCategoriesApiServiceMock })
-      .overrideProvider(TeaCategoriesDatabaseService, { useFactory: createTeaCategoriesDatabaseServiceMock });
+    TestBed.overrideProvider(TeaCategoriesApiService, {
+      useFactory: createTeaCategoriesApiServiceMock,
+    }).overrideProvider(TeaCategoriesDatabaseService, { useFactory: createTeaCategoriesDatabaseServiceMock });
     initializeTestData();
     const teaCategoriesApiService = TestBed.inject(TeaCategoriesApiService);
     const teaCategoriesDatabaseService = TestBed.inject(TeaCategoriesDatabaseService);
@@ -32,8 +31,7 @@ describe('TeaCategoriesService', () => {
   describe('load database from API', () => {
     describe('on mobile', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
       });
 
       it('gets the tea categories', async () => {
@@ -59,8 +57,7 @@ describe('TeaCategoriesService', () => {
 
     describe('on web', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
       });
 
       it('does not interact with the database', async () => {
@@ -76,8 +73,7 @@ describe('TeaCategoriesService', () => {
   describe('refresh', () => {
     describe('on mobile', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
       });
 
       it('gets the tea categories from the database', async () => {
@@ -96,8 +92,7 @@ describe('TeaCategoriesService', () => {
 
     describe('on web', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
       });
 
       it('gets the tea categories', async () => {
@@ -118,8 +113,7 @@ describe('TeaCategoriesService', () => {
   describe('find', () => {
     describe('on mobile', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(true);
       });
 
       it('gets the data if it is not cached', async () => {
@@ -143,8 +137,7 @@ describe('TeaCategoriesService', () => {
 
     describe('on web', () => {
       beforeEach(() => {
-        const platform = TestBed.inject(Platform);
-        (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+        spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
       });
 
       it('gets the data if it is not cached', async () => {

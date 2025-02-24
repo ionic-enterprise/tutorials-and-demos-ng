@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Capacitor } from '@capacitor/core';
 import { KeyValueStorage } from '@ionic-enterprise/secure-storage/ngx';
-import { Platform } from '@ionic/angular/standalone';
 import { EncryptionService } from '../encryption/encryption.service';
 
 @Injectable({
@@ -11,7 +11,6 @@ export class StorageService {
 
   constructor(
     private encryption: EncryptionService,
-    private platform: Platform,
     private storage: KeyValueStorage,
   ) {}
 
@@ -33,7 +32,7 @@ export class StorageService {
   }
 
   private async createStorage(): Promise<void> {
-    if (this.platform.is('hybrid')) {
+    if (Capacitor.isNativePlatform()) {
       const key = await this.encryption.getDatabaseKey();
       return this.storage.create(key);
     }

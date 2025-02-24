@@ -1,10 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { SessionVaultService } from '@app/core/session-vault/session-vault.service';
 import { createSessionVaultServiceMock } from '@app/core/testing';
+import { Capacitor } from '@capacitor/core';
 import { environment } from '@env/environment';
 import { Auth0Provider, AuthConnect, AuthResult, TokenType } from '@ionic-enterprise/auth';
-import { Platform } from '@ionic/angular/standalone';
-import { createPlatformMock } from '@test/mocks';
 import { AuthenticationService } from './authentication.service';
 
 const refreshedAuthResult = {
@@ -28,9 +27,8 @@ const testAuthResult = {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       spyOn(AuthConnect, 'decodeToken').and.callFake(() => Promise.resolve(null as any));
       spyOn(AuthConnect, 'setup').and.callFake(() => Promise.resolve());
-      const platform = createPlatformMock();
-      (platform.is as jasmine.Spy).and.returnValue(isNative);
-      TestBed.overrideProvider(Platform, { useValue: platform }).overrideProvider(SessionVaultService, {
+      spyOn(Capacitor, 'isNativePlatform').and.returnValue(isNative);
+      TestBed.overrideProvider(SessionVaultService, {
         useFactory: createSessionVaultServiceMock,
       });
       service = TestBed.inject(AuthenticationService);

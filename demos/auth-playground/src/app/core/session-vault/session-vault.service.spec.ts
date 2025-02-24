@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
+import { Capacitor } from '@capacitor/core';
 import { Preferences } from '@capacitor/preferences';
 import {
   BiometricPermissionState,
@@ -9,8 +10,8 @@ import {
   Vault,
   VaultType,
 } from '@ionic-enterprise/identity-vault';
-import { ModalController, Platform } from '@ionic/angular/standalone';
-import { createOverlayControllerMock, createOverlayElementMock, createPlatformMock } from '@test/mocks';
+import { ModalController } from '@ionic/angular/standalone';
+import { createOverlayControllerMock, createOverlayElementMock } from '@test/mocks';
 import { SessionVaultService, UnlockMode } from './session-vault.service';
 import { VaultFactoryService } from './vault-factory.service';
 
@@ -57,11 +58,12 @@ describe('SessionVaultService', () => {
     modal = createOverlayElementMock('Modal');
     const factory = jasmine.createSpyObj('VaultFactoryService', { create: null });
     (factory.create as jasmine.Spy).and.returnValues(preferencesVault, mockVault);
-    TestBed.overrideProvider(ModalController, { useValue: createOverlayControllerMock('ModalController', modal) })
-      .overrideProvider(Platform, { useFactory: createPlatformMock })
-      .overrideProvider(VaultFactoryService, { useValue: factory });
+    TestBed.overrideProvider(ModalController, {
+      useValue: createOverlayControllerMock('ModalController', modal),
+    }).overrideProvider(VaultFactoryService, { useValue: factory });
     service = TestBed.inject(SessionVaultService);
     (factory.create as jasmine.Spy).and.returnValues(preferencesVault, mockVault);
+    spyOn(Capacitor, 'isNativePlatform').and.returnValue(false);
   });
 
   it('should be created', () => {
@@ -168,8 +170,7 @@ describe('SessionVaultService', () => {
     describe('initialize unlock type', () => {
       describe('on mobile', () => {
         beforeEach(() => {
-          const platform = TestBed.inject(Platform);
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(true);
+          (Capacitor.isNativePlatform as jasmine.Spy).and.returnValue(true);
         });
 
         it('uses a session PIN if no system PIN is set', async () => {
@@ -213,8 +214,7 @@ describe('SessionVaultService', () => {
 
       describe('on web', () => {
         beforeEach(() => {
-          const platform = TestBed.inject(Platform);
-          (platform.is as jasmine.Spy).withArgs('hybrid').and.returnValue(false);
+          (Capacitor.isNativePlatform as jasmine.Spy).and.returnValue(false);
         });
 
         it('does not update the config', async () => {

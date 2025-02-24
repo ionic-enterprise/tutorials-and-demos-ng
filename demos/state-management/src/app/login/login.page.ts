@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { SessionVaultService, UnlockMode } from '@app/core';
 import { selectAuthErrorMessage } from '@app/store';
 import { login, unlockSession } from '@app/store/actions';
+import { Capacitor } from '@capacitor/core';
 import { Device } from '@ionic-enterprise/identity-vault';
 import {
   AlertController,
@@ -15,7 +16,6 @@ import {
   IonListHeader,
   IonRadio,
   IonRadioGroup,
-  Platform,
 } from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { addIcons } from 'ionicons';
@@ -65,7 +65,6 @@ export class LoginPage implements OnInit {
 
   constructor(
     private alertController: AlertController,
-    private platform: Platform,
     private sessionVault: SessionVaultService,
     private store: Store,
     private zone: NgZone,
@@ -75,7 +74,7 @@ export class LoginPage implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.errorMessage$ = this.store.select(selectAuthErrorMessage);
-    if (this.platform.is('hybrid')) {
+    if (Capacitor.isNativePlatform()) {
       this.canUnlock = await this.sessionVault.canUnlock();
       this.displayLockingOptions = true;
       if (await Device.isBiometricsEnabled()) {

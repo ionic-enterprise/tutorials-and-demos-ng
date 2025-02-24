@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TastingNote } from '@app/models';
-import { Platform } from '@ionic/angular/standalone';
+import { Capacitor } from '@capacitor/core';
 import { firstValueFrom } from 'rxjs';
 import { TastingNotesApiService } from '../tasting-notes-api/tasting-notes-api.service';
 import { TastingNotesDatabaseService } from '../tasting-notes-database/tasting-notes-database.service';
@@ -12,7 +12,6 @@ export class TastingNotesService {
   private tastingNotes: TastingNote[] | undefined;
 
   constructor(
-    private platform: Platform,
     private api: TastingNotesApiService,
     private database: TastingNotesDatabaseService,
   ) {}
@@ -29,7 +28,7 @@ export class TastingNotesService {
   }
 
   async loadDatabaseFromApi(): Promise<void> {
-    if (this.platform.is('hybrid')) {
+    if (Capacitor.isNativePlatform()) {
       const notes = await firstValueFrom(this.api.getAll());
       this.database.pruneOthers(notes);
       const upserts = notes.map((n) => this.database.upsert(n));
@@ -38,16 +37,18 @@ export class TastingNotesService {
   }
 
   async refresh(): Promise<void> {
-    this.tastingNotes = await (this.platform.is('hybrid') ? this.database.getAll() : firstValueFrom(this.api.getAll()));
+    this.tastingNotes = await (Capacitor.isNativePlatform()
+      ? this.database.getAll()
+      : firstValueFrom(this.api.getAll()));
   }
 
   async remove(note: TastingNote): Promise<void> {
-    await (this.platform.is('hybrid') ? this.database.remove(note) : firstValueFrom(this.api.remove(note)));
+    await (Capacitor.isNativePlatform() ? this.database.remove(note) : firstValueFrom(this.api.remove(note)));
     this.tastingNotes = this.tastingNotes?.filter((x) => x.id !== note.id);
   }
 
   async save(note: TastingNote): Promise<TastingNote> {
-    const savedNote = await (this.platform.is('hybrid')
+    const savedNote = await (Capacitor.isNativePlatform()
       ? this.database.save(note)
       : firstValueFrom(this.api.save(note)));
     if (this.tastingNotes) {
