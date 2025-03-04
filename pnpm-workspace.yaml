@@ -1,4 +1,11 @@
 packages:
-  - 'auth-connect/*'
-  - 'identity-vault/*'
-  - 'demos/*'
+  - auth-connect/*
+  - identity-vault/*
+  - demos/*
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - core-js
+  - esbuild
+  - lmdb
+  - msgpackr-extract
+  - sharp
