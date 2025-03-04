@@ -125,7 +125,7 @@ export class SessionVaultService {
 
   async hideContentsInBackground(value: boolean): Promise<void> {
     if (value) {
-      PrivacyScreen.enable({ android: { dimBackground: true } });
+      PrivacyScreen.enable({ android: { dimBackground: true, privacyModeOnActivityHidden: 'splash' } });
     } else {
       PrivacyScreen.disable();
     }

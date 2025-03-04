@@ -1,5 +1,5 @@
 interface PrivacyScreenConfig {
-  android?: { dimBackground?: boolean; preventScreenshots?: boolean };
+  android?: { dimBackground?: boolean; privacyModeOnActivityHidden?: 'none' | 'dim' | 'splash' };
   ios?: { blurEffect?: 'light' | 'dark' | 'none' };
 }
 
