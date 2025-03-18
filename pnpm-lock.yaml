@@ -76,8 +76,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic-enterprise/auth':
-        specifier: 7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: 7.1.1
+        version: 7.1.1(@capacitor/core@7.0.1)
       '@ionic/angular':
         specifier: ^8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -209,8 +209,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic-enterprise/auth':
-        specifier: 7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: 7.1.1
+        version: 7.1.1(@capacitor/core@7.0.1)
       '@ionic/angular':
         specifier: ^8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -342,8 +342,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic-enterprise/auth':
-        specifier: 7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: 7.1.1
+        version: 7.1.1(@capacitor/core@7.0.1)
       '@ionic/angular':
         specifier: ^8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -475,8 +475,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic-enterprise/auth':
-        specifier: 7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: 7.1.1
+        version: 7.1.1(@capacitor/core@7.0.1)
       '@ionic/angular':
         specifier: ^8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -608,8 +608,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic-enterprise/auth':
-        specifier: 7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: 7.1.1
+        version: 7.1.1(@capacitor/core@7.0.1)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -753,8 +753,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic-enterprise/auth':
-        specifier: 7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: 7.1.1
+        version: 7.1.1(@capacitor/core@7.0.1)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -898,8 +898,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic-enterprise/auth':
-        specifier: 7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: 7.1.1
+        version: 7.1.1(@capacitor/core@7.0.1)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -1037,8 +1037,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic-enterprise/auth':
-        specifier: 7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: 7.1.1
+        version: 7.1.1(@capacitor/core@7.0.1)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -1324,8 +1324,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic-enterprise/auth':
-        specifier: 7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: 7.1.1
+        version: 7.1.1(@capacitor/core@7.0.1)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -3244,8 +3244,8 @@ packages:
       '@types/node':
         optional: true
 
-  '@ionic-enterprise/auth@7.0.1':
-    resolution: {integrity: sha512-O0Wv8AXjIl5PfXr+kQVI3GetzVtCES+zOH3n/AxIYnWMySaJMWng49AsLQZO5280NmJemi1UKIaOLhMMKTndcQ==}
+  '@ionic-enterprise/auth@7.1.1':
+    resolution: {integrity: sha512-aquGHYwk9oDBYPeaGw+cdLYPPLfpmvpSFxS+Ega7AKggU24I/pg2t4PAfZR7UDsTHSfzC6q3UWDneypEQHbnXA==}
     engines: {cordovaDependencies: {3.0.0: {cordova: '>100'}}}
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
@@ -9322,7 +9322,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.13.5
 
-  '@ionic-enterprise/auth@7.0.1(@capacitor/core@7.0.1)':
+  '@ionic-enterprise/auth@7.1.1(@capacitor/core@7.0.1)':
     dependencies:
       '@capacitor/core': 7.0.1
       js-sha256: 0.9.0

@@ -36,7 +36,7 @@
     "@capacitor/share": "^7.0.0",
     "@capacitor/splash-screen": "^7.0.0",
     "@capacitor/status-bar": "^7.0.0",
-    "@ionic-enterprise/auth": "7.0.1",
+    "@ionic-enterprise/auth": "7.1.1",
     "@ionic-enterprise/identity-vault": "~6.0.1",
     "@ionic/angular": "~8.4.3",
     "@ngrx/effects": "19.0.1",
