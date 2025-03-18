@@ -52,32 +52,32 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/preferences':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
-        version: 7.1.1(@capacitor/core@7.0.1)
+        version: 7.1.1(@capacitor/core@7.1.0)
       '@ionic/angular':
         specifier: ^8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -107,8 +107,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ^12.1.1
         version: 12.1.1
@@ -185,32 +185,32 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/preferences':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
-        version: 7.1.1(@capacitor/core@7.0.1)
+        version: 7.1.1(@capacitor/core@7.1.0)
       '@ionic/angular':
         specifier: ^8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -240,8 +240,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ^12.1.1
         version: 12.1.1
@@ -318,32 +318,32 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/preferences':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
-        version: 7.1.1(@capacitor/core@7.0.1)
+        version: 7.1.1(@capacitor/core@7.1.0)
       '@ionic/angular':
         specifier: ^8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -373,8 +373,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ^12.1.1
         version: 12.1.1
@@ -451,32 +451,32 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/preferences':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
-        version: 7.1.1(@capacitor/core@7.0.1)
+        version: 7.1.1(@capacitor/core@7.1.0)
       '@ionic/angular':
         specifier: ^8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -506,8 +506,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ^12.1.1
         version: 12.1.1
@@ -578,38 +578,38 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/preferences':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/privacy-screen':
         specifier: ^1.1.0
-        version: 1.1.0(@capacitor/core@7.0.1)
+        version: 1.1.0(@capacitor/core@7.1.0)
       '@capacitor/splash-screen':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
-        version: 7.1.1(@capacitor/core@7.0.1)
+        version: 7.1.1(@capacitor/core@7.1.0)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -648,8 +648,8 @@ importers:
         specifier: ~3.0.5
         version: 3.0.5(@types/node@22.13.5)(encoding@0.1.13)(typescript@5.7.3)
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ~12.1.1
         version: 12.1.1
@@ -723,38 +723,38 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/preferences':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/privacy-screen':
         specifier: ^1.1.0
-        version: 1.1.0(@capacitor/core@7.0.1)
+        version: 1.1.0(@capacitor/core@7.1.0)
       '@capacitor/share':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/splash-screen':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
-        version: 7.1.1(@capacitor/core@7.0.1)
+        version: 7.1.1(@capacitor/core@7.1.0)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -793,8 +793,8 @@ importers:
         specifier: ~3.0.5
         version: 3.0.5(@types/node@22.13.5)(encoding@0.1.13)(typescript@5.7.3)
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ~12.1.1
         version: 12.1.1
@@ -868,38 +868,38 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/preferences':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/privacy-screen':
         specifier: ^1.1.0
-        version: 1.1.0(@capacitor/core@7.0.1)
+        version: 1.1.0(@capacitor/core@7.1.0)
       '@capacitor/share':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/splash-screen':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
-        version: 7.1.1(@capacitor/core@7.0.1)
+        version: 7.1.1(@capacitor/core@7.1.0)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -938,8 +938,8 @@ importers:
         specifier: ~3.0.5
         version: 3.0.5(@types/node@22.13.5)(encoding@0.1.13)(typescript@5.7.3)
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ~12.1.1
         version: 12.1.1
@@ -1010,35 +1010,35 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/privacy-screen':
         specifier: ^1.1.0
-        version: 1.1.0(@capacitor/core@7.0.1)
+        version: 1.1.0(@capacitor/core@7.1.0)
       '@capacitor/splash-screen':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
-        version: 7.1.1(@capacitor/core@7.0.1)
+        version: 7.1.1(@capacitor/core@7.1.0)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -1086,8 +1086,8 @@ importers:
         specifier: ~3.0.5
         version: 3.0.5(@types/node@22.13.5)(encoding@0.1.13)(typescript@5.7.3)
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ~12.1.1
         version: 12.1.1
@@ -1170,26 +1170,26 @@ importers:
         specifier: ^6.14.0
         version: 6.14.0(@awesome-cordova-plugins/core@6.9.0(rxjs@7.8.2))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic/angular':
         specifier: ^8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -1225,8 +1225,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ^12.1.1
         version: 12.1.1
@@ -1288,44 +1288,44 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/assets':
         specifier: ~3.0.5
         version: 3.0.5(@types/node@22.13.5)(encoding@0.1.13)(typescript@5.7.3)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/preferences':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/privacy-screen':
         specifier: ^1.1.0
-        version: 1.1.0(@capacitor/core@7.0.1)
+        version: 1.1.0(@capacitor/core@7.1.0)
       '@capacitor/share':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/splash-screen':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
-        version: 7.1.1(@capacitor/core@7.0.1)
+        version: 7.1.1(@capacitor/core@7.1.0)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -1370,8 +1370,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ~12.1.1
         version: 12.1.1
@@ -1448,35 +1448,35 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/preferences':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/share':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/splash-screen':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic/angular':
         specifier: ~8.4.3
         version: 8.4.3(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/forms@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(@angular/router@19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2))(rxjs@7.8.2)(zone.js@0.15.0)
@@ -1512,8 +1512,8 @@ importers:
         specifier: ~3.0.5
         version: 3.0.5(@types/node@22.13.5)(encoding@0.1.13)(typescript@5.7.3)
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ~12.1.1
         version: 12.1.1
@@ -1590,26 +1590,26 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -1642,8 +1642,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ^12.1.1
         version: 12.1.1
@@ -1714,29 +1714,29 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/privacy-screen':
         specifier: ^1.1.0
-        version: 1.1.0(@capacitor/core@7.0.1)
+        version: 1.1.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -1769,8 +1769,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ^12.1.1
         version: 12.1.1
@@ -1841,26 +1841,26 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -1893,8 +1893,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ^12.1.1
         version: 12.1.1
@@ -1965,26 +1965,26 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.7(@angular/animations@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.7(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.7(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/app':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@capacitor/haptics':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.0.1(@capacitor/core@7.0.1)
+        specifier: ^7.1.0
+        version: 7.1.0(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
         specifier: ^7.0.0
-        version: 7.0.0(@capacitor/core@7.0.1)
+        version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic-enterprise/identity-vault':
         specifier: ~6.0.1
         version: 6.0.1(typescript@5.7.3)
@@ -2017,8 +2017,8 @@ importers:
         specifier: ^19.1.7
         version: 19.1.7
       '@capacitor/cli':
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.1.0
+        version: 7.1.0
       '@ionic/angular-toolkit':
         specifier: ^12.1.1
         version: 12.1.1
@@ -2828,10 +2828,10 @@ packages:
     resolution: {integrity: sha512-Y3IR1cRnOxOCDvMmNiym7XpXQ93iGDDPHx+Zj+NM+rg0fBaShfQLkg+hKPaZCEvg5N/LeCo4+Rj/i3FuJsIQaw==}
     engines: {node: '>=6.9.0'}
 
-  '@capacitor/android@7.0.1':
-    resolution: {integrity: sha512-jukJJHfkcyEBOkFBJRD3EwXMIIQo7lSv0ExPWgsIliPdGXLAj6ElvK2JaYEzec3vKyLc4RTNFVv0PMEU0vnImg==}
+  '@capacitor/android@7.1.0':
+    resolution: {integrity: sha512-piPgQViWOjh18H7R8wDkh5uaZ5PwRbMxGZFu39ReP8Y0nZwjS8ESUvJuBm38T+HHJnHM6MnDHmCWnW3ixKqeZw==}
     peerDependencies:
-      '@capacitor/core': ^7.0.0
+      '@capacitor/core': ^7.1.0
 
   '@capacitor/app@7.0.0':
     resolution: {integrity: sha512-/UFwfPFsw/Jen6vjrV0lfTBOQWSaDDdmrYXKpYg4Xn8hwj0xrrRPXxC43j7VmPoj9AFMVPA+hx94ygqjChPASQ==}
@@ -2848,23 +2848,23 @@ packages:
     engines: {node: '>=16.0.0'}
     hasBin: true
 
-  '@capacitor/cli@7.0.1':
-    resolution: {integrity: sha512-KNKT25ZvNL8Gm+zxSxCq8n9FQYUBsZcAGs5lisQKHnDRz7tkTMmMNok+TlNlLn6to78J1k+OtBgpmfbFerpOng==}
+  '@capacitor/cli@7.1.0':
+    resolution: {integrity: sha512-oCjB9VB6KNTnBAlzt8tVIuBW+ZniIOCbrsp+nLoa2EfUIgoOGfMHldS4tG9KlTG3pTi5AzeHjSHJIMZwfiz6gg==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
-  '@capacitor/core@7.0.1':
-    resolution: {integrity: sha512-1Ob9bvA/p8g8aNwK6VesxEekGXowLVf6APjkW4LRnr05H+7z/bke+Q5pn9zqh/GgTbIxAQ/rwZrAZvvxkdm1UA==}
+  '@capacitor/core@7.1.0':
+    resolution: {integrity: sha512-I0a4C8gux5sx+HDamJjCiWHEWRdJU3hejwURFOSwJjUmAMkfkrm4hOsI0dgd+S0eCkKKKYKz9WNm7DAIvhm2zw==}
 
   '@capacitor/haptics@7.0.0':
     resolution: {integrity: sha512-8uI8rWyAbq8EzkjS+sHZSncyzujHzVbuLKgj8J5H0yUL6+r26F16gVA2iuQuIBvzbSMy7Y0/pUuWlwZr/H8AKg==}
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
 
-  '@capacitor/ios@7.0.1':
-    resolution: {integrity: sha512-RN6S1C1k7ue57DFmJM4EizzsYBrahTTiMhcnlHspFLaojgHbFWZbYq1VriuRKysPU1ka/P+klsdtRFsB5K9jyw==}
+  '@capacitor/ios@7.1.0':
+    resolution: {integrity: sha512-ND7GNxtBRnD6Az14D5YRFKFL4VtdLeXE6Zym1SVcKac0NZF18n4DBympBcnfCR61421FCmRlswbpPa9Fr+Czxw==}
     peerDependencies:
-      '@capacitor/core': ^7.0.0
+      '@capacitor/core': ^7.1.0
 
   '@capacitor/keyboard@7.0.0':
     resolution: {integrity: sha512-Tqwy8wG+sx4UqiFCX4Q+bFw6uKgG7BiHKAPpeefoIgoEB8H8Jf3xZNZoVPnJIMuPsCdSvuyHXZbJXH9IEEirGA==}
@@ -8946,13 +8946,13 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@capacitor/android@7.0.1(@capacitor/core@7.0.1)':
+  '@capacitor/android@7.1.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
-  '@capacitor/app@7.0.0(@capacitor/core@7.0.1)':
+  '@capacitor/app@7.0.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
   '@capacitor/assets@3.0.5(@types/node@22.13.5)(encoding@0.1.13)(typescript@5.7.3)':
     dependencies:
@@ -8999,7 +8999,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@capacitor/cli@7.0.1':
+  '@capacitor/cli@7.1.0':
     dependencies:
       '@ionic/cli-framework-output': 2.2.8
       '@ionic/utils-subprocess': 3.0.1
@@ -9021,41 +9021,41 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@capacitor/core@7.0.1':
+  '@capacitor/core@7.1.0':
     dependencies:
       tslib: 2.8.1
 
-  '@capacitor/haptics@7.0.0(@capacitor/core@7.0.1)':
+  '@capacitor/haptics@7.0.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
-  '@capacitor/ios@7.0.1(@capacitor/core@7.0.1)':
+  '@capacitor/ios@7.1.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
-  '@capacitor/keyboard@7.0.0(@capacitor/core@7.0.1)':
+  '@capacitor/keyboard@7.0.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
-  '@capacitor/preferences@7.0.0(@capacitor/core@7.0.1)':
+  '@capacitor/preferences@7.0.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
-  '@capacitor/privacy-screen@1.1.0(@capacitor/core@7.0.1)':
+  '@capacitor/privacy-screen@1.1.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
-  '@capacitor/share@7.0.0(@capacitor/core@7.0.1)':
+  '@capacitor/share@7.0.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
-  '@capacitor/splash-screen@7.0.0(@capacitor/core@7.0.1)':
+  '@capacitor/splash-screen@7.0.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
-  '@capacitor/status-bar@7.0.0(@capacitor/core@7.0.1)':
+  '@capacitor/status-bar@7.0.0(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
 
   '@colors/colors@1.5.0': {}
 
@@ -9322,9 +9322,9 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.13.5
 
-  '@ionic-enterprise/auth@7.1.1(@capacitor/core@7.0.1)':
+  '@ionic-enterprise/auth@7.1.1(@capacitor/core@7.1.0)':
     dependencies:
-      '@capacitor/core': 7.0.1
+      '@capacitor/core': 7.1.0
       js-sha256: 0.9.0
       url-parse: 1.5.10
 
