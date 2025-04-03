@@ -611,8 +611,8 @@ importers:
         specifier: 7.1.1
         version: 7.1.1(@capacitor/core@7.2.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~6.0.1
-        version: 6.0.1(typescript@5.8.2)
+        specifier: ~6.0.2
+        version: 6.0.2(typescript@5.8.2)
       '@ionic/angular':
         specifier: ~8.5.3
         version: 8.5.3(264a67de493897afc64227233bca9700)
@@ -756,8 +756,8 @@ importers:
         specifier: 7.1.1
         version: 7.1.1(@capacitor/core@7.2.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~6.0.1
-        version: 6.0.1(typescript@5.8.2)
+        specifier: ~6.0.2
+        version: 6.0.2(typescript@5.8.2)
       '@ionic/angular':
         specifier: ~8.5.3
         version: 8.5.3(264a67de493897afc64227233bca9700)
@@ -901,8 +901,8 @@ importers:
         specifier: 7.1.1
         version: 7.1.1(@capacitor/core@7.2.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~6.0.1
-        version: 6.0.1(typescript@5.8.2)
+        specifier: ~6.0.2
+        version: 6.0.2(typescript@5.8.2)
       '@ionic/angular':
         specifier: ~8.5.3
         version: 8.5.3(264a67de493897afc64227233bca9700)
@@ -1040,8 +1040,8 @@ importers:
         specifier: 7.1.1
         version: 7.1.1(@capacitor/core@7.2.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~6.0.1
-        version: 6.0.1(typescript@5.8.2)
+        specifier: ~6.0.2
+        version: 6.0.2(typescript@5.8.2)
       '@ionic-enterprise/secure-storage':
         specifier: ~3.0.4
         version: 3.0.4(@awesome-cordova-plugins/core@6.9.0(rxjs@7.8.2))(rxjs@7.8.2)
@@ -1327,8 +1327,8 @@ importers:
         specifier: 7.1.1
         version: 7.1.1(@capacitor/core@7.2.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~6.0.1
-        version: 6.0.1(typescript@5.8.2)
+        specifier: ~6.0.2
+        version: 6.0.2(typescript@5.8.2)
       '@ionic/angular':
         specifier: ~8.5.3
         version: 8.5.3(264a67de493897afc64227233bca9700)
@@ -1611,8 +1611,8 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1(@capacitor/core@7.2.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~6.0.1
-        version: 6.0.1(typescript@5.8.2)
+        specifier: ~6.0.2
+        version: 6.0.2(typescript@5.8.2)
       '@ionic/angular':
         specifier: ^8.5.3
         version: 8.5.3(264a67de493897afc64227233bca9700)
@@ -1738,8 +1738,8 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1(@capacitor/core@7.2.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~6.0.1
-        version: 6.0.1(typescript@5.8.2)
+        specifier: ~6.0.2
+        version: 6.0.2(typescript@5.8.2)
       '@ionic/angular':
         specifier: ^8.5.3
         version: 8.5.3(264a67de493897afc64227233bca9700)
@@ -1862,8 +1862,8 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1(@capacitor/core@7.2.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~6.0.1
-        version: 6.0.1(typescript@5.8.2)
+        specifier: ~6.0.2
+        version: 6.0.2(typescript@5.8.2)
       '@ionic/angular':
         specifier: ^8.5.3
         version: 8.5.3(264a67de493897afc64227233bca9700)
@@ -1986,8 +1986,8 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1(@capacitor/core@7.2.0)
       '@ionic-enterprise/identity-vault':
-        specifier: ~6.0.1
-        version: 6.0.1(typescript@5.8.2)
+        specifier: ~6.0.2
+        version: 6.0.2(typescript@5.8.2)
       '@ionic/angular':
         specifier: ^8.5.3
         version: 8.5.3(264a67de493897afc64227233bca9700)
@@ -3263,8 +3263,8 @@ packages:
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
 
-  '@ionic-enterprise/identity-vault@6.0.1':
-    resolution: {integrity: sha512-BtOO2myhtUz0bJeeWrimZhZwXM/+6pFJeqFgugFe4VKG+KVsMDPe/yLDPHQ3Sw05Kmx1RZkwmbw//E2kNc2wZA==}
+  '@ionic-enterprise/identity-vault@6.0.2':
+    resolution: {integrity: sha512-DcUp2jimZhPif1hV07ucaREgsco5aXhxQz5r9h2uNLRrZcYp7Ps7L7ekE1m6eNCaQkvYPOV70UOepSmiy+UaqA==}
     engines: {cordovaDependencies: {3.0.0: {cordova-android: '>=6.3.0'}, 4.0.0: {cordova-android: '>=9.0.0-dev'}, 5.0.0: {cordova: '>=10.0.0', cordova-android: '>=10.0.0'}, 6.0.0: {cordova: '>=12.0.0', cordova-android: '>=12.0.0'}}}
     peerDependencies:
       typescript: '>=3.5'
@@ -3924,8 +3924,8 @@ packages:
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
 
-  '@stencil/core@4.28.2':
-    resolution: {integrity: sha512-sHwBNionxzHfmjQ93ffaQOBNvd5HrSn8e5KSsiBBaODgC/g9squZoARYHHJ0VFfUpOXkEoZQ+ASixpUBafG9bA==}
+  '@stencil/core@4.29.0':
+    resolution: {integrity: sha512-A9jxUKotmEQye1bdAlixoEziVsINJBMKhx406C+VCaH+yzQmQekC9Wa8K82I8D0mdMaq+OrG68v1bqiDI0WAxA==}
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
 
@@ -9395,7 +9395,7 @@ snapshots:
       js-sha256: 0.9.0
       url-parse: 1.5.10
 
-  '@ionic-enterprise/identity-vault@6.0.1(typescript@5.8.2)':
+  '@ionic-enterprise/identity-vault@6.0.2(typescript@5.8.2)':
     dependencies:
       '@types/lodash': 4.17.16
       tslib: 2.8.1
@@ -10040,7 +10040,7 @@ snapshots:
 
   '@stencil/core@4.20.0': {}
 
-  '@stencil/core@4.28.2':
+  '@stencil/core@4.29.0':
     optionalDependencies:
       '@rollup/rollup-darwin-arm64': 4.34.9
       '@rollup/rollup-darwin-x64': 4.34.9
@@ -11997,7 +11997,7 @@ snapshots:
 
   ionicons@7.4.0:
     dependencies:
-      '@stencil/core': 4.28.2
+      '@stencil/core': 4.29.0
 
   ip-address@9.0.5:
     dependencies:
