@@ -1,6 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/NOTICE', 'META-INF/LICENSE']
+        }
+    }
     namespace "io.ionic.csdemosecurestorageng"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
