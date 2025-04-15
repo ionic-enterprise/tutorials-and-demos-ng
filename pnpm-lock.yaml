@@ -1043,8 +1043,8 @@ importers:
         specifier: ~6.0.2
         version: 6.0.2(typescript@5.8.3)
       '@ionic-enterprise/secure-storage':
-        specifier: ~3.0.5
-        version: 3.0.5(@awesome-cordova-plugins/core@6.9.0(rxjs@7.8.2))(rxjs@7.8.2)
+        specifier: ~3.0.6
+        version: 3.0.6(@awesome-cordova-plugins/core@6.9.0(rxjs@7.8.2))(rxjs@7.8.2)
       '@ionic/angular':
         specifier: ~8.5.4
         version: 8.5.4(1d5ef4ecab69cfd16e1797585e1bf189)
@@ -3256,8 +3256,8 @@ packages:
     peerDependencies:
       typescript: '>=3.5'
 
-  '@ionic-enterprise/secure-storage@3.0.5':
-    resolution: {integrity: sha512-tSu38SYLsIayySh5vXCfjqVZ/zrZc9zoSCcPm8sPybfp9I0Shb96wpAlr/6VbaZfPyypjaVVeZX2JDTBTG/s5A==}
+  '@ionic-enterprise/secure-storage@3.0.6':
+    resolution: {integrity: sha512-cjG/bd/ULiIuvOp9ihQODfo7x6XsBVFiNow1FVDHOiUoqRzU/3Db6i042UNg9+sVUF8Pp7C9xdzl48IVS8fXiA==}
     peerDependencies:
       '@awesome-cordova-plugins/core': ^6.0.0
       rxjs: ^5.5.0 || ^6.5.0 || ^7.3.0
@@ -9372,7 +9372,7 @@ snapshots:
       tslib: 2.8.1
       typescript: 5.8.3
 
-  '@ionic-enterprise/secure-storage@3.0.5(@awesome-cordova-plugins/core@6.9.0(rxjs@7.8.2))(rxjs@7.8.2)':
+  '@ionic-enterprise/secure-storage@3.0.6(@awesome-cordova-plugins/core@6.9.0(rxjs@7.8.2))(rxjs@7.8.2)':
     dependencies:
       '@awesome-cordova-plugins/core': 6.9.0(rxjs@7.8.2)
       '@awesome-cordova-plugins/sqlite': 6.16.0(@awesome-cordova-plugins/core@6.9.0(rxjs@7.8.2))(rxjs@7.8.2)
