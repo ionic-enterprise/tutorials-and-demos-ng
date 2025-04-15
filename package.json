@@ -18,11 +18,11 @@
   "devDependencies": {
     "@ionic/prettier-config": "^4.0.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.0",
+    "lint-staged": "^15.5.1",
     "prettier": "^3.5.3"
   },
   "peerDependencies": {
     "@stencil/core": "4.18.1"
   },
-  "packageManager": "pnpm@10.6.4+sha512.da3d715bfd22a9a105e6e8088cfc7826699332ded60c423b14ec613a185f1602206702ff0fe4c438cb15c979081ce4cb02568e364b15174503a63c7a8e2a5f6c"
+  "packageManager": "pnpm@10.8.1"
 }

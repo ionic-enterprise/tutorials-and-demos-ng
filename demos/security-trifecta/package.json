@@ -39,7 +39,7 @@
     "@capacitor/status-bar": "^7.0.1",
     "@ionic-enterprise/auth": "7.1.1",
     "@ionic-enterprise/identity-vault": "~6.0.2",
-    "@ionic-enterprise/secure-storage": "~3.0.4",
+    "@ionic-enterprise/secure-storage": "~3.0.5",
     "@ionic/angular": "~8.5.4",
     "core-js": "~3.41.0",
     "date-fns": "~4.1.0",
@@ -59,7 +59,7 @@
     "@ionic/angular-toolkit": "~12.2.0",
     "@types/jasmine": "~5.1.7",
     "@types/jasminewd2": "~2.0.13",
-    "@types/node": "~22.14.0",
+    "@types/node": "~22.14.1",
     "angular-eslint": "^19.3.0",
     "eslint": "~9.24.0",
     "jasmine-core": "~5.6.0",
@@ -72,6 +72,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ts-node": "~10.9.2",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.29.1"
+    "typescript-eslint": "^8.30.1"
   }
 }
