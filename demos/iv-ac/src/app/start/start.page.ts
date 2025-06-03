@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
@@ -9,7 +8,7 @@ import { IonContent, NavController } from '@ionic/angular/standalone';
   selector: 'app-start',
   templateUrl: './start.page.html',
   styleUrls: ['./start.page.scss'],
-  imports: [CommonModule, ReactiveFormsModule, IonContent],
+  imports: [ReactiveFormsModule, IonContent],
 })
 export class StartPage implements OnInit {
   constructor(

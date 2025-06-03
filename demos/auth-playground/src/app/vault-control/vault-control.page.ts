@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
@@ -29,7 +28,6 @@ import { ellipsisVerticalOutline, hardwareChipOutline, listOutline } from 'ionic
   templateUrl: 'vault-control.page.html',
   styleUrls: ['vault-control.page.scss'],
   imports: [
-    CommonModule,
     FormsModule,
     VaultTypePipe,
     IonHeader,

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
@@ -22,7 +21,6 @@ import {
   templateUrl: './preferences.page.html',
   styleUrls: ['./preferences.page.scss'],
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     IonHeader,
     IonToolbar,

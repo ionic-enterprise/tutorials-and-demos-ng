@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
@@ -12,7 +11,7 @@ import { startup } from './store/actions';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  imports: [CommonModule, IonApp, IonRouterOutlet],
+  imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
   constructor(

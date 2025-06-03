@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
@@ -44,7 +43,6 @@ import {
   templateUrl: 'tasting-notes.page.html',
   styleUrls: ['tasting-notes.page.scss'],
   imports: [
-    CommonModule,
     FormsModule,
     TastingNoteEditorComponent,
     IonHeader,

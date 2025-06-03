@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
@@ -18,17 +17,7 @@ import {
   selector: 'app-unlock-card',
   templateUrl: './unlock-card.component.html',
   styleUrls: ['./unlock-card.component.scss'],
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonCard,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardSubtitle,
-    IonCardContent,
-    IonButton,
-    IonIcon,
-  ],
+  imports: [FormsModule, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, IonIcon],
 })
 export class UnlockCardComponent {
   @Output() unlock = new EventEmitter<void>();

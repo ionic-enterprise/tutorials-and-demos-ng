@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
@@ -25,7 +24,6 @@ import {
   templateUrl: './value-list.page.html',
   styleUrls: ['./value-list.page.scss'],
   imports: [
-    CommonModule,
     FormsModule,
     IonHeader,
     IonToolbar,

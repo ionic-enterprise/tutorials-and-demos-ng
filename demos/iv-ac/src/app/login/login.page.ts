@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthenticationService } from '@app/core';
 import { NavController } from '@ionic/angular/standalone';
@@ -24,7 +23,6 @@ import {
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   imports: [
-    CommonModule,
     IonHeader,
     IonToolbar,
     IonTitle,

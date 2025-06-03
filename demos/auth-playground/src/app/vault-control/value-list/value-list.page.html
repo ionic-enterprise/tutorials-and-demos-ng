@@ -15,14 +15,18 @@
   </ion-header>
 
   <ion-list data-testid="key-value-list">
-    <ion-item *ngFor="let item of values">
-      <ion-label>
-        <div><strong> {{item.key}} </strong></div>
-        <div>
-          <pre>{{item.value}}</pre>
-        </div>
-      </ion-label>
-    </ion-item>
+    @for (item of values; track item) {
+      <ion-item>
+        <ion-label>
+          <div>
+            <strong> {{ item.key }} </strong>
+          </div>
+          <div>
+            <pre>{{ item.value }}</pre>
+          </div>
+        </ion-label>
+      </ion-item>
+    }
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

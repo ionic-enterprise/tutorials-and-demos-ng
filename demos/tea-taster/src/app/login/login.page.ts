@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
@@ -27,7 +26,6 @@ import {
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     IonHeader,
     IonToolbar,

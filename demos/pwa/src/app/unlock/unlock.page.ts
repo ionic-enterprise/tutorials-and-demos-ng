@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
@@ -18,7 +17,7 @@ import { arrowRedoOutline, lockOpenOutline } from 'ionicons/icons';
   selector: 'app-unlock',
   templateUrl: './unlock.page.html',
   styleUrls: ['./unlock.page.scss'],
-  imports: [CommonModule, ReactiveFormsModule, IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon],
+  imports: [ReactiveFormsModule, IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon],
 })
 export class UnlockPage {
   constructor(

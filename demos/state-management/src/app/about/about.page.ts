@@ -3,7 +3,7 @@ import { logout } from '@app/store/actions';
 import { Store } from '@ngrx/store';
 import packageInfo from '../../../package.json';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { addIcons } from 'ionicons';
 import { logOutOutline } from 'ionicons/icons';
 import {
@@ -26,7 +26,6 @@ import {
   templateUrl: './about.page.html',
   styleUrls: ['./about.page.scss'],
   imports: [
-    CommonModule,
     FormsModule,
     IonHeader,
     IonToolbar,

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationExpediterService, SessionVaultService } from '@app/core';
@@ -26,7 +25,6 @@ import {
   templateUrl: 'about.page.html',
   styleUrls: ['about.page.scss'],
   imports: [
-    CommonModule,
     FormsModule,
     IonHeader,
     IonToolbar,

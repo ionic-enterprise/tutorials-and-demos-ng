@@ -35,7 +35,9 @@
     </ion-item>
     <ion-item>
       <ion-select name="tea-type-select" label="Type" [(ngModel)]="teaCategoryId" #teaTypeSelect="ngModel" required>
-        <ion-select-option *ngFor="let t of categories" value="{{ t.id }}">{{ t.name }}</ion-select-option>
+        @for (t of categories; track t) {
+          <ion-select-option value="{{ t.id }}">{{ t.name }}</ion-select-option>
+        }
       </ion-select>
     </ion-item>
     <ion-item>

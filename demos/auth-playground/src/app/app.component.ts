@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { SplashScreen } from '@capacitor/splash-screen';
@@ -9,7 +8,7 @@ import { SessionVaultService } from './core';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  imports: [CommonModule, IonApp, IonRouterOutlet],
+  imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
   constructor(

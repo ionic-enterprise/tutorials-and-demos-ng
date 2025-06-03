@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, forwardRef, HostBinding, Input } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonIcon } from '@ionic/angular/standalone';
@@ -9,7 +8,7 @@ import { star, starOutline } from 'ionicons/icons';
   selector: 'app-rating',
   templateUrl: './rating.component.html',
   styleUrls: ['./rating.component.scss'],
-  imports: [CommonModule, FormsModule, IonIcon],
+  imports: [FormsModule, IonIcon],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

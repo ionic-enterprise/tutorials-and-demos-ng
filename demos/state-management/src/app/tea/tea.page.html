@@ -12,16 +12,20 @@
   </ion-header>
 
   <ion-grid>
-    <ion-row *ngFor="let teaRow of teas$ | async" class="ion-align-items-stretch">
-      <ion-col *ngFor="let tea of teaRow" size="12" size-md="6" size-xl="3">
-        <ion-card button (click)="showDetailsPage(tea.id)">
-          <ion-img [src]="tea.image"></ion-img>
-          <ion-card-header>
-            <ion-card-title>{{tea.name}}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content> {{tea.description}} </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
+    @for (teaRow of teas$ | async; track teaRow) {
+      <ion-row class="ion-align-items-stretch">
+        @for (tea of teaRow; track tea) {
+          <ion-col size="12" size-md="6" size-xl="3">
+            <ion-card button (click)="showDetailsPage(tea.id)">
+              <ion-img [src]="tea.image"></ion-img>
+              <ion-card-header>
+                <ion-card-title>{{ tea.name }}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content> {{ tea.description }} </ion-card-content>
+            </ion-card>
+          </ion-col>
+        }
+      </ion-row>
+    }
   </ion-grid>
 </ion-content>

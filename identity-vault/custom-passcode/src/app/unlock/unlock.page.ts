@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
@@ -19,18 +18,7 @@ import { SessionVaultService } from '../core/session-vault.service';
   selector: 'app-unlock',
   templateUrl: './unlock.page.html',
   styleUrls: ['./unlock.page.scss'],
-  imports: [
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonTitle,
-    IonToolbar,
-    CommonModule,
-    FormsModule,
-  ],
+  imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, FormsModule],
 })
 export class UnlockPage {
   constructor(

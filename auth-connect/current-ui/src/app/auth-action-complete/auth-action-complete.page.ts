@@ -1,5 +1,5 @@
 import { Capacitor } from '@capacitor/core';
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonContent, NavController } from '@ionic/angular/standalone';
@@ -9,7 +9,7 @@ import { AuthenticationService } from '../core/authentication.service';
   selector: 'app-auth-action-complete',
   templateUrl: './auth-action-complete.page.html',
   styleUrls: ['./auth-action-complete.page.scss'],
-  imports: [CommonModule, FormsModule, IonContent],
+  imports: [FormsModule, IonContent],
 })
 export class AuthActionCompletePage {
   constructor(

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNotesService, TeaCategoriesService } from '@app/core';
@@ -29,7 +28,6 @@ import {
   templateUrl: './tasting-note-editor.component.html',
   styleUrls: ['./tasting-note-editor.component.scss'],
   imports: [
-    CommonModule,
     FormsModule,
     RatingComponent,
     IonHeader,

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, forwardRef, Input, HostBinding } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonIcon } from '@ionic/angular/standalone';
@@ -16,7 +15,7 @@ import { star, starOutline } from 'ionicons/icons';
       multi: true,
     },
   ],
-  imports: [CommonModule, IonIcon],
+  imports: [IonIcon],
 })
 export class RatingComponent implements ControlValueAccessor {
   @Input() rating = 0;
