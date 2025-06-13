@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   IonButton,
   IonContent,
@@ -22,14 +22,12 @@ import { BiometricPermissionState, Device } from '@ionic-enterprise/identity-vau
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, IonTitle],
 })
 export class Tab1Page implements OnInit {
+  private authentication = inject(AuthenticationService);
+  private navController = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
+
   session: Session | null = null;
   disableBiometrics = false;
-
-  constructor(
-    private authentication: AuthenticationService,
-    private navController: NavController,
-    private sessionVault: SessionVaultService,
-  ) {}
 
   async ngOnInit() {
     this.session = await this.sessionVault.getSession();

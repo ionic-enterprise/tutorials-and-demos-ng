@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { AuthVendor } from '@app/models';
 import { SessionVaultService } from '../../session-vault/session-vault.service';
 import { Authenticator } from '../authenticator';
@@ -9,11 +9,9 @@ import { OIDCAuthenticationService } from '../oidc-authentication/oidc-authentic
   providedIn: 'root',
 })
 export class AuthenticationExpediterService {
-  constructor(
-    private oidc: OIDCAuthenticationService,
-    private basic: BasicAuthenticationService,
-    private vault: SessionVaultService,
-  ) {}
+  private oidc = inject(OIDCAuthenticationService);
+  private basic = inject(BasicAuthenticationService);
+  private vault = inject(SessionVaultService);
 
   async login(vendor: AuthVendor, credentials?: { email: string; password: string }): Promise<void> {
     await this.vault.setAuthVendor(vendor);

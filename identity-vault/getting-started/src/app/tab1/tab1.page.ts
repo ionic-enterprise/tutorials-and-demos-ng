@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import {
   IonButton,
   IonContent,
@@ -20,10 +20,12 @@ import { Session } from '../models/session';
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, IonTitle],
 })
 export class Tab1Page implements OnInit, OnDestroy {
+  private sessionVault = inject(SessionVaultService);
+
   private subscription: Subscription;
   session: Session | null = null;
 
-  constructor(private sessionVault: SessionVaultService) {
+  constructor() {
     this.subscription = this.sessionVault.locked$.subscribe((lock) => (this.session = lock ? null : this.session));
   }
 

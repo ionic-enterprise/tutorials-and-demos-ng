@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PreferencesPage } from '@app/preferences/preferences.page';
 import { ModalController } from '@ionic/angular/standalone';
 import packageInfo from '../../../package.json';
@@ -39,12 +39,14 @@ import {
   ],
 })
 export class AboutPage {
+  private modalController = inject(ModalController);
+
   author: string;
   name: string;
   description: string;
   version: string;
 
-  constructor(private modalController: ModalController) {
+  constructor() {
     this.author = packageInfo.author;
     this.name = packageInfo.name;
     this.description = packageInfo.description;

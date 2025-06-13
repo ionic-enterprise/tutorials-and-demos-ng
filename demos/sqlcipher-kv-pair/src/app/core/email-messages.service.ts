@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { format } from 'date-fns';
 import { InboxStorageService } from './inbox-storage.service';
 
@@ -80,7 +80,8 @@ const messagePool: EmailMessage[] = [
   providedIn: 'root',
 })
 export class EmailMessagesService {
-  constructor(private inbox: InboxStorageService) {}
+  private inbox = inject(InboxStorageService);
+
 
   async getMessages(): Promise<EmailMessage[]> {
     return [...(await this.inbox.getAll())].reverse().map((x) => x.value);

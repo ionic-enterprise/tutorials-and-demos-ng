@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { environment } from '@env/environment';
 import { Auth0Provider, AuthConnect, AuthResult, TokenType } from '@ionic-enterprise/auth';
@@ -8,12 +8,14 @@ import { SessionVaultService } from '../session-vault/session-vault.service';
   providedIn: 'root',
 })
 export class AuthenticationService {
+  private sessionVault = inject(SessionVaultService);
+
   initializing: Promise<void> | undefined;
 
   private provider: Auth0Provider;
   private isMobile: boolean;
 
-  constructor(private sessionVault: SessionVaultService) {
+  constructor() {
     this.provider = new Auth0Provider();
     this.isMobile = Capacitor.isNativePlatform();
   }

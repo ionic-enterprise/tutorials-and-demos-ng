@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthenticationService, SessionVaultService } from '@app/core';
 import { NavController } from '@ionic/angular/standalone';
 import { tap } from 'rxjs';
@@ -40,16 +40,16 @@ import {
   ],
 })
 export class AboutPage {
+  private auth = inject(AuthenticationService);
+  private nav = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
+
   author: string;
   name: string;
   description: string;
   version: string;
 
-  constructor(
-    private auth: AuthenticationService,
-    private nav: NavController,
-    private sessionVault: SessionVaultService,
-  ) {
+  constructor() {
     this.author = packageInfo.author;
     this.name = packageInfo.name;
     this.description = packageInfo.description;

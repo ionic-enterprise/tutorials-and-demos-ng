@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationExpediterService, SessionVaultService } from '@app/core';
 import { NavController } from '@ionic/angular/standalone';
@@ -13,11 +13,11 @@ import { IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon }
   imports: [FormsModule, IonContent, IonCard, IonCardContent, IonCardTitle, IonButton, IonIcon],
 })
 export class UnlockPage {
-  constructor(
-    private auth: AuthenticationExpediterService,
-    private navController: NavController,
-    private sessionVault: SessionVaultService,
-  ) {
+  private auth = inject(AuthenticationExpediterService);
+  private navController = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
+
+  constructor() {
     addIcons({ lockOpenOutline, arrowRedoOutline });
   }
 

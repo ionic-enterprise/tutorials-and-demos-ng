@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
 import { AlertController } from '@ionic/angular/standalone';
@@ -40,13 +40,13 @@ import {
   ],
 })
 export class ValueListPage implements OnInit {
+  private alertController = inject(AlertController);
+  private sessionVault = inject(SessionVaultService);
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   values: { key: string; value?: any }[] = [];
 
-  constructor(
-    private alertController: AlertController,
-    private sessionVault: SessionVaultService,
-  ) {
+  constructor() {
     addIcons({ add });
   }
 

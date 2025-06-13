@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { SplashScreen } from '@capacitor/splash-screen';
@@ -14,10 +14,9 @@ import { startup } from './store/actions';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
-  constructor(
-    private session: SessionVaultService,
-    private store: Store,
-  ) {}
+  private session = inject(SessionVaultService);
+  private store = inject(Store);
+
 
   async ngOnInit() {
     PrivacyScreen.enable();

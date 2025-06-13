@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { IonApp, IonRouterOutlet, NavController } from '@ionic/angular/standalone';
@@ -11,11 +11,10 @@ import { PreferencesService, SessionVaultService } from './core';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
-  constructor(
-    private navController: NavController,
-    private preferences: PreferencesService,
-    private sessionVault: SessionVaultService,
-  ) {}
+  private navController = inject(NavController);
+  private preferences = inject(PreferencesService);
+  private sessionVault = inject(SessionVaultService);
+
 
   async ngOnInit() {
     this.handlePreferencesChange();

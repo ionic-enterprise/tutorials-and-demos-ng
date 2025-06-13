@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Tea } from '@app/models';
 import { selectTeasMatrix } from '@app/store';
@@ -43,12 +43,10 @@ import { Observable } from 'rxjs';
   ],
 })
 export class TeaPage implements OnInit {
-  teas$: Observable<Tea[][]> | undefined;
+  private navController = inject(NavController);
+  private store = inject(Store);
 
-  constructor(
-    private navController: NavController,
-    private store: Store,
-  ) {}
+  teas$: Observable<Tea[][]> | undefined;
 
   ngOnInit() {
     this.teas$ = this.store.select(selectTeasMatrix);

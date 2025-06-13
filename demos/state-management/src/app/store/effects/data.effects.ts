@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { from, of } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
@@ -26,6 +26,11 @@ import { AuthenticationService, TastingNotesService, TeaService } from '@app/cor
 
 @Injectable()
 export class DataEffects {
+  private actions$ = inject(Actions);
+  private auth = inject(AuthenticationService);
+  private tastingNotesService = inject(TastingNotesService);
+  private teaService = inject(TeaService);
+
   sessionLoaded$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(loginSuccess, startup, unlockSessionSuccess),
@@ -120,11 +125,4 @@ export class DataEffects {
       ),
     );
   });
-
-  constructor(
-    private actions$: Actions,
-    private auth: AuthenticationService,
-    private tastingNotesService: TastingNotesService,
-    private teaService: TeaService,
-  ) {}
 }

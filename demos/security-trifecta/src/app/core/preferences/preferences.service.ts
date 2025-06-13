@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { StorageService } from '../storage/storage.service';
 
@@ -6,6 +6,8 @@ import { StorageService } from '../storage/storage.service';
   providedIn: 'root',
 })
 export class PreferencesService {
+  private storage = inject(StorageService);
+
   private keys = {
     prefersDarkMode: 'prefersDarkMode',
   };
@@ -13,7 +15,7 @@ export class PreferencesService {
   private prefersDarkModeValue: boolean | null = null;
   private preferencesChanged: Subject<void>;
 
-  constructor(private storage: StorageService) {
+  constructor() {
     this.preferencesChanged = new Subject();
   }
 

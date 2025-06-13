@@ -1,4 +1,4 @@
-import { Injectable, NgZone, isDevMode } from '@angular/core';
+import { Injectable, NgZone, isDevMode, inject } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { Auth0Provider, AuthConnect, AuthResult, ProviderOptions } from '@ionic-enterprise/auth';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -8,6 +8,9 @@ import { SessionVaultService } from '../session-vault/session-vault.service';
   providedIn: 'root',
 })
 export class AuthenticationService {
+  private ngZone = inject(NgZone);
+  private sessionVault = inject(SessionVaultService);
+
   private isNative;
   private authOptions: ProviderOptions;
   private provider = new Auth0Provider();
@@ -15,10 +18,7 @@ export class AuthenticationService {
   private authenticationChange = new BehaviorSubject<boolean>(false);
   public authenticationChange$: Observable<boolean>;
 
-  constructor(
-    private ngZone: NgZone,
-    private sessionVault: SessionVaultService,
-  ) {
+  constructor() {
     this.isNative = Capacitor.isNativePlatform();
     const url = this.isNative
       ? 'io.ionic.teataster://auth-action-complete'

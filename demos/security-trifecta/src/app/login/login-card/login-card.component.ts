@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
 import { Capacitor } from '@capacitor/core';
@@ -34,6 +34,9 @@ import { logInOutline } from 'ionicons/icons';
   ],
 })
 export class LoginCardComponent {
+  private authentication = inject(AuthenticationService);
+  private sessionVault = inject(SessionVaultService);
+
   @Output() loginSuccess = new EventEmitter<void>();
 
   authenticating = false;
@@ -41,10 +44,7 @@ export class LoginCardComponent {
   useSessionLocking = false;
   errorMessage = '';
 
-  constructor(
-    private authentication: AuthenticationService,
-    private sessionVault: SessionVaultService,
-  ) {
+  constructor() {
     this.showSessionLocking = Capacitor.isNativePlatform();
     addIcons({ logInOutline });
   }

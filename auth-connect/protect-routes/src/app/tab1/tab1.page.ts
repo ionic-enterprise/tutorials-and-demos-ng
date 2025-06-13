@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { AuthenticationService } from './../core/authentication.service';
 
@@ -9,10 +9,10 @@ import { AuthenticationService } from './../core/authentication.service';
   imports: [IonButton, IonContent, IonHeader, IonTitle, IonToolbar],
 })
 export class Tab1Page implements OnInit {
+  private authentication = inject(AuthenticationService);
+
   authenticated = false;
   accessToken: string | undefined = '';
-
-  constructor(private authentication: AuthenticationService) {}
 
   async ngOnInit() {
     await this.checkAuthentication();

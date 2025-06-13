@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNote, Tea } from '@app/models';
 import { RatingComponent } from '@app/shared';
@@ -54,6 +54,9 @@ import { Observable } from 'rxjs';
   ],
 })
 export class TastingNoteEditorComponent implements OnInit {
+  private modalController = inject(ModalController);
+  private store = inject(Store);
+
   @Input() note: TastingNote | undefined;
 
   brand = '';
@@ -64,10 +67,7 @@ export class TastingNoteEditorComponent implements OnInit {
 
   teaCategories$: Observable<Tea[]> | undefined;
 
-  constructor(
-    private modalController: ModalController,
-    private store: Store,
-  ) {
+  constructor() {
     addIcons({ shareOutline, close });
   }
 

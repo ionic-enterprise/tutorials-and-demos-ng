@@ -1,6 +1,6 @@
 import { Capacitor } from '@capacitor/core';
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonContent, NavController } from '@ionic/angular/standalone';
 import { AuthenticationService } from '../core/authentication.service';
@@ -12,10 +12,9 @@ import { AuthenticationService } from '../core/authentication.service';
   imports: [FormsModule, IonContent],
 })
 export class AuthActionCompletePage {
-  constructor(
-    private auth: AuthenticationService,
-    private navController: NavController,
-  ) {}
+  private auth = inject(AuthenticationService);
+  private navController = inject(NavController);
+
 
   async ionViewDidEnter() {
     if (!Capacitor.isNativePlatform()) {

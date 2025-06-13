@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
 import { addIcons } from 'ionicons';
@@ -20,12 +20,14 @@ import {
   imports: [FormsModule, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, IonIcon],
 })
 export class UnlockCardComponent {
+  private sessionVault = inject(SessionVaultService);
+
   @Output() unlock = new EventEmitter<void>();
   @Output() vaultClear = new EventEmitter<void>();
 
   errorMessage = '';
 
-  constructor(private sessionVault: SessionVaultService) {
+  constructor() {
     addIcons({ lockOpenOutline, logInOutline });
   }
 

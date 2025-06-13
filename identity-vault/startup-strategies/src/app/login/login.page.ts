@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   IonButton,
   IonContent,
@@ -19,10 +19,9 @@ import { AuthenticationService } from '../core/authentication.service';
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar],
 })
 export class LoginPage {
-  constructor(
-    private navController: NavController,
-    private authentication: AuthenticationService,
-  ) {}
+  private navController = inject(NavController);
+  private authentication = inject(AuthenticationService);
+
 
   async login() {
     try {

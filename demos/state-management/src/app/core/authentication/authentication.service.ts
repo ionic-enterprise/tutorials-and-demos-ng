@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { User } from '@app/models';
 import { Capacitor } from '@capacitor/core';
 import { mobileAuthConfig, webAuthConfig } from '@env/environment';
@@ -10,6 +10,8 @@ import { SessionVaultService } from '../session-vault/session-vault.service';
   providedIn: 'root',
 })
 export class AuthenticationService {
+  private ngZone = inject(NgZone);
+
   public authenticationChange$: Observable<boolean>;
   private authenticationChange = new BehaviorSubject<boolean>(false);
 
@@ -20,10 +22,9 @@ export class AuthenticationService {
   private authResult: AuthResult | null = null;
   private vaultService: SessionVaultService;
 
-  constructor(
-    vaultService: SessionVaultService,
-    private ngZone: NgZone,
-  ) {
+  constructor() {
+    const vaultService = inject(SessionVaultService);
+
     this.isNative = Capacitor.isNativePlatform();
     this.authOptions = this.isNative ? mobileAuthConfig : webAuthConfig;
     this.vaultService = vaultService;

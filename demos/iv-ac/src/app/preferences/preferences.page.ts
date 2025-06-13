@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
 import { ModalController, NavController } from '@ionic/angular/standalone';
@@ -36,6 +36,11 @@ import {
   ],
 })
 export class PreferencesPage implements OnInit {
+  private auth = inject(AuthenticationService);
+  private modalController = inject(ModalController);
+  private navController = inject(NavController);
+  private session = inject(SessionVaultService);
+
   hideInBackground = false;
   useBiometrics = false;
   useSystemPasscode = false;
@@ -44,13 +49,6 @@ export class PreferencesPage implements OnInit {
   disableCustomPasscode = false;
   disableHideInBackground = false;
   disableSystemPasscode = false;
-
-  constructor(
-    private auth: AuthenticationService,
-    private modalController: ModalController,
-    private navController: NavController,
-    private session: SessionVaultService,
-  ) {}
 
   ngOnInit() {
     this.init();

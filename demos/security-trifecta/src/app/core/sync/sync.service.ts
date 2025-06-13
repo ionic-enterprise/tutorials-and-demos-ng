@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { TastingNotesApiService } from '../tasting-notes-api/tasting-notes-api.service';
 import { TastingNotesDatabaseService } from '../tasting-notes-database/tasting-notes-database.service';
@@ -9,12 +9,11 @@ import { TeaCategoriesService } from '../tea-categories/tea-categories.service';
   providedIn: 'root',
 })
 export class SyncService {
-  constructor(
-    private tastingNotesDatabase: TastingNotesDatabaseService,
-    private tastingNotesApi: TastingNotesApiService,
-    private tastingNotes: TastingNotesService,
-    private teaCategories: TeaCategoriesService,
-  ) {}
+  private tastingNotesDatabase = inject(TastingNotesDatabaseService);
+  private tastingNotesApi = inject(TastingNotesApiService);
+  private tastingNotes = inject(TastingNotesService);
+  private teaCategories = inject(TeaCategoriesService);
+
 
   async execute(): Promise<void> {
     await this.syncTastingNotes();

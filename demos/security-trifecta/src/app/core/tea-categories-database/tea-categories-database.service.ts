@@ -1,5 +1,5 @@
 /* eslint @typescript-eslint/no-explicit-any: off, @typescript-eslint/no-empty-function: off */
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TeaCategory } from '@app/models';
 import { DatabaseService } from '../database/database.service';
 
@@ -7,7 +7,8 @@ import { DatabaseService } from '../database/database.service';
   providedIn: 'root',
 })
 export class TeaCategoriesDatabaseService {
-  constructor(private database: DatabaseService) {}
+  private database = inject(DatabaseService);
+
 
   async getAll(): Promise<TeaCategory[]> {
     const cats: TeaCategory[] = [];

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { IonApp, IonRouterOutlet, NavController } from '@ionic/angular/standalone';
@@ -11,10 +11,8 @@ import { SessionVaultService } from './core';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
-  constructor(
-    private navController: NavController,
-    private vault: SessionVaultService,
-  ) {}
+  private navController = inject(NavController);
+  private vault = inject(SessionVaultService);
 
   ngOnInit(): void {
     this.vault.locked.subscribe((lock: boolean) => {

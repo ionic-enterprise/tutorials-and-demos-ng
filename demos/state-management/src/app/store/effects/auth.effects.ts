@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NavController } from '@ionic/angular/standalone';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { from, of } from 'rxjs';
@@ -22,6 +22,11 @@ import {
 
 @Injectable()
 export class AuthEffects {
+  private actions$ = inject(Actions);
+  private auth = inject(AuthenticationService);
+  private navController = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
+
   login$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(login),
@@ -90,13 +95,6 @@ export class AuthEffects {
       map(() => logoutSuccess()),
     );
   });
-
-  constructor(
-    private actions$: Actions,
-    private auth: AuthenticationService,
-    private navController: NavController,
-    private sessionVault: SessionVaultService,
-  ) {}
 
   private async performLogin(mode: UnlockMode): Promise<void> {
     await this.sessionVault.clearSession();

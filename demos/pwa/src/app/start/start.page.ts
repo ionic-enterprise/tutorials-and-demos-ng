@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
 import { Capacitor } from '@capacitor/core';
@@ -11,10 +11,9 @@ import { IonContent, NavController } from '@ionic/angular/standalone';
   imports: [ReactiveFormsModule, IonContent],
 })
 export class StartPage implements OnInit {
-  constructor(
-    private navController: NavController,
-    private session: SessionVaultService,
-  ) {}
+  private navController = inject(NavController);
+  private session = inject(SessionVaultService);
+
 
   async ngOnInit() {
     if (Capacitor.isNativePlatform() && (await this.session.canUnlock())) {

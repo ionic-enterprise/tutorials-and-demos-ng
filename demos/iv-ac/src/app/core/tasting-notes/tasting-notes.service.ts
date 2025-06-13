@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TastingNote } from '@app/models';
 import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TastingNotesService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
+
 
   getAll(): Observable<TastingNote[]> {
     return this.http.get<TastingNote[]>(`${environment.dataService}/user-tasting-notes`);

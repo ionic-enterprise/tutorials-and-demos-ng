@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { environment } from '@env/environment';
 import { firstValueFrom } from 'rxjs';
 import { SessionVaultService } from '../../session-vault/session-vault.service';
@@ -22,10 +22,8 @@ interface Session {
   providedIn: 'root',
 })
 export class BasicAuthenticationService implements Authenticator {
-  constructor(
-    private http: HttpClient,
-    private vault: SessionVaultService,
-  ) {}
+  private http = inject(HttpClient);
+  private vault = inject(SessionVaultService);
 
   async login(email: string, password: string): Promise<void> {
     const { success, ...session } = await firstValueFrom(

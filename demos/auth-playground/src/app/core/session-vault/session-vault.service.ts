@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { AuthVendor } from '@app/models';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
 import { Capacitor } from '@capacitor/core';
@@ -22,16 +22,17 @@ export type UnlockMode = 'Device' | 'SystemPIN' | 'SessionPIN' | 'NeverLock' | '
   providedIn: 'root',
 })
 export class SessionVaultService {
+  private modalController = inject(ModalController);
+
   private lockedSubject: Subject<boolean>;
   private onLockCallback: (() => void) | undefined;
   private vault: Vault | BrowserVault;
   private preferencesVault: Vault | BrowserVault;
   private vaultReady: Promise<void> | undefined;
 
-  constructor(
-    vaultFactory: VaultFactoryService,
-    private modalController: ModalController,
-  ) {
+  constructor() {
+    const vaultFactory = inject(VaultFactoryService);
+
     this.lockedSubject = new Subject();
     this.preferencesVault = vaultFactory.create();
     this.vault = vaultFactory.create();

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
 import { Capacitor } from '@capacitor/core';
 import { Preferences } from '@capacitor/preferences';
@@ -42,14 +42,15 @@ const modeKey = 'mode-key';
   providedIn: 'root',
 })
 export class SessionVaultService {
+  private modalController = inject(ModalController);
+
   private lockedSubject: Subject<boolean>;
   private vault: Vault | BrowserVault;
   private platform: string;
 
-  constructor(
-    private modalController: ModalController,
-    vaultFactory: VaultFactoryService,
-  ) {
+  constructor() {
+    const vaultFactory = inject(VaultFactoryService);
+
     this.platform = Capacitor.getPlatform();
     this.vault = vaultFactory.create();
     this.lockedSubject = new Subject();

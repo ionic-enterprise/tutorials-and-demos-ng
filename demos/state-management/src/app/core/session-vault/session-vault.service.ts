@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { PinDialogComponent } from '@app/pin-dialog/pin-dialog.component';
 import { sessionLocked } from '@app/store/actions';
 import { AuthResult } from '@ionic-enterprise/auth';
@@ -23,13 +23,14 @@ const vaultKey = 'auth-result';
   providedIn: 'root',
 })
 export class SessionVaultService {
+  private modalController = inject(ModalController);
+  private store = inject(Store);
+
   vault: Vault | BrowserVault;
 
-  constructor(
-    private modalController: ModalController,
-    private store: Store,
-    vaultFactory: VaultFactoryService,
-  ) {
+  constructor() {
+    const vaultFactory = inject(VaultFactoryService);
+
     this.vault = vaultFactory.create();
   }
 

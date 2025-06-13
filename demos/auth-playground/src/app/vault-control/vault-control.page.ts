@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService } from '@app/core';
 import { VaultTypePipe } from '@app/shared/vault-type.pipe';
@@ -46,16 +46,16 @@ import { ellipsisVerticalOutline, hardwareChipOutline, listOutline } from 'ionic
   ],
 })
 export class VaultControlPage {
+  private navController = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
+
   disableDeviceUnlock = true;
   disableCustomPasscode = true;
   disableInMemory = true;
   disableLock = true;
   config: IdentityVaultConfig | undefined;
 
-  constructor(
-    private navController: NavController,
-    private sessionVault: SessionVaultService,
-  ) {
+  constructor() {
     addIcons({ ellipsisVerticalOutline, hardwareChipOutline, listOutline });
   }
 

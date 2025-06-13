@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { NavController } from '@ionic/angular/standalone';
 import { SessionVaultService } from './core';
@@ -11,10 +11,12 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
-  constructor(
-    navController: NavController,
-    private sessionVault: SessionVaultService,
-  ) {
+  private sessionVault = inject(SessionVaultService);
+
+  constructor() {
+    const navController = inject(NavController);
+    const sessionVault = this.sessionVault;
+
     sessionVault.locked.subscribe(async (locked) => {
       if (locked) {
         try {

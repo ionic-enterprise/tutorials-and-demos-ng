@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TeaService } from '@app/core';
 import { Tea } from '@app/models';
@@ -42,12 +42,10 @@ import {
   ],
 })
 export class TeaPage implements OnInit {
-  teaMatrix$: Observable<Tea[][]> = of([]);
+  private nav = inject(NavController);
+  private tea = inject(TeaService);
 
-  constructor(
-    private nav: NavController,
-    private tea: TeaService,
-  ) {}
+  teaMatrix$: Observable<Tea[][]> = of([]);
 
   ngOnInit() {
     this.teaMatrix$ = this.tea.getAll().pipe(map((teas) => this.toMatrix(teas)));

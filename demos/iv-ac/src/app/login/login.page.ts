@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthenticationService } from '@app/core';
 import { NavController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
@@ -38,12 +38,12 @@ import {
   ],
 })
 export class LoginPage {
+  private auth = inject(AuthenticationService);
+  private nav = inject(NavController);
+
   loginFailed = false;
 
-  constructor(
-    private auth: AuthenticationService,
-    private nav: NavController,
-  ) {
+  constructor() {
     addIcons({ logInOutline });
   }
 

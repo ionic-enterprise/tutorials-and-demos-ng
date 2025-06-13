@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { DbTransaction, SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite';
 import { Capacitor } from '@capacitor/core';
 import { EncryptionKeysService } from './encryption-keys.service';
@@ -7,9 +7,9 @@ import { EncryptionKeysService } from './encryption-keys.service';
   providedIn: 'root',
 })
 export class DatabaseService {
-  private handle: SQLiteObject | null = null;
+  private keys = inject(EncryptionKeysService);
 
-  constructor(private keys: EncryptionKeysService) {}
+  private handle: SQLiteObject | null = null;
 
   async getHandle(): Promise<SQLiteObject | null> {
     if (!this.handle) {

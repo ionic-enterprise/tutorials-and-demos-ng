@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   IonButton,
   IonContent,
@@ -21,13 +21,11 @@ import { AuthenticationService } from '../core/authentication.service';
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, IonTitle],
 })
 export class Tab1Page implements OnInit {
-  session: Session | null = null;
+  private authentication = inject(AuthenticationService);
+  private navController = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
 
-  constructor(
-    private authentication: AuthenticationService,
-    private navController: NavController,
-    private sessionVault: SessionVaultService,
-  ) {}
+  session: Session | null = null;
 
   async ngOnInit() {
     this.session = await this.sessionVault.getSession();

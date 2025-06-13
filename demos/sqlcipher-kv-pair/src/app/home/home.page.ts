@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   IonButton,
   IonButtons,
@@ -21,9 +21,11 @@ import { MessageComponent } from '../message/message.component';
   imports: [IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonList, IonTitle, IonToolbar, MessageComponent],
 })
 export class HomePage {
+  private email = inject(EmailMessagesService);
+
   messages: EmailMessage[] = [];
 
-  constructor(private email: EmailMessagesService) {
+  constructor() {
     addIcons({ addCircleOutline, removeCircleOutline, trashOutline });
   }
 

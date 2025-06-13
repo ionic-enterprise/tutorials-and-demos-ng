@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { logout } from '@app/store/actions';
 import { Store } from '@ngrx/store';
 import packageInfo from '../../../package.json';
@@ -42,12 +42,14 @@ import {
   ],
 })
 export class AboutPage implements OnInit {
+  private store = inject(Store);
+
   author = '';
   name = '';
   description = '';
   version = '';
 
-  constructor(private store: Store) {
+  constructor() {
     addIcons({ logOutOutline });
   }
 

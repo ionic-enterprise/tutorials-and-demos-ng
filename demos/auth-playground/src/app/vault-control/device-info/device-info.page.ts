@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Capacitor } from '@capacitor/core';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
@@ -38,6 +38,8 @@ import {
   ],
 })
 export class DeviceInfoPage implements OnInit {
+  private alertController = inject(AlertController);
+
   biometricStrength = '';
   hasSecureHardware = false;
   canTogglePrivacyScreen = false;
@@ -48,8 +50,6 @@ export class DeviceInfoPage implements OnInit {
   isLockedOutOfBiometrics = false;
   isSystemPasscodeSet = false;
   availableHardware: string[] = [];
-
-  constructor(private alertController: AlertController) {}
 
   async ngOnInit() {
     this.biometricStrength = await Device.getBiometricStrengthLevel();

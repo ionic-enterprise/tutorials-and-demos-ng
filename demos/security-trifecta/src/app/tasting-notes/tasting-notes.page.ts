@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   AuthenticationService,
@@ -64,21 +64,21 @@ import {
   ],
 })
 export class TastingNotesPage implements OnInit {
+  private authentication = inject(AuthenticationService);
+  private navController = inject(NavController);
+  private modalController = inject(ModalController);
+  private preferences = inject(PreferencesService);
+  private routerOutlet = inject(IonRouterOutlet);
+  private sessionVault = inject(SessionVaultService);
+  private syncService = inject(SyncService);
+  private toastController = inject(ToastController);
+  private tastingNotes = inject(TastingNotesService);
+  private teaCategories = inject(TeaCategoriesService);
+
   notes: TastingNote[] = [];
   prefersDarkMode = false;
 
-  constructor(
-    private authentication: AuthenticationService,
-    private navController: NavController,
-    private modalController: ModalController,
-    private preferences: PreferencesService,
-    private routerOutlet: IonRouterOutlet,
-    private sessionVault: SessionVaultService,
-    private syncService: SyncService,
-    private toastController: ToastController,
-    private tastingNotes: TastingNotesService,
-    private teaCategories: TeaCategoriesService,
-  ) {
+  constructor() {
     addIcons({ sync, logOutOutline, add });
   }
 

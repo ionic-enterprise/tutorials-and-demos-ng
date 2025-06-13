@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { KeyValueStorage } from '@ionic-enterprise/secure-storage/ngx';
 import { EncryptionService } from '../encryption/encryption.service';
@@ -7,12 +7,10 @@ import { EncryptionService } from '../encryption/encryption.service';
   providedIn: 'root',
 })
 export class StorageService {
-  private ready: Promise<void> | null = null;
+  private encryption = inject(EncryptionService);
+  private storage = inject(KeyValueStorage);
 
-  constructor(
-    private encryption: EncryptionService,
-    private storage: KeyValueStorage,
-  ) {}
+  private ready: Promise<void> | null = null;
 
   async get<T>(key: string): Promise<T> {
     await this.initialize();

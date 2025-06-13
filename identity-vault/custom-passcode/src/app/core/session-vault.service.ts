@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   BrowserVault,
   DeviceSecurityType,
@@ -18,10 +18,12 @@ export type UnlockMode = 'BiometricsWithPasscode' | 'CustomPasscode' | 'InMemory
   providedIn: 'root',
 })
 export class SessionVaultService {
+  private modalController = inject(ModalController);
+
   private lockedSubject: Subject<boolean>;
   private vault: BrowserVault | Vault;
 
-  constructor(private modalController: ModalController) {
+  constructor() {
     this.vault = VaultFactory.create();
     this.lockedSubject = new Subject<boolean>();
   }

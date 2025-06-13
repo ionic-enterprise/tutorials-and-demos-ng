@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Tea } from '@app/models';
 import { Preferences } from '@capacitor/preferences';
 import { environment } from '@env/environment';
@@ -11,9 +11,9 @@ type TeaResponse = Omit<Tea, 'image' | 'rating'>;
   providedIn: 'root',
 })
 export class TeaService {
-  private images: string[] = ['green', 'black', 'herbal', 'oolong', 'dark', 'puer', 'white', 'yellow'];
+  private http = inject(HttpClient);
 
-  constructor(private http: HttpClient) {}
+  private images: string[] = ['green', 'black', 'herbal', 'oolong', 'dark', 'puer', 'white', 'yellow'];
 
   getAll(): Observable<Tea[]> {
     return this.http

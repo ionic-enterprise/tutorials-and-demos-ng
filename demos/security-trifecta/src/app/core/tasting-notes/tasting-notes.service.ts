@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TastingNote } from '@app/models';
 import { Capacitor } from '@capacitor/core';
 import { firstValueFrom } from 'rxjs';
@@ -9,12 +9,10 @@ import { TastingNotesDatabaseService } from '../tasting-notes-database/tasting-n
   providedIn: 'root',
 })
 export class TastingNotesService {
-  private tastingNotes: TastingNote[] | undefined;
+  private api = inject(TastingNotesApiService);
+  private database = inject(TastingNotesDatabaseService);
 
-  constructor(
-    private api: TastingNotesApiService,
-    private database: TastingNotesDatabaseService,
-  ) {}
+  private tastingNotes: TastingNote[] | undefined;
 
   get data(): TastingNote[] {
     return [...(this.tastingNotes ?? [])];

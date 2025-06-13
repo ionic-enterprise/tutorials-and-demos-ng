@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Capacitor } from '@capacitor/core';
 import {
@@ -23,12 +23,12 @@ import { EmailMessage, EmailMessagesService } from '../core/email-messages.servi
   imports: [IonHeader, IonToolbar, IonButtons, IonBackButton, IonContent, IonItem, IonIcon, IonLabel, IonNote],
 })
 export class ViewMessagePage implements OnInit {
+  private activatedRoute = inject(ActivatedRoute);
+  private email = inject(EmailMessagesService);
+
   public message: EmailMessage | null = null;
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private email: EmailMessagesService,
-  ) {
+  constructor() {
     addIcons({ personCircle });
   }
 

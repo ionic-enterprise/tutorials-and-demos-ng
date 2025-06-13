@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationExpediterService, SessionVaultService } from '@app/core';
 import { AuthVendor } from '@app/models';
@@ -41,15 +41,15 @@ import { logoAmazon, logoMicrosoft } from 'ionicons/icons';
   ],
 })
 export class LoginPage {
+  private auth = inject(AuthenticationExpediterService);
+  private navController = inject(NavController);
+  private vault = inject(SessionVaultService);
+
   email = '';
   errorMessage = '';
   password = '';
 
-  constructor(
-    private auth: AuthenticationExpediterService,
-    private navController: NavController,
-    private vault: SessionVaultService,
-  ) {
+  constructor() {
     addIcons({ logoAmazon, logoMicrosoft });
   }
 

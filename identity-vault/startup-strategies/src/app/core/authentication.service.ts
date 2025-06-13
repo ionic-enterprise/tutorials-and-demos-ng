@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { SessionVaultService } from './session-vault.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private sessionVault: SessionVaultService) {}
+  private sessionVault = inject(SessionVaultService);
+
 
   async isAuthenticated(): Promise<boolean> {
     const session = await this.sessionVault.getSession();

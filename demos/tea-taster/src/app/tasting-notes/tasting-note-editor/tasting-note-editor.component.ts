@@ -50,6 +50,11 @@ import { Observable, of, tap } from 'rxjs';
   ],
 })
 export class TastingNoteEditorComponent implements OnInit {
+  private fb = inject(FormBuilder);
+  private modalController = inject(ModalController);
+  private tastingNotes = inject(TastingNotesService);
+  private tea = inject(TeaService);
+
   @Input()
   note: TastingNote | undefined;
 
@@ -78,12 +83,7 @@ export class TastingNoteEditorComponent implements OnInit {
     );
   }
 
-  constructor(
-    private fb: FormBuilder,
-    private modalController: ModalController,
-    private tastingNotes: TastingNotesService,
-    private tea: TeaService,
-  ) {
+  constructor() {
     addIcons({ shareOutline });
   }
 

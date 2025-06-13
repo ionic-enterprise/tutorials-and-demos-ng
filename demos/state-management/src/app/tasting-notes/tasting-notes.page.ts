@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNote } from '@app/models';
 import { selectNotes } from '@app/store';
@@ -52,15 +52,15 @@ import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-e
   ],
 })
 export class TastingNotesPage implements OnInit {
+  private alertController = inject(AlertController);
+  private modalController = inject(ModalController);
+  private routerOutlet = inject(IonRouterOutlet);
+  private store = inject(Store);
+
   @ViewChild(IonList, { static: true }) list: IonList | undefined;
   notes$: Observable<TastingNote[]> | undefined;
 
-  constructor(
-    private alertController: AlertController,
-    private modalController: ModalController,
-    private routerOutlet: IonRouterOutlet,
-    private store: Store,
-  ) {
+  constructor() {
     addIcons({ add });
   }
 

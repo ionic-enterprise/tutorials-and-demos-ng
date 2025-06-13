@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { DbTransaction, SQLite, SQLiteObject } from '@ionic-enterprise/secure-storage/ngx';
 import { EncryptionService } from '../encryption/encryption.service';
@@ -12,12 +12,10 @@ interface Column {
   providedIn: 'root',
 })
 export class DatabaseService {
-  private handle: SQLiteObject | null = null;
+  private encryption = inject(EncryptionService);
+  private sqlite = inject(SQLite);
 
-  constructor(
-    private encryption: EncryptionService,
-    private sqlite: SQLite,
-  ) {}
+  private handle: SQLiteObject | null = null;
 
   async getHandle(): Promise<SQLiteObject | null> {
     if (!this.handle) {

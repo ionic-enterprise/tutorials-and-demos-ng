@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SessionVaultService, SyncService } from '@app/core';
 import { IonContent, IonLoading, NavController } from '@ionic/angular/standalone';
 import { LoginCardComponent } from './login-card/login-card.component';
@@ -11,14 +11,12 @@ import { UnlockCardComponent } from './unlock-card/unlock-card.component';
   imports: [LoginCardComponent, UnlockCardComponent, IonContent, IonLoading],
 })
 export class LoginPage implements OnInit {
+  private navController = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
+  private sync = inject(SyncService);
+
   showUnlock = false;
   syncing = false;
-
-  constructor(
-    private navController: NavController,
-    private sessionVault: SessionVaultService,
-    private sync: SyncService,
-  ) {}
 
   async ngOnInit() {
     this.showUnlock = await this.sessionVault.sessionIsLocked();

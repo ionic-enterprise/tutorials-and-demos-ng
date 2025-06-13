@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   IonButton,
   IonContent,
@@ -20,11 +20,10 @@ import { SessionVaultService } from '../core/session-vault.service';
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar],
 })
 export class LoginPage {
-  constructor(
-    private navController: NavController,
-    private authentication: AuthenticationService,
-    private sessionVault: SessionVaultService,
-  ) {}
+  private navController = inject(NavController);
+  private authentication = inject(AuthenticationService);
+  private sessionVault = inject(SessionVaultService);
+
 
   async login() {
     try {

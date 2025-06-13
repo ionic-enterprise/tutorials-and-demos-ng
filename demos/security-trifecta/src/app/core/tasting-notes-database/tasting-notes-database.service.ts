@@ -1,5 +1,5 @@
 /* eslint @typescript-eslint/no-explicit-any: off, @typescript-eslint/no-empty-function: off */
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TastingNote } from '@app/models';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { DatabaseService } from '../database/database.service';
@@ -8,10 +8,9 @@ import { DatabaseService } from '../database/database.service';
   providedIn: 'root',
 })
 export class TastingNotesDatabaseService {
-  constructor(
-    private database: DatabaseService,
-    private authentication: AuthenticationService,
-  ) {}
+  private database = inject(DatabaseService);
+  private authentication = inject(AuthenticationService);
+
 
   async getAll(includeDeleted = false): Promise<TastingNote[]> {
     const notes: TastingNote[] = [];

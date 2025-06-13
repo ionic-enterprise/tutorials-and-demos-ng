@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { Auth0Provider, AuthConnect, AuthResult, ProviderOptions } from '@ionic-enterprise/auth';
 import { SessionService } from './session.service';
@@ -7,10 +7,12 @@ import { SessionService } from './session.service';
   providedIn: 'root',
 })
 export class AuthenticationService {
+  private session = inject(SessionService);
+
   private authOptions: ProviderOptions;
   private provider: Auth0Provider;
 
-  constructor(private session: SessionService) {
+  constructor() {
     const isNative = Capacitor.isNativePlatform();
     this.provider = new Auth0Provider();
     this.authOptions = {

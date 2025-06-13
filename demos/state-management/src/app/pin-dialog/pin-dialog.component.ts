@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import {
   IonButton,
   IonButtons,
@@ -37,6 +37,8 @@ import { close } from 'ionicons/icons';
   ],
 })
 export class PinDialogComponent implements OnInit {
+  private modalController = inject(ModalController);
+
   @Input() setPasscodeMode = false;
 
   displayPin = '';
@@ -47,7 +49,7 @@ export class PinDialogComponent implements OnInit {
 
   private verifyPin = '';
 
-  constructor(private modalController: ModalController) {
+  constructor() {
     addIcons({ close });
   }
 

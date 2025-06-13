@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { environment } from '@env/environment';
 import { BrowserVault, DeviceSecurityType, Vault, VaultType } from '@ionic-enterprise/identity-vault';
 import { firstValueFrom } from 'rxjs';
@@ -9,13 +9,14 @@ import { VaultFactoryService } from '../vault-factory/vault-factory.service';
   providedIn: 'root',
 })
 export class EncryptionService {
+  private http = inject(HttpClient);
+
   private vault: Vault | BrowserVault;
   private vaultReady: Promise<void> | undefined;
 
-  constructor(
-    private http: HttpClient,
-    vaultFactory: VaultFactoryService,
-  ) {
+  constructor() {
+    const vaultFactory = inject(VaultFactoryService);
+
     this.vault = vaultFactory.create();
   }
 

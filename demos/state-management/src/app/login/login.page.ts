@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SessionVaultService, UnlockMode } from '@app/core';
 import { selectAuthErrorMessage } from '@app/store';
@@ -40,6 +40,11 @@ import { Observable } from 'rxjs';
   ],
 })
 export class LoginPage implements OnInit {
+  private alertController = inject(AlertController);
+  private sessionVault = inject(SessionVaultService);
+  private store = inject(Store);
+  private zone = inject(NgZone);
+
   email = '';
   password = '';
   canUnlock = false;
@@ -63,12 +68,7 @@ export class LoginPage implements OnInit {
 
   errorMessage$: Observable<string> | undefined;
 
-  constructor(
-    private alertController: AlertController,
-    private sessionVault: SessionVaultService,
-    private store: Store,
-    private zone: NgZone,
-  ) {
+  constructor() {
     addIcons({ logInOutline, lockOpenOutline, arrowRedoOutline });
   }
 

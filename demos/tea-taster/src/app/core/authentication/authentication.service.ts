@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Session } from '@app/models';
 import { environment } from '@env/environment';
 import { map, Observable } from 'rxjs';
@@ -12,7 +12,8 @@ interface LoginResponse extends Session {
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
+
 
   login(email: string, password: string): Observable<Session | undefined> {
     return this.http

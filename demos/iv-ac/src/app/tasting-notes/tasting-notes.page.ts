@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNotesService } from '@app/core';
 import { TastingNote } from '@app/models';
@@ -48,16 +48,16 @@ import {
   ],
 })
 export class TastingNotesPage implements OnInit {
+  private alertController = inject(AlertController);
+  private modalController = inject(ModalController);
+  private routerOutlet = inject(IonRouterOutlet);
+  private tastingNotes = inject(TastingNotesService);
+
   private refresh = new BehaviorSubject<void>(undefined);
   @ViewChild(IonList, { static: true }) list: IonList | undefined;
   notes$: Observable<TastingNote[]> = EMPTY;
 
-  constructor(
-    private alertController: AlertController,
-    private modalController: ModalController,
-    private routerOutlet: IonRouterOutlet,
-    private tastingNotes: TastingNotesService,
-  ) {
+  constructor() {
     addIcons({ add });
   }
 

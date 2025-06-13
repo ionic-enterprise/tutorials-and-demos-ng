@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationExpediterService, SessionVaultService } from '@app/core';
 import { NavController } from '@ionic/angular/standalone';
@@ -41,17 +41,17 @@ import {
   ],
 })
 export class AboutPage implements OnInit {
+  private auth = inject(AuthenticationExpediterService);
+  private navController = inject(NavController);
+  private vault = inject(SessionVaultService);
+
   author = '';
   name = '';
   version = '';
   authConnectVersion = '';
   identityVaultVersion = '';
 
-  constructor(
-    private auth: AuthenticationExpediterService,
-    private navController: NavController,
-    private vault: SessionVaultService,
-  ) {
+  constructor() {
     addIcons({ logOutOutline });
   }
 

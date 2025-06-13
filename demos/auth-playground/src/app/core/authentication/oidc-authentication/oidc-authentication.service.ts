@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { SessionVaultService } from '@app/core/session-vault/session-vault.service';
 import { AuthVendor } from '@app/models';
 import { Capacitor } from '@capacitor/core';
@@ -18,11 +18,11 @@ import { Authenticator } from '../authenticator';
   providedIn: 'root',
 })
 export class OIDCAuthenticationService implements Authenticator {
+  private sessionVault = inject(SessionVaultService);
+
   private authResultKey = 'auth-result';
   private options: ProviderOptions | null = null;
   private provider: Auth0Provider | AzureProvider | CognitoProvider | null = null;
-
-  constructor(private sessionVault: SessionVaultService) {}
 
   initialize(): Promise<void> {
     return AuthConnect.setup({

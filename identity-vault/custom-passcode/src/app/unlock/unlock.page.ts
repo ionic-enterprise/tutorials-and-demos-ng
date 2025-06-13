@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   IonButton,
@@ -21,11 +21,10 @@ import { SessionVaultService } from '../core/session-vault.service';
   imports: [IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, FormsModule],
 })
 export class UnlockPage {
-  constructor(
-    private authentication: AuthenticationService,
-    private navController: NavController,
-    private sessionVault: SessionVaultService,
-  ) {}
+  private authentication = inject(AuthenticationService);
+  private navController = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
+
 
   async redoLogin(): Promise<void> {
     await this.authentication.logout();

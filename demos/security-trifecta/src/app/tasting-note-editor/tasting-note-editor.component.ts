@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TastingNotesService, TeaCategoriesService } from '@app/core';
 import { TastingNote, TeaCategory } from '@app/models';
@@ -47,6 +47,10 @@ import {
   ],
 })
 export class TastingNoteEditorComponent implements OnInit {
+  private modalController = inject(ModalController);
+  private tastingNotes = inject(TastingNotesService);
+  private teaCategories = inject(TeaCategoriesService);
+
   @Input() note: TastingNote | undefined;
 
   brand = '';
@@ -57,11 +61,7 @@ export class TastingNoteEditorComponent implements OnInit {
 
   categories: TeaCategory[] = [];
 
-  constructor(
-    private modalController: ModalController,
-    private tastingNotes: TastingNotesService,
-    private teaCategories: TeaCategoriesService,
-  ) {
+  constructor() {
     addIcons({ close });
   }
 

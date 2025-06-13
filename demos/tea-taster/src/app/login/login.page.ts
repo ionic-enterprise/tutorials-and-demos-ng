@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService, SessionVaultService } from '@app/core';
 import { NavController } from '@ionic/angular/standalone';
@@ -43,6 +43,11 @@ import {
   ],
 })
 export class LoginPage {
+  private auth = inject(AuthenticationService);
+  private fb = inject(FormBuilder);
+  private nav = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
+
   loginFailed = false;
 
   get emailError(): string {
@@ -60,12 +65,7 @@ export class LoginPage {
     password: ['', [Validators.required]],
   });
 
-  constructor(
-    private auth: AuthenticationService,
-    private fb: FormBuilder,
-    private nav: NavController,
-    private sessionVault: SessionVaultService,
-  ) {
+  constructor() {
     addIcons({ logInOutline });
   }
 

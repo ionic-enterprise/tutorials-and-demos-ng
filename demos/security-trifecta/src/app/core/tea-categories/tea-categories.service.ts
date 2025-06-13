@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TeaCategory } from '@app/models';
 import { Capacitor } from '@capacitor/core';
 import { firstValueFrom } from 'rxjs';
@@ -9,12 +9,10 @@ import { TeaCategoriesDatabaseService } from '../tea-categories-database/tea-cat
   providedIn: 'root',
 })
 export class TeaCategoriesService {
-  private teaCategories: TeaCategory[] | undefined;
+  private database = inject(TeaCategoriesDatabaseService);
+  private api = inject(TeaCategoriesApiService);
 
-  constructor(
-    private database: TeaCategoriesDatabaseService,
-    private api: TeaCategoriesApiService,
-  ) {}
+  private teaCategories: TeaCategory[] | undefined;
 
   get data(): TeaCategory[] {
     return [...(this.teaCategories ?? [])];

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { AlertController } from '@ionic/angular/standalone';
 import { SwUpdate } from '@angular/service-worker';
 import { filter } from 'rxjs/operators';
@@ -7,10 +7,9 @@ import { filter } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ApplicationService {
-  constructor(
-    private alertController: AlertController,
-    private update: SwUpdate,
-  ) {}
+  private alertController = inject(AlertController);
+  private update = inject(SwUpdate);
+
 
   registerForUpdates() {
     this.update.versionUpdates.pipe(filter((evt) => evt.type === 'VERSION_READY')).subscribe(() => this.promptUser());

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { NavController } from '@ionic/angular/standalone';
 import { AuthenticationExpediterService } from '../authentication-expediter/authentication-expediter.service';
@@ -7,10 +7,8 @@ import { AuthenticationExpediterService } from '../authentication-expediter/auth
   providedIn: 'root',
 })
 export class AuthGuardService {
-  constructor(
-    private auth: AuthenticationExpediterService,
-    private navCtrl: NavController,
-  ) {}
+  private auth = inject(AuthenticationExpediterService);
+  private navCtrl = inject(NavController);
 
   async canActivate(): Promise<boolean> {
     if (await this.auth.isAuthenticated()) {

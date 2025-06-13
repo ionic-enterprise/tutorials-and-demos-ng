@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IonContent, NavController } from '@ionic/angular/standalone';
 import { AuthenticationService } from '../core/authentication.service';
 import { SessionVaultService } from '../core/session-vault.service';
@@ -10,13 +10,11 @@ import { SessionVaultService } from '../core/session-vault.service';
   imports: [IonContent],
 })
 export class StartPage implements OnInit {
-  showUnlock = false;
+  private authentication = inject(AuthenticationService);
+  private navController = inject(NavController);
+  private sessionVault = inject(SessionVaultService);
 
-  constructor(
-    private authentication: AuthenticationService,
-    private navController: NavController,
-    private sessionVault: SessionVaultService,
-  ) {}
+  showUnlock = false;
 
   async ngOnInit(): Promise<void> {
     await this.performUnlock();

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TeaService } from '@app/core';
 import { Tea } from '@app/models';
@@ -41,10 +41,12 @@ import {
   ],
 })
 export class TeaListPage implements OnInit {
+  private teaService = inject(TeaService);
+
   teas$: Observable<Tea[][]> | undefined;
   private refresh: Subject<void>;
 
-  constructor(private teaService: TeaService) {
+  constructor() {
     this.refresh = new Subject();
   }
 

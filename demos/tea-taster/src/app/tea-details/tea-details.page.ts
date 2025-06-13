@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { TeaService } from '@app/core';
@@ -34,13 +34,11 @@ import { EMPTY, Observable, tap } from 'rxjs';
   ],
 })
 export class TeaDetailsPage implements OnInit {
+  private route = inject(ActivatedRoute);
+  private tea = inject(TeaService);
+
   tea$: Observable<Tea> = EMPTY;
   rating = 0;
-
-  constructor(
-    private route: ActivatedRoute,
-    private tea: TeaService,
-  ) {}
 
   ngOnInit() {
     const id = parseInt(this.route.snapshot.paramMap.get('id') as string, 10);
