@@ -61,8 +61,8 @@ export class Tab2Page implements OnInit {
       await Device.showBiometricPrompt({
         iosBiometricsLocalizedReason: 'Just to show you how this works',
       });
-    } catch {
-      alert('user cancelled biometrics prompt');
+    } catch (err: unknown) {
+      alert(JSON.stringify(err));
     }
   }
 }
