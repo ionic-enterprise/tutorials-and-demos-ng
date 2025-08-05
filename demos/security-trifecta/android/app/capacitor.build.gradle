@@ -19,7 +19,7 @@ dependencies {
     implementation "net.zetetic:sqlcipher-android:4.6.1"
     implementation "androidx.sqlite:sqlite:2.2.0"
 }
-apply from: "../../../../node_modules/.pnpm/@ionic-enterprise+identity-vault@6.0.2_typescript@5.8.3/node_modules/@ionic-enterprise/identity-vault/src/android/ionicnativeauth.gradle"
+apply from: "../../../../node_modules/.pnpm/@ionic-enterprise+identity-vault@6.0.3_typescript@5.8.3/node_modules/@ionic-enterprise/identity-vault/src/android/ionicnativeauth.gradle"
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()
