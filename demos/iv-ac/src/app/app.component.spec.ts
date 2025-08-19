@@ -2,8 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { AppComponent } from './app.component';
-import { SessionVaultService } from './core';
-import { createSessionVaultServiceMock } from './core/testing';
+import { AuthenticationService, SessionVaultService } from './core';
+import { createAuthenticationServiceMock, createSessionVaultServiceMock } from './core/testing';
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -11,7 +11,9 @@ describe('AppComponent', () => {
       add: {
         imports: [RouterTestingModule],
       },
-    }).overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
+    })
+      .overrideProvider(AuthenticationService, { useFactory: createAuthenticationServiceMock })
+      .overrideProvider(SessionVaultService, { useFactory: createSessionVaultServiceMock });
   });
 
   it('should create the app', () => {

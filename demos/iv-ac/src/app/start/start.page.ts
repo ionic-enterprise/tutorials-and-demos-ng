@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SessionVaultService } from '@app/core';
+import { AuthenticationService, SessionVaultService } from '@app/core';
 import { Capacitor } from '@capacitor/core';
+import { VaultErrorCodes } from '@ionic-enterprise/identity-vault';
 import { IonContent, NavController } from '@ionic/angular/standalone';
 
 @Component({
@@ -12,8 +13,8 @@ import { IonContent, NavController } from '@ionic/angular/standalone';
 })
 export class StartPage implements OnInit {
   private navController = inject(NavController);
+  private auth = inject(AuthenticationService);
   private session = inject(SessionVaultService);
-
 
   async ngOnInit() {
     if (Capacitor.isNativePlatform() && (await this.session.canUnlock())) {
@@ -27,8 +28,15 @@ export class StartPage implements OnInit {
     try {
       await this.session.unlockVault();
       this.navController.navigateRoot('/tabs/tea');
-    } catch {
-      this.navController.navigateRoot('/unlock');
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      if (err.code === VaultErrorCodes.InvalidatedCredential) {
+        await this.session.setUnlockMode('SecureStorage');
+        await this.auth.logout();
+        this.navController.navigateRoot('/login');
+      } else {
+        this.navController.navigateRoot('/unlock');
+      }
     }
   }
 }

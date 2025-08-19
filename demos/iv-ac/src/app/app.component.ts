@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { NavController } from '@ionic/angular/standalone';
-import { SessionVaultService } from './core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { VaultErrorCodes } from '@ionic-enterprise/identity-vault';
+import { IonApp, IonRouterOutlet, NavController } from '@ionic/angular/standalone';
+import { AuthenticationService, SessionVaultService } from './core';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
+  private auth = inject(AuthenticationService);
   private sessionVault = inject(SessionVaultService);
 
   constructor() {
@@ -21,8 +22,15 @@ export class AppComponent implements OnInit {
       if (locked) {
         try {
           await sessionVault.unlockVault();
-        } catch {
-          navController.navigateRoot('/unlock');
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (err: any) {
+          if (err.code === VaultErrorCodes.InvalidatedCredential) {
+            await this.sessionVault.setUnlockMode('SecureStorage');
+            await this.auth.logout();
+            navController.navigateRoot('/login');
+          } else {
+            navController.navigateRoot('/unlock');
+          }
         }
       }
     });
