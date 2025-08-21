@@ -1,6 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
-import { SplashScreen } from '@capacitor/splash-screen';
 import { IonApp, IonRouterOutlet, NavController } from '@ionic/angular/standalone';
 import { PreferencesService, SessionVaultService } from './core';
 
@@ -15,12 +14,10 @@ export class AppComponent implements OnInit {
   private preferences = inject(PreferencesService);
   private sessionVault = inject(SessionVaultService);
 
-
   async ngOnInit() {
     this.handlePreferencesChange();
     this.handleLocked();
     PrivacyScreen.enable();
-    SplashScreen.hide();
   }
 
   private handlePreferencesChange() {

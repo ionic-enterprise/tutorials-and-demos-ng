@@ -8,9 +8,6 @@ const config: CapacitorConfig = {
     adjustMarginsForEdgeToEdge: 'auto',
   },
   plugins: {
-    SplashScreen: {
-      launchAutoHide: false,
-    },
     StatusBar: {
       overlaysWebView: false,
     },

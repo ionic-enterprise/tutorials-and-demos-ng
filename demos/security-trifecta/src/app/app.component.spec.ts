@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
-import { SplashScreen } from '@capacitor/splash-screen';
 import { NavController } from '@ionic/angular/standalone';
 import { createNavControllerMock } from '@test/mocks';
 import { AppComponent } from './app.component';
@@ -24,13 +23,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it('hides the splash screen', () => {
-    spyOn(SplashScreen, 'hide');
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    expect(SplashScreen.hide).toHaveBeenCalledTimes(1);
   });
 
   it('set the privacy screen', () => {

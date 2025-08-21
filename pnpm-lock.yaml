@@ -601,9 +601,6 @@ importers:
       '@capacitor/privacy-screen':
         specifier: ^1.1.0
         version: 1.1.0(@capacitor/core@7.4.3)
-      '@capacitor/splash-screen':
-        specifier: ^7.0.2
-        version: 7.0.2(@capacitor/core@7.4.3)
       '@capacitor/status-bar':
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.3)
@@ -749,9 +746,6 @@ importers:
       '@capacitor/share':
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.3)
-      '@capacitor/splash-screen':
-        specifier: ^7.0.2
-        version: 7.0.2(@capacitor/core@7.4.3)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
         version: 7.1.1(@capacitor/core@7.4.3)
@@ -894,9 +888,6 @@ importers:
       '@capacitor/share':
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.3)
-      '@capacitor/splash-screen':
-        specifier: ^7.0.2
-        version: 7.0.2(@capacitor/core@7.4.3)
       '@ionic-enterprise/auth':
         specifier: 7.1.1
         version: 7.1.1(@capacitor/core@7.4.3)
@@ -1030,9 +1021,6 @@ importers:
       '@capacitor/privacy-screen':
         specifier: ^1.1.0
         version: 1.1.0(@capacitor/core@7.4.3)
-      '@capacitor/splash-screen':
-        specifier: ^7.0.2
-        version: 7.0.2(@capacitor/core@7.4.3)
       '@capacitor/status-bar':
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.3)
@@ -1317,9 +1305,6 @@ importers:
       '@capacitor/share':
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.3)
-      '@capacitor/splash-screen':
-        specifier: ^7.0.2
-        version: 7.0.2(@capacitor/core@7.4.3)
       '@capacitor/status-bar':
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.3)
@@ -1469,9 +1454,6 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.3)
       '@capacitor/share':
-        specifier: ^7.0.2
-        version: 7.0.2(@capacitor/core@7.4.3)
-      '@capacitor/splash-screen':
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.3)
       '@capacitor/status-bar':
@@ -2472,11 +2454,6 @@ packages:
 
   '@capacitor/share@7.0.2':
     resolution: {integrity: sha512-VyNPo/9831xnL17IMDeft5yNdBjoKNb451P95sRcr69hulRDqHc+kndqOVaMXnaA6IyBdWnnFv/n1HUf4cXpGw==}
-    peerDependencies:
-      '@capacitor/core': '>=7.0.0'
-
-  '@capacitor/splash-screen@7.0.2':
-    resolution: {integrity: sha512-bchh4F73CnVONm6XFEgXKEhbSEDQh2CQ0rNSoasIeJ5pf9JqHkkPS3t0Fnm33qHkLVFcaPoKPW69Y9zMpT5Vxg==}
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
 
@@ -7392,10 +7369,6 @@ snapshots:
       '@capacitor/core': 7.4.3
 
   '@capacitor/share@7.0.2(@capacitor/core@7.4.3)':
-    dependencies:
-      '@capacitor/core': 7.4.3
-
-  '@capacitor/splash-screen@7.0.2(@capacitor/core@7.4.3)':
     dependencies:
       '@capacitor/core': 7.4.3
 

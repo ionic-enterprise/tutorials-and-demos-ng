@@ -33,7 +33,6 @@
     "@capacitor/keyboard": "^7.0.2",
     "@capacitor/preferences": "^7.0.2",
     "@capacitor/share": "^7.0.2",
-    "@capacitor/splash-screen": "^7.0.2",
     "@capacitor/status-bar": "^7.0.2",
     "@ionic/angular": "8.7.3",
     "ionicons": "~8.0.13",

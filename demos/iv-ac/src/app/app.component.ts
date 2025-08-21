@@ -1,5 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { SplashScreen } from '@capacitor/splash-screen';
+import { Component, inject, OnInit } from '@angular/core';
 import { VaultErrorCodes } from '@ionic-enterprise/identity-vault';
 import { IonApp, IonRouterOutlet, NavController } from '@ionic/angular/standalone';
 import { AuthenticationService, SessionVaultService } from './core';
@@ -34,16 +33,10 @@ export class AppComponent implements OnInit {
         }
       }
     });
-
-    this.init();
   }
 
-  async init() {
+  async ngOnInit() {
     const hide = await this.sessionVault.isHidingContentsInBackground();
     this.sessionVault.hideContentsInBackground(hide);
-  }
-
-  ngOnInit() {
-    SplashScreen.hide();
   }
 }

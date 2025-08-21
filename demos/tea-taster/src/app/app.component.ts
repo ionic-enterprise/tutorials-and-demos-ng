@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SplashScreen } from '@capacitor/splash-screen';
+import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
@@ -8,8 +7,4 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   styleUrls: ['app.component.scss'],
   imports: [IonApp, IonRouterOutlet],
 })
-export class AppComponent implements OnInit {
-  ngOnInit() {
-    SplashScreen.hide();
-  }
-}
+export class AppComponent {}

@@ -1,6 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
-import { SplashScreen } from '@capacitor/splash-screen';
 import { IonApp, IonRouterOutlet, NavController } from '@ionic/angular/standalone';
 import { ApplicationService, SessionVaultService } from './core';
 
@@ -27,19 +26,13 @@ export class AppComponent implements OnInit {
         }
       }
     });
-
-    this.init();
   }
 
-  async init() {
-    const hide = await this.sessionVault.isHidingContentsInBackground();
-    this.sessionVault.hideContentsInBackground(hide);
-  }
-
-  ngOnInit() {
-    SplashScreen.hide();
+  async ngOnInit() {
     if (!Capacitor.isNativePlatform()) {
       this.application.registerForUpdates();
     }
+    const hide = await this.sessionVault.isHidingContentsInBackground();
+    this.sessionVault.hideContentsInBackground(hide);
   }
 }

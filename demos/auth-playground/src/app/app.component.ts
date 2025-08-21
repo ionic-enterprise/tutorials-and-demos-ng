@@ -1,6 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { PrivacyScreen } from '@capacitor/privacy-screen';
-import { SplashScreen } from '@capacitor/splash-screen';
 import { IonApp, IonRouterOutlet, NavController } from '@ionic/angular/standalone';
 import { SessionVaultService } from './core';
 
@@ -20,8 +19,6 @@ export class AppComponent implements OnInit {
         this.navController.navigateRoot(['/', 'unlock']);
       }
     });
-
-    SplashScreen.hide();
 
     PrivacyScreen.enable();
   }
