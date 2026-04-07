@@ -35,7 +35,6 @@ import { TastingNoteEditorComponent } from './tasting-note-editor/tasting-note-e
   imports: [
     CommonModule,
     FormsModule,
-    TastingNoteEditorComponent,
     IonHeader,
     IonToolbar,
     IonTitle,
