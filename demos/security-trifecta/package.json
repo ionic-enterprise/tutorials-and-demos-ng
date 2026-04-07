@@ -22,12 +22,12 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^20.2.3",
-    "@angular/core": "^20.2.3",
-    "@angular/forms": "^20.2.3",
-    "@angular/platform-browser": "^20.2.3",
-    "@angular/platform-browser-dynamic": "^20.2.3",
-    "@angular/router": "^20.2.3",
+    "@angular/common": "^20.3.18",
+    "@angular/core": "^20.3.18",
+    "@angular/forms": "^20.3.18",
+    "@angular/platform-browser": "^20.3.18",
+    "@angular/platform-browser-dynamic": "^20.3.18",
+    "@angular/router": "^20.3.18",
     "@capacitor/android": "^7.4.3",
     "@capacitor/app": "^7.0.2",
     "@capacitor/core": "^7.4.3",
@@ -48,18 +48,18 @@
     "zone.js": "~0.15.1"
   },
   "devDependencies": {
-    "@angular/build": "^20.2.1",
-    "@angular/cli": "^20.2.1",
-    "@angular/compiler": "^20.2.3",
-    "@angular/compiler-cli": "^20.2.3",
-    "@angular/language-service": "^20.2.3",
+    "@angular/build": "^20.3.22",
+    "@angular/cli": "^20.3.22",
+    "@angular/compiler": "^20.3.18",
+    "@angular/compiler-cli": "^20.3.18",
+    "@angular/language-service": "^20.3.18",
     "@capacitor/assets": "~3.0.5",
     "@capacitor/cli": "^7.4.3",
     "@ionic/angular-toolkit": "~12.3.0",
     "@types/jasmine": "~5.1.9",
     "@types/jasminewd2": "~2.0.13",
     "@types/node": "~24.3.0",
-    "angular-eslint": "^20.2.0",
+    "angular-eslint": "^20.7.0",
     "eslint": "~9.34.0",
     "jasmine-core": "~5.9.0",
     "jasmine-spec-reporter": "~7.0.0",
@@ -71,6 +71,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ts-node": "~10.9.2",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.41.0"
+    "typescript-eslint": "^8.58.0"
   }
 }
