@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { DbTransaction, SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite';
+import { DbTransaction, SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 import { Capacitor } from '@capacitor/core';
 import { EncryptionKeysService } from './encryption-keys.service';
 
@@ -8,6 +8,7 @@ import { EncryptionKeysService } from './encryption-keys.service';
 })
 export class DatabaseService {
   private keys = inject(EncryptionKeysService);
+  private sqlite = inject(SQLite);
 
   private handle: SQLiteObject | null = null;
 
@@ -25,7 +26,7 @@ export class DatabaseService {
     if (Capacitor.isNativePlatform()) {
       const key = this.keys.getDatabaseKey();
       if (key) {
-        return SQLite.create({
+        return this.sqlite.create({
           name: 'emailcache.db',
           location: 'default',
           key,

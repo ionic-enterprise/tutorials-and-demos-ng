@@ -1158,11 +1158,11 @@ importers:
         specifier: ^20.3.18
         version: 20.3.18(@angular/common@20.3.18(@angular/core@20.3.18(@angular/compiler@20.3.18)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.3.18(@angular/compiler@20.3.18)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@20.3.18(@angular/animations@20.3.18(@angular/core@20.3.18(@angular/compiler@20.3.18)(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@20.3.18(@angular/core@20.3.18(@angular/compiler@20.3.18)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.3.18(@angular/compiler@20.3.18)(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
       '@awesome-cordova-plugins/core':
-        specifier: ^8.1.0
-        version: 8.1.0(rxjs@7.8.2)
+        specifier: ^9.1.2
+        version: 9.1.2(rxjs@7.8.2)
       '@awesome-cordova-plugins/sqlite':
-        specifier: ^8.1.0
-        version: 8.1.0(@awesome-cordova-plugins/core@8.1.0(rxjs@7.8.2))(rxjs@7.8.2)
+        specifier: ^9.1.2
+        version: 9.1.2(@awesome-cordova-plugins/core@9.1.2(rxjs@7.8.2))(rxjs@7.8.2)
       '@capacitor/android':
         specifier: ^8.3.0
         version: 8.3.0(@capacitor/core@8.3.0)
@@ -2317,8 +2317,8 @@ packages:
     peerDependencies:
       rxjs: ^5.5.0 || ^6.5.0 || ^7.3.0
 
-  '@awesome-cordova-plugins/core@8.1.0':
-    resolution: {integrity: sha512-7NkUC2FcXSlIuIH2xc1miIdN8/by2uewrIg5JBWauN1KCzCXLhCwZ39C8nBsWxCloAxCvec+MMU5SzJGGWfjTg==}
+  '@awesome-cordova-plugins/core@9.1.2':
+    resolution: {integrity: sha512-5i9LCZroyjcHp5PrBQE/vjv46odHq94iBgWez5dWGmm3Te8Zq99tppGUqCzGoSHBd4/GoodN1pHDrnnXy0Tylw==}
     peerDependencies:
       rxjs: ^5.5.0 || ^6.5.0 || ^7.3.0
 
@@ -2328,10 +2328,10 @@ packages:
       '@awesome-cordova-plugins/core': ^6.0.1
       rxjs: ^5.5.0 || ^6.5.0 || ^7.3.0
 
-  '@awesome-cordova-plugins/sqlite@8.1.0':
-    resolution: {integrity: sha512-lD1pt+Ftk4gUIIfqgMZ7R12E05TlIOqIatBkAbRkprKLgfHIcxt58oJcIRhjZo6y2bbi7FqeCItuYM6Jn/eXig==}
+  '@awesome-cordova-plugins/sqlite@9.1.2':
+    resolution: {integrity: sha512-XgDN3oN4r+PWrciVSiVBgNNnpAGl3/UYnJLH95CWjoaLvgTCUobpkONKGHnGi1eYbjYQUFZURDNakMeFG3NO9A==}
     peerDependencies:
-      '@awesome-cordova-plugins/core': ^8.0.2
+      '@awesome-cordova-plugins/core': ^9.1.2
       rxjs: ^5.5.0 || ^6.5.0 || ^7.3.0
 
   '@babel/code-frame@7.27.1':
@@ -7424,7 +7424,7 @@ snapshots:
       '@types/cordova': 11.0.3
       rxjs: 7.8.2
 
-  '@awesome-cordova-plugins/core@8.1.0(rxjs@7.8.2)':
+  '@awesome-cordova-plugins/core@9.1.2(rxjs@7.8.2)':
     dependencies:
       '@types/cordova': 11.0.3
       rxjs: 7.8.2
@@ -7435,10 +7435,9 @@ snapshots:
       '@types/cordova': 11.0.3
       rxjs: 7.8.2
 
-  '@awesome-cordova-plugins/sqlite@8.1.0(@awesome-cordova-plugins/core@8.1.0(rxjs@7.8.2))(rxjs@7.8.2)':
+  '@awesome-cordova-plugins/sqlite@9.1.2(@awesome-cordova-plugins/core@9.1.2(rxjs@7.8.2))(rxjs@7.8.2)':
     dependencies:
-      '@awesome-cordova-plugins/core': 8.1.0(rxjs@7.8.2)
-      '@types/cordova': 11.0.3
+      '@awesome-cordova-plugins/core': 9.1.2(rxjs@7.8.2)
       rxjs: 7.8.2
 
   '@babel/code-frame@7.27.1':
