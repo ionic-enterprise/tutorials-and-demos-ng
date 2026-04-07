@@ -39,7 +39,7 @@
     "@ionic-enterprise/auth": "7.1.1",
     "@ionic-enterprise/identity-vault": "~6.0.4",
     "@ionic-enterprise/secure-storage": "~3.0.6",
-    "@ionic/angular": "8.7.3",
+    "@ionic/angular": "8.8.3",
     "core-js": "~3.45.1",
     "date-fns": "~4.1.0",
     "ionicons": "~8.0.13",

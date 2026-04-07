@@ -37,7 +37,7 @@
     "@capacitor/status-bar": "^7.0.2",
     "@ionic-enterprise/auth": "7.1.1",
     "@ionic-enterprise/identity-vault": "~6.0.4",
-    "@ionic/angular": "8.7.3",
+    "@ionic/angular": "8.8.3",
     "@ngrx/effects": "20.0.1",
     "@ngrx/store": "20.0.1",
     "@ngrx/store-devtools": "20.0.1",
