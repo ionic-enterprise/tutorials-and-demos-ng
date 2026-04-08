@@ -32,7 +32,7 @@
     "@capacitor/ios": "^8.3.0",
     "@capacitor/keyboard": "^8.0.2",
     "@capacitor/preferences": "^8.0.1",
-    "@capacitor/privacy-screen": "^1.1.4",
+    "@capacitor/privacy-screen": "^2.0.1",
     "@capacitor/share": "^8.0.1",
     "@ionic-enterprise/auth": "8.0.0",
     "@ionic-enterprise/identity-vault": "~6.0.6",

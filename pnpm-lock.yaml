@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@stencil/core':
-        specifier: 4.18.1
-        version: 4.18.1
     devDependencies:
       '@ionic/prettier-config':
         specifier: ^4.0.0
@@ -599,8 +595,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(@capacitor/core@8.3.0)
       '@capacitor/privacy-screen':
-        specifier: ^1.1.4
-        version: 1.1.4(@capacitor/core@8.3.0)
+        specifier: ^2.0.1
+        version: 2.0.1(@capacitor/core@8.3.0)
       '@capacitor/status-bar':
         specifier: ^8.0.2
         version: 8.0.2(@capacitor/core@8.3.0)
@@ -741,8 +737,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(@capacitor/core@8.3.0)
       '@capacitor/privacy-screen':
-        specifier: ^1.1.4
-        version: 1.1.4(@capacitor/core@8.3.0)
+        specifier: ^2.0.1
+        version: 2.0.1(@capacitor/core@8.3.0)
       '@capacitor/share':
         specifier: ^8.0.1
         version: 8.0.1(@capacitor/core@8.3.0)
@@ -883,8 +879,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(@capacitor/core@8.3.0)
       '@capacitor/privacy-screen':
-        specifier: ^1.1.4
-        version: 1.1.4(@capacitor/core@8.3.0)
+        specifier: ^2.0.1
+        version: 2.0.1(@capacitor/core@8.3.0)
       '@capacitor/share':
         specifier: ^8.0.1
         version: 8.0.1(@capacitor/core@8.3.0)
@@ -1022,8 +1018,8 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(@capacitor/core@8.3.0)
       '@capacitor/privacy-screen':
-        specifier: ^1.1.4
-        version: 1.1.4(@capacitor/core@8.3.0)
+        specifier: ^2.0.1
+        version: 2.0.1(@capacitor/core@8.3.0)
       '@capacitor/status-bar':
         specifier: ^8.0.2
         version: 8.0.2(@capacitor/core@8.3.0)
@@ -1306,8 +1302,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(@capacitor/core@8.3.0)
       '@capacitor/privacy-screen':
-        specifier: ^1.1.4
-        version: 1.1.4(@capacitor/core@8.3.0)
+        specifier: ^2.0.1
+        version: 2.0.1(@capacitor/core@8.3.0)
       '@capacitor/share':
         specifier: ^8.0.1
         version: 8.0.1(@capacitor/core@8.3.0)
@@ -1720,8 +1716,8 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(@capacitor/core@8.3.0)
       '@capacitor/privacy-screen':
-        specifier: ^1.1.4
-        version: 1.1.4(@capacitor/core@8.3.0)
+        specifier: ^2.0.1
+        version: 2.0.1(@capacitor/core@8.3.0)
       '@capacitor/status-bar':
         specifier: ^8.0.2
         version: 8.0.2(@capacitor/core@8.3.0)
@@ -2457,10 +2453,10 @@ packages:
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
-  '@capacitor/privacy-screen@1.1.4':
-    resolution: {integrity: sha512-/bwBOmhXgkXdLJEYsUDwc3rbo6iJF2CoQsg0epkjiBKUpoN0wmGJ52t5A8GdDpvgNJc9YatPDXN2piDH7xKR7g==}
+  '@capacitor/privacy-screen@2.0.1':
+    resolution: {integrity: sha512-NDKXhf2tGMZu6JcVTDtwfUw0Y7BMBfcoinhxVqRhzHaBCO7HgXF7MRX2HLk0T+l4/2uzmRb3AvUKHiF4BW8drA==}
     peerDependencies:
-      '@capacitor/core': '>=7.0.0'
+      '@capacitor/core': '>=8.0.0'
 
   '@capacitor/share@8.0.1':
     resolution: {integrity: sha512-3cSBKBCJVon54rKDROP2rqGyeGks4pBh9TbaEk9S375Kbek/ZHe72N50zIa0Vn9Eac/SuhwgehO/mmA4CsUOiw==}
@@ -3584,11 +3580,6 @@ packages:
 
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
-
-  '@stencil/core@4.18.1':
-    resolution: {integrity: sha512-WoRctLuXqoiLquS4EEvMoyLsbQ5+xuk8wp0+n4mYjoAoXy8NppXmMqKrMlFyYXL/zUI5ODS7U7IcLCpZ3IcKZQ==}
-    engines: {node: '>=16.0.0', npm: '>=7.10.0'}
-    hasBin: true
 
   '@stencil/core@4.36.3':
     resolution: {integrity: sha512-C9DOaAjm+hSYRuVoUuYWG/lrYT8+4DG0AL0m1Ea9+G5v2Y6ApVpNJLbXvFlRZIdDMGecH86s6v0Gp39uockLxg==}
@@ -7666,7 +7657,7 @@ snapshots:
     dependencies:
       '@capacitor/core': 8.3.0
 
-  '@capacitor/privacy-screen@1.1.4(@capacitor/core@8.3.0)':
+  '@capacitor/privacy-screen@2.0.1(@capacitor/core@8.3.0)':
     dependencies:
       '@capacitor/core': 8.3.0
 
@@ -8803,8 +8794,6 @@ snapshots:
       '@sigstore/protobuf-specs': 0.5.1
 
   '@socket.io/component-emitter@3.1.2': {}
-
-  '@stencil/core@4.18.1': {}
 
   '@stencil/core@4.36.3':
     optionalDependencies:
