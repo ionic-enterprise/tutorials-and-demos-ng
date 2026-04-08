@@ -56,5 +56,7 @@
     <true/>
     <key>NSFaceIDUsageDescription</key>
     <string>Use Face ID to unlock the application</string>
+    <key>CAPACITOR_DEBUG</key>
+    <string>$(CAPACITOR_DEBUG)</string>
   </dict>
 </plist>
