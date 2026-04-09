@@ -7,10 +7,10 @@ android {
             excludes += ['META-INF/NOTICE', 'META-INF/LICENSE', 'META-INF/NOTICE', 'META-INF/LICENSE', 'META-INF/NOTICE', 'META-INF/LICENSE', 'META-INF/NOTICE', 'META-INF/LICENSE']
         }
     }
-    namespace = "com.kensodemann.teataster"
+    namespace = "io.ionic.demos.enterprise.demos.ivac"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.kensodemann.teataster"
+        applicationId "io.ionic.demos.enterprise.demos.ivac"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

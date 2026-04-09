@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "com.kensodemann.teataster"
+    namespace = "io.ionic.demos.enterprise.demos.teataster"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.kensodemann.teataster"
+        applicationId "io.ionic.demos.enterprise.demos.teataster"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
