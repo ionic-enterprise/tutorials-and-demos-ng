@@ -4,9 +4,6 @@ const config: CapacitorConfig = {
   appId: 'io.ionic.demos.enterprise.authconnect.gettingstarted',
   appName: 'Auth Start',
   webDir: 'www/browser',
-  android: {
-    adjustMarginsForEdgeToEdge: 'auto',
-  },
   plugins: {
     StatusBar: {
       overlaysWebView: false,
