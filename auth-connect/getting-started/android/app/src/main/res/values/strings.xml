@@ -3,5 +3,5 @@
     <string name="app_name">Auth Start</string>
     <string name="title_activity_main">Auth Start</string>
     <string name="package_name">io.ionic.demos.enterprise.authconnect.gettingstarted</string>
-    <string name="custom_url_scheme">io.ionic.gettingstartedac</string>
+    <string name="custom_url_scheme">io.ionic.demos.enterprise.authconnect.gettingstarted</string>
 </resources>

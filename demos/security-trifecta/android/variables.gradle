@@ -13,5 +13,5 @@ ext {
     cordovaAndroidVersion = '14.0.1'
     coreSplashScreenVersion = '1.2.0'
     androidxWebkitVersion = '1.14.0'
-    AUTH_URL_SCHEME = 'io.ionic.acdemo'
+    AUTH_URL_SCHEME = 'io.ionic.demos.enterprise.demos.securitytrifecta'
 }

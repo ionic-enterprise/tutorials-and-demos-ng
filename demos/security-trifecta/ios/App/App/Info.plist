@@ -52,7 +52,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>io.ionic.acdemo</string>
+          <string>io.ionic.demos.enterprise.demos.securitytrifecta</string>
         </array>
       </dict>
     </array>

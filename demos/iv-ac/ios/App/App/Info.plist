@@ -52,7 +52,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>io.ionic.teataster</string>
+          <string>io.ionic.demos.enterprise.demos.ivac</string>
         </array>
       </dict>
     </array>

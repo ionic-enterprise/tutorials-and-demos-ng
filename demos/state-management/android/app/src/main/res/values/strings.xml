@@ -3,5 +3,5 @@
     <string name="app_name">State Mgmt</string>
     <string name="title_activity_main">State Mgmt</string>
     <string name="package_name">io.ionic.demos.enterprise.demos.statemanagement</string>
-    <string name="custom_url_scheme">io.ionic.teatasterng</string>
+    <string name="custom_url_scheme">io.ionic.demos.enterprise.demos.statemanagement</string>
 </resources>
