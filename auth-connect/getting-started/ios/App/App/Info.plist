@@ -5,7 +5,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>en</string>
     <key>CFBundleDisplayName</key>
-    <string>getting-started-ac</string>
+    <string>Auth Start</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -50,9 +50,11 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>io.ionic.acdemo</string>
+          <string>io.ionic.demos.enterprise.authconnect.gettingstarted</string>
         </array>
       </dict>
     </array>
+    <key>CAPACITOR_DEBUG</key>
+    <string>$(CAPACITOR_DEBUG)</string>
   </dict>
 </plist>

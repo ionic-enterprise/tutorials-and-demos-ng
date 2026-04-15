@@ -5,7 +5,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>en</string>
     <key>CFBundleDisplayName</key>
-    <string>iv-custom-passcode</string>
+    <string>IV Passcode</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -47,5 +47,7 @@
     <true/>
     <key>NSFaceIDUsageDescription</key>
     <string>Use Face ID to authenticate yourself and login</string>
+    <key>CAPACITOR_DEBUG</key>
+    <string>$(CAPACITOR_DEBUG)</string>
   </dict>
 </plist>

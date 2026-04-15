@@ -11,8 +11,8 @@ const baseConfig: ProviderOptions = {
 
 export const mobileAuthConfig: ProviderOptions = {
   ...baseConfig,
-  redirectUri: 'io.ionic.teataster://auth-action-complete',
-  logoutUrl: 'io.ionic.teataster://auth-action-complete',
+  redirectUri: 'io.ionic.demos.enterprise.demos.statemanagement://auth-action-complete',
+  logoutUrl: 'io.ionic.demos.enterprise.demos.statemanagement://auth-action-complete',
 };
 
 export const webAuthConfig: ProviderOptions = {

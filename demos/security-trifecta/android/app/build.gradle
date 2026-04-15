@@ -6,10 +6,10 @@ android {
             excludes += ['META-INF/NOTICE', 'META-INF/LICENSE']
         }
     }
-    namespace = "io.ionic.csdemosecurestorageng"
+    namespace = "io.ionic.demos.enterprise.demos.securitytrifecta"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "io.ionic.csdemosecurestorageng"
+        applicationId "io.ionic.demos.enterprise.demos.securitytrifecta"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

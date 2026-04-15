@@ -21,7 +21,7 @@ export class AuthenticationService {
   constructor() {
     this.isNative = Capacitor.isNativePlatform();
     const url = this.isNative
-      ? 'io.ionic.teataster://auth-action-complete'
+      ? 'io.ionic.demos.enterprise.demos.pwa://auth-action-complete'
       : isDevMode()
         ? 'http://localhost:8100/auth-action-complete'
         : 'https://tea-taster-ng.web.app/auth-action-complete';

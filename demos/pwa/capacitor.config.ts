@@ -1,12 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.kensodemann.teataster',
-  appName: 'Tea Taster',
+  appId: 'io.ionic.demos.enterprise.demos.pwa',
+  appName: 'PWA Demo',
   webDir: 'www/browser',
-  android: {
-    adjustMarginsForEdgeToEdge: 'auto',
-  },
   plugins: {
     StatusBar: {
       overlaysWebView: false,

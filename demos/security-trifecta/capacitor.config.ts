@@ -1,12 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.csdemosecurestorageng',
-  appName: 'Secure Storage (Angular)',
+  appId: 'io.ionic.demos.enterprise.demos.securitytrifecta',
+  appName: 'Sec Trifecta',
   webDir: 'www/browser',
-  android: {
-    adjustMarginsForEdgeToEdge: 'auto',
-  },
   plugins: {
     StatusBar: {
       overlaysWebView: false,

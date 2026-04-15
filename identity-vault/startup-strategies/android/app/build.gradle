@@ -7,10 +7,10 @@ android {
             excludes += ['META-INF/NOTICE', 'META-INF/LICENSE', 'META-INF/NOTICE', 'META-INF/LICENSE']
         }
     }
-    namespace = "io.ionic.gettingstartediv"
+    namespace = "io.ionic.demos.enterprise.identityvault.startupstrategies"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "io.ionic.gettingstartediv"
+        applicationId "io.ionic.demos.enterprise.identityvault.startupstrategies"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

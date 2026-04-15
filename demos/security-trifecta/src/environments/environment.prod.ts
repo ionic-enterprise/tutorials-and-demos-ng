@@ -11,8 +11,8 @@ const baseConfig: ProviderOptions = {
 
 const mobileAuthConfig: ProviderOptions = {
   ...baseConfig,
-  redirectUri: 'io.ionic.acdemo://auth-action-complete',
-  logoutUrl: 'io.ionic.acdemo://auth-action-complete',
+  redirectUri: 'io.ionic.demos.enterprise.demos.securitytrifecta://auth-action-complete',
+  logoutUrl: 'io.ionic.demos.enterprise.demos.securitytrifecta://auth-action-complete',
 };
 
 const webAuthConfig: ProviderOptions = {
