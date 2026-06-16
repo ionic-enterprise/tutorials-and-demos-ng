@@ -1,1 +1,2 @@
+#include? "team.xcconfig"
 CAPACITOR_DEBUG = true
