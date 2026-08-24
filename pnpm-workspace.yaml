@@ -2,10 +2,10 @@ packages:
   - auth-connect/*
   - identity-vault/*
   - demos/*
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - core-js
-  - esbuild
-  - lmdb
-  - msgpackr-extract
-  - sharp
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  esbuild: true
+  lmdb: true
+  msgpackr-extract: true
+  sharp: true
