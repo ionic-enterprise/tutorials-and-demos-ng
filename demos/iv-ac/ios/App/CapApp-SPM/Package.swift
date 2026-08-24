@@ -18,7 +18,7 @@ let package = Package(
         .package(name: "CapacitorPreferences", path: "../../../../../node_modules/.pnpm/@capacitor+preferences@8.0.1_@capacitor+core@8.5.0/node_modules/@capacitor/preferences"),
         .package(name: "CapacitorPrivacyScreen", path: "../../../../../node_modules/.pnpm/@capacitor+privacy-screen@2.0.1_@capacitor+core@8.5.0/node_modules/@capacitor/privacy-screen"),
         .package(name: "CapacitorShare", path: "../../../../../node_modules/.pnpm/@capacitor+share@8.0.1_@capacitor+core@8.5.0/node_modules/@capacitor/share"),
-        .package(name: "IonicEnterpriseAuth", path: "../../../../../node_modules/.pnpm/@ionic-enterprise+auth@8.0.0_@capacitor+core@8.5.0/node_modules/@ionic-enterprise/auth"),
+        .package(name: "IonicEnterpriseAuth", path: "../../../../../node_modules/.pnpm/@ionic-enterprise+auth@8.1.0_@capacitor+core@8.5.0/node_modules/@ionic-enterprise/auth"),
         .package(name: "IonicEnterpriseIdentityVault", path: "../../capacitor-cordova-ios-plugins/sources/IonicEnterpriseIdentityVault")
     ],
     targets: [
