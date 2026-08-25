@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/skiptools/swift-sqlcipher.git",
       "state" : {
-        "revision" : "8d376ade71f2ce83b4c8e3250c79b207db4eddf6",
-        "version" : "1.10.0"
+        "revision" : "37a25816c4cea90b3bc6f428fc3896b82dc58915",
+        "version" : "1.11.0"
       }
     }
   ],

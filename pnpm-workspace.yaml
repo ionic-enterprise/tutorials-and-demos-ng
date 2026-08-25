@@ -9,3 +9,5 @@ allowBuilds:
   lmdb: true
   msgpackr-extract: true
   sharp: true
+patchedDependencies:
+  '@ionic-enterprise/secure-storage@3.1.0': patches/@ionic-enterprise__secure-storage@3.1.0.patch

@@ -19,7 +19,7 @@ let package = Package(
         .package(name: "CapacitorStatusBar", path: "../../../../../node_modules/.pnpm/@capacitor+status-bar@8.0.3_@capacitor+core@8.5.0/node_modules/@capacitor/status-bar"),
         .package(name: "IonicEnterpriseAuth", path: "../../../../../node_modules/.pnpm/@ionic-enterprise+auth@8.1.0_@capacitor+core@8.5.0/node_modules/@ionic-enterprise/auth"),
         .package(name: "IonicEnterpriseIdentityVault", path: "../../capacitor-cordova-ios-plugins/sources/IonicEnterpriseIdentityVault"),
-        .package(name: "@ionic-enterprise/secure-storage", path: "../../../../../node_modules/.pnpm/@ionic-enterprise+secure-storage@3.1.0_@awesome-cordova-plugins+core@6.16.0_rxjs@7.8.2__rxjs@7.8.2/node_modules/@ionic-enterprise/secure-storage")
+        .package(name: "@ionic-enterprise/secure-storage", path: "../../../../../node_modules/.pnpm/@ionic-enterprise+secure-storage@3.1.0_patch_hash=f4dd32134c270538fa4ea0b4b985de0bd32c2_cac6e14f0099fce6efee1b540b642b44/node_modules/@ionic-enterprise/secure-storage")
     ],
     targets: [
         .target(

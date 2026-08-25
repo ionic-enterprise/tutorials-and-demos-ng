@@ -2,8 +2,11 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.demos.enterprise.demos.securitytrifecta',
-  appName: 'Sec Trifecta',
+  appName: 'Trifecta',
   webDir: 'www/browser',
+  android: {
+    adjustMarginsForEdgeToEdge: 'auto',
+  },
   plugins: {
     StatusBar: {
       overlaysWebView: false,
