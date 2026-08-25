@@ -25,6 +25,10 @@ export class HomePage {
 
   messages: EmailMessage[] = [];
 
+  get canAddMessage(): boolean {
+    return this.messages.length < this.email.messageLimit;
+  }
+
   constructor() {
     addIcons({ addCircleOutline, removeCircleOutline, trashOutline });
   }

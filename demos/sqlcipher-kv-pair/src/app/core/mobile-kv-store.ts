@@ -10,105 +10,58 @@ export class MobileKVStore implements KVStorageProvider {
   async clear(): Promise<void> {
     const handle = await this.database.getHandle();
     if (handle) {
-      await handle.transaction((tx) => {
-        tx.executeSql('DELETE FROM KeyValuePairs WHERE collection = ?', [this.collection], () => {});
-      });
+      await handle.run('DELETE FROM KeyValuePairs WHERE collection = ?', [this.collection]);
     }
   }
 
   async getAll(): Promise<KeyValuePair[]> {
-    const kvPairs: { key: any; value: any }[] = [];
     const handle = await this.database.getHandle();
-    if (handle) {
-      await handle.transaction((tx) =>
-        tx.executeSql(
-          `SELECT id, value FROM KeyValuePairs WHERE collection = ? ORDER BY id`,
-          [this.collection],
-          (_t: any, r: any) => {
-            for (let i = 0; i < r.rows.length; i++) {
-              const { id, value } = r.rows.item(i);
-              kvPairs.push({ key: JSON.parse(id), value: JSON.parse(value) });
-            }
-          },
-        ),
-      );
-    }
-    return kvPairs;
+    if (!handle) return [];
+
+    const result = await handle.query('SELECT id, value FROM KeyValuePairs WHERE collection = ? ORDER BY id', [
+      this.collection,
+    ]);
+    return (result.values ?? []).map(({ id, value }) => ({ key: JSON.parse(id), value: JSON.parse(value) }));
   }
 
   async getValue(key: KeyValueKey): Promise<any | undefined> {
-    let value: any = undefined;
     const handle = await this.database.getHandle();
-    if (handle) {
-      await handle.transaction((tx) =>
-        tx.executeSql(
-          `SELECT value FROM KeyValuePairs WHERE id = ? AND collection = ?`,
-          [JSON.stringify(key), this.collection],
-          (_t: any, r: any) => {
-            if (r.rows.length) {
-              value = JSON.parse(r.rows.item(0).value);
-            }
-          },
-        ),
-      );
-    }
-    return value;
+    if (!handle) return undefined;
+
+    const result = await handle.query('SELECT value FROM KeyValuePairs WHERE id = ? AND collection = ?', [
+      JSON.stringify(key),
+      this.collection,
+    ]);
+    return result.values?.length ? JSON.parse(result.values[0].value) : undefined;
   }
 
   async removeValue(key: KeyValueKey): Promise<void> {
     const handle = await this.database.getHandle();
     if (handle) {
-      await handle.transaction((tx) => {
-        tx.executeSql(
-          'DELETE FROM KeyValuePairs WHERE id = ? AND collection = ?',
-          [JSON.stringify(key), this.collection],
-          () => {},
-        );
-      });
+      await handle.run('DELETE FROM KeyValuePairs WHERE id = ? AND collection = ?', [
+        JSON.stringify(key),
+        this.collection,
+      ]);
     }
   }
 
   async setValue(key: KeyValueKey, value: any): Promise<void> {
     const handle = await this.database.getHandle();
     if (handle) {
-      await handle.transaction((tx) => {
-        tx.executeSql(
-          'INSERT INTO KeyValuePairs (id, collection, value) VALUES (?, ?, ?)' +
-            ' ON CONFLICT(id, collection) DO' +
-            ' UPDATE SET value = ?' +
-            ' WHERE id = ?' +
-            ' AND collection = ?',
-          [
-            JSON.stringify(key),
-            this.collection,
-            JSON.stringify(value),
-            JSON.stringify(value),
-            JSON.stringify(key),
-            this.collection,
-          ],
-          () => {},
-        );
-      });
+      await handle.run(
+        'INSERT INTO KeyValuePairs (id, collection, value) VALUES (?, ?, ?) ON CONFLICT(id, collection) DO UPDATE SET value = excluded.value',
+        [JSON.stringify(key), this.collection, JSON.stringify(value)],
+      );
     }
   }
 
   async getKeys(): Promise<KeyValueKey[]> {
-    const keys: KeyValueKey[] = [];
     const handle = await this.database.getHandle();
-    if (handle) {
-      await handle.transaction((tx) =>
-        tx.executeSql(
-          `SELECT id FROM KeyValuePairs WHERE collection = ? ORDER BY id`,
-          [this.collection],
-          (_t: any, r: any) => {
-            for (let i = 0; i < r.rows.length; i++) {
-              const { id } = r.rows.item(i);
-              keys.push(JSON.parse(id));
-            }
-          },
-        ),
-      );
-    }
-    return keys;
+    if (!handle) return [];
+
+    const result = await handle.query('SELECT id FROM KeyValuePairs WHERE collection = ? ORDER BY id', [
+      this.collection,
+    ]);
+    return (result.values ?? []).map(({ id }) => JSON.parse(id));
   }
 }

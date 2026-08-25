@@ -5,6 +5,11 @@ const config: CapacitorConfig = {
   appName: 'SQLCipher KV',
   webDir: 'www',
   plugins: {
+    CapacitorSQLite: {
+      iosIsEncryption: true,
+      iosKeychainPrefix: 'io.ionic.demos.sqlcipherkvpair',
+      androidIsEncryption: true,
+    },
     StatusBar: {
       overlaysWebView: false,
     },

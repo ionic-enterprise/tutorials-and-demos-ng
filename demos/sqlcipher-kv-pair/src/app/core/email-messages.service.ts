@@ -82,6 +82,9 @@ const messagePool: EmailMessage[] = [
 export class EmailMessagesService {
   private inbox = inject(InboxStorageService);
 
+  get messageLimit(): number {
+    return messagePool.length;
+  }
 
   async getMessages(): Promise<EmailMessage[]> {
     return [...(await this.inbox.getAll())].reverse().map((x) => x.value);

@@ -1,44 +1,69 @@
 import { Injectable, inject } from '@angular/core';
-import { DbTransaction, SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
+import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection } from '@capacitor-community/sqlite';
 import { Capacitor } from '@capacitor/core';
 import { EncryptionKeysService } from './encryption-keys.service';
+
+const DATABASE_NAME = 'emailcache';
+const LEGACY_DATABASE_NAME = 'emailcache.db';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DatabaseService {
   private keys = inject(EncryptionKeysService);
-  private sqlite = inject(SQLite);
+  private sqlite = new SQLiteConnection(CapacitorSQLite);
 
-  private handle: SQLiteObject | null = null;
+  private handle: SQLiteDBConnection | null = null;
 
-  async getHandle(): Promise<SQLiteObject | null> {
+  async getHandle(): Promise<SQLiteDBConnection | null> {
     if (!this.handle) {
-      this.handle = await this.openDatabase();
-      if (this.handle) {
-        this.handle.transaction((tx: DbTransaction) => this.createTables(tx));
+      try {
+        this.handle = await this.openDatabase();
+      } catch (error) {
+        console.error('Unable to open the encrypted database', error);
+        this.handle = null;
       }
     }
     return this.handle;
   }
 
-  private async openDatabase(): Promise<SQLiteObject | null> {
+  private async openDatabase(): Promise<SQLiteDBConnection | null> {
     if (Capacitor.isNativePlatform()) {
       const key = this.keys.getDatabaseKey();
       if (key) {
-        return this.sqlite.create({
-          name: 'emailcache.db',
-          location: 'default',
-          key,
-        });
+        const secret = await this.sqlite.isSecretStored();
+        if (secret.result) {
+          const matches = await this.sqlite.checkEncryptionSecret(key);
+          if (!matches.result) {
+            throw new Error('The configured database key does not match the stored key');
+          }
+        } else {
+          await this.sqlite.setEncryptionSecret(key);
+        }
+        const migrated = await this.migrateCordovaDatabase();
+
+        const handle = await this.sqlite.createConnection(DATABASE_NAME, true, 'secret', 1, false);
+        await handle.open();
+        await handle.execute(
+          'CREATE TABLE IF NOT EXISTS KeyValuePairs (id TEXT, collection TEXT, value TEXT, PRIMARY KEY (id, collection))',
+        );
+        if (migrated) {
+          await this.sqlite.deleteOldDatabases(undefined, [LEGACY_DATABASE_NAME]);
+        }
+        return handle;
       }
     }
     return null;
   }
 
-  createTables(transaction: DbTransaction): void {
-    transaction.executeSql(
-      'CREATE TABLE IF NOT EXISTS KeyValuePairs (id TEXT, collection TEXT, value TEXT, PRIMARY KEY (id, collection))',
-    );
+  private async migrateCordovaDatabase(): Promise<boolean> {
+    const databases = await this.sqlite.getMigratableDbList();
+    const databaseNames = databases.values ?? [];
+
+    if (databaseNames.includes(LEGACY_DATABASE_NAME)) {
+      await this.sqlite.addSQLiteSuffix(undefined, [LEGACY_DATABASE_NAME]);
+      return true;
+    }
+    return false;
   }
 }

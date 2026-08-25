@@ -25,6 +25,12 @@ Our key-value pair implementation exposes the following API:
 
 Base implementations exist for Mobile and Web. The Web implementation is intended for development and is not secure. The Mobile implementation is secure.
 
+### Migrating from the Cordova SQLite plugin
+
+The mobile implementation uses `@capacitor-community/sqlite`. Existing installs that used `cordova-sqlcipher-adapter` keep their encrypted database in the legacy `emailcache.db` file. On first launch after the upgrade, the app copies that database into the new plugin naming convention (`emailcacheSQLite.db`), opens it with the existing encryption key, and creates the `KeyValuePairs` table if necessary. The old file is deleted only after the new connection succeeds. If migration or decryption fails, the error is caught and the legacy database is left in place so a later release can retry the migration.
+
+This assumes the encryption key and SQLCipher configuration remain compatible. Production applications should validate migrated data before deleting the legacy file and use an explicit schema migration strategy, such as the database version and `addUpgradeStatement`, for future table changes.
+
 ### Data Types;
 
 For our implementation, we would like to initially define a single collection of key-value pairs, but we would also like to make it easy to expand to using multiple key-value
