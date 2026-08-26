@@ -19,3 +19,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+
+# Local Apple Developer team config
+team.xcconfig

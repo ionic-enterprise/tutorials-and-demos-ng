@@ -1,12 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.gettingstartedac',
-  appName: 'getting-started-ac',
+  appId: 'io.ionic.demos.enterprise.authconnect.gettingstarted',
+  appName: 'Auth Start',
   webDir: 'www/browser',
-  android: {
-    adjustMarginsForEdgeToEdge: 'auto',
-  },
   plugins: {
     StatusBar: {
       overlaysWebView: false,

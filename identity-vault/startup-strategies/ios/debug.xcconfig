@@ -1,0 +1,2 @@
+CAPACITOR_DEBUG = false
+CAPACITOR_DEBUG[config=Debug] = true

@@ -19,8 +19,12 @@ export class AuthenticationService {
       audience: 'https://io.ionic.demo.ac',
       clientId: 'yLasZNUGkZ19DGEjTmAITBfGXzqbvd00',
       discoveryUrl: 'https://dev-2uspt-sz.us.auth0.com/.well-known/openid-configuration',
-      logoutUrl: isNative ? 'io.ionic.acdemo://auth-action-complete' : 'http://localhost:8100/auth-action-complete',
-      redirectUri: isNative ? 'io.ionic.acdemo://auth-action-complete' : 'http://localhost:8100/auth-action-complete',
+      logoutUrl: isNative
+        ? 'io.ionic.demos.enterprise.authconnect.currentui://auth-action-complete'
+        : 'http://localhost:8100/auth-action-complete',
+      redirectUri: isNative
+        ? 'io.ionic.demos.enterprise.authconnect.currentui://auth-action-complete'
+        : 'http://localhost:8100/auth-action-complete',
       scope: 'openid offline_access email picture profile',
     };
   }

@@ -1,12 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.gettingstartediv',
-  appName: 'iv-getting-started',
+  appId: 'io.ionic.demos.enterprise.identityvault.startupstrategies',
+  appName: 'IV Startup',
   webDir: 'www/browser',
-  android: {
-    adjustMarginsForEdgeToEdge: 'auto',
-  },
   plugins: {
     StatusBar: {
       overlaysWebView: false,

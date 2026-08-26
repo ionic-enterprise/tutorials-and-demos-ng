@@ -1,0 +1,15 @@
+diff --git a/Package.swift b/Package.swift
+index 251423d2033e228b2d9a213f96b01dd9d1c016cd..0bd2d8eaa404d4f39cc0ebd5af5eb348a43e2a33 100644
+--- a/Package.swift
++++ b/Package.swift
+@@ -21,6 +21,9 @@ let package = Package(
+                 .product(name: "SQLCipher", package: "swift-sqlcipher"),
+             ],
+             path: "src/ios",
+-            publicHeadersPath: ".")
++            publicHeadersPath: ".",
++            cSettings: [
++                .define("SQLITE_HAS_CODEC")
++            ])
+     ]
+ )

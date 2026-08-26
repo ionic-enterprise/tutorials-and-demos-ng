@@ -2,7 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
       "@app/*": ["src/app/*"],

@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "io.ionic.gettingstartedac"
+    namespace = "io.ionic.demos.enterprise.authconnect.refreshworkflow"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "io.ionic.gettingstartedac"
+        applicationId "io.ionic.demos.enterprise.authconnect.refreshworkflow"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

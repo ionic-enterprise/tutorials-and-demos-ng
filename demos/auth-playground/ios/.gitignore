@@ -10,3 +10,6 @@ capacitor-cordova-ios-plugins
 App/App/capacitor.config.json
 App/App/config.xml
 
+
+# Local Apple Developer team config
+team.xcconfig

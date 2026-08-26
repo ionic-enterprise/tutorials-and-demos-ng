@@ -44,7 +44,6 @@ import {
   styleUrls: ['tasting-notes.page.scss'],
   imports: [
     FormsModule,
-    TastingNoteEditorComponent,
     IonHeader,
     IonToolbar,
     IonTitle,

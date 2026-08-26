@@ -31,7 +31,6 @@ import {
   imports: [
     CommonModule,
     FormsModule,
-    TastingNoteEditorComponent,
     IonHeader,
     IonToolbar,
     IonTitle,

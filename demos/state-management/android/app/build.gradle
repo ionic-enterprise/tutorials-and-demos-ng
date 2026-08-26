@@ -7,10 +7,10 @@ android {
             excludes += ['META-INF/NOTICE', 'META-INF/LICENSE', 'META-INF/NOTICE', 'META-INF/LICENSE']
         }
     }
-    namespace = "io.ionic.teatasterng"
+    namespace = "io.ionic.demos.enterprise.demos.statemanagement"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "io.ionic.teatasterng"
+        applicationId "io.ionic.demos.enterprise.demos.statemanagement"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
